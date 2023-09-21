@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pack Standoff 2</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        .Top-Bar {
+            background-color: Black;
+            height: 40px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .Pack-So2-Logo {
+            width: 135px;
+            height: 70px;
+            border-radius: 50%;
+        }
+
+        .Sunstrike-Logo {
+            width: 93px;
+            height: 20px;
+        }
+
+        .Img-1 {
+            background-color: gray;
+            height: 245px;
+            width: 110%;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .button-ver {
+            background-image: url('https://tinyurl.com/45eum4r7');
+            background-color: white;
+            color: white;
+            padding: 3px 10px;
+            border: none;
+            border-radius: 0px;
+            width: 100px;
+            position: absolute;
+            top: 190px;
+            left: 35%;
+            transform: translateX(-50%);
+            font-family: 'Bebas Neue', sans-serif;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .Black-screen-p1 {
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 20px;
+        }
+
+        .botao-voltar {
+            background-color: yellow;
+            color: white;
+            padding: 3px 25px;
+            border: none;
+            border-radius: 0px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 14px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            background-image: url('https://tinyurl.com/2b75d2zr');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .c-personagens {
+            background-color: yellow;
+            color: white;
+            padding: 10px 130px;
+            border: none;
+            border-radius: 0px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .ocultar-botao {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="Top-Bar">
+        <img src="https://tinyurl.com/2s3dykvk" alt="Pack So2 Logo" class="Pack-So2-Logo">
+        <img src="https://tinyurl.com/3653ycsh" alt="Sunstrike Logo" class="Sunstrike-Logo">
+    </div>
+
+    <div class="Img-1">
+        <img src="https://tinyurl.com/3tmh7vrh" alt="Nova Imagem" style="width: 100%;">
+    </div>
+
+    <div class="Img-1">
+        <img src="https://tinyurl.com/4ndtjv2a" alt="Nova Imagem" width="110%" height="245px">
+        
+        <button class="button-ver" style="font-family: 'Bebas Neue', sans-serif;" onclick="criarNovoQuadrado()">VER</button>
+    </div>
+
+    <div class="Img-1">
+        <!-- Conteúdo do terceiro quadrado aqui -->
+    </div>
+
+    <script>
+        function criarNovoQuadrado() {
+            document.querySelector(".button-ver").classList.add("ocultar-botao");
+
+            var novoQuadrado = document.createElement("div");
+            novoQuadrado.className = "Black-screen-p1";
+            
+            var botaoVoltar = document.createElement("button");
+            botaoVoltar.className = "botao-voltar";
+            botaoVoltar.textContent = "Voltar";
+            botaoVoltar.onclick = function() {
+                document.body.removeChild(novoQuadrado);
+                document.querySelector(".button-ver").classList.remove("ocultar-botao");
+            };
+
+            novoQuadrado.appendChild(botaoVoltar);
+
+            var novoBotao = document.createElement("button");
+            novoBotao.className = "c-personagens";
+            novoBotao.textContent = "Personagens";
+            novoQuadrado.appendChild(novoBotao);
+
+            document.body.appendChild(novoQuadrado);
+        }
+    </script>
+</body>
+</html>
