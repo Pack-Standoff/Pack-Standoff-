@@ -142,15 +142,14 @@
         <!-- Conteúdo do terceiro quadrado aqui -->
     </div>
 
-    <!-- Código JavaScript para música de fundo -->
+    <!-- Tag de áudio para música de fundo -->
+    <audio autoplay loop>
+        <source src="https://soundtrack-season.vercel.app/Sava%20T%20-%20Sunstrike%20_%20Standoff%202%200.25.0%20_%20Season%206(MP3_160K).mp3" type="audio/mp3">
+        Seu navegador não suporta a reprodução de áudio.
+    </audio>
+
+    <!-- Resto do seu código JavaScript... -->
     <script>
-        var musica = new Audio("https://soundtrack-season.vercel.app/Sava%20T%20-%20Sunstrike%20_%20Standoff%202%200.25.0%20_%20Season%206(MP3_160K).mp3"); // Substitua pela URL direta do seu arquivo de música
-        musica.loop = true;
-
-        document.addEventListener("DOMContentLoaded", function () {
-            musica.play();
-        });
-
         function criarNovoQuadrado() {
             document.querySelector(".button-ver").classList.add("ocultar-botao");
 
