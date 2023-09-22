@@ -4,20 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pack Standoff 2</title>
-    
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
-    
+
     <style>
+        :root {
+            --zoom-level: 1.-1; /* Valor padrão de zoom */
+        }
+
         body {
             margin: 0;
             padding: 0;
             background-color: black;
             font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            transform: scale(var(--zoom-level)); /* Aplicar o zoom aqui */
+            transition: transform 0.5s ease; /* Adicionar transição para suavizar o zoom */
         }
 
         .Top-Bar {
-            background-color: Black;
-            height: 40px;
+            background-color: black;
+            height: 30px;
             width: 100%;
             display: flex;
             justify-content: space-between;
@@ -28,19 +36,21 @@
         .Pack-So2-Logo {
             width: 135px;
             height: 70px;
-            border-radius: 50%;
+            border-radius: 40%;
+            margin-top: 5px; /* Adiciona margem superior negativa para mover a imagem para cima */
+            margin-left: -15px; /* Adicionei esta linha para mover a imagem um pouco para a esquerda */
         }
 
         .Sunstrike-Logo {
-            width: 93px;
-            height: 20px;
+            width: 88px;
+            height: 18px;
+        		margin-right: -15px; /* Adicionei esta linha para mover a imagem um pouco para a esquerda */
         }
-
         .Img-1 {
-            background-color: gray;
-            height: 245px;
+            background-color: #333;
+            height: 240px;
             width: 110%;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -97,9 +107,9 @@
         }
 
         .c-personagens {
-            background-color: yellow;
+            background-color: blue;
             color: white;
-            padding: 10px 130px;
+            padding: 10px 150px;
             border: none;
             border-radius: 0px;
             font-family: 'Bebas Neue', sans-serif;
@@ -123,8 +133,8 @@
     </div>
 
     <div class="Img-1">
-        <img src="https://tinyurl.com/4ndtjv2a" alt="Nova Imagem" width="110%" height="245px">
-        
+        <img src="https://tinyurl.com/4ndtjv2a" alt="Nova Imagem" width="100%" height="248px">
+
         <button class="button-ver" style="font-family: 'Bebas Neue', sans-serif;" onclick="criarNovoQuadrado()">VER</button>
     </div>
 
@@ -138,11 +148,11 @@
 
             var novoQuadrado = document.createElement("div");
             novoQuadrado.className = "Black-screen-p1";
-            
+
             var botaoVoltar = document.createElement("button");
             botaoVoltar.className = "botao-voltar";
             botaoVoltar.textContent = "Voltar";
-            botaoVoltar.onclick = function() {
+            botaoVoltar.onclick = function () {
                 document.body.removeChild(novoQuadrado);
                 document.querySelector(".button-ver").classList.remove("ocultar-botao");
             };
