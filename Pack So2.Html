@@ -6,221 +6,180 @@
   <title>Pack Standoff 2</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
   <style>
-         :root { --zoom-level: 0.980; }
+    :root {
+      --zoom-level: 0.980;
+    }
 
-          body {
-          margin: 0;
-          padding: 0;
-          background-color: black;
-          font-family: Arial, sans-serif;
-          max-width: 1200px;
-          margin: 0 auto;
-          transform: scale(var(--zoom-level));
-          transition: transform 0.5s ease;}
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      font-family: Arial, sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      transform: scale(var(--zoom-level));
+      transition: transform 0.5s ease;
+    }
 
-          .Top-Bar {
-           background-color: black;
-           height: 1%;
-           width: 100%;
-           display: flex;
-           justify-content: space-between;
-           align-items: center;
-           padding: 0 20px;}
+    .Top-Bar {
+      background-color: black;
+      height: 1%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
 
-           .Pack-So2-Logo {
-           width: 35%;
-           height: 225%;
-           border-radius: 40%;
-           margin-top: 5px;
-           margin-left: -15px;}
+    .Pack-So2-Logo {
+      width: 35%;
+      height: 225%;
+      border-radius: 40%;
+      margin-top: 5px;
+      margin-left: -15px;
+    }
 
-           .Sunstrike-Logo {
-           width: 20%;
-           height: 50%;
-           margin-right: -10px;}
+    .Sunstrike-Logo {
+      width: 20%;
+      height: 50%;
+      margin-right: -10px;
+    }
 
-            .Img-1 {
-           background-color: #333;
-           height: 240px;
-           width: 110%;
-           margin-bottom: 10%;
-           display: flex;
-           justify-content: center;
-           align-items: center;
-           position: relative;}
+    .Img-1 {
+      background-color: #333;
+      height: 240px;
+      width: 110%;
+      margin-bottom: 10%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
 
-          .button-ver {
-           background-image: url('https://tinyurl.com/45eum4r7');
-           background-color: #333;
-           color: white;
-           padding: 3px 10px;
-           border: none;
-           border-radius: 0px;
-           width: 100px;
-           position: absolute;
-           top: 190px;
-           left: 32%;
-           transform: translateX(-50%);
-           font-family: 'Bebas Neue', sans-serif;
-           text-align: center;
-           font-size: 16px;
-           cursor: pointer;}
+    .button-ver {
+      background-image: url('https://tinyurl.com/45eum4r7');
+      background-color: #333;
+      color: white;
+      padding: 3px 10px;
+      border: none;
+      border-radius: 0px;
+      width: 100px;
+      position: absolute;
+      top: 190px;
+      left: 32%;
+      transform: translateX(-50%);
+      font-family: 'Bebas Neue', sans-serif;
+      text-align: center;
+      font-size: 16px;
+      cursor: pointer;
+    }
 
-           .Black-screen-p1 {
-           background-color: black;
-           position: fixed;
-           top: 0;
-           left: 0;
-           width: 100%;
-           height: 100%;
-           z-index: 999;
-           display: flex;
-           flex-direction: column;
-           align-items: flex-start;
-           justify-content: flex-start;
-           padding: 20px;}
+    .button-soundtrack {
+      background-image: url('https://tinyurl.com/45eum4r7');
+      background-color: #333;
+      color: white;
+      padding: 5px 15px;
+      border: none;
+      border-radius: 0px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 16px;
+      cursor: pointer;
+      position: fixed;
+      bottom: -5.5%;
+      left: 20%;
+      transform: translateX(-50%);
+    }
 
-          .botao-voltar {
-           background-color: yellow;
-           color: white;
-           padding: 3px 25px;
-           border: none;
-           border-radius: 0px;
-           font-family: 'Bebas Neue', sans-serif;
-           font-size: 14px;
-           cursor: pointer;
-           margin-bottom: 10px;
-           background-image: url('https://tinyurl.com/2b75d2zr');
-           background-repeat: no-repeat;
-           background-size: cover;
-           background-position: center;}
+    .button-pause {
+      background-image: url('https://tinyurl.com/45eum4r7');
+      background-color: #333;
+      color: white;
+      padding: 5px 15px;
+      border: none;
+      border-radius: 0px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 16px;
+      cursor: pointer;
+      position: fixed;
+      bottom: -5.5%;
+      left: 51%;
+      transform: translateX(-50%);
+    }
 
-           .c-personagens {
-           background-color: #333;
-           color: white;
-           padding: 10px 150px;
-           border: none;
-           border-radius: 0px;
-           font-family: 'Bebas Neue', sans-serif;
-           font-size: 14px;
-           cursor: pointer;}
-        
-           .ocultar-botao {
-           display: none;}
-  
-           .button-soundtrack {
-           background-image: url('https://tinyurl.com/45eum4r7');
-           background-color: green;
-           color: white;
-           padding: 5px 15px;
-           border: none;
-           border-radius: 0px;
-           font-family: 'Bebas Neue', sans-serif;
-           font-size: 16px;
-           cursor: pointer;
-           position: fixed;
-           bottom: -5%; 
-           left: 20%; 
-           transform: translateX(-50%); }
-             .button-pause {
-           background-image: url('https://tinyurl.com/45eum4r7');
-           background-color: blue;
-           color: white;
-           padding: 5px 15px;
-           border: none;
-           border-radius: 0px;
-           font-family: 'Bebas Neue', sans-serif;
-           font-size: 16px;
-           cursor: pointer;
-           position: fixed;
-           bottom: -5%;
-           left: 51%; 
-           transform: translateX(-50%); }
-  
-           .retangulo {
-           background-color: #333; 
-           width: 100%; 
-           height: 20%; 
-           position: absolute; 
-           top: 110%; 
-           left: 0%; }
-        
-           .texto-barra {
-           color: white;
-           font-family: 'Bebas Neue', sans-serif;
-           font-size: 17px; 
-           position: absolute;
-           top: -10%; 
-           left: 3%;}
+    /* Estilo quando o botão está ativo (clicado) */
+    .button-pause:active {
+      background-color: #333;
+      color: white;
+    }
+
+    .retangulo {
+      background-image: url('https://tinyurl.com/5n6avdde');
+      width: 100%;
+      height: 20%;
+      position: absolute;
+      top: 110%;
+      left: 0%;
+    }
+
+    .texto-barra {
+      color: white;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 17px;
+      position: absolute;
+      top: -7%;
+      left: 5%;
+    }
   </style>
 </head>
 <body>
-    <div class="Top-Bar">
-     <img src="https://tinyurl.com/2s3dykvk" alt="Pack So2 Logo" class="Pack-So2-Logo">
-     <img src="https://tinyurl.com/3653ycsh" alt="Sunstrike Logo" class="Sunstrike-Logo">
-    </div>
+  <div class="Top-Bar">
+    <img src="https://tinyurl.com/2s3dykvk" alt="Pack So2 Logo" class="Pack-So2-Logo">
+    <img src="https://tinyurl.com/3653ycsh" alt="Sunstrike Logo" class="Sunstrike-Logo">
+  </div>
 
-    <div class="Img-1">
-     <img src="https://tinyurl.com/3tmh7vrh" alt="Nova Imagem" style="width: 100%;">
-    </div>
+  <div class="Img-1">
+    <img src="https://tinyurl.com/3tmh7vrh" alt="Nova Imagem" style="width: 100%;">
+  </div>
 
-    <div class="Img-1">
-     <img src="https://tinyurl.com/4ndtjv2a" alt="Nova Imagem" width="100%;">
-     <button class="button-ver" style="font-family: 'Bebas Neue', sans-serif;" onclick="criarNovoQuadrado()">VER</button>
-     <button class="button-pause" onclick= >pause</button>
-    </div>
-    <div class="Img-1" style="color: white; font-family: 'Bebas Neue', sans-serif;">
+  <div class="Img-1">
+    <img src="https://tinyurl.com/4ndtjv2a" alt="Nova Imagem" width="100%">
+    <button class="button-ver" style="font-family: 'Bebas Neue', sans-serif;" onclick="criarNovoQuadrado()">VER</button>
+    <button class="button-pause" onclick="pausarMusicaFundo()">pause</button>
+  </div>
+  <div class="Img-1" style="color: white; font-family: 'Bebas Neue', sans-serif;">
     Coming Soon
     <div class="retangulo">
-     <p class="texto-barra">relaxe e escute a trilha sonora do jogo enquanto navegue pelo site </p>
+      <p class="texto-barra">relaxe e escute a trilha sonora do jogo enquanto navegue pelo site</p>
     </div>
-</div>
-    <script>
-        function criarNovoQuadrado() {
-        document.querySelector(".button-ver").classList.add("ocultar-botao");
-
-        var novoQuadrado = document.createElement("div");
-        novoQuadrado.className = "Black-screen-p1";
-
-        var botaoVoltar = document.createElement("button");
-        botaoVoltar.className = "botao-voltar";
-        botaoVoltar.textContent = "Voltar";
-        botaoVoltar.onclick = function () {
-        document.body.removeChild(novoQuadrado);
-        document.querySelector(".button-ver").classList.remove("ocultar-botao");};
-
-        novoQuadrado.appendChild(botaoVoltar);
-
-        var novoBotao = document.createElement("button");
-        novoBotao.className = "c-personagens";
-        novoBotao.textContent = "Personagens";
-        novoQuadrado.appendChild(novoBotao);
-
-        document.body.appendChild(novoQuadrado);}
-</script>
-   <div class="volume-control">
-   <label for="volume-range" class="texto-barra">Volume:</label>
-   <input type="range" id="volume-range" min="0" max="0.1%" step="0.1" value="0.5" oninput="ajustarVolume(this.value)">
-</div>
-<script>
+  </div>
+  <div class="volume-control">
+    <label for="volume-range" class="texto-barra">Volume:</label>
+    <input type="range" id="volume-range" min="0" max="0.1%" step="0.1" value="0.5" oninput="ajustarVolume(this.value)">
+  </div>
+  <script>
     var backgroundMusic; // Variável para armazenar a música de fundo
 
     // Função para reproduzir a música de fundo
     function reproduzirMusicaFundo() {
-    backgroundMusic = new Audio("https://tinyurl.com/4zbt8twb");
-    backgroundMusic.play();}
+      backgroundMusic = new Audio("https://tinyurl.com/4zbt8twb");
+      backgroundMusic.play();
+    }
 
     // Função para pausar a música de fundo
     function pausarMusicaFundo() {
-        if (backgroundMusic) {
-            backgroundMusic.pause();}}
+      if (backgroundMusic) {
+        backgroundMusic.pause();
+      }
+    }
 
     // Função para ajustar o volume da música de fundo
     function ajustarVolume(novoVolume) {
-        if (backgroundMusic) {
-            backgroundMusic.volume = novoVolume;}}
-</script>
-   <button class="button-soundtrack" onclick="reproduzirMusicaFundo()">Reproduzir SoundTrack</button>
-   <button class="button-pause" onclick="pausarMusicaFundo()">Pausar</button>
+      if (backgroundMusic) {
+        backgroundMusic.volume = novoVolume;
+      }
+    }
+  </script>
+  <button class="button-soundtrack" onclick="reproduzirMusicaFundo()">Reproduzir SoundTrack</button>
+  <button class="button-pause" onclick="pausarMusicaFundo()">Pausar</button>
 </body>
 </html>
