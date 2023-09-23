@@ -23,19 +23,20 @@
 
     .Top-Bar {
       background-color: black;
-      height: 1%;
+      height: 0%;
       width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0 20px;
+      margin-top: -13%;
     }
 
     .Pack-So2-Logo {
       width: 35%;
       height: 225%;
       border-radius: 40%;
-      margin-top: 5px;
+      margin-top: 10%;
       margin-left: -15px;
     }
 
@@ -43,6 +44,7 @@
       width: 20%;
       height: 50%;
       margin-right: -10px;
+      margin-top: 9%;
     }
 
     .Img-1 {
@@ -71,9 +73,8 @@
       font-family: 'Bebas Neue', sans-serif;
       text-align: center;
       font-size: 16px;
-      cursor: pointer;
-    }
-
+      cursor: pointer;}
+  
     .button-soundtrack {
       background-image: url('https://tinyurl.com/45eum4r7');
       background-color: #333;
@@ -90,7 +91,7 @@
       transform: translateX(-50%);
     }
 
-    .button-pause {
+     .button-pause {
       background-image: url('https://tinyurl.com/45eum4r7');
       background-color: #333;
       color: white;
@@ -106,13 +107,7 @@
       transform: translateX(-50%);
     }
 
-    /* Estilo quando o botão está ativo (clicado) */
-    .button-pause:active {
-      background-color: #333;
-      color: white;
-    }
-
-    .retangulo {
+      .retangulo {
       background-image: url('https://tinyurl.com/5n6avdde');
       width: 100%;
       height: 20%;
@@ -127,7 +122,7 @@
       font-size: 17px;
       position: absolute;
       top: -7%;
-      left: 5%;
+      left: 4%;
     }
   </style>
 </head>
@@ -144,14 +139,19 @@
   <div class="Img-1">
     <img src="https://tinyurl.com/4ndtjv2a" alt="Nova Imagem" width="100%">
     <button class="button-ver" style="font-family: 'Bebas Neue', sans-serif;" onclick="criarNovoQuadrado()">VER</button>
-    <button class="button-pause" onclick="pausarMusicaFundo()">pause</button>
+</div>
+  <div class="Img-1">
+  <img src="adicionar url" alt="Nova Imagem" width="100%">
+       </div>
+  <div class="Img-1" style="color: white; font-family: 'Bebas Neue', sans-serif; position: relative;">
+  <div style="position: absolute; top: 0; right: 0; width: 45px; height: 25px; background-color: #333;">
+    <img src="https://tinyurl.com/mr3t7hby" alt="Sua Imagem" style="width: 100%; height: 100%;">
   </div>
-  <div class="Img-1" style="color: white; font-family: 'Bebas Neue', sans-serif;">
-    Coming Soon
-    <div class="retangulo">
-      <p class="texto-barra">relaxe e escute a trilha sonora do jogo enquanto navegue pelo site</p>
-    </div>
+  Coming Soon
+  <div class="retangulo">
+    <p class="texto-barra">relaxe e escute a trilha sonora do jogo enquanto navegue pelo site</p>
   </div>
+</div>
   <div class="volume-control">
     <label for="volume-range" class="texto-barra">Volume:</label>
     <input type="range" id="volume-range" min="0" max="0.1%" step="0.1" value="0.5" oninput="ajustarVolume(this.value)">
