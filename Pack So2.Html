@@ -138,11 +138,11 @@
 
   <div class="Img-1">
     <img src="https://tinyurl.com/4ndtjv2a" alt="Nova Imagem" width="100%">
-    <button class="button-ver" style="font-family: 'Bebas Neue', sans-serif;" onclick="criarNovoQuadrado()">VER</button>
+    <button class="button-ver" style="font-family: 'Bebas Neue', sans-serif;" onclick="abrirNovaPagina()">VER</button>
 </div>
   <div class="Img-1">
-  <img src="adicionar url" alt="Nova Imagem" width="100%">
-       </div>
+  <img src="adicionar url" alt="Nova Imagem" width="100%">   
+  </div>
   <div class="Img-1" style="color: white; font-family: 'Bebas Neue', sans-serif; position: relative;">
   <div style="position: absolute; top: 0; right: 0; width: 45px; height: 25px; background-color: #333;">
     <img src="https://tinyurl.com/mr3t7hby" alt="Sua Imagem" style="width: 100%; height: 100%;">
@@ -178,8 +178,15 @@
         backgroundMusic.volume = novoVolume;
       }
     }
+  
   </script>
   <button class="button-soundtrack" onclick="reproduzirMusicaFundo()">Reproduzir SoundTrack</button>
   <button class="button-pause" onclick="pausarMusicaFundo()">Pausar</button>
+<script>
+    // Função para abrir uma nova página ao clicar no botão "VER"
+    function abrirNovaPagina() {
+        window.open("https://pack-standoff2-content.vercel.app/Pack%20Standoff%202%20Content.html");
+    }
+</script>
 </body>
 </html>
