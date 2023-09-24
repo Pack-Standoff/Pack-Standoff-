@@ -124,6 +124,18 @@
       top: -7%;
       left: 4%;
     }
+	<script>
+    function desativarCliqueDireito() {
+      var imagens = document.getElementsByTagName("img");
+      for (var i = 0; i < imagens.length; i++) {
+        imagens[i].oncontextmenu = function() {
+          return false;
+        };
+      }
+    }
+
+    window.onload = desativarCliqueDireito;
+</script>	
   </style>
 </head>
 <body>
