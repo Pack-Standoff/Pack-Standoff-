@@ -3,190 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pack Standoff 2</title>
+  <title>Pack Standoff 2 Content</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
   <style>
-    :root {
-      --zoom-level: 0.980;
-    }
-
     body {
       margin: 0;
       padding: 0;
-      background-color: black;
+      background-color: #1C1C1C;
       font-family: Arial, sans-serif;
-      max-width: 1200px;
-      margin: 0 auto;
-      transform: scale(var(--zoom-level));
-      transition: transform 0.5s ease;
     }
 
-    .Top-Bar {
+    .top-bar {
       background-color: black;
-      height: 0%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 20px;
-      margin-top: -13%;
-    }
-
-    .Pack-So2-Logo {
-      width: 35%;
-      height: 225%;
-      border-radius: 40%;
-      margin-top: 10%;
-      margin-left: -15px;
-    }
-
-    .Sunstrike-Logo {
-      width: 20%;
-      height: 50%;
-      margin-right: -10px;
-      margin-top: 9%;
-    }
-
-    .Img-1 {
-      background-color: #333;
-      height: 240px;
-      width: 110%;
-      margin-bottom: 10%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
-
-    .button-ver {
-      background-image: url('https://tinyurl.com/45eum4r7');
-      background-color: #333;
       color: white;
-      padding: 3px 10px;
-      border: none;
-      border-radius: 0px;
-      width: 100px;
-      position: absolute;
-      top: 190px;
-      left: 32%;
-      transform: translateX(-50%);
-      font-family: 'Bebas Neue', sans-serif;
+      padding: 25px;
       text-align: center;
-      font-size: 16px;
-      cursor: pointer;}
-  
-    .button-soundtrack {
-      background-image: url('https://tinyurl.com/45eum4r7');
-      background-color: #333;
-      color: white;
-      padding: 5px 15px;
-      border: none;
-      border-radius: 0px;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 16px;
-      cursor: pointer;
       position: fixed;
-      bottom: -5.5%;
-      left: 20%;
-      transform: translateX(-50%);
-    }
-
-     .button-pause {
-      background-image: url('https://tinyurl.com/45eum4r7');
-      background-color: #333;
-      color: white;
-      padding: 5px 15px;
-      border: none;
-      border-radius: 0px;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 16px;
-      cursor: pointer;
-      position: fixed;
-      bottom: -5.5%;
-      left: 51%;
-      transform: translateX(-50%);
-    }
-
-      .retangulo {
-      background-image: url('https://tinyurl.com/5n6avdde');
+      top: 0;
       width: 100%;
-      height: 20%;
-      position: absolute;
-      top: 110%;
-      left: 0%;
+      z-index: 1;
     }
 
-    .texto-barra {
-      color: white;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 17px;
+    .top-bar img.left-corner {
       position: absolute;
-      top: -7%;
-      left: 4%;
+      left: 5px;
+      top: 10px;
+      width: 150px;
+    }
+
+    .personagem-t {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 20px;
+      margin-top: 80px;
+      background: linear-gradient(to bottom, white 40%, #808080 150%, black 90%);
+      -webkit-background-clip: text;
+      color: transparent;
+      text-align: left;
+      padding-left: 10px;
+    }
+
+    .square-1 {
+      background-color: gray;
+      width: 98%;
+      height: 200px;
+      margin-top: 10px;
+      text-align: center;
+      padding: 20px;
+      background-image: url("https://tinyurl.com/f2ua46pf");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    /* Estilo para o botão Voltar com imagem de fundo */
+    .botao-voltar {
+      position: fixed;
+      top: 70px;
+      right: 5px;
+      background-color: #1C1C1C;
+      color: white;
+      padding: 5px 25px;
+      text-decoration: none;
+      font-family: 'Bebas Neue', sans-serif;
+      background-image: url("https://tinyurl.com/2s3tz9wp");
+      background-size: cover;
     }
   </style>
+  <script>
+    // Função para desabilitar o clique direito em todas as imagens
+    function disableRightClick(event) {
+      event.preventDefault();
+    }
+
+    // Adicionar um ouvinte de evento a todas as imagens
+    window.onload = function() {
+      var images = document.getElementsByTagName("img");
+      for (var i = 0; i < images.length; i++) {
+        images[i].addEventListener("contextmenu", disableRightClick);
+      }
+    };
+  </script>
 </head>
 <body>
-  <div class="Top-Bar">
-    <img src="https://tinyurl.com/2s3dykvk" alt="Pack So2 Logo" class="Pack-So2-Logo">
-    <img src="https://tinyurl.com/3653ycsh" alt="Sunstrike Logo" class="Sunstrike-Logo">
+  <div class="top-bar">
+    <img src="https://tinyurl.com/ytn4d7rh" alt="Logo" class="left-corner">
   </div>
-
-  <div class="Img-1">
-    <img src="https://tinyurl.com/3tmh7vrh" alt="Nova Imagem" style="width: 100%;">
+  <!-- Link de voltar adicionado aqui com redirecionamento -->
+  <a class="botao-voltar" href="https://pack-standoff.vercel.app/Pack%20So2.Html">Voltar</a>
+  <div class="personagem-t">Personagens</div>
+  <div class="square-1">
+    <!-- Conteúdo do quadrado aqui -->
   </div>
-
-  <div class="Img-1">
-    <img src="https://tinyurl.com/4ndtjv2a" alt="Nova Imagem" width="100%">
-    <button class="button-ver" style="font-family: 'Bebas Neue', sans-serif;" onclick="abrirNovaPagina()">VER</button>
-</div>
-  <div class="Img-1">
-  <img src="adicionar url" alt="Nova Imagem" width="100%">   
-  </div>
-  <div class="Img-1" style="color: white; font-family: 'Bebas Neue', sans-serif; position: relative;">
-  <div style="position: absolute; top: 0; right: 0; width: 45px; height: 25px; background-color: #333;">
-    <img src="https://tinyurl.com/mr3t7hby" alt="Sua Imagem" style="width: 100%; height: 100%;">
-  </div>
-  Coming Soon
-  <div class="retangulo">
-    <p class="texto-barra">relaxe e escute a trilha sonora do jogo enquanto navegue pelo site</p>
-  </div>
-</div>
-  <div class="volume-control">
-    <label for="volume-range" class="texto-barra">Volume:</label>
-    <input type="range" id="volume-range" min="0" max="0.1%" step="0.1" value="0.5" oninput="ajustarVolume(this.value)">
-  </div>
-  <script>
-    var backgroundMusic; // Variável para armazenar a música de fundo
-
-    // Função para reproduzir a música de fundo
-    function reproduzirMusicaFundo() {
-      backgroundMusic = new Audio("https://tinyurl.com/4zbt8twb");
-      backgroundMusic.play();
-    }
-
-    // Função para pausar a música de fundo
-    function pausarMusicaFundo() {
-      if (backgroundMusic) {
-        backgroundMusic.pause();
-      }
-    }
-
-    // Função para ajustar o volume da música de fundo
-    function ajustarVolume(novoVolume) {
-      if (backgroundMusic) {
-        backgroundMusic.volume = novoVolume;
-      }
-    }
-  
-  </script>
-  <button class="button-soundtrack" onclick="reproduzirMusicaFundo()">Reproduzir SoundTrack</button>
-  <button class="button-pause" onclick="pausarMusicaFundo()">Pausar</button>
-<script>
-    // Função para redirecionar para a nova página na mesma guia
-    function abrirNovaPagina() {
-        window.location.href = "https://pack-standoff2-content.vercel.app/Pack%20Standoff%202%20Content.html";
-    }
-</script>
 </body>
 </html>
