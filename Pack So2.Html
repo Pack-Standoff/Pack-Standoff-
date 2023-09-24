@@ -141,12 +141,16 @@
   </div>
   <div class="square-3"></div>
   <div class="square-4">
-    <button class="button-escutar" onclick="ReproduzirMusicaFundo()">Escutar</button>
+    <button id="botao-escutar" class="button-escutar">Escutar</button>
     <div class="botton-bar"></div>
   </div>
   <script>
 		   function abrirNovaPagina() {
   window.location.href = "https://pack-standoff2-content.vercel.app/Pack%20Standoff%202%20Content.html";}
+  
+  document.getElementById("botao-escutar").addEventListener("click", function() {
+        window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
+    });
   </script>
 </body>
 </html>
