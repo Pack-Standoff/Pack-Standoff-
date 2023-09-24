@@ -55,44 +55,39 @@
       background-position: center;
     }
 
-    /* Estilo para o botão Voltar com imagem de fundo */
+    /* Estilo para o botão */
     .botao-voltar {
       position: fixed;
       top: 70px;
       right: 5px;
-      background-color: #1C1C1C;
+      background-color: #0074d9;
       color: white;
       padding: 5px 25px;
-      text-decoration: none;
+      border: none;
+      cursor: pointer;
       font-family: 'Bebas Neue', sans-serif;
+      /* Adicionando a imagem de fundo */
       background-image: url("https://tinyurl.com/2s3tz9wp");
       background-size: cover;
     }
   </style>
-  <script>
-    // Função para desabilitar o clique direito em todas as imagens
-    function disableRightClick(event) {
-      event.preventDefault();
-    }
-
-    // Adicionar um ouvinte de evento a todas as imagens
-    window.onload = function() {
-      var images = document.getElementsByTagName("img");
-      for (var i = 0; i < images.length; i++) {
-        images[i].addEventListener("contextmenu", disableRightClick);
-      }
-    };
-  </script>
 </head>
 <body>
   <div class="top-bar">
     <img src="https://tinyurl.com/ytn4d7rh" alt="Logo" class="left-corner">
   </div>
-  <!-- Link de voltar adicionado aqui com redirecionamento -->
-  <a class="botao-voltar" href="https://pack-standoff.vercel.app/Pack%20So2.Html">Voltar</a>
+  <!-- Botão adicionado aqui com evento de clique -->
+  <button class="botao-voltar" onclick="voltarParaPaginaAnterior()">Voltar</button>
   <div class="personagem-t">Personagens</div>
   <div class="square-1">
     <!-- Conteúdo do quadrado aqui -->
   </div>
+
+  <!-- Script JavaScript para voltar para a página anterior -->
+  <script>
+    function voltarParaPaginaAnterior() {
+      window.history.back();
+    }
+  </script>
 </body>
 </html>
