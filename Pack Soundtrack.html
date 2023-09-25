@@ -25,7 +25,7 @@
     }
 
     .top-bar img.left-corner {
-      position: absolute;
+      position: absolute;¹
       left: 5px;
       top: 10px;
       width: 150px;
@@ -43,23 +43,39 @@
      background-size: cover;
     }
 
-    .button-container {
+    .square {
       text-align: center;
-      margin-top: 30%;
+      margin-top: 10%;e
+      
     }
+.season-1 {
+  background-color: transparent; /* Remova a cor de fundo */
+  border: none; /* Remova a borda */
+  color: white;
+  padding: 0px 0px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 0px;
+  width: 100%;
+  height: 300%;
+  font-family: 'Bebas Neue', sans-serif;
+  margin-bottom: 5px;
+  background-image: url(https://tinyurl.com/2s3tz9wp);
+}
+ .season-2 {
+  background-color: transparent; /* Remova a cor de fundo */
+  border: none; /* Remova a borda */
+  color: white;
+  padding: 15px 30px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 0px;
+  width: 100%;
+  font-family: 'Bebas Neue', sans-serif;
+  margin-bottom: 5px;
 
-    .season-1, .season-2, .season-3, .season-4, .season-5, .season-6 {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 15px 30px;
-      font-size: 18px;
-      cursor: pointer;
-      border-radius: 0px;
-      width: 100%;
-      font-family: 'Bebas Neue', sans-serif;
-      margin-bottom: 5px;
     }
+  
 
     /* Ocultar o reprodutor de áudio */
     .audio {
@@ -72,12 +88,17 @@
     <img src="https://tinyurl.com/ytn4d7rh" alt="Logo" class="left-corner">
   </div>
   <a class="botao-voltar" href="https://pack-standoff.vercel.app/Pack%20So2.Html">Voltar</a>
-  <div class="button-container">
-    <button class="season-1" onclick="playAudio(1)">
-      <img src="URL_PARA_IMAGEM_1" alt="Imagem 1"> Z9 Project Season 1 Soundtrack
+  <div class="square">
+  <div style="width: 100%; height: 240px; background-color: gray; position: relative;">
+    <img src="https://tinyurl.com/ws59v4sp" alt="Imagem" style="width: 100%; height: 100%; object-fit: cover;">
+  </div>
+    <button class="season-1" onclick="playAudio(1)" style="width: 40%; height: 20%; margin-top: 5px;"> Reproduzir Soundtrack
     </button>
+      <div style="width: 100%; height: 260px; background-color: gray;"></div>
+ 
+      
     <button class="season-2" onclick="playAudio(2)">
-      <img src="URL_PARA_IMAGEM_2" alt="Imagem 2"> Revival Season 2 SoundTrack
+      <img src="" alt="Imagem 2"> Revival Season 2 SoundTrack
     </button>
     <button class="season-3" onclick="playAudio(3)">
       <img src="URL_PARA_IMAGEM_3" alt="Imagem 3"> Dragon Rise Season 3 SoundTrack
