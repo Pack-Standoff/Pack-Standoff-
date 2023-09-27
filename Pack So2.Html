@@ -12,7 +12,6 @@
       background-color: #1C1C1C;
       font-family: Arial, sans-serif;
     }
-
     .top-bar {
       background-color: black;
       color: white;
@@ -23,7 +22,6 @@
       width: 100%;
       z-index: 1;
     }
-
     .top-bar img.left-corner {
       position: absolute;
       left: 5px;
@@ -31,7 +29,6 @@
       width: 33%;
       height: 180%;
     }
-
     .square-1 {
       background-color: gray;
       width: 98%;
@@ -44,7 +41,6 @@
       background-repeat: no-repeat;
       background-position: center;
     }
-
     .square-2 {
       background-color: gray;
       width: 98%;
@@ -58,9 +54,8 @@
       background-position: center;
       position: relative;
     }
-
     .button-ver {
-      background-color: #333;
+      background-color: transparent;
       color: white;
       background-image: url("https://tinyurl.com/2s3tz9wp");
       position: absolute;
@@ -73,7 +68,6 @@
       font-size: 16px;
       font-family: 'Bebas Neue', sans-serif;
     }
-
     .square-3 {
       background-color: gray;
       width: 98%;
@@ -85,8 +79,8 @@
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
+      position: relative;
     }
-
     .square-4 {
       background-color: gray;
       width: 98%;
@@ -100,23 +94,21 @@
       background-position: center;
       position: relative; /* Tornar o quarto quadrado relativo */
     }
-
     .button-escutar {
-      background-color: #333;
+      background-color: transparent;
       color: white;
       background-image: url("https://tinyurl.com/2s3tz9wp");
       position: absolute;
       width: 30%;
       height: 13%;
-      top: 70%; /* Ajustado para alinhar com o botão "Ver" */
-      left: 80%; /* Ajustado para centralizar horizontalmente */
+      top: 80%; 
+      left: 80%;
       transform: translateX(-50%); /* Adicionado para centralizar corretamente */
       border: none;
       text-align: center;
       font-size: 16px;
       font-family: 'Bebas Neue', sans-serif;
     }
-
     .botton-bar {
       background-color: gray;
       width: 98%;
@@ -129,6 +121,19 @@
       background-repeat: no-repeat;
       background-position: center;
     }
+    .new {
+      background-color: transparent;
+      background-image: url("https://tinyurl.com/ypsszas7");
+      width: 45px;
+      height: 25px;
+      position: absolute;
+      top: 0;
+      left: 94%;
+      transform: translateX(-50%);
+      background-size: contain; 
+      background-repeat: no-repeat;
+      background-position: center; 
+     }
   </style>
 </head>
 <body>
@@ -141,15 +146,17 @@
   </div>
   <div class="square-3"></div>
   <div class="square-4">
+    <div class="new"></div> <!-- Novo quadrado azul -->
     <button id="botao-escutar" class="button-escutar">Escutar</button>
     <div class="botton-bar"></div>
   </div>
   <script>
-		   function abrirNovaPagina() {
-  window.location.href = "https://pack-standoff2-content.vercel.app/Pack%20Standoff%202%20Content.html";}
-  
-  document.getElementById("botao-escutar").addEventListener("click", function() {
-        window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
+    function abrirNovaPagina() {
+      window.location.href = "https://pack-standoff2-content.vercel.app/Pack%20Standoff%202%20Content.html";
+    }
+
+    document.getElementById("botao-escutar").addEventListener("click", function() {
+      window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
     });
   </script>
 </body>
