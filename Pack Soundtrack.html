@@ -30,9 +30,17 @@
       top: 10px;
       width: 150px;
     }
+  
+  .botao-voltar-container {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      z-index: 2;
+    }
     .botao-voltar {
-     position: fixed;
-     top: 90%;
+     bottom: 0;
+     top: 95%;
      right: 5px;
      background-color: #1C1C1C;
      color: white;
@@ -90,6 +98,61 @@
 
     }
   
+  .season-4 {
+  background-color: transparent; /* Remova a cor de fundo */
+  border: none; /* Remova a borda */
+  color: white;
+  padding: 0px 0px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 0px;
+  width: 100%;
+  font-family: 'Bebas Neue', sans-serif;
+  margin-bottom: 5px;
+
+    }
+  .season-5 {
+  background-color: transparent; /* Remova a cor de fundo */
+  border: none; /* Remova a borda */
+  color: white;
+  padding: 0px 0px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 0px;
+  width: 100%;
+  font-family: 'Bebas Neue', sans-serif;
+  margin-bottom: 5px;
+
+    }
+  
+   .season-6 {
+  background-color: transparent; /* Remova a cor de fundo */
+  border: none; /* Remova a borda */
+  color: white;
+  padding: 0px 0px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 0px;
+  width: 100%;
+  font-family: 'Bebas Neue', sans-serif;
+  margin-bottom: 15%;
+
+    }
+  
+  
+   .pause-button {
+  background-color: transparent; /* Remova a cor de fundo */
+  border: none; /* Remova a borda */
+  color: white;
+  padding: 0px 0px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 0px;
+  width: 100%;
+  font-family: 'Bebas Neue', sans-serif;
+  margin-bottom: 5px;
+
+    }
 
     /* Ocultar o reprodutor de áudio */
     .audio {
@@ -101,8 +164,11 @@
   <div class="top-bar">
     <img src="https://tinyurl.com/ytn4d7rh" alt="Logo" class="left-corner">
   </div>
-  <a class="botao-voltar" href="https://pack-standoff.vercel.app/Pack%20So2.Html">Voltar</a>
-  <div class="square">
+    <div class="square">
+      
+  <div class="botao-voltar-container">
+    <a class="botao-voltar" href="https://pack-standoff.vercel.app/Pack%20So2.Html">Voltar</a>
+  </div>
  
     <div style="width: 100%; height: 240px; background-color: gray; position: relative;">
     <img src="https://tinyurl.com/ws59v4sp" alt="Imagem" style="width: 100%; height: 100%; object-fit: cover;">
@@ -110,6 +176,9 @@
     
     <button class="season-1" onclick="playAudio(1)" style="width: 40%; height: 20%; margin-top: 5px;"> Reproduzir Soundtrack
     </button>
+        <button class="pause-button" onclick="pauseAudio()"style="width: 40%; height: 200%; margin-top: 5px; background-image: url('https://tinyurl.com/2s3tz9wp');background-size: cover;"> Pause
+    </button>>
+    
     
     <div style="width: 100%; height: 240px; background-color: gray;">
     <img src="https://tinyurl.com/ykn426vy" alt="imagem" style= "width: 100%; height: 100%; object-fit: cover;">
@@ -117,6 +186,8 @@
     
    <button class="season-2" onclick="playAudio(2)" style="width: 40%; height: 200%; margin-top: 5px; background-image: url('https://tinyurl.com/2s3tz9wp');background-size: cover;"> Reproduzir SoundTrack
    </button>
+        <button class="pause-button" onclick="pauseAudio()"style="width: 40%; height: 200%; margin-top: 5px; background-image: url('https://tinyurl.com/2s3tz9wp');background-size: cover;"> Pause
+    </button>>
     
    <div style="width: 100%; height: 240px; background-color: gray; position: relative;">
    <img src="https://tinyurl.com/mr4cvzz7" alt="Sua Imagem" style= "width: 100%; height: 100%; object-fit: cover;">
@@ -124,22 +195,39 @@
     
     <button class="season-3" onclick="playAudio(3)" style="width: 40%; height: 200%; margin-top: 5px; background-image: url('https://tinyurl.com/2s3tz9wp');background-size: cover;"> Reproduzir SoundTrack
     </button>
+        <button class="pause-button" onclick="pauseAudio()"style="width: 40%; height: 200%; margin-top: 5px; background-image: url('https://tinyurl.com/2s3tz9wp');background-size: cover;"> Pause
+    </button>>
     
-    <button class="season-4" onclick="playAudio(4)">
-    <img src="URL_PARA_IMAGEM_4" alt="Imagem 4"> Legends Season 4 Soundtrack
+    <div style="width: 100%; height: 240px; background-color: gray; position: relative;">
+   <img src="https://tinyurl.com/y6nvnn74" alt="Sua Imagem" style= "width: 100%; height: 100%; object-fit: cover;">
+   </div>
+        <button class="season-4" onclick="playAudio(4)" style="width: 40%; height: 200%; margin-top: 5px; background-image: url('https://tinyurl.com/2s3tz9wp');background-size: cover;"> Reproduzir SoundTrack
     </button>
+        <button class="pause-button" onclick="pauseAudio()"style="width: 40%; height: 200%; margin-top: 5px; background-image: url('https://tinyurl.com/2s3tz9wp');background-size: cover;"> Pause
+    </button>>
     
-    <button class="season-5" onclick="playAudio(5)">
-    <img src="URL_PARA_IMAGEM_5" alt="Imagem 5"> Fireborn Season 5 SoundTrack
-    </button>
+    <div style="width: 100%; height: 240px; background-color: gray; position: relative;">
+   <img src="https://tinyurl.com/543z4hvh" alt="Sua Imagem" style= "width: 100%; height: 100%; object-fit: cover;">
+   </div>
     
-    <button class="season-6" onclick="playAudio(6)">
-    <img src="URL_PARA_IMAGEM_6" alt="Imagem 6"> Sunstrike Season 6 SoundTrack
+     <button class="season-5" onclick="playAudio(5)" style="width: 40%; height: 200%; margin-top: 5px; background-image: url('https://tinyurl.com/2s3tz9wp');background-size: cover;"> Reproduzir SoundTrack
     </button>
+        <button class="pause-button" onclick="pauseAudio()"style="width: 40%; height: 200%; margin-top: 5px; background-image: url('https://tinyurl.com/2s3tz9wp');background-size: cover;"> Pause
+    </button>>
+    
+    <div style="width: 100%; height: 240px; background-color: gray; position: relative;">
+   <img src="https://tinyurl.com/563v6j2t" alt="Sua Imagem" style= "width: 100%; height: 100%; object-fit: cover;">
+   </div>
+    
+    <button class="season-6" onclick="playAudio(6)" style="width: 40%; height: 200%; margin-top: 5px; background-image: url('https://tinyurl.com/2s3tz9wp');background-size: cover;"> Reproduzir SoundTrack
+    </button>
+
+    
     
     <!-- Botão de pausa -->
-    <button class="pause-button" onclick="pauseAudio()">
-      Pause
+    <button class="pause-button" onclick="pauseAudio()"style="width: 40%; height: 200%; margin-top: 5px; background-image: url('https://tinyurl.com/2s3tz9wp');background-size: cover;"> Pause
+    </button>>
+     
    </button>
   </div>
   <audio class="audio" id="audio1" src="https://pack-standoff.vercel.app/Z9%20Project%20Season%201%20SoundTrack.mp3" controls></audio>
