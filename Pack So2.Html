@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pack Standoff 2 Content</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
   <style>
@@ -28,25 +29,29 @@
       width: 33%;
       height: 180%;
     }
-    .square {
+    .square-1 {
       background-color: gray;
       width: 98%;
-    		top: 40px;
-      margin: 30px auto; /* Espaço uniforme ao redor dos quadrados */
+      height: 200px;
+      margin-top: 50px;
       text-align: center;
-      padding: 0px;
+      padding: 20px;
+      background-image: url("https://tinyurl.com/28ux7k2x");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      position: relative;
-    }
-    .square-1 {
-      height: 200px;
-      background-image: url("https://tinyurl.com/28ux7k2x");
     }
     .square-2 {
+      background-color: gray;
+      width: 98%;
       height: 200px;
+      margin-top: 10%;
+      text-align: center;
+      padding: 20px;
       background-image: url("https://tinyurl.com/3fbscd5y");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
       position: relative;
     }
     .button-ver {
@@ -64,12 +69,29 @@
       font-family: 'Bebas Neue', sans-serif;
     }
     .square-3 {
+      background-color: gray;
+      width: 98%;
       height: 200px;
-      background-image: url("URL_DA_SUA_IMAGEM_3"); /* Substitua pela URL da sua terceira imagem */
+      margin-top: 10%;
+      text-align: center;
+      padding: 20px;
+      background-image: url("valores");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: relative;
     }
     .square-4 {
+      background-color: gray;
+      width: 98%;
       height: 200px;
-      background-image: url("URL_DA_SUA_IMAGEM_4"); /* Substitua pela URL da sua quarta imagem */
+      margin-top: 10%;
+      text-align: center;
+      padding: 20px;
+      background-image: url("https://exemplo.com/sua-imagem.jpg"); /* Substitua pela URL da sua imagem */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
       position: relative; /* Tornar o quarto quadrado relativo */
     }
     .button-escutar {
@@ -79,7 +101,7 @@
       position: absolute;
       width: 30%;
       height: 13%;
-      top: 80%;
+      top: 80%; 
       left: 80%;
       transform: translateX(-50%); /* Adicionado para centralizar corretamente */
       border: none;
@@ -88,8 +110,13 @@
       font-family: 'Bebas Neue', sans-serif;
     }
     .botton-bar {
+      background-color: gray;
+      width: 98%;
       height: 20px;
-      background-image: url("URL_DA_SUA_IMAGEM_5"); /* Substitua pela URL da sua quinta imagem */
+      margin-top: 10%;
+      text-align: center;
+      padding: 10px; /* Corrigido o valor de padding */
+      background-image: url("url");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
@@ -98,31 +125,28 @@
       background-color: transparent;
       background-image: url("https://tinyurl.com/2k5kpc78");
       width: 45px;
-      color: white;
+    		 color: white;
       height: 20px;
       position: absolute;
-      top: 0;
-      right: 0;
-      font-size: 16px;
-      font-family: 'Bebas Neue', sans-serif;
-      padding-top: 2px;
-    }
+      top: 0px;
+    		 left: 89%;
+    		 font-size: 16px;
+    		 font-family: 'Bebas Neue', sans-serif;
+    		 padding-top: 2px;
+    		  
+     }
   </style>
 </head>
 <body>
   <div class="top-bar">
     <img src="https://tinyurl.com/2m8254j7" alt="Logo" class="left-corner">
   </div>
-  <div class="square square-1">
-    <!-- Conteúdo adicional pode ser adicionado aqui -->
-  </div>
-  <div class="square square-2">
+  <div class="square-1"></div>
+  <div class="square-2">
     <button class="button-ver" onclick="abrirNovaPagina()">Ver</button>
   </div>
-  <div class="square square-3">
-    <!-- Conteúdo adicional pode ser adicionado aqui -->
-  </div>
-  <div class="square square-4">
+  <div class="square-3"></div>
+  <div class="square-4">
     <div class="new">New</div> <!-- Novo quadrado azul -->
     <button id="botao-escutar" class="button-escutar">Escutar</button>
     <div class="botton-bar"></div>
@@ -131,6 +155,10 @@
     function abrirNovaPagina() {
       window.location.href = "https://pack-standoff2-content.vercel.app/Pack%20Standoff%202%20Content.html";
     }
+
+    document.getElementById("botao-escutar").addEventListener("click", function() {
+      window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
+    });
   </script>
 </body>
 </html>
