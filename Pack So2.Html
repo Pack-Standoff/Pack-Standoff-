@@ -51,20 +51,24 @@
             font-family: 'Bebas Neue', sans-serif;
             font-size: 18px;
         }
-        .button-escutar {
-            background-color: transparent;
-            color: white;
-            background-image: url("https://tinyurl.com/2k5kpc78");
+          
+        .button-escutar-container {
             position: absolute;
-            width: 30%;
-            height: 13%;
             top: 80%;
-            left: 80%;
-            transform: translateX(-50%);
+            left: 32%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+        .button-escutar {
+            background-image: url('https://tinyurl.com/2k5kpc78');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 1px 40px;
             border: none;
-            text-align: center;
-            font-size: 18px;
+            cursor: pointer;
             font-family: 'Bebas Neue', sans-serif;
+            font-size: 18px;
         }
     </style>
 </head>
@@ -81,7 +85,7 @@
         <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
             <img src="https://tinyurl.com/3fbscd5y" alt="imagem" style="width: 100%; height: 100%; object-fit: cover;">
             <div class="button-ver-container">
-                <button class="button-ver" onclick="abrirNovaPagina()" style="">Ver</button>
+                <button class="button-ver" onclick="abrirNovaPaginaVer()">Ver</button>
             </div>
         </div>
 
@@ -91,16 +95,17 @@
 
         <div style="width: 100%; height: 210px; background-color: gray; position: relative; margin-bottom: 18px;">
             <img src="url img" alt="em breve" style="width: 100%; height: 100%; object-fit: cover;">
-            <button id="botao-escutar" class="button-escutar">Escutar</button>
+            <button class="button-escutar" onclick="abrirNovaPaginaEscutar()">Escutar</button>
         </div>
     </div>
     <script>
-        function abrirNovaPagina() {
+        function abrirNovaPaginaVer() {
             window.location.href = "https://pack-standoff2-content.vercel.app/Pack%20Standoff%202%20Content.html";
         }
-        document.getElementById("botao-escutar").addEventListener("click", function() {
+
+        function abrirNovaPaginaEscutar() {
             window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
-        });
+        }
     </script>
 </body>
 </html>
