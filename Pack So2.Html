@@ -49,13 +49,12 @@
             border: none;
             cursor: pointer;
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 18px;
+            font-size: 16px;
         }
-          
         .button-escutar-container {
             position: absolute;
-            top: 80%;
-            left: 32%;
+            top: 80%; /* Ajuste a porcentagem para mover mais para baixo */
+            left: 32%; /* Ajuste a porcentagem para mover para a esquerda */
             transform: translate(-50%, -50%);
             z-index: 2;
         }
@@ -64,11 +63,11 @@
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 1px 40px;
+            padding: 2px 32px;
             border: none;
             cursor: pointer;
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 18px;
+            font-size: 16px;
         }
     </style>
 </head>
@@ -90,12 +89,14 @@
         </div>
 
         <div style="width: 100%; height: 210px; background-color: gray; position: relative; margin-bottom: 18px;">
-            <img src="url img" alt="em breve" style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="https://tinyurl.com/2hhkv9rt" alt="em breve" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
 
-        <div style="width: 100%; height: 210px; background-color: gray; position: relative; margin-bottom: 18px;">
-            <img src="url img" alt="em breve" style="width: 100%; height: 100%; object-fit: cover;">
-            <button class="button-escutar" onclick="abrirNovaPaginaEscutar()">Escutar</button>
+        <div style="width: 100%; height: 210px; background-color: transparent; position: relative; margin-bottom: 18px;">
+            <img src="https://tinyurl.com/46e4an9f" alt="em breve" style="width: 100%; height: 100%; object-fit: cover;">
+            <div class="button-escutar-container">
+                <button class="button-escutar" onclick="abrirNovaPaginaEscutar()">Escutar</button>
+            </div>
         </div>
     </div>
     <script>
