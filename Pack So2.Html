@@ -31,14 +31,13 @@
         }
         .square {
             text-align: center;
-            margin-top: 10vh; /* Ajustado para ser relativo à altura da tela */
+            margin-top: 10%;
+            display: flex; /* Adicionado para ajustar o alinhamento vertical dos quadrados */
+            flex-direction: column; /* Alinhar os elementos verticalmente */
+            align-items: center; /* Centralizar os elementos horizontalmente */
         }
         .button-ver-container,
         .button-escutar-container {
-            position: absolute;
-            top: 75%; 
-            left: 33%; 
-            transform: translate(-50%, -50%);
             z-index: 2;
         }
         .button-ver,
