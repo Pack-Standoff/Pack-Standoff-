@@ -31,39 +31,23 @@
         }
         .square {
             text-align: center;
-            margin-top: 10%;
+            margin-top: 10vh; /* Ajustado para ser relativo à altura da tela */
         }
-        .button-ver-container {
-            position: absolute;
-            top: 80%;
-            left: 32%;
-            transform: translate(-50%, -50%);
-            z-index: 2;
-        }
-        .button-ver {
-            background-image: url('https://tinyurl.com/2k5kpc78');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 1px 40px;
-            border: none;
-            cursor: pointer;
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 16px;
-        }
+        .button-ver-container,
         .button-escutar-container {
             position: absolute;
-            top: 80%; /* Ajuste a porcentagem para mover mais para baixo */
-            left: 32%; /* Ajuste a porcentagem para mover para a esquerda */
+            top: 75%; 
+            left: 33%; 
             transform: translate(-50%, -50%);
             z-index: 2;
         }
+        .button-ver,
         .button-escutar {
             background-image: url('https://tinyurl.com/2k5kpc78');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 2px 32px;
+            padding: 1px 40px;
             border: none;
             cursor: pointer;
             font-family: 'Bebas Neue', sans-serif;
