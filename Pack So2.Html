@@ -31,22 +31,39 @@
         }
         .square {
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 10vh;
+            margin-top: 10%;
         }
-        .button-ver-container,
-        .button-escutar-container {
+        .button-ver-container {
+            position: absolute;
+            top: 80%;
+            left: 32%;
+            transform: translate(-50%, -50%);
             z-index: 2;
         }
-        .button-ver,
-        .button-escutar {
+        .button-ver {
             background-image: url('https://tinyurl.com/2k5kpc78');
             background-size: cover;
             background-position: center;
             color: white;
             padding: 1px 40px;
+            border: none;
+            cursor: pointer;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 16px;
+        }
+        .button-escutar-container {
+            position: absolute;
+            top: 80%; /* Ajuste a porcentagem para mover mais para baixo */
+            left: 32%; /* Ajuste a porcentagem para mover para a esquerda */
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+        .button-escutar {
+            background-image: url('https://tinyurl.com/2k5kpc78');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 2px 32px;
             border: none;
             cursor: pointer;
             font-family: 'Bebas Neue', sans-serif;
