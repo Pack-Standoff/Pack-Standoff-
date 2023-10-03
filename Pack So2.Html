@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,8 +55,8 @@
         }
         .button-escutar-container {
             position: absolute;
-            top: 80%; /* Ajuste a porcentagem para mover mais para baixo */
-            left: 32%; /* Ajuste a porcentagem para mover para a esquerda */
+            top: 80%;
+            left: 60%; /* Ajuste a porcentagem para posicionar o botão "Escutar" */
             transform: translate(-50%, -50%);
             z-index: 2;
         }
@@ -84,7 +86,7 @@
         <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
             <img src="https://tinyurl.com/3fbscd5y" alt="imagem" style="width: 100%; height: 100%; object-fit: cover;">
             <div class="button-ver-container">
-                <button class="button-ver" onclick="abrirNovaPaginaVer()">Ver</button>
+                <!-- O botão "Ver" é criado usando JavaScript -->
             </div>
         </div>
 
@@ -95,18 +97,36 @@
         <div style="width: 100%; height: 210px; background-color: transparent; position: relative; margin-bottom: 18px;">
             <img src="https://tinyurl.com/46e4an9f" alt="em breve" style="width: 100%; height: 100%; object-fit: cover;">
             <div class="button-escutar-container">
-                <button class="button-escutar" onclick="abrirNovaPaginaEscutar()">Escutar</button>
+                <!-- O botão "Escutar" é criado usando JavaScript -->
             </div>
         </div>
     </div>
     <script>
-        function abrirNovaPaginaVer() {
-            window.location.href = "https://pack-standoff2-content.vercel.app/Pack%20Standoff%202%20Content.html";
+        function criarBotaoVer() {
+            var verContainer = document.querySelector('.button-ver-container');
+            var novoBotaoVer = document.createElement('button');
+            novoBotaoVer.className = 'button-ver';
+            novoBotaoVer.textContent = 'Ver';
+            novoBotaoVer.addEventListener('click', function () {
+                window.location.href = "https://pack-standoff2-content.vercel.app/Pack%20Standoff%202%20Content.html";
+            });
+            verContainer.appendChild(novoBotaoVer);
         }
 
-        function abrirNovaPaginaEscutar() {
-            window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
+        function criarBotaoEscutar() {
+            var escutarContainer = document.querySelector('.button-escutar-container');
+            var novoBotaoEscutar = document.createElement('button');
+            novoBotaoEscutar.className = 'button-escutar';
+            novoBotaoEscutar.textContent = 'Escutar';
+            novoBotaoEscutar.addEventListener('click', function () {
+                window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
+            });
+            escutarContainer.appendChild(novoBotaoEscutar);
         }
+
+        // Chame as funções para criar os botões
+        criarBotaoVer();
+        criarBotaoEscutar();
     </script>
 </body>
 </html>
