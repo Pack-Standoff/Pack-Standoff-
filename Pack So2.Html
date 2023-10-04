@@ -130,7 +130,6 @@ function abrirNovaPaginaEscutar() {
     window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
 }
 var botaoImagem = document.getElementById("botao-imagem");
-    var imagemSelecionada;
 
     // Carregue a imagem ao carregar a página
     window.addEventListener("load", carregarImagem);
@@ -142,7 +141,7 @@ var botaoImagem = document.getElementById("botao-imagem");
         inputImagem.accept = "image/*";
 
         inputImagem.addEventListener("change", function() {
-            imagemSelecionada = inputImagem.files[0];
+            var imagemSelecionada = inputImagem.files[0];
 
             if (imagemSelecionada) {
                 carregarImagemSelecionada(imagemSelecionada);
@@ -156,19 +155,29 @@ var botaoImagem = document.getElementById("botao-imagem");
     // Função para carregar a imagem selecionada
     function carregarImagemSelecionada(imagem) {
         if (imagem) {
-            var imagemURL = URL.createObjectURL(imagem);
+            var reader = new FileReader();
 
-            // Exiba a imagem escolhida acima do botão
-            botaoImagem.style.backgroundImage = `url('${imagemURL}')`;
-            botaoImagem.style.backgroundSize = "cover";
+            reader.onload = function(e) {
+                var imagemURL = e.target.result;
+
+                // Exiba a imagem escolhida acima do botão
+                botaoImagem.style.backgroundImage = `url('${imagemURL}')`;
+                botaoImagem.style.backgroundSize = "cover";
+
+                // Salve a imagem no armazenamento local
+                localStorage.setItem('imagemSelecionada', imagemURL);
+            };
+
+            reader.readAsDataURL(imagem);
         }
     }
 
     // Carregue a imagem ao carregar a página
     function carregarImagem() {
-        if (localStorage.getItem('imagemSelecionada')) {
-            var imagemURL = localStorage.getItem('imagemSelecionada');
-            carregarImagemSelecionada(imagemURL);
+        var imagemURL = localStorage.getItem('imagemSelecionada');
+        if (imagemURL) {
+            botaoImagem.style.backgroundImage = `url('${imagemURL}')`;
+            botaoImagem.style.backgroundSize = "cover";
         }
     }
 
@@ -176,13 +185,7 @@ var botaoImagem = document.getElementById("botao-imagem");
     botaoImagem.addEventListener("click", function() {
         abrirAbaImagem();
     });
-
-    window.addEventListener("beforeunload", function() {
-        if (imagemSelecionada) {
-            var imagemURL = URL.createObjectURL(imagemSelecionada);
-            localStorage.setItem('imagemSelecionada', imagemURL);
-        }
-    });</script>
+  
 </script>
     </script>
 </body>
