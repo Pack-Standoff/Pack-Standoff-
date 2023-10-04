@@ -156,12 +156,14 @@ function abrirNovaPaginaEscutar() {
     }
 
     // Carregue a URL da imagem do armazenamento local e defina-a como imagem de fundo do botão
-    var urlSalva = localStorage.getItem('urlImagem');
-    if (urlSalva) {
-        var botaoImagem = document.getElementById("botao-imagem");
-        botaoImagem.style.backgroundImage = `url('${urlSalva}')`;
-        botaoImagem.style.backgroundSize = "cover";
-       }
+    document.addEventListener("DOMContentLoaded", function() {
+        var urlSalva = localStorage.getItem('urlImagem');
+        if (urlSalva) {
+            var botaoImagem = document.getElementById("botao-imagem");
+            botaoImagem.style.backgroundImage = `url('${urlSalva}')`;
+            botaoImagem.style.backgroundSize = "cover";
+        }
+    });
 </script>
     </script>
 </body>
