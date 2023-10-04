@@ -12,7 +12,7 @@
             background-color: #1C1C1C;
             font-family: Arial, sans-serif;
         }
-            .top-bar {
+        .top-bar {
             background-color: black;
             color: white;
             padding: 25px;
@@ -22,25 +22,39 @@
             width: 100%;
             z-index: 1;
         }
-            .top-bar img.left-corner {
+        .top-bar img.left-corner {
             position: absolute;
             left: 5px;
             top: 8px;
             width: 180px;
             height: 35px;
         }
-            .square {
+        .round-button {
+            border-radius: 50%;
+            position: fixed;
+            top: 1.1%;
+            right: 20px;
+            width: 35px;
+            height: 35px;
+            background-image: url("https://tinyurl.com/rw5ynr6x");
+            background-color: gray;
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 2;
+        }
+        .square {
             text-align: center;
             margin-top: 10%;
         }
-            .button-ver-container {
+        .button-ver-container {
             position: absolute;
             top: 80%;
             left: 32%;
             transform: translate(-50%, -50%);
             z-index: 2;
         }
-            .button-ver {
+        .button-ver {
             background-image: url('https://tinyurl.com/2k5kpc78');
             background-size: cover;
             background-position: center;
@@ -51,14 +65,14 @@
             font-family: 'Bebas Neue', sans-serif;
             font-size: 16px;
         }
-            .button-escutar-container {
+        .button-escutar-container {
             position: absolute;
-            top: 80%; /* Ajuste a porcentagem para mover mais para baixo */
-            left: 32%; /* Ajuste a porcentagem para mover para a esquerda */
+            top: 80%;
+            left: 32%;
             transform: translate(-50%, -50%);
             z-index: 2;
         }
-            .button-escutar {
+        .button-escutar {
             background-image: url('https://tinyurl.com/2k5kpc78');
             background-size: cover;
             background-position: center;
@@ -72,27 +86,30 @@
     </style>
 </head>
 <body>
-      <div class="top-bar">
-       <img src="https://tinyurl.com/2p8mk8dp" alt="Logo" class="left-corner"></div>
-  
-       <div class="square" style="margin-top: 50px;">
-       <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
-       <img src="https://tinyurl.com/28ux7k2x" alt="imagem" style="width: 100%; height: 100%; object-fit: cover;"oncontextmenu="return false;"></div>
-         
-       <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
-       <img src="https://tinyurl.com/3fbscd5y" alt="imagem" style="width: 100%; height: 100%; object-fit: cover;">
-       <div class="button-ver-container">
-       <button class="button-ver" onclick="abrirNovaPaginaVer()">Ver</button></div></div>
-         
-       <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
-       <img src="https://tinyurl.com/2hhkv9rt" alt="em breve" style="width: 100%; height: 100%; object-fit: cover;"></div>
-
-       <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
-       <img src="https://tinyurl.com/46e4an9f" alt="em breve" style="width: 100%; height: 100%; object-fit: cover;">
-       <div class="button-escutar-container">
-       <button class="button-escutar" onclick="abrirNovaPaginaEscutar()">Escutar</button></div></div></div>
-
-<script>
+    <div class="top-bar">
+        <img src="https://tinyurl.com/2p8mk8dp" alt="Logo" class="left-corner">
+    </div>
+<button id="botao-imagem" class="round-button" onclick="abrirAbaImagem()"></button>   <div class="square" style="margin-top: 50px;">
+        <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
+            <img src="https://tinyurl.com/28ux7k2x" alt="imagem" style="width: 100%; height: 100%; object-fit: cover;" oncontextmenu="return false;">
+        </div>
+        <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
+            <img src="https://tinyurl.com/3fbscd5y" alt="imagem" style="width: 100%; height: 100%; object-fit: cover;">
+            <div class="button-ver-container">
+                <button class="button-ver" onclick="abrirNovaPaginaVer()">Ver</button>
+            </div>
+        </div>
+        <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
+            <img src="https://tinyurl.com/2hhkv9rt" alt="em breve" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
+            <img src="https://tinyurl.com/46e4an9f" alt="em breve" style="width: 100%; height: 100%; object-fit: cover;">
+            <div class="button-escutar-container">
+                <button class="button-escutar" onclick="abrirNovaPaginaEscutar()">Escutar</button>
+            </div>
+        </div>
+    </div>
+    <script>
         function abrirNovaPaginaVer() {
             window.location.href = "https://pack-standoff2-content.vercel.app/Pack%20Standoff%202%20Content.html";
         }
@@ -100,6 +117,40 @@
         function abrirNovaPaginaEscutar() {
             window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
         }
+
+        function abrirNovaPaginaVer() {
+    window.location.href = "https://pack-standoff2-content.vercel.app/Pack%20Standoff%202%20Content.html";
+   }
+
+function abrirNovaPaginaEscutar() {
+    window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
+}
+
+function abrirAbaImagem() {
+    var urlImagemEscolhida = prompt("Por favor, insira a URL da imagem:");
+    if (urlImagemEscolhida) {
+        var imagemEscolhida = new Image();
+        imagemEscolhida.src = urlImagemEscolhida;
+        imagemEscolhida.style.width = "60px";
+        imagemEscolhida.style.height = "60px";
+        document.body.appendChild(imagemEscolhida);
+        salvarURLImagem(urlImagemEscolhida);
+        var botaoImagem = document.getElementById("botao-imagem");
+        botaoImagem.style.backgroundImage = `url('${urlImagemEscolhida}')`;
+        botaoImagem.style.backgroundSize = "cover";
+    }
+}
+
+function salvarURLImagem(url) {
+    localStorage.setItem('urlImagem', url);
+}
+
+var urlSalva = localStorage.getItem('urlImagem');
+if (urlSalva) {
+    var botaoImagem = document.getElementById("botao-imagem");
+    botaoImagem.style.backgroundImage = `url('${urlSalva}')`;
+    botaoImagem.style.backgroundSize = "cover";
+}
     </script>
 </body>
 </html>
