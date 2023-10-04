@@ -118,15 +118,15 @@
       font-family: 'Bebas Neue', sans-serif;
       margin-bottom: 5px;
      }
-      .botao-voltar {
-      right: 0px;
-      background-color: #1C1C1C;
-      color: white;
-      padding: 4px 25px;
-      text-decoration: none;
-      font-family: 'Bebas Neue', sans-serif;
-      background-image: url("https://tinyurl.com/2k5kpc78");
-      background-size: cover;
+		    .bottom-voltar {
+     		background-image: url('https://tinyurl.com/2k5kpc78');
+     		background-size: cover;
+     		color: white;
+     		padding: 3px 20px;
+     		border: none;
+     		cursor: pointer;
+     		font-family: "Bebas Neue";
+     		font-size: 16px
      }
      .audio {
       display: none;
@@ -180,10 +180,10 @@
        <button class="season-6" onclick="playAudio(6)" style="width: 40%; height: 200%; margin-top: 5px; background-image: url('https://tinyurl.com/2k5kpc78');background-size: cover;"> Reproduzir SoundTrack</button>
        <button class="pause-button" onclick="pauseAudio()"style="width: 40%; height: 200%; margin-top: 5px; background-image: url('https://tinyurl.com/2k5kpc78');background-size: cover;"> Pause</button>
        		
-       <a class="botao-voltar" href="https://pack-standoff.vercel.app/Pack%20So2.Html">Voltar</a>
-       </button>
-       </div>
-
+       <div style="text-align: center; margin-top: 20px;">
+       		<button class="bottom-voltar" onclick="voltarParaPaginaAnterior()">Voltar</button> 
+       </div> 
+       		
        <audio class="audio" id="audio1" src="https://pack-standoff.vercel.app/Z9%20Project%20Season%201%20SoundTrack.mp3" controls></audio>
        <audio class="audio" id="audio2" src="https://pack-standoff.vercel.app/Revival%20Season%202%20SoundTrack.mp3"></audio>
        <audio class="audio" id="audio3" src="https://pack-standoff.vercel.app/Dragon%20Rise%20Season%203%20SoundTrack.mp3" controls></audio>
@@ -225,6 +225,9 @@
     document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
     });
+       		function voltarParaPaginaAnterior() { 
+         window.history.back(); 
+     } 
 </script>
 </body>
 </html>
