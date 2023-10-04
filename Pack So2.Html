@@ -32,12 +32,15 @@
         .round-button {
             border-radius: 50%;
             position: fixed;
-            top: 1.1%;
+            top: 0.70%;
             right: 20px;
-            width: 35px;
-            height: 35px;
+            width: 10%;
+            height: 6%;
             background-image: url("https://tinyurl.com/rw5ynr6x");
-            background-color: gray;
+        		  background-position: center;
+        		  background-size: cover;
+            background-color: white;
+        		  background-repeat: no-repeat;
             color: white;
             border: none;
             cursor: pointer;
@@ -125,20 +128,45 @@
 function abrirNovaPaginaEscutar() {
     window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
 }
-
 function abrirAbaImagem() {
-    var urlImagemEscolhida = prompt("Por favor, insira a URL da imagem:");
-    if (urlImagemEscolhida) {
-        var imagemEscolhida = new Image();
-        imagemEscolhida.src = urlImagemEscolhida;
-        imagemEscolhida.style.width = "60px";
-        imagemEscolhida.style.height = "60px";
-        document.body.appendChild(imagemEscolhida);
-        salvarURLImagem(urlImagemEscolhida);
-        var botaoImagem = document.getElementById("botao-imagem");
-        botaoImagem.style.backgroundImage = `url('${urlImagemEscolhida}')`;
-        botaoImagem.style.backgroundSize = "cover";
-    }
+    // Crie um elemento de input do tipo "file" invisível
+    var inputImagem = document.createElement("input");
+    inputImagem.type = "file";
+    inputImagem.accept = "image/*";
+    inputImagem.style.display = "none";
+
+    // Adicione o elemento de input ao corpo do documento
+    document.body.appendChild(inputImagem);
+
+    // Simule um clique no elemento de input para abrir a galeria de imagens
+    inputImagem.click();
+
+    // Configure um evento para ouvir a seleção da imagem
+    inputImagem.addEventListener("change", function() {
+        var imagemSelecionada = inputImagem.files[0];
+
+        if (imagemSelecionada) {
+            var imagemURL = URL.createObjectURL(imagemSelecionada);
+
+            // Exiba a imagem escolhida acima do botão
+            var imagemExibida = new Image();
+            imagemExibida.src = imagemURL;
+            imagemExibida.style.width = "60px"; // Ajuste o tamanho conforme necessário
+            imagemExibida.style.height = "60px";
+            document.body.appendChild(imagemExibida);
+
+            // Salve a URL da imagem no armazenamento local
+            salvarURLImagem(imagemURL);
+
+            // Defina a imagem de fundo do botão
+            var botaoImagem = document.getElementById("botao-imagem");
+            botaoImagem.style.backgroundImage = `url('${imagemURL}')`;
+            botaoImagem.style.backgroundSize = "cover";
+        }
+
+        // Remova o elemento de input após o uso
+        inputImagem.remove();
+    });
 }
 
 function salvarURLImagem(url) {
