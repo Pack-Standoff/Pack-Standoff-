@@ -1,3 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pack Standoff 2</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1C1C1C;
+            font-family: Arial, sans-serif;
+        }
+        .top-bar {
+            background-color: black;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+        }
+        .top-bar img.left-corner {
+            position: absolute;
+            left: 5px;
+            top: 8px;
+            width: 180px;
+            height: 35px;
+        }
+        .round-button {
+            border-radius: 50%;
+            position: fixed;
+            top: 0.78%;
+            right: 20px;
+            width: 8.5%;
+            height: 4.3%;
+            background-image: url("https://tinyurl.com/rw5ynr6x");
+        		  background-position: center;
+        		  background-size: cover;
+            background-color: white;
+        		  background-repeat: no-repeat;
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 2;
+        }
+        .square {
+            text-align: center;
+            margin-top: 10%;
+        }
+        .button-ver-container {
+            position: absolute;
+            top: 80%;
+            left: 32%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+        .button-ver {
+            background-image: url('https://tinyurl.com/2k5kpc78');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 1px 40px;
+            border: none;
+            cursor: pointer;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 16px;
+        }
+        .button-escutar-container {
+            position: absolute;
+            top: 80%;
+            left: 32%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+        .button-escutar {
+            background-image: url('https://tinyurl.com/2k5kpc78');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 2px 32px;
+            border: none;
+            cursor: pointer;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <img src="https://tinyurl.com/2p8mk8dp" alt="Logo" class="left-corner">
+    </div>
+<button id="botao-imagem" class="round-button" onclick="abrirAbaImagem()"></button>
+  <div class="square" style="margin-top: 50px;">
+        <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
+            <img src="https://tinyurl.com/28ux7k2x" alt="imagem" style="width: 100%; height: 100%; object-fit: cover;" oncontextmenu="return false;">
+        </div>
+        <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
+            <img src="https://tinyurl.com/3fbscd5y" alt="imagem" style="width: 100%; height: 100%; object-fit: cover;" oncontextmenu="return false;">
+            <div class="button-ver-container">
+                <button class="button-ver" onclick="abrirNovaPaginaVer()">Ver</button>
+            </div>
+        </div>
+        <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
+            <img src="https://tinyurl.com/2hhkv9rt" alt="em breve" style="width: 100%; height: 100%; object-fit: cover;" oncontextmenu="return false;">
+        </div>
+        <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
+            <img src="https://tinyurl.com/46e4an9f" alt="em breve" style="width: 100%; height: 100%; object-fit: cover;" oncontextmenu="return false;">
+            <div class="button-escutar-container">
+                <button class="button-escutar" onclick="abrirNovaPaginaEscutar()">Escutar</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function abrirNovaPaginaVer() {
+            window.location.href = "https://pack-standoff2-content.vercel.app/Pack%20Standoff%202%20Content.html";
+        }
+
+        function abrirNovaPaginaEscutar() {
+            window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
+        }
+
+        function abrirNovaPaginaVer() {
+    window.location.href = "https://pack-standoff2-content.vercel.app/Pack%20Standoff%202%20Content.html";
+   }
+
+function abrirNovaPaginaEscutar() {
+    window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
+}
  // Função para abrir a galeria de imagens e salvar a URL da imagem selecionada
     function abrirAbaImagem() {
         var inputImagem = document.createElement("input");
@@ -39,3 +170,6 @@
         botaoImagem.style.backgroundSize = "cover";
     }
 </script>
+    </script>
+</body>
+</html>
