@@ -11,8 +11,8 @@
             padding: 0;
             background-color: #1C1C1C;
             font-family: Arial, sans-serif;
-        }
-        .top-bar {
+           }
+           .top-bar {
             background-color: black;
             color: white;
             padding: 25px;
@@ -21,92 +21,49 @@
             top: 0;
             width: 100%;
             z-index: 1;
-        }
-        .top-bar img.left-corner {
+           }
+           .top-bar img.left-corner {
             position: absolute;
             left: 5px;
             top: 8px;
             width: 180px;
             height: 35px;
-        }
-        .square {
+           }
+           .square {
             text-align: center;
             margin-top: 10%;
-        }
-        .button-ver-container {
-            position: absolute;
-            top: 80%;
-            left: 32%;
-            transform: translate(-50%, -50%);
-            z-index: 2;
-        }
-        .button-ver {
-            background-image: url('https://tinyurl.com/2k5kpc78');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 1px 40px;
-            border: none;
-            cursor: pointer;
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 16px;
-        }
-        .button-escutar-container {
-            position: absolute;
-            top: 80%; /* Ajuste a porcentagem para mover mais para baixo */
-            left: 32%; /* Ajuste a porcentagem para mover para a esquerda */
-            transform: translate(-50%, -50%);
-            z-index: 2;
-        }
-        .button-escutar {
-            background-image: url('https://tinyurl.com/2k5kpc78');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 2px 32px;
-            border: none;
-            cursor: pointer;
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 16px;
-        }
+           }
+           .ver-button {
+           position: absolute;
+           top: 73%;
+           left: 30%;
+           transform: translate(-50%, -50%);
+           z-index: 2;
+          }
     </style>
 </head>
 <body>
     <div class="top-bar">
-        <img src="https://tinyurl.com/2p8mk8dp" alt="Logo" class="left-corner">
-    </div>
+    <img src="https://tinyurl.com/2p8mk8dp" alt="Logo" class="left-corner"></div>
     <div class="square" style="margin-top: 50px;">
-        <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
-            <img src="https://tinyurl.com/28ux7k2x" alt="imagem" style="width: 100%; height: 100%; object-fit: cover;"
-                oncontextmenu="return false;">
-        </div>
+      
+    <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
+    <img src="https://tinyurl.com/28ux7k2x" alt="img" style="width: 100%; height: 100%; object-fit: cover;"oncontextmenu="return false;"></div>
+    <button id="verButton" onclick="verClick()" class="ver-button">Ver</button>   
+      
+    <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
+    <img src="https://tinyurl.com/3fbscd5y" alt="img" style="width: 100%; height: 100%; object-fit: cover;"></div>
 
-        <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
-            <img src="https://tinyurl.com/3fbscd5y" alt="imagem" style="width: 100%; height: 100%; object-fit: cover;">
-            <div class="button-ver-container">
-                <button class="button-ver" onclick="abrirNovaPaginaVer()">Ver</button>
-            </div>
-        </div>
+    <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
+    <img src="https://tinyurl.com/2hhkv9rt" alt="img" style="width: 100%; height: 100%; object-fit: cover;"></div>
 
-        <div style="width: 100%; height: 210px; background-color: gray; position: relative; margin-bottom: 18px;">
-            <img src="https://tinyurl.com/2hhkv9rt" alt="em breve" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-
-        <div style="width: 100%; height: 210px; background-color: transparent; position: relative; margin-bottom: 18px;">
-            <img src="https://tinyurl.com/46e4an9f" alt="em breve" style="width: 100%; height: 100%; object-fit: cover;">
-            <div class="button-escutar-container">
-                <button class="button-escutar" onclick="abrirNovaPaginaEscutar()">Escutar</button>
-            </div>
-        </div>
-    </div>
-    <script>
-        function abrirNovaPaginaVer() {
-            window.location.href = "https://pack-standoff2-content.vercel.app/Pack%20Standoff%202%20Content.html";
-        }
-
-        function abrirNovaPaginaEscutar() {
-            window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
-        }
-    </script>
+    <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
+    <img src="https://tinyurl.com/46e4an9f" alt="img" style="width: 100%; height: 100%; object-fit: cover;"></div>
+    
+  <script>
+    function verClick() {
+        // Coloque aqui o código que deseja executar quando o botão "Ver" for clicado.
+    }
+</script>
 </body>
 </html>
