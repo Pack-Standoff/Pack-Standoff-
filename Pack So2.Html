@@ -129,23 +129,31 @@
 function abrirNovaPaginaEscutar() {
     window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
 }
- // Função para abrir a galeria de imagens
+ // Verifique se há uma URL de imagem salva no armazenamento local
+    var urlSalva = localStorage.getItem('urlImagem');
+    var botaoImagem = document.getElementById("botao-imagem");
+
+    if (urlSalva) {
+        botaoImagem.style.backgroundImage = `url('${urlSalva}')`;
+        botaoImagem.style.backgroundSize = "cover";
+    }
+
+    // Função para abrir a galeria de imagens e salvar a URL da imagem selecionada
     function abrirAbaImagem() {
         var inputImagem = document.createElement("input");
         inputImagem.type = "file";
         inputImagem.accept = "image/*";
-
+        
         inputImagem.addEventListener("change", function() {
             var imagemSelecionada = inputImagem.files[0];
-
+            
             if (imagemSelecionada) {
                 var imagemURL = URL.createObjectURL(imagemSelecionada);
-
+                
                 // Exiba a imagem escolhida acima do botão
-                var botaoImagem = document.getElementById("botao-imagem");
                 botaoImagem.style.backgroundImage = `url('${imagemURL}')`;
                 botaoImagem.style.backgroundSize = "cover";
-
+                
                 // Salve a URL da imagem no armazenamento local
                 localStorage.setItem('urlImagem', imagemURL);
             }
@@ -154,16 +162,6 @@ function abrirNovaPaginaEscutar() {
         // Simule um clique no elemento de input para abrir a galeria de imagens
         inputImagem.click();
     }
-
-    // Carregue a URL da imagem do armazenamento local e defina-a como imagem de fundo do botão
-    window.addEventListener("load", function() {
-        var urlSalva = localStorage.getItem('urlImagem');
-        if (urlSalva) {
-            var botaoImagem = document.getElementById("botao-imagem");
-            botaoImagem.style.backgroundImage = `url('${urlSalva}')`;
-            botaoImagem.style.backgroundSize = "cover";
-        }
-    });
 </script>
     </script>
 </body>
