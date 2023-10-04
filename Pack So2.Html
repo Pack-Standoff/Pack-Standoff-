@@ -134,18 +134,18 @@ function abrirNovaPaginaEscutar() {
         var inputImagem = document.createElement("input");
         inputImagem.type = "file";
         inputImagem.accept = "image/*";
-        
+
         inputImagem.addEventListener("change", function() {
             var imagemSelecionada = inputImagem.files[0];
-            
+
             if (imagemSelecionada) {
                 var imagemURL = URL.createObjectURL(imagemSelecionada);
-                
+
                 // Exiba a imagem escolhida acima do botão
                 var botaoImagem = document.getElementById("botao-imagem");
                 botaoImagem.style.backgroundImage = `url('${imagemURL}')`;
                 botaoImagem.style.backgroundSize = "cover";
-                
+
                 // Salve a URL da imagem no armazenamento local
                 localStorage.setItem('urlImagem', imagemURL);
             }
@@ -156,7 +156,7 @@ function abrirNovaPaginaEscutar() {
     }
 
     // Carregue a URL da imagem do armazenamento local e defina-a como imagem de fundo do botão
-    document.addEventListener("DOMContentLoaded", function() {
+    window.addEventListener("load", function() {
         var urlSalva = localStorage.getItem('urlImagem');
         if (urlSalva) {
             var botaoImagem = document.getElementById("botao-imagem");
