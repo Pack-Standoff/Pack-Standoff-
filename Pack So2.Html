@@ -12,7 +12,7 @@
             background-color: #1C1C1C;
             font-family: Arial, sans-serif;
         }
-        .top-bar {
+            .top-bar {
             background-color: black;
             color: white;
             padding: 25px;
@@ -22,14 +22,14 @@
             width: 100%;
             z-index: 1;
         }
-        .top-bar img.left-corner {
+            .top-bar img.left-corner {
             position: absolute;
             left: 5px;
             top: 8px;
             width: 180px;
             height: 35px;
         }
-        .round-button {
+            .round-button {
             border-radius: 50%;
             position: fixed;
             top: 0.90%;
@@ -47,21 +47,22 @@
             z-index: 2;
             max-height: 8.5%;
         }
-        .square {
+            .square {
             text-align: center;
             margin-top: 10%;
         }
-        .button-ver-container {
+            .button-ver-container {
             position: absolute;
             top: 80%;
             left: 32%;
             transform: translate(-50%, -50%);
             z-index: 2;
         }
-        .button-ver {
+            .button-ver {
             background-image: url('https://tinyurl.com/2k5kpc78');
             background-size: cover;
             background-position: center;
+            background-color: transparent;
             color: white;
             padding: 1px 40px;
             border: none;
@@ -69,17 +70,18 @@
             font-family: 'Bebas Neue', sans-serif;
             font-size: 16px;
         }
-        .button-escutar-container {
+            .button-escutar-container {
             position: absolute;
             top: 80%;
             left: 32%;
             transform: translate(-50%, -50%);
             z-index: 2;
         }
-        .button-escutar {
+            .button-escutar {
             background-image: url('https://tinyurl.com/2k5kpc78');
             background-size: cover;
             background-position: center;
+            background-color: transparent;
             color: white;
             padding: 2px 32px;
             border: none;
@@ -90,104 +92,94 @@
     </style>
 </head>
 <body>
-    <div class="top-bar">
-        <img src="https://tinyurl.com/2p8mk8dp" alt="Logo" class="left-corner">
-    </div>
-<button id="botao-imagem" class="round-button" onclick="abrirAbaImagem()"></button>
-  <div class="square" style="margin-top: 50px;">
-        <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
-            <img src="https://tinyurl.com/28ux7k2x" alt="imagem" style="width: 100%; height: 100%; object-fit: cover;" oncontextmenu="return false;">
-        </div>
-        <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
-            <img src="https://tinyurl.com/3fbscd5y" alt="imagem" style="width: 100%; height: 100%; object-fit: cover;" oncontextmenu="return false;">
-            <div class="button-ver-container">
-                <button class="button-ver" onclick="abrirNovaPaginaVer()">Ver</button>
-            </div>
-        </div>
-        <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
-            <img src="https://tinyurl.com/2hhkv9rt" alt="em breve" style="width: 100%; height: 100%; object-fit: cover;" oncontextmenu="return false;">
-        </div>
-        <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
-            <img src="https://tinyurl.com/46e4an9f" alt="em breve" style="width: 100%; height: 100%; object-fit: cover;" oncontextmenu="return false;">
-            <div class="button-escutar-container">
-                <button class="button-escutar" onclick="abrirNovaPaginaEscutar()">Escutar</button>
-            </div>
-        </div>
-    </div>
-    <script>
-        function abrirNovaPaginaVer() {
-            window.location.href = "https://pack-standoff2-content.vercel.app/Pack%20Standoff%202%20Content.html";
-        }
+       <div class="top-bar">
+       <img src="https://tinyurl.com/2p8mk8dp" alt="Logo" class="left-corner"></div>
+       <button id="botao-imagem" class="round-button" onclick="abrirAbaImagem()"></button>
+       <div class="square" style="margin-top: 50px;">
+       <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
+       <img src="https://tinyurl.com/28ux7k2x" alt="imagem" style="width: 100%; height: 100%; object-fit: cover;" oncontextmenu="return false;"></div>
+       <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
+       <img src="https://tinyurl.com/3fbscd5y" alt="imagem" style="width: 100%; height: 100%; object-fit: cover;" oncontextmenu="return false;">
+       <div class="button-ver-container">
+       <button class="button-ver" onclick="abrirNovaPaginaVer()">Ver</button></div></div>
+       <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
+       <img src="https://tinyurl.com/2hhkv9rt" alt="em breve" style="width: 100%; height: 100%; object-fit: cover;" oncontextmenu="return false;"></div>
+       <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
+       <img src="https://tinyurl.com/46e4an9f" alt="em breve" style="width: 100%; height: 100%; object-fit: cover;" oncontextmenu="return false;">
+       <div class="button-escutar-container">
+       <button class="button-escutar" onclick="abrirNovaPaginaEscutar()">Escutar</button></div></div></div>
 
+<script>
+        function abrirNovaPaginaVer() {
+        window.location.href = "https://pack-standoff2-content.vercel.app/Pack%20Standoff%202%20Content.html";
+      }
         function abrirNovaPaginaEscutar() {
-            window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
-        }
+        window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
+      }
 
         function abrirNovaPaginaVer() {
-    window.location.href = "https://pack-standoff2-content.vercel.app/Pack%20Standoff%202%20Content.html";
-   }
+        window.location.href = "https://pack-standoff2-content.vercel.app/Pack%20Standoff%202%20Content.html";
+     }
+        function abrirNovaPaginaEscutar() {
+        window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
+     }
+        var botaoImagem = document.getElementById("botao-imagem");
 
-function abrirNovaPaginaEscutar() {
-    window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
-}
-var botaoImagem = document.getElementById("botao-imagem");
+        // Carregue a imagem ao carregar a página
+        window.addEventListener("load", carregarImagem);
 
-    // Carregue a imagem ao carregar a página
-    window.addEventListener("load", carregarImagem);
-
-    // Função para abrir a galeria de imagens
-    function abrirAbaImagem() {
+        // Função para abrir a galeria de imagens
+        function abrirAbaImagem() {
         var inputImagem = document.createElement("input");
         inputImagem.type = "file";
         inputImagem.accept = "image/*";
 
+   
         inputImagem.addEventListener("change", function() {
-            var imagemSelecionada = inputImagem.files[0];
+        var imagemSelecionada = inputImagem.files[0];
 
-            if (imagemSelecionada) {
-                carregarImagemSelecionada(imagemSelecionada);
-            }
+        if (imagemSelecionada) {
+           carregarImagemSelecionada(imagemSelecionada);
+     }
         });
 
         // Simule um clique no elemento de input para abrir a galeria de imagens
         inputImagem.click();
     }
-
-    // Função para carregar a imagem selecionada
-    function carregarImagemSelecionada(imagem) {
+        // Função para carregar a imagem selecionada
+        function carregarImagemSelecionada(imagem) {
         if (imagem) {
-            var reader = new FileReader();
+        var reader = new FileReader();
 
-            reader.onload = function(e) {
-                var imagemURL = e.target.result;
+        reader.onload = function(e) {
+        var imagemURL = e.target.result;
 
-                // Exiba a imagem escolhida acima do botão
-                botaoImagem.style.backgroundImage = `url('${imagemURL}')`;
-                botaoImagem.style.backgroundSize = "cover";
+        // Exiba a imagem escolhida acima do botão
+        botaoImagem.style.backgroundImage = `url('${imagemURL}')`;
+        botaoImagem.style.backgroundSize = "cover";
 
-                // Salve a imagem no armazenamento local
+        // Salve a imagem no armazenamento local
                 localStorage.setItem('imagemSelecionada', imagemURL);
             };
 
-            reader.readAsDataURL(imagem);
-        }
+        reader.readAsDataURL(imagem);
+    }
     }
 
-    // Carregue a imagem ao carregar a página
-    function carregarImagem() {
-        var imagemURL = localStorage.getItem('imagemSelecionada');
-        if (imagemURL) {
-            botaoImagem.style.backgroundImage = `url('${imagemURL}')`;
-            botaoImagem.style.backgroundSize = "cover";
-        }
+       // Carregue a imagem ao carregar a página
+       function carregarImagem() {
+       var imagemURL = localStorage.getItem('imagemSelecionada');
+       if (imagemURL) {
+       botaoImagem.style.backgroundImage = `url('${imagemURL}')`;
+       botaoImagem.style.backgroundSize = "cover";
+    }
     }
 
-    // Salve a imagem na memória local quando ela for selecionada
-    botaoImagem.addEventListener("click", function() {
-        abrirAbaImagem();
+       // Salve a imagem na memória local quando ela for selecionada
+       botaoImagem.addEventListener("click", function() {
+       abrirAbaImagem();
     });
   
-</script>
     </script>
 </body>
 </html>
