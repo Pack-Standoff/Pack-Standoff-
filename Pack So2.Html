@@ -200,6 +200,10 @@
     if (isLoggedIn !== 'true') {
         var botaoLogin = document.getElementById("login-button");
         botaoLogin.style.display = "block"; // ou "inline" se for o caso
+    } else {
+        // Se o usuário estiver logado, oculte o botão de login
+        var botaoLogin = document.getElementById("login-button");
+        botaoLogin.style.display = "none";
     }
 });
      </script> 
