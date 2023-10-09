@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login</title>
+    <!-- Link para a fonte Bebas Neue do Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+
+    <style>
+        /* Estilize o h1 com a fonte "Bebas Neue" */
+        h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            /* Outros estilos para o seu h1, como tamanho, cor, etc. */
+        }
+
+        /* Estilos para o container de login */
+        .login-container {
+            color: white;
+            text-align: center;
+            margin-top: 15%;
+            padding: 20px;
+        }
+
+        /* Altere a cor de fundo para cinza escuro */
+        body {
+            background-color: #333; /* Cor de fundo cinza escuro */
+            margin: 0; /* Remova margens para evitar espaços indesejados */
+        }
+
+        /* Estilos para o formulário */
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column; /* Alinha os elementos verticalmente */
+            align-items: center; /* Centraliza os elementos horizontalmente */
+        }
+
+        /* Estilos para os campos de entrada */
+        label, input {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Estilos para o botão */
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form>
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="button" onclick="validarLogin()">Entrar</button>
+        </form>
+    </div>
+
+    <script>
+function validarLogin() {
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+
+    // Verifique as credenciais
+    if ((username === "1" && password === "1") ||
+        (username === "2" && password === "2") ||
+        (username === "usuario3" && password === "senha3")) {
+        		// Defina uma variável no localStorage para indicar que o usuário está logado
+    localStorage.setItem('isLoggedIn', 'true');
+        alert('Login bem-sucedido! Redirecionando...');
+        // Redirecione para a página desejada
+        window.location.href = 'https://pack-standoff.vercel.app/Pack%20So2.Html';
+    } else {
+        alert('Nome de usuário ou senha incorretos.');
+    }
+}
+    </script>
+</body>
+</html>
