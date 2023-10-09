@@ -71,13 +71,13 @@ function validarLogin() {
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
 
-    // Verifique as credenciais
-    if ((username === "1" && password === "1") ||
-        (username === "2" && password === "2") ||
-        (username === "usuario3" && password === "senha3")) {
-        		// Defina uma variável no localStorage para indicar que o usuário está logado
-    localStorage.setItem('isLoggedIn', 'true');
-        alert('Login bem-sucedido! Redirecionando...');
+    // Verifique as credenciais (substitua com suas próprias credenciais)
+    if (username === "01" && password === "01") {
+        alert('Login bem-sucedido!');
+        
+        // Defina uma variável no localStorage para indicar que o usuário está logado
+        localStorage.setItem('isLoggedIn', 'true');
+        
         // Redirecione para a página desejada
         window.location.href = 'https://pack-standoff.vercel.app/Pack%20So2.Html';
     } else {
