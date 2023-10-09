@@ -192,10 +192,10 @@
         botaoImagem.addEventListener("click", function() { 
         abrirAbaImagem(); 
      }); 
-        window.addEventListener("load", function () {
+       window.addEventListener("load", function () {
     // Verifique se o usuário está logado no localStorage
     var isLoggedIn = localStorage.getItem('isLoggedIn');
-
+    
     // Se o usuário não estiver logado, exiba o botão de login
     if (isLoggedIn !== 'true') {
         var botaoLogin = document.getElementById("login-button");
