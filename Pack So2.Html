@@ -10,22 +10,8 @@
              margin: 0; 
              padding: 0; 
              background-color: #1C1C1C; 
-             font-family: Arial, sans-serif; 
-         } 
- 		         .login-b {
- 		         		color: white;
- 		         		background-color:  transparent;
- 		         		background-image: url('https://tinyurl.com/2k5kpc78'); 
- 		         		right: 70px;
- 		         		width: 55px;
- 		           height: 18px;
- 		         		position: fixed;
- 		         		text-align: center;
- 		         		top: 17px;
- 		         		border: none;
- 		         		font-family: "Bebas Neue";
- 		         		font-size: 15px;
- 		     }
+             font-family: Arial, sans-serif;
+ 	 	     }
  		
              .top-bar { 
              background-color: black; 
@@ -108,7 +94,6 @@
  </head> 
  <body> 
         <div class="top-bar">
-        		<button id= "login-button" class= "login-b" onclick= "abrirPaginaLogin()">Login</button>
         		<img src="https://tinyurl.com/2p8mk8dp" alt="Logo" class="left-corner"></div> 
  		   		<button id="botao-imagem" class="round-button" onclick="abrirAbaImagem()"></button> 
         <div class="square" style="margin-top: 50px;"> 
@@ -192,20 +177,7 @@
         botaoImagem.addEventListener("click", function() { 
         abrirAbaImagem(); 
      }); 
-       window.addEventListener("load", function () {
-    // Verifique se o usuário está logado na sessão
-    var isLoggedIn = sessionStorage.getItem('isLoggedIn');
-    
-    // Se o usuário não estiver logado, exiba o botão de login
-    if (isLoggedIn !== 'true') {
-        var botaoLogin = document.getElementById("login-button");
-        botaoLogin.style.display = "block"; // ou "inline" se for o caso
-    } else {
-        // Se o usuário estiver logado, oculte o botão de login
-        var botaoLogin = document.getElementById("login-button");
-        botaoLogin.style.display = "none";
-    }
-});
+
      </script> 
  </body> 
  </html>
