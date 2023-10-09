@@ -193,19 +193,19 @@
         abrirAbaImagem(); 
      }); 
        window.addEventListener("load", function () {
-    // Verifique se o usuário está logado na sessão
-    var isLoggedIn = sessionStorage.getItem('isLoggedIn');
-    
-    // Se o usuário não estiver logado, exiba o botão de login
-    if (isLoggedIn !== 'true') {
-        var botaoLogin = document.getElementById("login-button");
-        botaoLogin.style.display = "block"; // ou "inline" se for o caso
-    } else {
-        // Se o usuário estiver logado, oculte o botão de login
-        var botaoLogin = document.getElementById("login-button");
-        botaoLogin.style.display = "none";
-    }
-});
+            // Verifique se o usuário está logado na sessão
+            var isLoggedIn = sessionStorage.getItem('isLoggedIn');
+            
+            // Se o usuário não estiver logado, exiba o botão de login
+            if (isLoggedIn !== 'true') {
+                var botaoLogin = document.getElementById("login-button");
+                botaoLogin.style.display = "block"; // ou "inline" se for o caso
+            } else {
+                // Se o usuário estiver logado, oculte o botão de login
+                var botaoLogin = document.getElementById("login-button");
+                botaoLogin.style.display = "none";
+            }
+        });
      </script> 
  </body> 
  </html>
