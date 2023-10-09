@@ -75,8 +75,8 @@ function validarLogin() {
     if (username === "01" && password === "01") {
         alert('Login bem-sucedido!');
         
-        // Defina uma variável no localStorage para indicar que o usuário está logado
-        localStorage.setItem('isLoggedIn', 'true');
+        // Inicie uma sessão JavaScript definindo uma variável de estado de login
+        sessionStorage.setItem('isLoggedIn', 'true');
         
         // Redirecione para a página desejada
         window.location.href = 'https://pack-standoff.vercel.app/Pack%20So2.Html';
