@@ -30,7 +30,16 @@
              width: 220px; 
              height: 40px; 
            }
-
+             .bottom-voltar { 
+             background-image: url('https://tinyurl.com/2k5kpc78'); 
+             background-size: cover; 
+             color: white; 
+             padding: 3px 20px; 
+             border: none; 
+             cursor: pointer; 
+             font-family: "Bebas Neue"; 
+             font-size: 16px; 
+           }
              .table-container {
              margin: 0 auto;
              width: 90%;
@@ -164,6 +173,13 @@
               <td>43,75 Golds</td>
             </tr>
         </table>
+          <div style="text-align: center; margin-top: 20px;">
+       <button class="bottom-voltar" onclick="voltarParaPaginaAnterior()">Voltar</button>
     </div>
+     <script> 
+     function voltarParaPaginaAnterior() { 
+         window.history.back(); 
+     } 
+     </script>
 </body>
 </html>
