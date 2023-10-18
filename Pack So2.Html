@@ -68,12 +68,12 @@
              .side-bar { 
               position: fixed; 
               top: 0; 
-              left: -300px; /* Inicialmente, a aba lateral estará fora da tela */ 
-              width: 200px; 
+              left: -300px; 
+              width: 120px; 
               height: 100%; 
               background-color: #333; 
               color: white; 
-              transition: left 0.4s ease-in-out; /* Adiciona uma transição suave para o efeito de deslizamento */ 
+              transition: left 0.4s ease-in-out; 
               z-index: 2; 
              } 
   
@@ -139,8 +139,41 @@
               font-family: 'Bebas Neue', sans-serif;  
               font-size: 16px;  
           }  
-           
-      </style>  
+             #button-1 {
+             		position: absolute;
+             		top: 20%;
+             		border: none;
+             		width: 100px;
+             		height: 25px;
+             		transform: translateY(-50%);
+             		left: 10px; 
+             		background-image: url('https://tinyurl.com/5n8arjep');  
+               background-size: cover;  
+               background-position: center;  
+             		background-color: transparent;  
+               color: white;
+             		font-family: 'Bebas Neue', sans-serif;  
+               font-size: 16px;  
+             		z-index: 3;
+             }
+  		          #button-2 {
+             		position: absolute;
+             		top: 25%;
+             		border: none;
+             		width: 100px;
+             		height: 25px;
+             		transform: translateY(-50%);
+             		left: 10px; 
+             		background-image: url('https://tinyurl.com/5n8arjep');  
+               background-size: cover;  
+               background-position: center;  
+             		background-color: transparent;  
+               color: white;
+             		font-family: 'Bebas Neue', sans-serif;  
+               font-size: 16px;  
+             		z-index: 3;
+             }
+  		</style>  
   </head>  
   <body>  
          <div class="top-bar"> 
@@ -169,10 +202,9 @@
          <div class="button-escutar-container">  
          <button class="button-escutar" onclick="abrirNovaPaginaEscutar()">Escutar</button></div></div></div>  
   
-         <div class="side-bar" id="sideBar">
-    <div class="user-info">
-        <p class="user-name">Nome da Pessoa</p>
-    </div>
+<div class="side-bar" id="sideBar">
+		<button id="button-1">Comprar</button>
+		<button id="button-2">Sobre</button>
 </div>
   
  </div> 
@@ -190,11 +222,9 @@
   
           var botaoImagem = document.getElementById("botao-imagem");  
   
-          // Carregue a imagem ao carregar a página  
           window.addEventListener("load", carregarImagem);  
   
-          // Função para abrir a galeria de imagens  
-          function abrirAbaImagem() {  
+         function abrirAbaImagem() {  
           var inputImagem = document.createElement("input");  
           inputImagem.type = "file";  
           inputImagem.accept = "image/*";  
@@ -208,22 +238,18 @@
        }  
           });  
   
-          // Simule um clique no elemento de input para abrir a galeria de imagens  
           inputImagem.click();  
       }  
-          // Função para carregar a imagem selecionada  
-          function carregarImagemSelecionada(imagem) {  
+         function carregarImagemSelecionada(imagem) {  
           if (imagem) {  
           var reader = new FileReader();  
   
           reader.onload = function(e) {  
           var imagemURL = e.target.result;  
   
-          // Exiba a imagem escolhida acima do botão  
-          botaoImagem.style.backgroundImage = `url('${imagemURL}')`;  
+         botaoImagem.style.backgroundImage = `url('${imagemURL}')`;  
           botaoImagem.style.backgroundSize = "cover";  
   
-          // Salve a imagem no armazenamento local  
                   localStorage.setItem('imagemSelecionada', imagemURL);  
               };  
   
@@ -231,7 +257,6 @@
       }  
       }  
   
-         // Carregue a imagem ao carregar a página  
          function carregarImagem() {  
          var imagemURL = localStorage.getItem('imagemSelecionada');  
          if (imagemURL) {  
@@ -239,22 +264,20 @@
          botaoImagem.style.backgroundSize = "cover";  
       }  
       }  
-  
-         // Salve a imagem na memória local quando ela for selecionada  
-         botaoImagem.addEventListener("click", function() {  
+        botaoImagem.addEventListener("click", function() {  
          abrirAbaImagem();  
       });  
  
-
-    function toggleSideBar() {
+        function toggleSideBar() {
         var sideBar = document.getElementById("sideBar");
 
-        if (sideBar.style.left === "0px" || sideBar.style.left === "") {
-            sideBar.style.left = "-300px";
-        } else {
-            sideBar.style.left = "0px";
-        }
+       var leftValue = parseInt(sideBar.style.left, 10);
+        if (leftValue === 0) {
+        sideBar.style.left = "-300px";
+      } else {
+        sideBar.style.left = "0px";
     }
+}
 </script>
   </body>  
 </html>
