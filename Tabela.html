@@ -17,7 +17,7 @@
              font-family: "Eurostile"; 
              src: url("https://pack-standoff.vercel.app/Eurostile-Reg.ttf.otf") format("opentype"); 
             } 
-             .top-bar { 
+           .top-bar { 
              background-color: black; 
              color: white; 
              padding: 25px; 
@@ -27,55 +27,113 @@
              width: 100%; 
              z-index: 1; 
             } 
-             .top-bar img.left-corner { 
+           .top-bar img.left-corner { 
              position: absolute; 
              left: 0%; 
              top: 8%; 
              width: 220px; 
              height: 40px;
-             		
-           }
-             .bottom-voltar {
+            } 		
+             additional-content {
+             text-align: center;
+             margin-top: 70px;
+            }
+           .contact-text {
+             font-family: "Bebas Neue";
+             font-size: 24px;
+             color: white;
+             text-align: center;
+            }
+           .rectangle-1 {
+             background-color: rgba(28, 28, 28, 1);
+             border: 1px solid rgba(255, 255, 255, 0.5);
+             opacity: 1;
+             padding: 10px;
+             margin-top: 10px;
+             width: 85%;
+             height: 40px;
+             margin: 0 auto;
+             text-align: center;
+             }
+           .rectangle-2 {
+             background-color: rgba(28, 28, 28, 1);
+             border: 1px solid rgba(255, 255, 255, 0.5);
+             opacity: 1;
+             padding: 10px;
+             margin-top: 10px;
+             width: 85%;
+             height: 40px;
+             margin: 0 auto;
+             text-align: center;
+            }
+           .icon-1 {
+             width: 40px;
+             height: 40px;
+             margin-right: 75%;
+             margin-top: -2px; /* Movido para cima */
+             opacity: 1;
+            }
+           .icon-2 {
+             width: 40px;
+             height: 40px;
+             margin-right: 75%;
+             margin-top: -2px; /* Movido para cima */
+             opacity: 1;
+            }
+          .d-text {
+             font-family: 'Bebas Neue';
+             color: white; /* Cor branca */
+             margin-left: 60%;
+             font-size: 22px;
+             margin-top: -37px; /* Movido para cima */
+            }
+           .w-text {
+             font-family: 'Bebas Neue';
+             color: white; /* Cor branca */
+             margin-left: 60%;
+             font-size: 22px;
+             margin-top: -37px; /* Movido para cima */
+            }
+            .bottom-voltar {
              		background-image: url('https://tinyurl.com/2k5kpc78');
              		background-size: cover; 
              		color: white; 
-             padding: 3px 20px; 
-             border: none; 
-             cursor: pointer; 
-             font-family: "Bebas Neue"; 
-             font-size: 16px; 
-           }
-             .table-container {
-             margin: 0 auto;
-             width: 90%;
-             padding-top: 70px;
-        }
-		         table {
-            width: 100%;
-            border-collapse: collapse;
-            font-family: 'Bebas Neue', sans-serif;
-            color: white;
-            background-image: url('');
-            background-size: cover;
-
-        }
-		         th, td {
-           border: 1px solid rgba(255, 255, 255, 0.3);
-           padding: 6px;
-           text-align: left;
-           color: white;
-           font-weight: normal; 
-        }
-		         th {
-        background-image:
-        background-size: cover;
-        background-repeat: no-repeat;
-        color: white;
-    }
-        }
-		      tr:nth-child(even) {
-            background-color: #1C1C1C;
-        }
+              margin-top: 10%;
+              padding: 3px 20px; 
+              border: none; 
+              cursor: pointer; 
+              font-family: "Bebas Neue"; 
+              font-size: 16px; 
+             }
+            .table-container {
+              margin: 0 auto;
+              width: 90%;
+              padding-top: 70px;
+             }
+		           table {
+              width: 100%;
+		             border-collapse: collapse;
+		             font-family: 'Bebas Neue', sans-serif;
+		             color: white;
+		             background-image: url('');
+		             background-size: cover;
+             }
+            th, td {
+              border: 1px solid rgba(255, 255, 255, 0.3);
+              padding: 6px;
+              text-align: left;
+              color: white;
+              font-weight: normal; 
+             }
+		           th {
+              background-image:
+		             background-size: cover;
+		             background-repeat: no-repeat;
+		             color: white;
+             }     
+		           tr:nth-child(even) {
+              background-color: #1C1C1C;
+             }
 		      </style>
 </head>
 <body>
@@ -109,7 +167,7 @@
               <tr>
               <td style="text-align: center; padding-top: 10px;"><img src="https://tinyurl.com/yh74ntbe" alt="medalha de passe" style="width: 27px; height: 17px;"></td>
               <td>Medalhas de Passe</td>
-              		<td>R$ 6,50</td>
+             		<td>R$ 6,50</td>
               <td>97,50 Golds</td>
             </tr>
               <tr>
@@ -173,13 +231,40 @@
               <td>43,75 Golds</td>
               		</tr>
 </table>
-    <div style="text-align: center; margin-top: 20px;">
-       <button class="bottom-voltar" onclick="voltarParaPaginaAnterior()">Voltar</button>
-    </div>
+           <div class="additional-content">
+             <div style="margin-top: 20px;">
+               <p class="contact-text">Entre em Contato e Realize a Compra</p>
+           </div>
+             <div class="rectangle-1" onclick="copiarNomeDiscord()">
+               <img src="https://tinyurl.com/34sk55h8" alt="Imagem" class="icon-1">
+               <p class="d-text">Discord</p>
+           </div>
+             <div class="rectangle-2" onclick="abrirNovaPaginaWhatsapp()">
+               <img src="https://tinyurl.com/yd28jebe" alt="Imagem" class="icon-2">
+               <p class="w-text">whatsapp</p>
+             </div>
+           </div>
+       <div style="text-align: center;">
+         <button class="bottom-voltar" onclick="voltarParaPaginaAnterior()">Voltar</button>
+       </div>
 <script> 
-     function voltarParaPaginaAnterior() { 
+      function voltarParaPaginaAnterior() { 
          window.history.back(); 
      } 
+      function copiarNomeDiscord() {
+            var nomeDiscord = "PackStandoff#1705"; // Substitua pelo seu nome de usuário do Discord
+            var tempInput = document.createElement("input");
+            tempInput.value = nomeDiscord;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            alert("Nome do usuário copiado: " + nomeDiscord);
+        }
+
+            function abrirNovaPaginaWhatsapp() {    
+            window.location.href = "https://wa.me/5511958683615";    
+          }   
      </script>
 </body>
 </html>
