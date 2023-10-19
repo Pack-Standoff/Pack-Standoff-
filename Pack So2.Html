@@ -35,7 +35,6 @@
              .round-button {  
               border-radius: 50%;  
               position: fixed;  
-              user-select: none;
               top: 7px;  
               right: 3%; 
               width: 35px;
@@ -178,9 +177,9 @@
   </head>  
   <body>
   		    <div class="top-bar">
-  		   		<img src="https://tinyurl.com/2p8mk8dp" alt="Logo" class="left-corner"> 
+  		   		<img src="https://tinyurl.com/2p8mk8dp" alt="Logo" oncontextmenu="return false;" class="left-corner"> 
          <button id="aba" onclick="toggleSideBar()"></button> 
-         <button id="botao-imagem" class="round-button" onclick="abrirAbaImagem()"></button>  
+         <button id="botao-imagem" class="round-button" onclick="abrirAbaImagem()" oncontextmenu="return false;"></button>  
          </div> 
          </div>  
   
