@@ -34,7 +34,6 @@
               .round-button {   
                border-radius: 50%;   
                position: fixed;
-               outline: none; 
                top: 7px;   
                right: 3%;  
                width: 35px; 
@@ -90,7 +89,6 @@
                z-index: 2;   
            }   
                .button-ver {   
-               outline: none; 
                background-image: url('https://tinyurl.com/2k5kpc78');   
                background-size: cover;   
                background-position: center;   
@@ -103,7 +101,6 @@
                font-size: 16px;   
            }   
                .button-see-container {   
-               outline: none; 
                position: absolute;   
                top: 75%;   
                left: 72%;   
@@ -123,7 +120,6 @@
                font-size: 16px;   
            } 
                .button-escutar-container {   
-               outline: none; 
                position: absolute;   
                top: 75%;   
                left: 29%;   
@@ -181,9 +177,8 @@
    <body> 
                        <div class="top-bar"> 
                                       <img src="https://tinyurl.com/2p8mk8dp" alt="Logo" oncontextmenu="return false;" class="left-corner">  
-          <button id="aba" onclick="toggleSideBar()"></button>  
-          <button id="botao-imagem" class="round-button" onclick="abrirAbaImagem()" oncontextmenu="return false;"></button>   
-          </div>  
+          <button id="aba" onclick="toggleSideBar()" style="outline: none;"></button>
+          <button id="botao-imagem" class="round-button" onclick="abrirAbaImagem()" style="outline: none;"></button></div>  
           </div>   
   
           <div class="square" style="margin-top: 50px;">   
@@ -193,17 +188,17 @@
           <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">   
           <img src="https://tinyurl.com/yzu7f7v9" alt="imagem" style="width: 100%; height: 100%; object-fit: cover;" oncontextmenu="return false;">   
           <div class="button-ver-container">   
-          <button class="button-ver" onclick="abrirNovaPaginaVer()">Ver</button></div></div>   
+          <button class="button-ver" onclick="abrirNovaPaginaVer()" style="outline: none;">Ver</button></div></div>   
   
           <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">   
           <img src="https://tinyurl.com/2s3mdupk" alt="em breve" style="width: 100%; height: 100%; object-fit: cover;" oncontextmenu="return false;">  
           <div class="button-see-container">   
-          <button class="button-see" onclick="abrirNovaPaginaTabela()">Ver</button></div></div>  
+          <button class="button-see" onclick="abrirNovaPaginaTabela()" style="outline: none;">Ver</button></div></div>  
   
           <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">   
           <img src="https://tinyurl.com/59rb7pf6" alt="em breve" style="width: 100%; height: 100%; object-fit: cover;" oncontextmenu="return false;">   
           <div class="button-escutar-container">   
-          <button class="button-escutar" onclick="abrirNovaPaginaEscutar()">Escutar</button></div></div></div>   
+          <button class="button-escutar" onclick="abrirNovaPaginaEscutar()" style="outline: none;">Escutar</button></div></div></div>   
   
          <div class="side-bar" id="sideBar"> 
                        <button id="button-1">Comprar</button> 
