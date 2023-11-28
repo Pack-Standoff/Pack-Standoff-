@@ -40,16 +40,16 @@
             }
            .contact-text {
              font-family: "Bebas Neue";
-             font-size: 24px;
+             font-size: 20px;
              color: white;
              text-align: center;
-            }
+           }
            .rectangle-1 {
              background-color: rgba(28, 28, 28, 1);
              border: 1px solid rgba(255, 255, 255, 0.5);
              opacity: 1;
              padding: 10px;
-             margin-top: 10px;
+             margin-top: 30px;
              width: 85%;
              height: 40px;
              margin: 0 auto;
@@ -60,79 +60,77 @@
              border: 1px solid rgba(255, 255, 255, 0.5);
              opacity: 1;
              padding: 10px;
-             margin-top: 10px;
+             margin-top: 30px;
              width: 85%;
              height: 40px;
              margin: 0 auto;
              text-align: center;
             }
-           .icon-1 {
+            .icon-1 {
              width: 40px;
              height: 40px;
              margin-right: 75%;
-             margin-top: -2px; /* Movido para cima */
+             margin-top: -2px; 
              opacity: 1;
             }
-           .icon-2 {
+            .icon-2 {
              width: 40px;
              height: 40px;
              margin-right: 75%;
-             margin-top: -2px; /* Movido para cima */
+             margin-top: -2px;
              opacity: 1;
             }
-          .d-text {
+            .d-text {
              font-family: 'Bebas Neue';
-             color: white; /* Cor branca */
+             color: white; 
              margin-left: 60%;
              font-size: 22px;
-             margin-top: -37px; /* Movido para cima */
+             margin-top: -37px; 
             }
-           .w-text {
+            .w-text {
              font-family: 'Bebas Neue';
-             color: white; /* Cor branca */
+             color: white; 
              margin-left: 60%;
              font-size: 22px;
-             margin-top: -37px; /* Movido para cima */
+             margin-top: -37px; 
             }
             .bottom-voltar {
-             		background-image: url('https://tinyurl.com/2k5kpc78');
-             		background-size: cover; 
-             		color: white; 
-              margin-top: 10%;
+            		background-image: url('https://tinyurl.com/2k5kpc78');
+            		background-size: cover;
+            		color: white; 
+              margin-top: 6%;
               padding: 3px 20px; 
               border: none; 
               cursor: pointer; 
               font-family: "Bebas Neue"; 
               font-size: 16px; 
              }
-            .table-container {
+             .table-container {
               margin: 0 auto;
               width: 90%;
               padding-top: 70px;
              }
-		           table {
-              width: 100%;
-		             border-collapse: collapse;
-		             font-family: 'Bebas Neue', sans-serif;
-		             color: white;
-		             background-image: url('');
-		             background-size: cover;
+		            table {
+		            		width: 100%;
+		            		border-collapse: collapse;
+		            		font-family: 'Bebas Neue', sans-serif;
+		            		color: white;
              }
-            th, td {
-              border: 1px solid rgba(255, 255, 255, 0.3);
-              padding: 6px;
-              text-align: left;
-              color: white;
-              font-weight: normal; 
+              th, td {
+              		border: 1px solid rgba(255, 255, 255, 0.3);
+              		padding: 8px;
+              		text-align: left;
+              		color: white;
+              		font-weight: normal; 
              }
-		           th {
-              background-image:
-		             background-size: cover;
-		             background-repeat: no-repeat;
-		             color: white;
+		            th {
+		            		background-image:
+		            		background-size: cover;
+		            		background-repeat: no-repeat;
+		            		color: white;
              }     
 		           tr:nth-child(even) {
-              background-color: #1C1C1C;
+		           		background-color: #1C1C1C;
              }
 		      </style>
 </head>
@@ -229,9 +227,17 @@
               <td>R$ 3,50</td>
               <td>43,75 Golds</td>
               		</tr>
+     		       <td style="text-align: center; padding-top: 12px;"><img src="https://tinyurl.com/ymh2rzdb" alt="granadas" style="width: 20px; height: 18px;"></td>
+              <td>Mapas</td>
+              <td>R$ 3,50</td>
+              <td>43,75 Golds</td>
+     </tr>
 </table>
+<div style="text-align: center; margin-top: 10px;">
+    <p style="color: white; font-family: 'Eurostile'; font-size: 15px;">Ao Adquirir o pacote, você receberá todo o conteúdo atual e futuras atualizações.</p>
+</div>
            <div class="additional-content">
-             <div style="margin-top: 20px;">
+             <div style="margin-top: 35px;">
                <p class="contact-text">Entre em Contato e Realize a Compra</p>
            </div>
              <div class="rectangle-1" onclick="copiarNomeDiscord()">
@@ -240,10 +246,10 @@
            </div>
              <div class="rectangle-2" onclick="abrirNovaPaginaWhatsapp()">
                <img src="https://tinyurl.com/yd28jebe" alt="Imagem" class="icon-2">
-               <p class="w-text">whatsapp</p>
+               <p class="w-text">Whatsapp</p>
              </div>
            </div>
-       <div style="text-align: center;">
+<div style="text-align: center;">
          <button class="bottom-voltar" onclick="voltarParaPaginaAnterior()">Voltar</button>
        </div>
 <script> 
@@ -260,8 +266,7 @@
             document.body.removeChild(tempInput);
             alert("Nome do usuário copiado: " + nomeDiscord);
         }
-
-            function abrirNovaPaginaWhatsapp() {    
+       function abrirNovaPaginaWhatsapp() {    
             window.location.href = "https://wa.me/5511958683615";    
           }   
      </script>
