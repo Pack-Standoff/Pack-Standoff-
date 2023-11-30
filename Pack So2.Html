@@ -1,279 +1,315 @@
-<!DOCTYPE html>   
-   <html>   
-   <head>   
-       <meta charset="UTF-8">   
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">   
-       <title>Pack Standoff 2</title>   
-       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">   
-       <style>   
-           body {   
-               margin: 0;   
-               padding: 0;   
-               background-color: #1C1C1C;   
-               font-family: Arial, sans-serif;  
-           }  
-              .top-bar {   
-               background-color: black;   
-               color: white;   
-               padding: 25px;   
-               text-align: center;   
-               position: fixed;   
-               top: 0;   
-               width: 100%;   
-               z-index: 3;   
-           }   
-              .top-bar img.left-corner {   
-               position: absolute;   
-               center: fixed; 
-               top: 8px;   
-               width: 180px;   
-               height: 35px; 
-               left: 50%; 
-               transform: translateX(-50%);  
-           }   
-              .round-button {   
-               border-radius: 50%;   
-               position: fixed;
-               top: 7px;   
-               right: 3%;  
-               width: 35px; 
-               height: 35px; 
-               background-image: url("https://tinyurl.com/4b7f2x82");  
-               background-position: center;  
-               background-size: cover;   
-               background-color: transparent; 
-               background-repeat: no-repeat;   
-               color: white;   
-               border: none;   
-               cursor: pointer;   
-               z-index: 4;   
-  
-           }   
-               #aba{  
-               display: flex;  
-               justify-content: center;  
-               align-items: center;  
-               position: absolute;  
-               border: none;   
-               cursor: pointer;   
-               width: 20px;   
-               height: 20px;   
-               top: 30%;  
-               left: 2%;  
-               background-image: url------('https://tinyurl.com/nvtuthze');  
-               background-size: cover;  
-               background-position: center;  
-               background-color: transparent;  
-            }  
-              .side-bar {  
-               position: fixed;  
-               top: 0;  
-               left: -300px;  
-               width: 120px;  
-               height: 130%;  
-               background-color: #1C1C1C;  
-               color: white;  
-               transition: left 0.4s ease-in-out;  
-               z-index: 2;  
-              }  
-  
-              .square {   
-               text-align: center;   
-               margin-top: 10%;   
-             }   
-               .button-ver-container {   
-               position: absolute;   
-               top: 80%;   
-               left: 30%;   
-               transform: translate(-50%, -50%);   
-               z-index: 2;   
-           }   
-               .button-ver {   
-               background-image: url('https://tinyurl.com/2k5kpc78');   
-               background-size: cover;   
-               background-position: center;   
-               background-color: transparent;   
-               color: white;   
-               padding: 1px 40px;   
-               border: none;   
-               cursor: pointer;   
-               font-family: 'Bebas Neue', sans-serif;   
-               font-size: 16px;   
-           }   
-               .button-see-container {   
-               position: absolute;   
-               top: 75%;   
-               left: 72%;   
-               transform: translate(-50%, -50%);   
-               z-index: 2;   
-           }   
-               .button-see {   
-               background-image: url('https://tinyurl.com/2k5kpc78');   
-               background-size: cover;   
-               background-position: center;   
-               background-color: transparent;   
-               color: white;   
-               padding: 1px 40px;   
-               border: none;   
-               cursor: pointer;   
-               font-family: 'Bebas Neue', sans-serif;   
-               font-size: 16px;   
-           } 
-               .button-escutar-container {   
-               position: absolute;   
-               top: 75%;   
-               left: 29%;   
-               transform: translate(-50%, -50%);   
-               z-index: 1;   
-           }   
-             .button-escutar {   
-               background-image: url('https://tinyurl.com/2k5kpc78');   
-               background-size: cover;   
-               background-position: center;   
-               background-color: transparent;   
-               color: white;   
-               padding: 2px 32px;   
-               border: none;   
-               cursor: pointer;   
-               font-family: 'Bebas Neue', sans-serif;   
-               font-size: 16px;   
-           }   
-             #button-1 { 
-               position: absolute; 
-               top: 80px; 
-               border: none; 
-               width: 100px; 
-               height: 25px; 
-               transform: translateY(-50%); 
-               left: 10px;  
-               background-image: url('https://tinyurl.com/5n8arjep');   
-               background-size: cover;   
-               background-position: center;   
-               background-color: transparent;   
-               color: white; 
-               font-family: 'Bebas Neue', sans-serif;   
-               font-size: 16px;   
-               z-index: 3; 
-              } 
-             #button-2 { 
-               position: absolute; 
-               top: 113px; 
-               border: none; 
-               width: 100px; 
-               height: 25px; 
-               transform: translateY(-50%); 
-               left: 10px;  
-               background-image: url('https://tinyurl.com/5n8arjep');   
-               background-size: cover;   
-               background-position: center;   
-               background-color: transparent;   
-               color: white; 
-               font-family: 'Bebas Neue', sans-serif;   
-               font-size: 16px;   
-               z-index: 3; 
-             } 
-               
-</style>   
-   </head>   
-   <body> 
-        <div class="top-bar"> 
-          <img src="https://tinyurl.com/2p8mk8dp" alt="Logo" oncontextmenu="return false;" class="left-corner">  
-          <button id="aba" onclick="toggleSideBar()" style="outline: none;"></button>
-          <button id="botao-imagem" class="round-button" onclick="abrirAbaImagem()" style="outline: none;"></button></div>  
-        </div>   
-          
-          <div class="square" style="margin-top: 50px;">   
-          <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">   
-          <img src="https://tinyurl.com/5n89bxuf" alt="imagem" style="width: 100%; height: 100%; object-fit: cover;" oncontextmenu="return false;"></div>   
-  
-          <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">   
-          <img src="https://tinyurl.com/yzu7f7v9" alt="imagem" style="width: 100%; height: 100%; object-fit: cover;" oncontextmenu="return false;">   
-          <div class="button-ver-container">   
-          <button class="button-ver" onclick="abrirNovaPaginaVer()" style="outline: none;">Ver</button></div></div>   
-  
-          <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">   
-          <img src="https://tinyurl.com/2s3mdupk" alt="em breve" style="width: 100%; height: 100%; object-fit: cover;" oncontextmenu="return false;">  
-          <div class="button-see-container">   
-          <button class="button-see" onclick="abrirNovaPaginaTabela()" style="outline: none;">Ver</button></div></div>  
-  
-          <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">   
-          <img src="https://tinyurl.com/59rb7pf6" alt="em breve" style="width: 100%; height: 100%; object-fit: cover;" oncontextmenu="return false;">   
-          <div class="button-escutar-container">   
-          <button class="button-escutar" onclick="abrirNovaPaginaEscutar()" style="outline: none;">Escutar</button></div></div></div>   
-  
-           <div class="side-bar" id="sideBar"> 
-           <button id="button-1">Comprar</button> 
-           <button id="button-2">Sobre</button> 
-         </div> 
-<script> 
-              function abrirNovaPaginaVer() {   
-           window.location.href = "https://pack-standoff2-content.vercel.app/Pack%20Standoff%202%20Content.html";   
-         }   
-           function abrirNovaPaginaTabela() {   
-           window.location.href = "https://pack-standoff.vercel.app/Tabela.html";   
-         }   
-  
-           function abrirNovaPaginaEscutar() {   
-           window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";   
-         }   
-  
-           var botaoImagem = document.getElementById("botao-imagem");   
-  
-           window.addEventListener("load", carregarImagem);   
-  
-          function abrirAbaImagem() {   
-           var inputImagem = document.createElement("input");   
-           inputImagem.type = "file";   
-           inputImagem.accept = "image/*";   
-  
-  
-           inputImagem.addEventListener("change", function() {   
-           var imagemSelecionada = inputImagem.files[0];   
-  
-           if (imagemSelecionada) {   
-              carregarImagemSelecionada(imagemSelecionada);   
-        }   
-           });   
-  
-           inputImagem.click();   
-       }   
-          function carregarImagemSelecionada(imagem) {   
-           if (imagem) {   
-           var reader = new FileReader();   
-  
-           reader.onload = function(e) {   
-           var imagemURL = e.target.result;   
-  
-          botaoImagem.style.backgroundImage = `url('${imagemURL}')`;   
-           botaoImagem.style.backgroundSize = "cover";   
-  
-                   localStorage.setItem('imagemSelecionada', imagemURL);   
-               };   
-  
-           reader.readAsDataURL(imagem);   
-       }   
-       }   
-  
-          function carregarImagem() {   
-          var imagemURL = localStorage.getItem('imagemSelecionada');   
-          if (imagemURL) {   
-          botaoImagem.style.backgroundImage = `url('${imagemURL}')`;   
-          botaoImagem.style.backgroundSize = "cover";   
-       }   
-       }   
-         botaoImagem.addEventListener("click", function() {   
-          abrirAbaImagem();   
-       });   
-  
-         function toggleSideBar() { 
-         var sideBar = document.getElementById("sideBar"); 
-        var leftValue = parseInt(sideBar.style.left, 10); 
-         if (leftValue === 0) { 
-         sideBar.style.left = "-300px"; 
-       } else { 
-         sideBar.style.left = "0px"; 
-     } 
- } 
- </script> 
-   </body>   
- </html>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pack Standoff 2</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #1C1C1C;
+      font-family: Arial, sans-serif;
+    }
+
+    .top-bar {
+      background-color: black;
+      color: white;
+      padding: 25px;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 3;
+    }
+
+    .top-bar img.left-corner {
+      position: absolute;
+      center: fixed;
+      top: 8px;
+      width: 180px;
+      height: 35px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .round-button {
+      border-radius: 50%;
+      position: fixed;
+      top: 7px;
+      right: 3%;
+      width: 35px;
+      height: 35px;
+      background-image: url("https://tinyurl.com/4b7f2x82");
+      background-position: center;
+      background-size: cover;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      color: white;
+      border: none;
+      cursor: pointer;
+      z-index: 4;
+    }
+
+    #aba {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      border: none;
+      cursor: pointer;
+      width: 20px;
+      height: 20px;
+      top: 30%;
+      left: 2%;
+      background-image: url('https://tinyurl.com/nvtuthze desativado');
+      background-size: cover;
+      background-position: center;
+      background-color: transparent;
+    }
+
+    .side-bar {
+      position: fixed;
+      top: 0;
+      left: -300px;
+      width: 120px;
+      height: 130%;
+      background-color: #1C1C1C;
+      color: white;
+      transition: left 0.4s ease-in-out;
+      z-index: 2;
+    }
+
+    .square {
+      text-align: center;
+      margin-top: 10%;
+    }
+
+    .button-ver-container {
+      position: absolute;
+      top: 80%;
+      left: 30%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+
+    .button-ver {
+      background-image: url('https://tinyurl.com/2k5kpc78');
+      background-size: cover;
+      background-position: center;
+      background-color: transparent;
+      color: white;
+      padding: 1px 40px;
+      border: none;
+      cursor: pointer;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 16px;
+    }
+
+    .button-see-container {
+      position: absolute;
+      top: 75%;
+      left: 72%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+
+    .button-see {
+      background-image: url('https://tinyurl.com/2k5kpc78');
+      background-size: cover;
+      background-position: center;
+      background-color: transparent;
+      color: white;
+      padding: 1px 40px;
+      border: none;
+      cursor: pointer;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 16px;
+    }
+
+    .button-escutar-container {
+      position: absolute;
+      top: 75%;
+      left: 29%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+
+    .button-escutar {
+      background-image: url('https://tinyurl.com/2k5kpc78');
+      background-size: cover;
+      background-position: center;
+      background-color: transparent;
+      color: white;
+      padding: 2px 32px;
+      border: none;
+      cursor: pointer;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 16px;
+    }
+
+    #button-1 {
+      position: absolute;
+      top: 80px;
+      border: none;
+      width: 100px;
+      height: 25px;
+      transform: translateY(-50%);
+      left: 10px;
+      background-image: url('https://tinyurl.com/5n8arjep');
+      background-size: cover;
+      background-position: center;
+      background-color: transparent;
+      color: white;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 16px;
+      z-index: 3;
+    }
+
+    #button-2 {
+      position: absolute;
+      top: 113px;
+      border: none;
+      width: 100px;
+      height: 25px;
+      transform: translateY(-50%);
+      left: 10px;
+      background-image: url('https://tinyurl.com/5n8arjep');
+      background-size: cover;
+      background-position: center;
+      background-color: transparent;
+      color: white;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 16px;
+      z-index: 3;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <img src="https://tinyurl.com/2p8mk8dp" alt="Logo" oncontextmenu="return false;" class="left-corner">
+    <button id="aba" onclick="toggleSideBar(desativado)" style="outline: none;"></button>
+    <button id="botao-imagem" class="round-button" onclick="abrirAbaImagem()" style="outline: none;"></button>
+  </div>
+
+  <div class="square" style="margin-top: 50px;">
+    <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
+      <img src="https://tinyurl.com/5n89bxuf" alt="imagem" style="width: 100%; height: 100%; object-fit: cover;" oncontextmenu="return false;">
+    </div>
+
+    <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
+      <img src="" alt="imagem" style="width: 100%; height: 100%; object-fit: cover;" oncontextmenu="return false;">
+      <div class="button-ver-container">
+        <button class="button-ver" onclick="abrirNovaPaginaVer()" style="outline: none;">Ver</button>
+      </div>
+    </div>
+
+    <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
+      <img src="https://tinyurl.com/2s3mdupk" alt="em breve" style="width: 100%; height: 100%; object-fit: cover;" oncontextmenu="return false;">
+      <div class="button-see-container">
+        <button class="button-see" onclick="abrirNovaPaginaTabela()" style="outline: none;">Ver</button>
+      </div>
+    </div>
+
+    <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 18px;">
+      <img src="https://tinyurl.com/59rb7pf6" alt="em breve" style="width: 100%; height: 100%; object-fit: cover;" oncontextmenu="return false;">
+      <div class="button-escutar-container">
+        <button class="button-escutar" onclick="abrirNovaPaginaEscutar()" style="outline: none;">Escutar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="side-bar" id="sideBar">
+    <button id="button-1">Comprar</button>
+    <button id="button-2">Sobre</button>
+  </div>
+
+  <script>
+    function abrirNovaPaginaVer() {
+      window.location.href = "https://pack-standoff2-content.vercel.app/Pack%20Standoff%202%20Content.html";
+    }
+
+    function abrirNovaPaginaTabela() {
+      window.location.href = "https://pack-standoff.vercel.app/Tabela.html";
+    }
+
+    function abrirNovaPaginaEscutar() {
+      window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
+    }
+
+    var botaoImagem = document.getElementById("botao-imagem");
+
+    window.addEventListener("load", carregarImagem);
+
+    function abrirAbaImagem() {
+      var inputImagem = document.createElement("input");
+      inputImagem.type = "file";
+      inputImagem.accept = "image/*";
+
+      inputImagem.addEventListener("change", function () {
+        var imagemSelecionada = inputImagem.files[0];
+
+        if (imagemSelecionada) {
+          carregarImagemSelecionada(imagemSelecionada);
+        }
+      });
+
+      inputImagem.click();
+    }
+
+    function carregarImagemSelecionada(imagem) {
+      if (imagem) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          var imagemURL = e.target.result;
+
+          botaoImagem.style.backgroundImage = `url('${imagemURL}')`;
+          botaoImagem.style.backgroundSize = "cover";
+
+          localStorage.setItem('imagemSelecionada', imagemURL);
+        };
+
+        reader.readAsDataURL(imagem);
+      }
+    }
+
+    function carregarImagem() {
+      var imagemURL = localStorage.getItem('imagemSelecionada');
+      if (imagemURL) {
+        botaoImagem.style.backgroundImage = `url('${imagemURL}')`;
+        botaoImagem.style.backgroundSize = "cover";
+      }
+    }
+
+    botaoImagem.addEventListener("click", function () {
+      abrirAbaImagem();
+    });
+
+    function toggleSideBar() {
+      var sideBar = document.getElementById("sideBar");
+      var leftValue = parseInt(sideBar.style.left, 10);
+      if (leftValue === 0) {
+        sideBar.style.left = "-300px";
+      } else {
+        sideBar.style.left = "0px";
+      }
+    }
+
+    function carregarImagemAleatoria() {
+      var imagemAleatoria = imagesArray[Math.floor(Math.random() * imagesArray.length)];
+
+      var segundoQuadrado = document.querySelector('.square div:nth-child(2) img');
+      segundoQuadrado.src = imagemAleatoria;
+    }
+
+    var imagesArray = [
+      "https://tinyurl.com/4sbrtakv",  // URL da Imagem 1
+      "https://tinyurl.com/4vbj5ce8"   // URL da Imagem 2
+    ];
+  carregarImagemAleatoria();  // Adicione esta linha para carregar uma imagem aleatória ao carregar a página
+		</script>
+</body>
+</html>
