@@ -8,45 +8,62 @@
      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"> 
                  <style> 
          body { 
-             margin: 0; 
-             padding: 0; 
-             background-color: #1C1C1C; 
-             font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    background-color: #1C1C1C; 
+       font-family: Arial, sans-serif;  
             } 
              @font-face { 
              font-family: "Eurostile"; 
              src: url("https://pack-standoff.vercel.app/Eurostile-Reg.ttf.otf") format("opentype"); 
             } 
-           .top-bar { 
-             background-color: black; 
-             color: white; 
-             padding: 25px; 
-             text-align: center; 
-             position: fixed; 
-             top: 0; 
-             width: 100%; 
-             z-index: 1; 
-            } 
-           .top-bar img.left-corner { 
-             position: absolute; 
-             left: 0%; 
-             top: 8%; 
-             width: 220px; 
-             height: 40px;
+           .top-bar {
+            background-color: black;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+           }
+            .top-bar img.left-corner {
+            position: absolute;
+            left: 0%;
+            top: 8%;
+            width: 220px;
+            height: 40px;
             } 		
              additional-content {
              text-align: center;
              margin-top: 70px;
             }
-           .contact-text {
+            .scrolling-wrapper {
+            display: flex;
+            overflow-x: auto;
+            justify-content: center;
+          }
+           button {
+            padding: 10px;
+            margin-right: 0px;
+            background-color: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;}
+              
+            button:hover {
+            background-color: transparent;
+            background-image: url("https://tinyurl.com/5n8arjep");
+          }
+   .contact-text {
              font-family: "Bebas Neue";
              font-size: 20px;
              color: white;
              text-align: center;
            }
            .rectangle-1 {
-             background-color: rgba(28, 28, 28, 1);
-             border: 1px solid rgba(255, 255, 255, 0.5);
+             background-color: transparent;
+             border: 1px solid rgba(255, 255, 255, 0.7);
              opacity: 1;
              padding: 10px;
              margin-top: 30px;
@@ -56,8 +73,8 @@
              text-align: center;
              }
            .rectangle-2 {
-             background-color: rgba(28, 28, 28, 1);
-             border: 1px solid rgba(255, 255, 255, 0.5);
+             background-color: transparent;
+             border: 1px solid rgba(255, 255, 255, 0.7);
              opacity: 1;
              padding: 10px;
              margin-top: 30px;
@@ -117,7 +134,7 @@
 		            		color: white;
              }
               th, td {
-              		border: 1px solid rgba(255, 255, 255, 0.3);
+              		border: 1px solid rgba(255, 255, 255, 0.7);
               		padding: 8px;
               		text-align: left;
               		color: white;
@@ -130,14 +147,19 @@
 		            		color: white;
              }     
 		           tr:nth-child(even) {
-		           		background-color: #1C1C1C;
+		           		background-color: transparent;
              }
 		      </style>
 </head>
 <body>
     <div class="top-bar">
-    <img src="https://tinyurl.com/mt6jwshr" alt="Logo" class="left-corner"></div>
-     <div class="table-container">
+      <div class="scrolling-wrapper">
+      <button onclick="redirecionarParaHome()">Home</button>
+      <button onclick="redirecionarParaConteudo()">Conteúdo</button>
+      <button onclick="redirecionarParaTabela()">Tabela</button>
+      <button onclick="redirecionarParaSoundtrack()">Soundtracks</button>
+      </div></div>
+  <div class="table-container">
         <table>
             <tr>
                 <th colspan="2">Conteúdo</th>
@@ -233,11 +255,15 @@
               <td>43,75 Golds</td>
      </tr>
 </table>
+<div class="additional-content">
+             <div style="margin-top: 10px;">
+               <p class="contact-text">Pacote Completo De:<s> R$72,00</s> por 65,00</p>
+           </div>
 <div style="text-align: center; margin-top: 10px;">
     <p style="color: white; font-family: 'Eurostile'; font-size: 15px;">Ao Adquirir o pacote, você receberá todo o conteúdo atual e futuras atualizações.</p>
 </div>
            <div class="additional-content">
-             <div style="margin-top: 35px;">
+             <div style="margin-top: 25px;">
                <p class="contact-text">Entre em Contato e Realize a Compra</p>
            </div>
              <div class="rectangle-1" onclick="copiarNomeDiscord()">
@@ -252,10 +278,15 @@
 <div style="text-align: center;">
          <button class="bottom-voltar" onclick="voltarParaPaginaAnterior()">Voltar</button>
        </div>
-<script> 
+  <h>.</h>
+  <script> 
       function voltarParaPaginaAnterior() { 
-         window.history.back(); 
-     } 
+    if (window.history.length > 1) {
+        window.history.back(); 
+    } else {
+        window.location.href = "https://pack-standoff.vercel.app/Pack%20So2.Html";
+    }
+}
       function copiarNomeDiscord() {
             var nomeDiscord = "PackStandoff2#1705"; 
             var tempInput = document.createElement("input");
@@ -269,6 +300,16 @@
        function abrirNovaPaginaWhatsapp() {    
             window.location.href = "https://wa.me/5511958683615";    
           }   
+         function redirecionarParaHome() {
+    window.location.href = "https://pack-standoff.vercel.app/Pack%20So2.Html";
+    }    
+    function redirecionarParaConteudo() {
+      window.location.href = "https://pack-standoff2-content.vercel.app/Pack%20Standoff%202%20Content.html";
+    }
+    
+    function redirecionarParaSoundtrack() {
+    window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
+    }
      </script>
 </body>
 </html>
