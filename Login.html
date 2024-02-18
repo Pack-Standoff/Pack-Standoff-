@@ -1,90 +1,158 @@
-<!DOCTYPE html>
-<html>
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Login</title>
-    <!-- Link para a fonte Bebas Neue do Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
-
-    <style>
-        /* Estilize o h1 com a fonte "Bebas Neue" */
-        h1 {
-            font-family: 'Bebas Neue', sans-serif;
-            /* Outros estilos para o seu h1, como tamanho, cor, etc. */
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Pack Standoff 2</title>  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"> 
+    <style>  
+        body {  
+            margin: 0;  
+            padding: 0;  
+            background-color: #1C1C1C;  
+            font-family: Arial, sans-serif;
+        } 
+        .top-bar {  
+            background-color: black;
+            color: white;  
+            padding: 5px;  
+            text-align: center;  
+            position: fixed;  
+            top: 0;  
+            width: 100%;  
+            z-index: 3;
+        }  
+        .top-bar img.left-corner {  
+            position: absolute;  
+            top: 8px;  
+            width: 180px;  
+            height: 35px;
+            left: 50%;
+            transform: translateX(-50%); 
         }
-
-        /* Estilos para o container de login */
-        .login-container {
-            color: white;
-            text-align: center;
-            margin-top: 15%;
-            padding: 20px;
-        }
-
-        /* Altere a cor de fundo para cinza escuro */
-        body {
-            background-color: #333; /* Cor de fundo cinza escuro */
-            margin: 0; /* Remova margens para evitar espaços indesejados */
-        }
-
-        /* Estilos para o formulário */
-        form {
-            margin-top: 20px;
+        .scrolling-wrapper {
             display: flex;
-            flex-direction: column; /* Alinha os elementos verticalmente */
-            align-items: center; /* Centraliza os elementos horizontalmente */
+            overflow-x: auto;
+            justify-content: center;
         }
-
-        /* Estilos para os campos de entrada */
-        label, input {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        /* Estilos para o botão */
         button {
-            background-color: #007BFF;
-            color: white;
+            padding: 10px;
+            margin-right: 0px;
+            background-color: transparent;
             border: none;
-            padding: 10px 20px;
+            color: white;
             cursor: pointer;
+            background-image: none; /* Remova a imagem de fundo padrão */
         }
-    </style>
-</head>
-<body>
-    <div class="login-container">
-        <h1>Login</h1>
-        <form>
-            <label for="username">Usuário:</label>
-            <input type="text" id="username" name="username" required>
-            
-            <label for="password">Senha:</label>
-            <input type="password" id="password" name="password" required>
-            
-            <button type="button" onclick="validarLogin()">Entrar</button>
-        </form>
+
+        button:hover {
+            background-image: url("https://tinyurl.com/5n8arjep");
+            background-size: cover;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+        .background-square {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 250px;
+            background-color: black;
+            opacity: 0.3;
+            z-index: -1;
+        }
+        form {
+            width: 300px;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        input {
+            display: block;
+            margin: 10px auto;
+            width: 250px;
+            height: 30px;
+            color: gray;
+            background-color: #111;
+            border: 1px solid white;
+            outline: none;
+        }
+        h3 {
+            color: white;
+            font-family: 'Eurostile', sans-serif;
+            font-size: 20px;      
+        }
+        #loginButton {
+            text-align: center;
+            padding: 10px;
+            margin-right: 0px;
+            background-color: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;
+            background-image: url("https://tinyurl.com/2k5kpc78");
+            background-size: cover;
+            margin: 0 auto;
+            display: block;
+            font-size: 10px;
+            width: 250px;
+        }
+    </style>  
+</head>  
+<body>  
+    <div class="top-bar">
+        <div class="scrolling-wrapper">
+            <button onclick="redirecionarParaHome()">Home</button>
+            <button onclick="redirecionarParaConteudo()">Conteúdo</button>
+            <button onclick="redirecionarParaTabela()">Tabela</button>
+            <button onclick="redirecionarParaSoundtrack()">Soundtracks</button>
+        </div>
     </div>
-
+    <div class="background-square"></div>
+    <form id="loginForm">
+        <h3>LOGIN</h3>
+        <input type="text" placeholder="Login" id="login">
+        <input type="password" placeholder="Senha" id="senha">
+        <input type="button" value="Login" onclick="logar()" id="loginButton"> 
+    </form>
     <script>
-function validarLogin() {
-    var username = document.getElementById('username').value;
-    var password = document.getElementById('password').value;
+        function redirecionarParaHome() {
+            // Adicione a lógica para redirecionar para a página inicial
+        }
+        function abrirNovaPaginaTabela() {
+            window.location.href = "https://pack-standoff.vercel.app/Tabela.html";
+        }  
+        function abrirNovaPaginaEscutar() {
+            window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
+        }  
+        function redirecionarParaConteudo() {
+            window.location.href = "https://pack-standoff2-content.vercel.app/Pack%20Standoff%202%20Content.html";
+        }    
+        function redirecionarParaTabela() {
+            window.location.href = "https://pack-standoff.vercel.app/Tabela.html";
+        }
 
-    // Verifique as credenciais (substitua com suas próprias credenciais)
-    if (username === "01" && password === "01") {
-        alert('Login bem-sucedido!');
-        
-        // Inicie uma sessão JavaScript definindo uma variável de estado de login
-        sessionStorage.setItem('isLoggedIn', 'true');
-        
-        // Redirecione para a página desejada
-        window.location.href = 'https://pack-standoff.vercel.app/Pack%20So2.Html';
-    } else {
-        alert('Nome de usuário ou senha incorretos.');
+        function redirecionarParaSoundtrack() {
+            window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
+        }
+        function logar() {
+          var login = document.getElementById('login').value;
+          var senha = document.getElementById('senha').value;
+          var usuarioCorreto = 'Test';
+          var senhaCorreta = 'Test';
+
+          if (login === usuarioCorreto && senha === senhaCorreta) {
+            alert('Login bem-sucedido!');
+          } else {
+            alert('Login falhou. Verifique suas credenciais.');
     }
 }
+        
     </script>
-</body>
+</body>  
 </html>
