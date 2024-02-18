@@ -141,16 +141,19 @@
             window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
         }
         function logar() {
-          var login = document.getElementById('login').value;
-          var senha = document.getElementById('senha').value;
-          var usuarioCorreto = 'Test';
-          var senhaCorreta = 'Test';
+        var login = document.getElementById('login').value;
+        var senha = document.getElementById('senha').value;
+        var usuarioCorreto = 'Test';
+        var senhaCorreta = 'Test';
 
-          if (login === usuarioCorreto && senha === senhaCorreta) {
+        if (login === usuarioCorreto && senha === senhaCorreta) {
             alert('Login bem-sucedido!');
-          } else {
+            localStorage.setItem('usuarioLogado', 'true'); // Armazena indicador de login
+            window.location.href = "/Pack%20So2.html";
+        } else {
             alert('Login falhou. Verifique suas credenciais.');
-    }
+        }
+    } }
 }
         
     </script>
