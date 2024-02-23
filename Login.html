@@ -1,10 +1,12 @@
 <!DOCTYPE html>  
 <html lang="en">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Pack Standoff 2</title>  
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pack Standoff 2</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+    <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js"></script>
     <style>  
         body {  
             margin: 0;  
@@ -30,13 +32,12 @@
             left: 50%;
             transform: translateX(-50%); 
         }
-             .square {  
-      text-align: center;  
-      margin-top: 80px; 
-      position: relative;}
-       
-  
-  .scrolling-wrapper {
+        .square {  
+            text-align: center;  
+            margin-top: 80px; 
+            position: relative;
+        }
+        .scrolling-wrapper {
             display: flex;
             overflow-x: auto;
             justify-content: center;
@@ -48,14 +49,12 @@
             border: none;
             color: white;
             cursor: pointer;
-            background-image: none; /* Remova a imagem de fundo padrão */
+            background-image: none;
         }
-
         button:hover {
             background-image: url("https://tinyurl.com/5n8arjep");
             background-size: cover;
         }
-
         * {
             box-sizing: border-box;
         }
@@ -123,26 +122,47 @@
   
     <div class="background-square"></div>
     <form id="loginForm">
-        <div class="square">  
-            <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 115px;">  
-                <img src="http://tinyurl.com/zeduk4ye" alt="imagem" style="width: 50%; height: 50%; object-fit: cover;" oncontextmenu="return false;">
-            </div>
-        </div> 
+      <div class="square">  
+      <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 115px;">  
+         <img src="http://tinyurl.com/zeduk4ye" alt="imagem" style="width: 50%; height: 50%; object-fit: cover;" oncontextmenu="return false;"></div></div> 
   
         <h3>LOGIN</h3>
-        <div style="position: relative;">
-            <input type="text" placeholder="Usuario" id="login">
-            <input type="password" placeholder="Senha" id="senha">
-            <span onclick="mostrarSenha()" style="cursor: pointer; position: absolute; top: 57px; right: 30px; transform: translateY(-50%);">
-    <img id="olhoIcone" src="http://tinyurl.com/yc6jsnk5" alt="Ícone" style="width: 18x; height: 18px;">
-</span>
-        </div>
+        <input type="text" placeholder="Usuario" id="login">
+        <input type="password" placeholder="Senha" id="senha">
         <input type="button" value="Login" onclick="logar()" id="loginButton"> 
     </form>
-
-
   <script>
-  
+        // Configuração do Firebase
+        var firebaseConfig = {
+        apiKey: "AIzaSyB5VR4aQS7KIfvtnDyg1wbeV8q5cSJ5tlA",
+        authDomain: "pack-standoff-2.firebaseapp.com",
+        projectId: "pack-standoff-2",
+        storageBucket: "pack-standoff-2.appspot.com",
+        messagingSenderId: "1097546624504",
+        appId: "1:1097546624504:web:58b09756c2a08094abba0d"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    function logar() {
+        var login = document.getElementById('login').value;
+        var senha = document.getElementById('senha').value;
+
+        firebase.auth().signInWithEmailAndPassword(login, senha)
+            .then((userCredential) => {
+                // Login bem-sucedido
+                alert('Login bem-sucedido!');
+                localStorage.setItem('usuarioLogado', 'true');
+                window.location.href = "https://drive.google.com/file/d/1ea9iqEEuhDJwKNmbE0hqy25e9EGpt6uy/view?usp=drivesdk";
+            })
+            .catch((error) => {
+                // Tratamento de erro
+                alert('Usuário e senha inválidos.');
+            });
+    }
+
+        // ... Restante do seu script ...
+
         function redirecionarParaHome() {
             window.location.href = "https://pack-standoff.vercel.app/Pack%20So2.Html"
         }
@@ -163,31 +183,7 @@
             window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
         }
         function logar() {
-            var login = document.getElementById('login').value;
-            var senha = document.getElementById('senha').value;
-            var usuarioCorreto = 'Amostra';
-            var senhaCorreta = 'amostra';
 
-            if (login === usuarioCorreto && senha === senhaCorreta) {
-                alert('Login bem-sucedido!');
-                localStorage.setItem('usuarioLogado', 'true'); // Armazena indicador de login
-                window.location.href = "https://drive.google.com/file/d/1ea9iqEEuhDJwKNmbE0hqy25e9EGpt6uy/view?usp=drivesdk"; // redirecionar
-            } else {
-                alert('Usuario e Senha invalida.');
-            }
-        }
-             function mostrarSenha() {
-    var senhaInput = document.getElementById('senha');
-    var olhoIcone = document.getElementById('olhoIcone');
-
-    if (senhaInput.type === 'password') {
-        senhaInput.type = 'text';
-        olhoIcone.src = 'http://tinyurl.com/yc6jsnk5'; // Ícone de olho aberto // Ícone de olho aberto
-    } else {
-        senhaInput.type = 'password';
-        olhoIcone.src = 'http://tinyurl.com/2z6d5snn'; // Ícone de olho fechado
-    }
-}
     </script>
 </body>  
 </html>
