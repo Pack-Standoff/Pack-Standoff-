@@ -6,222 +6,203 @@
   <title>Pack Standoff 2 SoundTrack</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
   <style>
-  body { 
-    margin: 0; 
-    padding: 0; 
-    background-color: #1C1C1C; 
-    font-family: Arial, sans-serif;   
-  }
- .top-bar {
-            background-color: black;
-            color: white;
-            padding: 5px;
-            text-align: center;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1;
-           }
-            .top-bar img.left-corner {
-            position: absolute;
-            left: 0%;
-            top: 8%;
-            width: 220px;
-            height: 40px;
-          }
-          .scrolling-wrapper {
-            display: flex;
-            overflow-x: auto;
-            justify-content: center;
-          }
-           button {
-            padding: 10px;
-            margin-right: 0px;
-            background-color: transparent;
-            border: none;
-            color: white;
-            cursor: pointer;}
-              
-            button:hover {
-            background-color: transparent;
-            background-image: url("http://tinyurl.com/4868vxyx");
-          }
-       .square {
-       text-align: center;
-       margin-top: 10%;
-       margin-left: 0%;
-       }
-       .season-1 {
-       background-color: transparent;
-       border: none;
-       color: white;
-       padding: 2px 0px;
-       font-size: 13px;
-       cursor: pointer;
-       border-radius: 0px;
-       width: 100%;
-       font-family: 'Bebas Neue', sans-serif;
-       margin-bottom: 5px;
-      		background-image: url("https://tinyurl.com/2k5kpc78");
-      }
-      .season-2 {
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #1C1C1C;
+      font-family: Arial, sans-serif;
+    }
+    .top-bar {
+      background-color: black;
+      color: white;
+      padding: 5px;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+    }
+    .top-bar img.left-corner {
+      position: absolute;
+      left: 0%;
+      top: 8%;
+      width: 220px;
+      height: 40px;
+    }
+    .scrolling-wrapper {
+      display: flex;
+      overflow-x: auto;
+      justify-content: center;
+    }
+    button {
+      padding: 10px;
+      margin-right: 0px;
       background-color: transparent;
       border: none;
       color: white;
-      padding: 2px 0px;
-      font-size: 13px;
       cursor: pointer;
-      border-radius: 0px;
-      width: 100%;
-      font-family: 'Bebas Neue', sans-serif;
-      margin-bottom: 5px;
-     }
-      .season-3 {
+    }
+    button:hover {
+      background-color: transparent;
+      background-image: url("http://tinyurl.com/4868vxyx");
+    }
+    .square {
+      margin-top: 30px;
+      margin-left: 5%;
+    }
+    .season-text {
       background-color: transparent;
       border: none;
       color: white;
-      padding: 2px 0px;
-      font-size: 13px;
+      padding: 15px 0px;
+      font-size: 22px;
       cursor: pointer;
       border-radius: 0px;
-      width: 100%;
       font-family: 'Bebas Neue', sans-serif;
-      margin-bottom: 5px;
-     }
-      .season-4 {
-      background-color: transparent;
-      border: none;
-      color: white;
-      padding: 2px 0px;
-      font-size: 13px;
-      cursor: pointer;
-      border-radius: 0px;
-      width: 100%;
-      font-family: 'Bebas Neue', sans-serif;
-      margin-bottom: 5px;
-      }
-      .season-5 {
-      background-color: transparent;
-      border: none; 
-      color: white;
-      padding: 2px 0px;
-      font-size: 13px;
-      cursor: pointer;
-      border-radius: 0px;
-      width: 100%;
-      font-family: 'Bebas Neue', sans-serif;
-      margin-bottom: 5px;
-     }
-      .season-6 {
-      background-color: transparent;
-      border: none;
-      color: white;
-      padding: 2px 0px;
-      font-size: 13px;
-      cursor: pointer;
-      border-radius: 0px;
-      width: 100%;
-      font-family: 'Bebas Neue', sans-serif;
-      margin-bottom: 5%;
-     }
-      .pause-button {
+      margin-bottom: -15px;
+      background-image: url("https://tinyurl.com/2k5kpc78");
+      max-width: 95%;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .audio {
+      display: none;
+    }
+    img {
+      max-width: 95%;
+      height: auto;
+      text-align: center;
+      border: 0.1px solid #555;
+    }
+     .escutar-button {
       background-color: transparent;
       border: none;
       color: white; 
-      padding: 2px;
+      padding: 3px;
       font-size: 13px;
       cursor: pointer;
       border-radius: 0px;
       width: 100%;
       font-family: 'Bebas Neue', sans-serif;
-      margin-bottom: 5px;
+      margin-bottom: -25px;
+      margin: 0 auto;
      }
-		    .buttom-voltar {
+     .pause-button {
+      background-color: transparent;
+      border: none;
+      color: white; 
+      padding: 3px;
+      font-size: 13px;
+      cursor: pointer;
+      border-radius: 0px;
+      width: 100%;
+      font-family: 'Bebas Neue', sans-serif;
+      margin-bottom: -25px;
+      margin: 0 auto;
+     }
+     .buttom-voltar {
      		background-image: url('http://tinyurl.com/5n75dkx2');
      		background-size: cover;
      		color: white;
-     		padding: 2px 25px;
+     		padding: 4px 27px;
      		border: none;
      		cursor: pointer;
      		font-family: "Bebas Neue";
      		font-size: 13px
      }
-     .audio {
-      display: none;
-     }
-		</style>
+  </style>
 </head>
-<body>	
-       <div class="top-bar">
-      <div class="scrolling-wrapper">
-      <button onclick="redirecionarParaHome()">Home</button>
-      <button onclick="redirecionarParaConteudo()">Conteúdo</button>
-      <button onclick="redirecionarParaTabela()">Tabela</button>
-      <button onclick="redirecionarParaSoundtrack()">Soundtracks</button>
-      </div></div>
-       <div class="square">
-       <div style="width: 50%; height: 20%; background-color: transparent; position: relative;">
-         <img src="http://tinyurl.com/55ep67sd" alt="Season 1 Logo" style="width: 80%; height: 70%; margin-top: 15px;"oncontextmenu="return false;"></div>
-      		<div style="width: 100%; height: 100%; background-color: transparent; position: relative;">
-        <img src="http://tinyurl.com/7fys6ucm" alt="imagem" style="width: 85%; height: 88%; object-fit: cover;"oncontextmenu="return false;"></div>
-       		
-       <button class="season-1" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(1)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Escutar</button>
-       <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>		
-     
-       <div style="width: 50%; height: 20%; background-color: transparent; position: relative;">
-        <img src="http://tinyurl.com/yckd2xkd" alt="Season 2 Logo" style="width: 80%; height: 70%; margin-top: 15px;"oncontextmenu="return false;"></div>
-       <div style="width: 100%; height: 100%; background-color: transparent;">
-        <img src="http://tinyurl.com/yt5t4n2y" alt="imagem" style= "width: 85%; height: 88%; object-fit: cover;"></div>
-       		
-       <button class="season-2" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(2)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Escutar</button>
-       <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>		
-         
-       <div style="width: 50%; height: 20%; background-color: transparent; position: relative;">
-        <img src="http://tinyurl.com/yc6m97np" alt="Season 3 Logo" style="width: 80%; height: 70%; margin-top: 15px;"oncontextmenu="return false;"></div>
-       <div style="width: 100%; height: 100%; background-color: transparent; position: relative;">
-        <img src="http://tinyurl.com/ms5f65su" alt="Sua Imagem" style= "width: 85%; height: 88%; object-fit: cover;"></div>
-       		
-      <button class="season-3" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(3)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Escutar</button>
-       <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>		
-     		
-       <div style="width: 50%; height: 20%; background-color: transparent; position: relative;">
-        <img src="http://tinyurl.com/33xharva" alt="Season 4 Logo" style="width: 80%; height: 70%; margin-top: 15px;"oncontextmenu="return false;"></div>
-       <div style="width: 100%; height: 100%; background-color: transparent; position: relative;">
-        <img src="http://tinyurl.com/yfhxfb8s" alt="Sua Imagem" style= "width: 85%; height: 90%; object-fit: cover;"></div>
-       		
-       <button class="season-4" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(4)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Escutar</button>
-       <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>		
-     	
-       <div style="width: 50%; height: 20%; background-color: transparent; position: relative;">
-        <img src="http://tinyurl.com/awy2yy6k" alt="Season 5 Logo" style="width: 80%; height: 70%; margin-top: 15px;"oncontextmenu="return false;"></div>
-       <div style="width: 100%; height: 100%; background-color: transparent; position: relative;">
-        <img src="http://tinyurl.com/4kyarv8h" alt="Sua Imagem" style= "width: 85%; height: 88%; object-fit: cover;"></div>
-       
-      	<button class="season-5" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(5)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Escutar</button>
-       <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>		
-     	
-       <div style="width: 50%; height: 20%; background-color: transparent; position: relative;">
-        <img src="http://tinyurl.com/yc79p2rn" alt="Season 6 Logo" style="width: 80%; height: 70%; margin-top: 15px;"oncontextmenu="return false;"></div>
-       <div style="width: 100%; height: 100%; background-color: transparent; position: relative;">
-        <img src="http://tinyurl.com/ye295yzj" alt="Sua Imagem" style= "width: 85%; height: 88%; object-fit: cover;"></div>
-       
-      		<button class="season-6" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(6)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Escutar</button>
-       <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>		
-     	
-       <div style="text-align: center; margin-top: 18px;">
-       		<button class="buttom-voltar" onclick="voltarParaPaginaAnterior()">Voltar</button> 
-       </div> 
-         
-       <audio class="audio" id="audio1" src="https://pack-standoff.vercel.app/Z9%20Project%20Season%201%20SoundTrack.mp3" controls></audio>
-       <audio class="audio" id="audio2" src="https://pack-standoff.vercel.app/Revival%20Season%202%20SoundTrack.mp3"></audio>
-       <audio class="audio" id="audio3" src="https://pack-standoff.vercel.app/Dragon%20Rise%20Season%203%20SoundTrack.mp3" controls></audio>
-       <audio class="audio" id="audio4" src="https://pack-standoff.vercel.app/Legends%20Season%204%20SoundTrack.mp3"></audio>
-       <audio class="audio" id="audio5" src="https://pack-standoff.vercel.app/Fireborn%20Season%205%20SoundTrack.mp3"></audio>
-       <audio class="audio" id="audio6" src="https://pack-standoff.vercel.app/Dune%20(Season%206%20Loading)%20-%20Standoff%202%20OST(MP3_160K).mp3"></audio>
-         <h>.</h>
-<script>
+<body>
+  <div class="top-bar">
+    <div class="scrolling-wrapper">
+     <button onclick="redirecionarParaHome()">Home</button>
+     <button onclick="redirecionarParaConteudo()">Conteúdo</button>
+     <button onclick="redirecionarParaTabela()">Tabela</button>
+     <button onclick="redirecionarParaSoundtrack()">Soundtracks</button>
+    </div></div>
+
+    <div class="square">
+    <p class="season-text">Season 1 </p>
+    <img src="http://tinyurl.com/7fys6ucm"></div>
+    <div style="text-align: center; margin-top: 0px;">
+    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(1)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;">Escutar</button>
+    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>	
+    </div>
+  
+    <div class="square">
+    <p class="season-text">Season 2</p>
+    <img src="http://tinyurl.com/yt5t4n2y"></div>
+    <div style="text-align: center; margin-top: 0px;">
+    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(2)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;">Escutar</button>
+    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>	
+    </div>
     
-         var currentAudio = null;
+    <div class="square">
+    <p class="season-text">Season 3</p>
+    <img src="http://tinyurl.com/ms5f65su"></div>
+    <div style="text-align: center; margin-top: 0px;">
+    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(3)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;">Escutar</button>
+    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>	
+    </div>
+  
+    <div class="square">
+    <p class="season-text">Season 4</p>
+    <img src="http://tinyurl.com/yfhxfb8s"></div>
+    <div style="text-align: center; margin-top: 0px;">
+    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(4)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;">Escutar</button>
+    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>	
+    </div>
+  
+    <div class="square">
+    <p class="season-text">Season 5</p>
+    <img src="http://tinyurl.com/4kyarv8h"></div>
+    <div style="text-align: center; margin-top: 0px;">
+    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(5)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;">Escutar</button>
+    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>	
+    </div>
+  
+    <div class="square">
+    <p class="season-text">Season 6</p>
+    <img src="http://tinyurl.com/ye295yzj"></div>
+    <div style="text-align: center; margin-top: 0px;">
+    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(6)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;">Escutar</button>
+    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>	
+    </div>
+  
+    <div style="text-align: center; margin-top: 18px;">
+   		<button class="buttom-voltar" onclick="voltarParaPaginaAnterior()">Voltar</button> 
+    </div>
+       
+     <audio class="audio" id="audio1" src="https://pack-standoff.vercel.app/Z9%20Project%20Season%201%20SoundTrack.mp3" controls></audio>
+     <audio class="audio" id="audio2" src="https://pack-standoff.vercel.app/Revival%20Season%202%20SoundTrack.mp3"></audio>
+     <audio class="audio" id="audio3" src="https://pack-standoff.vercel.app/Dragon%20Rise%20Season%203%20SoundTrack.mp3" controls></audio>
+     <audio class="audio" id="audio4" src="https://pack-standoff.vercel.app/Legends%20Season%204%20SoundTrack.mp3"></audio>
+     <audio class="audio" id="audio5" src="https://pack-standoff.vercel.app/Fireborn%20Season%205%20SoundTrack.mp3"></audio>
+     <audio class="audio" id="audio6" src="https://pack-standoff.vercel.app/Dune%20(Season%206%20Loading)%20-%20Standoff%202%20OST(MP3_160K).mp3"></audio>
+
+<script>
+  
+    function voltarParaPaginaAnterior() {
+      if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        window.location.href = "https://pack-standoff.vercel.app/Pack%20So2.Html";
+      }
+    }
+
+    function redirecionarParaHome() {
+      window.location.href = "https://pack-standoff.vercel.app/Pack%20So2.Html";
+    }
+
+    function redirecionarParaConteudo() {
+      window.location.href = "https://pack-standoff.vercel.app/Conte%C3%BAdo.html";
+    }
+
+    function redirecionarParaTabela() {
+      window.location.href = "https://pack-standoff.vercel.app/Tabela.html";
+    }
+    
+     var currentAudio = null;
          var audioToPause = null;
 
          function playAudio(audioNumber) {
@@ -253,31 +234,13 @@
         document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
     });
-       		function voltarParaPaginaAnterior() { 
-    if (window.history.length > 1) {
-        window.history.back(); 
-    } else {
-        window.location.href = "https://pack-standoff.vercel.app/Pack%20So2.Html";
-    }
-}
-         function redirecionarParaHome() {
-    window.location.href = "https://pack-standoff.vercel.app/Pack%20So2.Html";
-    }    
-    function redirecionarParaConteudo() {
-      window.location.href = "https://pack-standoff.vercel.app/Conte%C3%BAdo.html";
-    }
-    function redirecionarParaTabela() {
-      window.location.href = "https://pack-standoff.vercel.app/Tabela.html";
-    }
-         
-    function hoverSeason(element) {
+        function hoverSeason(element) {
         element.style.backgroundImage = "url('http://tinyurl.com/4868vxyx')";
     }
 
     function unhoverSeason(element) {
         element.style.backgroundImage = "url('http://tinyurl.com/5n75dkx2')";
     }
-</script>
-</script>
+  </script>
 </body>
 </html>
