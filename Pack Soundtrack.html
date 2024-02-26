@@ -100,15 +100,34 @@
       margin-bottom: -25px;
       margin: 0 auto;
      }
+     
      .buttom-voltar {
      		background-image: url('http://tinyurl.com/5n75dkx2');
      		background-size: cover;
      		color: white;
-     		padding: 4px 27px;
+     		padding: 3px 27px;
      		border: none;
      		cursor: pointer;
      		font-family: "Bebas Neue";
      		font-size: 13px
+     }
+      #opcoesFiltro {
+       display: none;
+       position: absolute;
+       width: 100%;
+      }
+    .filter-button {
+     		background-size: cover;
+      background-color: rgba(17, 17, 17, 0.7);
+     		color: white;
+     		padding: 3px 25px;
+     		border: 0.1px solid #888;
+     		cursor: pointer;
+     		font-family: "Bebas Neue";
+     		font-size: 13px
+      display: inline-block;
+      width: 100px;
+      
      }
   </style>
 </head>
@@ -120,15 +139,24 @@
      <button onclick="redirecionarParaTabela()">Tabela</button>
      <button onclick="redirecionarParaSoundtrack()">Soundtracks</button>
     </div></div>
-
+  
     <div class="square">
+      <div style="text-align: center; margin-top: 35px; margin-left: 66%; position: absolute;">
+  <button class="filter-button" onclick="toggleFiltro()">Filtrar</button>
+  <div id="opcoesFiltro" style="display: none;">
+    <button class="filter-button" onclick="filtrarPorOpcao('Todas')">todas</button>
+    <button class="filter-button" onclick="filtrarPorOpcao('Seasons')">Seasons</button>
+    <button class="filter-button" onclick="filtrarPorOpcao('Eventos')">Eventos</button>
+  </div>
+</div>
+      
     <p class="season-text">Season 1 </p>
     <img src="http://tinyurl.com/7fys6ucm"></div>
     <div style="text-align: center; margin-top: 0px;">
     <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(1)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;">Escutar</button>
     <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>	
     </div>
-  
+    
     <div class="square">
     <p class="season-text">Season 2</p>
     <img src="http://tinyurl.com/yt5t4n2y"></div>
@@ -172,6 +200,7 @@
     <div style="text-align: center; margin-top: 18px;">
    		<button class="buttom-voltar" onclick="voltarParaPaginaAnterior()">Voltar</button> 
     </div>
+
        
      <audio class="audio" id="audio1" src="https://pack-standoff.vercel.app/Z9%20Project%20Season%201%20SoundTrack.mp3" controls></audio>
      <audio class="audio" id="audio2" src="https://pack-standoff.vercel.app/Revival%20Season%202%20SoundTrack.mp3"></audio>
@@ -241,6 +270,14 @@
     function unhoverSeason(element) {
         element.style.backgroundImage = "url('http://tinyurl.com/5n75dkx2')";
     }
+    function toggleFiltro() {
+  var opcoesFiltro = document.getElementById("opcoesFiltro");
+  if (opcoesFiltro.style.display === "none" || opcoesFiltro.style.display === "") {
+    opcoesFiltro.style.display = "block";
+  } else {
+    opcoesFiltro.style.display = "none";
+  }
+}
   </script>
 </body>
 </html>
