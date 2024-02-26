@@ -116,6 +116,14 @@
        position: absolute;
        width: 100%;
       }
+     #filtro-icon {
+       width: 17px;
+       height: 17px;
+       position: absolute;
+       margin-top: 3.5px;
+       margin-left: -30%;
+       border: none;
+     }
     .filter-button {
      		background-size: cover;
       background-color: rgba(17, 17, 17, 0.7);
@@ -139,16 +147,16 @@
      <button onclick="redirecionarParaTabela()">Tabela</button>
      <button onclick="redirecionarParaSoundtrack()">Soundtracks</button>
     </div></div>
-  
-    <div class="square">
-      <div style="text-align: center; margin-top: 35px; margin-left: 66%; position: absolute;">
-  <button class="filter-button" onclick="toggleFiltro()">Filtrar</button>
-  <div id="opcoesFiltro" style="display: none;">
-    <button class="filter-button" onclick="filtrarPorOpcao('Todas')">todas</button>
-    <button class="filter-button" onclick="filtrarPorOpcao('Seasons')">Seasons</button>
-    <button class="filter-button" onclick="filtrarPorOpcao('Eventos')">Eventos</button>
+<div class="square">
+  <div style=" margin-top: 35px; margin-left: 66%; position: absolute;">
+    <img id="filtro-icon" src="http://tinyurl.com/2ssayunk" alt="Imagem de filtro"><button class="filter-button" onclick="toggleFiltro()">Filtrar</button>
+    <div id="opcoesFiltro" style="display: none;">
+      <button class="filter-button" onclick="filtrarPorOpcao('Todas')">todas</button>
+      <button class="filter-button" onclick="filtrarPorOpcao('Seasons')">Seasons</button>
+      <button class="filter-button" onclick="filtrarPorOpcao('Eventos')">Eventos</button>
+    </div>
   </div>
-</div>
+
       
     <p class="season-text">Season 1 </p>
     <img src="http://tinyurl.com/7fys6ucm"></div>
