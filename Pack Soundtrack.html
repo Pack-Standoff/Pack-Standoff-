@@ -153,8 +153,7 @@
     <div id="opcoesFiltro" style="display: none;">
       <button class="filter-button" onclick="filtrarPorOpcao('Todas')">todas</button>
       <button class="filter-button" onclick="filtrarPorOpcao('Seasons')">Seasons</button>
-      <button class="filter-button" onclick="filtrarPorOpcao('Eventos')">Eventos</button>
-    </div>
+     <button class="filter-button" onclick="redirecionarParaEventos()">Eventos</button></div>
   </div>
 
       
@@ -285,6 +284,9 @@
   } else {
     opcoesFiltro.style.display = "none";
   }
+}
+    function redirecionarParaEventos() {
+  window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack%20Eventos.html";
 }
   </script>
 </body>
