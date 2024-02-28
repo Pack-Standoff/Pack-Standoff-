@@ -156,7 +156,7 @@
     <div style="margin-top: -10px; margin-left: 66%; position: absolute;">
     <img id="filtro-icon" src="http://tinyurl.com/2ssayunk" alt="Imagem de filtro"><button class="filter-button" onclick="toggleFiltro()">Filtrar</button>
     <div id="opcoesFiltro" style="display: none;">
-      <button class="filter-button" onclick="filtrarPorOpcao('Todas')">todas</button>
+      <button class="filter-button" onclick="redirecionarParaTodas('Todas')">todas</button>
       <button class="filter-button" onclick="redirecionarParaSeasons()">Seasons</button>
       <button class="filter-button" onclick="filtrarPorOpcao('Eventos')">Eventos</button>
     </div>
@@ -366,6 +366,9 @@
 }
     function redirecionarParaSeasons() {
   window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
+}
+   function redirecionarParaTodas() {
+  window.location.href = "https://pack-standoff.vercel.app/Pack%20Todas%20Soundtrack%20.html";
 }
   </script>
 </body>
