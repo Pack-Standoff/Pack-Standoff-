@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pack Standoff 2 SoundTrack</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #1C1C1C;
+      font-family: Arial, sans-serif;
+    }
+    .top-bar {
+      background-color: black;
+      color: white;
+      padding: 5px;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+    }
+    .top-bar img.left-corner {
+      position: absolute;
+      left: 0%;
+      top: 8%;
+      width: 220px;
+      height: 40px;
+    }
+    .scrolling-wrapper {
+      display: flex;
+      overflow-x: auto;
+      justify-content: center;
+    }
+    button {
+      padding: 10px;
+      margin-right: 0px;
+      background-color: transparent;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: transparent;
+      background-image: url("http://tinyurl.com/4868vxyx");
+    }
+    .square {
+      margin-top: 10px;
+      margin-left: 5%;
+    }
+    .square-1 {
+      margin-top: 70px;
+      margin-left: 5%;
+    }
+    .season-text {
+      background-color: transparent;
+      border: none;
+      color: white;
+      padding: 15px 0px;
+      font-size: 22px;
+      cursor: pointer;
+      border-radius: 0px;
+      font-family: 'Bebas Neue', sans-serif;
+      margin-bottom: -15px;
+      background-image: url("https://tinyurl.com/2k5kpc78");
+      max-width: 95%;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .audio {
+      display: none;
+    }
+    img {
+      max-width: 95%;
+      height: auto;
+      text-align: center;
+      border: 0.1px solid #555;
+    }
+     .escutar-button {
+      background-color: transparent;
+      border: none;
+      color: white; 
+      padding: 3px;
+      font-size: 13px;
+      cursor: pointer;
+      border-radius: 0px;
+      width: 100%;
+      font-family: 'Bebas Neue', sans-serif;
+      margin-bottom: -25px;
+      margin: 0 auto;
+     }
+     .pause-button {
+      background-color: transparent;
+      border: none;
+      color: white; 
+      padding: 3px;
+      font-size: 13px;
+      cursor: pointer;
+      border-radius: 0px;
+      width: 100%;
+      font-family: 'Bebas Neue', sans-serif;
+      margin-bottom: -25px;
+      margin: 0 auto;
+     }
+     
+     .buttom-voltar {
+     		background-image: url('http://tinyurl.com/5n75dkx2');
+     		background-size: cover;
+     		color: white;
+     		padding: 3px 27px;
+     		border: none;
+     		cursor: pointer;
+     		font-family: "Bebas Neue";
+     		font-size: 13px
+     }
+      #opcoesFiltro {
+       display: none;
+       position: absolute;
+       width: 100%;
+      }
+     #filtro-icon {
+       width: 17px;
+       height: 17px;
+       position: absolute;
+       margin-top: 3.5px;
+       margin-left: -30%;
+       border: none;
+     }
+    .filter-button {
+     		background-size: cover;
+      background-color: rgba(15, 15, 15, 0.7);
+     		color: white;
+     		padding: 3px 25px;
+     		border: 0.1px solid #888;
+     		cursor: pointer;
+     		font-family: "Bebas Neue";
+     		font-size: 13px
+      display: inline-block;
+      width: 100px;
+      
+     }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="scrolling-wrapper">
+     <button onclick="redirecionarParaHome()">Home</button>
+     <button onclick="redirecionarParaConteudo()">Conteúdo</button>
+     <button onclick="redirecionarParaTabela()">Tabela</button>
+     <button onclick="redirecionarParaSoundtrack()">Soundtracks</button>
+    </div></div>
+
+  
+    <div style="margin-top: -10px; margin-left: 66%; position: absolute;">
+    <img id="filtro-icon" src="http://tinyurl.com/2ssayunk" alt="Imagem de filtro"><button class="filter-button" onclick="toggleFiltro()">Filtrar</button>
+    <div id="opcoesFiltro" style="display: none;">
+      <button class="filter-button" onclick="filtrarPorOpcao('Todas')">todas</button>
+      <button class="filter-button" onclick="redirecionarParaSeasons()">Seasons</button>
+      <button class="filter-button" onclick="filtrarPorOpcao('Eventos')">Eventos</button>
+    </div>
+  </div>
+  
+    <div class="square-1">   
+    <p class="season-text">2 Years</p>
+    <img src="http://tinyurl.com/a6jvu3m4"></div>
+    <div style="text-align: center; margin-top: 0px;">
+    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(1)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;">Escutar</button>
+    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>	
+    </div>
+    
+    <div class="square">
+    <p class="season-text">Halloween 2019</p>
+    <img src="http://tinyurl.com/mbawxnjv"></div>
+    <div style="text-align: center; margin-top: 0px;">
+    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(2)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;">Escutar</button>
+    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>	
+    </div>
+    
+    <div class="square">
+    <p class="season-text">New year madness 2020</p>
+    <img src="http://tinyurl.com/jh5s9ten"></div>
+    <div style="text-align: center; margin-top: 0px;">
+    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(3)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;">Escutar</button>
+    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>	
+    </div>
+    
+    <div class="square">
+    <p class="season-text">Season 1 Project Z9</p>
+    <img src="http://tinyurl.com/7fys6ucm"></div>
+    <div style="text-align: center; margin-top: 0px;">
+    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(15)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;">Escutar</button>
+    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>	
+    </div>
+     
+        <div class="square">
+    <p class="season-text">Season 2 Revival</p>
+    <img src="http://tinyurl.com/yt5t4n2y"></div>
+    <div style="text-align: center; margin-top: 0px;">
+    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(15)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;">Escutar</button>
+    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>	
+    </div>
+  
+    <div class="square">
+    <p class="season-text">Halloween 2020</p>
+    <img src="http://tinyurl.com/4xfmcm57"></div>
+    <div style="text-align: center; margin-top: 0px;">
+    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(4)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;">Escutar</button>
+    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>	
+    </div>
+  
+    <div class="square">
+    <p class="season-text">New year 2021</p>
+    <img src="http://tinyurl.com/2s3b6zcz"></div>
+    <div style="text-align: center; margin-top: 0px;">
+    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(5)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;">Escutar</button>
+    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>	
+    </div>
+  
+        <div class="square">
+    <p class="season-text">4 Years</p>
+    <img src="http://tinyurl.com/ycxfee3v"></div>
+    <div style="text-align: center; margin-top: 0px;">
+    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(14)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;">Escutar</button>
+    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>	
+    </div>
+  
+    <div class="square">
+    <p class="season-text">Season 3 Dragon Rise</p>
+    <img src="http://tinyurl.com/ms5f65su"></div>
+    <div style="text-align: center; margin-top: 0px;">
+    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(17)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;">Escutar</button>
+    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>	
+    </div>
+  
+    <div class="square">
+    <p class="season-text">Halloween 2021 cursed souls</p>
+    <img src="http://tinyurl.com/2zfwacu5"></div>
+    <div style="text-align: center; margin-top: 0px;">
+    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(6)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;">Escutar</button>
+    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>	
+    </div>
+  
+    <div class="square">
+    <p class="season-text">New Year 2022 Winter Fun</p>
+    <img src="http://tinyurl.com/3b4enrv2"></div>
+    <div style="text-align: center; margin-top: 0px;">
+    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(7)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;">Escutar</button>
+    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>	
+    </div>
+  
+    <div class="square">
+    <p class="season-text">5 Years</p>
+    <img src="http://tinyurl.com/mub4xxdf"></div>
+    <div style="text-align: center; margin-top: 0px;">
+    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(8)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;">Escutar</button>
+    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>	
+    </div>
+  
+        <div class="square">
+    <p class="season-text">Season 4 Legends</p>
+    <img src="http://tinyurl.com/yfhxfb8s"></div>
+    <div style="text-align: center; margin-top: 0px;">
+    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(18)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;">Escutar</button>
+    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>	
+    </div>
+  
+    <div class="square">
+    <p class="season-text">halloween 2022 Project Pandora</p>
+    <img src="http://tinyurl.com/4zrdjn68"></div>
+    <div style="text-align: center; margin-top: 0px;">
+    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(9)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;">Escutar</button>
+    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>	
+    </div>
+    
+     <div class="square">
+    <p class="season-text">New Year 2023 Hot Winter Party</p>
+    <img src="http://tinyurl.com/38uepf6h"></div>
+    <div style="text-align: center; margin-top: 0px;">
+    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(10)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;">Escutar</button>
+    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>	
+    </div>
+  
+    <div class="square">
+    <p class="season-text">Season 5 Fireborn</p>
+    <img src="http://tinyurl.com/4kyarv8h"></div>
+    <div style="text-align: center; margin-top: 0px;">
+    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(19)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;">Escutar</button>
+    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>	
+    </div>
+     
+    <div class="square">
+    <p class="season-text">Space Vision</p>
+    <img src="http://tinyurl.com/5chkjczh"></div>
+    <div style="text-align: center; margin-top: 0px;">
+    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(11)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;">Escutar</button>
+    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>	
+    </div>
+  
+    <div class="square">
+    <p class="season-text">Season 6 Sunstrike</p>
+    <img src="http://tinyurl.com/ye295yzj"></div>
+    <div style="text-align: center; margin-top: 0px;">
+    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(11)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;">Escutar</button>
+    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>	
+    </div>
+    
+  
+    <div class="square">
+    <p class="season-text">Halloween 2023 Subject X</p>
+    <img src="http://tinyurl.com/y48zbdvd"></div>
+    <div style="text-align: center; margin-top: 0px;">
+    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(12)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;">Escutar</button>
+    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>	
+    </div>
+  
+    <div class="square">
+    <p class="season-text">New Year 2024 Frost Chaos</p>
+    <img src="http://tinyurl.com/m76v22mn"></div>
+    <div style="text-align: center; margin-top: 0px;">
+    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(13)" style="width: 35%; margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;">Escutar</button>
+    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('http://tinyurl.com/5n75dkx2');background-size: cover;"> Pause</button>	
+    </div>
+  
+    <div style="text-align: center; margin-top: 18px;">
+   		<button class="buttom-voltar" onclick="voltarParaPaginaAnterior()">Voltar</button> 
+    </div>
+
+       
+     <audio class="audio" id="audio1" src="https://soundtrack-season.vercel.app/Standoff%202%20Soundtrack%202Years%20(MP3_160K).mp3" controls></audio>
+     <audio class="audio" id="audio2" src="https://soundtrack-season.vercel.app/Standoff%202%20Halloween%202019%20(MP3_160K)_1.mp3"></audio>
+     <audio class="audio" id="audio3" src="https://soundtrack-season.vercel.app/Standoff%202%20New%20Year%20Madness%202020%20MP3_160K).mp3" controls></audio>
+     <audio class="audio" id="audio4" src="https://soundtrack-season.vercel.app/Standoff%202%20Halloween%202020%20(MP3_160K).mp3"></audio>
+     <audio class="audio" id="audio5" src="https://soundtrack-season.vercel.app/Standoff%202%20New%20Year%202021%20Little%20Helper%20Protocol(MP3_160K).mp3"></audio>
+     <audio class="audio" id="audio6" src="https://soundtrack-season.vercel.app/Standoff%202%20Halloween%202021%20Cursed%20Souls%20(MP3_160K).mp3"></audio>
+     <audio class="audio" id="audio7" src="https://soundtrack-season.vercel.app/Standoff%202%20New%20Year%202022%20Winter%20Fun%20(MP3_160K).mp3"></audio>
+     <audio class="audio" id="audio8" src="https://soundtrack-season.vercel.app/Standoff%202%20-%205%20Years%20Soundtrack%20(MP3_160K).mp3"></audio>
+     <audio class="audio" id="audio9" src="https://soundtrack-season.vercel.app/Standoff%202%20Halloween%202022%20Project%20Pandora%20%20(MP3_160K).mp3"></audio>
+     <audio class="audio" id="audio10" src="https://soundtrack-season.vercel.app/Standoff%20New%20Year%202023%20%20Hot%20Winter%20Party(MP3_160K).mp3"></audio>
+     <audio class="audio" id="audio11" src="https://soundtrack-season.vercel.app/Standoff%202%20Space%20Vision%20Soundtrack%20(MP3_160K).mp3"></audio>
+     <audio class="audio" id="audio12" src="https://soundtrack-season.vercel.app/Standoff%202%20Halloween%202023%20Subject-X%20(MP3_160K).mp3"></audio>
+     <audio class="audio" id="audio13" src="https://soundtrack-season.vercel.app/Standoff%202%20-%20Frosty%20Chaos%20Soundtrack(MP3_160K).mp3"></audio>
+     <audio class="audio" id="audio14" src="https://soundtrack-season.vercel.app/Standoff%204%20Years%20Soundtrack%20(MP3_160K).mp3"></audio>
+     <audio class="audio" id="audio15" src="https://pack-standoff.vercel.app/Z9%20Project%20Season%201%20SoundTrack.mp3" controls></audio>
+     <audio class="audio" id="audio16" src="https://pack-standoff.vercel.app/Revival%20Season%202%20SoundTrack.mp3"></audio>
+     <audio class="audio" id="audio17" src="https://pack-standoff.vercel.app/Dragon%20Rise%20Season%203%20SoundTrack.mp3" controls></audio>
+     <audio class="audio" id="audio18" src="https://pack-standoff.vercel.app/Legends%20Season%204%20SoundTrack.mp3"></audio>
+     <audio class="audio" id="audio19" src="https://pack-standoff.vercel.app/Fireborn%20Season%205%20SoundTrack.mp3"></audio>
+     <audio class="audio" id="audio20" src="https://pack-standoff.vercel.app/Dune%20(Season%206%20Loading)%20-%20Standoff%202%20OST(MP3_160K).mp3"></audio>
+  
+  
+  <script>
+  
+    function voltarParaPaginaAnterior() {
+      if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        window.location.href = "https://pack-standoff.vercel.app/Pack%20So2.Html";
+      }
+    }
+
+    function redirecionarParaHome() {
+      window.location.href = "https://pack-standoff.vercel.app/Pack%20So2.Html";
+    }
+
+    function redirecionarParaConteudo() {
+      window.location.href = "https://pack-standoff.vercel.app/Conte%C3%BAdo.html";
+    }
+
+    function redirecionarParaTabela() {
+      window.location.href = "https://pack-standoff.vercel.app/Tabela.html";
+    }
+    
+     var currentAudio = null;
+         var audioToPause = null;
+
+         function playAudio(audioNumber) {
+         var audio = document.getElementById("audio" + audioNumber);
+           
+         if (currentAudio !== null && currentAudio !== audio) {
+         currentAudio.pause();
+         currentAudio.currentTime = 0;
+       }
+         if (audio.paused) {
+         audio.play();
+         currentAudio = audio;
+         audioToPause = audio;
+       } else {
+         audio.pause();
+         audio.currentTime = 0;
+         currentAudio = null;
+       }
+       }
+
+        function pauseAudio() {
+        if (audioToPause !== null) {
+        audioToPause.pause();
+        audioToPause.currentTime = 0;
+        currentAudio = null;
+        audioToPause = null;
+      }
+      }
+        document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+        function hoverSeason(element) {
+        element.style.backgroundImage = "url('http://tinyurl.com/4868vxyx')";
+    }
+
+    function unhoverSeason(element) {
+        element.style.backgroundImage = "url('http://tinyurl.com/5n75dkx2')";
+    }
+    function toggleFiltro() {
+  var opcoesFiltro = document.getElementById("opcoesFiltro");
+  if (opcoesFiltro.style.display === "none" || opcoesFiltro.style.display === "") {
+    opcoesFiltro.style.display = "block";
+  } else {
+    opcoesFiltro.style.display = "none";
+  }
+}
+    function redirecionarParaSeasons() {
+  window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
+}
+  </script>
+</body>
+</html>
