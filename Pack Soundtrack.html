@@ -10,8 +10,8 @@
             margin: 0;
             padding: 0;
             background-color: #1C1C1C;
-            background-image: url("https://tinyurl.com/3j4xvwdx");
-            background-size: cover;         
+            background-image: url("https://tinyurl.com/2e3uac6e");
+            background-size: relative;         
             font-family: Arial, sans-serif;
             }
     .top-bar {
@@ -53,7 +53,7 @@
       margin-left: 5%;
     }
     .square-1 {
-      margin-top: 20px;
+      margin-top: 5px;
       margin-left: 5%;
     }
     .season-text {
@@ -143,6 +143,16 @@
       width: 100px;
       
      }
+     .background-square {
+       position: fixed;
+       top: 310px;
+       left: 50%;
+       transform: translate(-50%, -50%);
+       width: 300px;
+       height: 230px;
+       background-color: black;
+       opacity: 0.3;
+       z-index: -1;
   
   </style>
 </head>
@@ -158,7 +168,8 @@
      <div class="titulo" style="margin-top: 60px;">  
       <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 0px; text-align: center">  
          <img src="https://soundtrack-season.vercel.app/Pack%20So2%20Logo.png" alt="imagem" style="width: 70%; height: 70%; border: none; object-fit: cover;" oncontextmenu="return false;"></div>  
-  
+    <div class="background-square" style="width: 100%; height: 100%;"></div>
+       
     <div class="square-1">   
     <p class="season-text">2 Years</p>
     <img src="https://soundtrack-season.vercel.app/STK_2Years.jpg"></div>
