@@ -247,7 +247,7 @@
            }
 		           .maps-c{
             position: absolute;
-            top: -6.40%;
+            top: 31%;
             left: 3%;
             width: 75%;
             height: 40px;
@@ -256,6 +256,7 @@
             background-size: 67% auto;
             background-position: left;
             background-repeat: no-repeat;
+		           
            }
 		          .bottom-voltar {
             background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');
@@ -279,7 +280,46 @@
 		          		font-size: 16px;
                        
            }
-		
+		           .carousel-container {
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-slide {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+  margin-top: -90%; /* Adiciona um espaçamento entre as imagens */
+}
+
+.carousel-button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+.carousel-prev {
+  left: 10px;
+}
+
+.carousel-next {
+  right: 10px;
+}
+
+.carousel-description {
+  text-align: center;
+  color: white;
+}
     </style>
 </head>
 <body>
@@ -412,22 +452,22 @@
   <img src="https://soundtrack-season.vercel.app/CNT_Granadas.jpg" alt="imagem" style="width: 90%; height: 96%; object-fit: cover;" oncontextmenu="return false;">
   <div class="grenades-c"></div>
   <div class= "description"></div>
-    <h>Contem todas granadas do jogo</h>
-  		
-  		  <div class="square" style="margin-top: 9%;">
+  <h>Contem todas granadas do jogo</h>
+  		  
+  <div class="maps-c"></div>
+  <div class="square" style="margin-top: 5%;">
   <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 20px;">
-  		 <img src="https://soundtrack-season.vercel.app/CNT_Maps.jpg" alt="imagem" style="width: 90%; height: 96%; object-fit: cover;" oncontextmenu="return false;">
-    <img src="https://soundtrack-season.vercel.app/CNT_Maps_Events.jpg" alt="imagem" style="width: 90%; height: 96%; object-fit: cover;" oncontextmenu="return false;">
-  
-   <div class="maps-c"></div>
+  <img id="maps-image" src="https://tinyurl.com/y4huyu5v" alt="imagem" style="width: 90%; height: 96%; object-fit: cover;margin-top: 20px;" oncontextmenu="return false;">
+  <img id="maps-image-2" src="https://tinyurl.com/3fdpkzaj" alt="imagem" style="width: 90%; height: 96%; object-fit: cover; display: none; margin-top: 20px;" oncontextmenu="return false;">
+    
+  <img id="maps-image-event-1" src="https://tinyurl.com/y4huyu5v" alt="imagem" style="width: 90%; height: 96%; object-fit: cover;margin-top: 20px;" oncontextmenu="return false;">
+  <img id="maps-image-event-2" src="https://tinyurl.com/3fdpkzaj" alt="imagem" style="width: 90%; height: 96%; object-fit: cover; display: none; margin-top: 20px;" oncontextmenu="return false;">
   <div class= "description"></div>
-    <h>Contem todos mapas do jogo, mais os mapas de eventos</h> 
+  <h>Contem todos mapas do jogo, mais os mapas de eventos</h> 
+  
   <div style="text-align: center; margin-top: 20px;">
-
-  		
-  <div style="text-align: center; margin-top: 20px;">
-   <button class="bottom-comprar" onclick="abrirNovaPaginaComprar()">Comprar</button>
-  		<button class="bottom-voltar" onclick="voltarParaPaginaAnterior()">Voltar</button>
+  <button class="bottom-comprar" onclick="abrirNovaPaginaComprar()">Comprar</button>
+ 		<button class="bottom-voltar" onclick="voltarParaPaginaAnterior()">Voltar</button>
 </div>		
   		<script>
     function voltarParaPaginaAnterior() { 
@@ -450,6 +490,50 @@
     function redirecionarParaSoundtrack() {
     window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
     }
-      </script>
+    
+    var images = [
+    "https://tinyurl.com/39sr7ax7",
+    "https://tinyurl.com/y4huyu5v",
+    "https://tinyurl.com/3fdpkzaj",
+    "https://tinyurl.com/4z3eh925",
+    "https://tinyurl.com/4edsyskp",
+    "https://tinyurl.com/5y678sdn",
+    "https://tinyurl.com/ytxswkhc"
+    
+];
+
+var currentImageIndex = 0;
+var mapsImage = document.getElementById("maps-image");
+var mapsImage2 = document.getElementById("maps-image-2");
+
+function changeImage() {
+    mapsImage.src = images[currentImageIndex];
+    mapsImage2.src = images[(currentImageIndex + 1) % images.length];
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+}
+
+setInterval(changeImage, 2000);
+    
+    
+    var eventImages = [       
+        "https://tinyurl.com/4um97kdd",
+        "https://tinyurl.com/2p8y4mjp"
+        
+       
+    ];
+
+    var currentEventImageIndex = 0;
+    var eventImage1 = document.getElementById("maps-image-event-1");
+    var eventImage2 = document.getElementById("maps-image-event-2");
+
+    function changeEventImage() {
+        eventImage1.src = eventImages[currentEventImageIndex];
+        eventImage2.src = eventImages[(currentEventImageIndex + 1) % eventImages.length];
+        currentEventImageIndex = (currentEventImageIndex + 1) % eventImages.length;
+    }
+
+    setInterval(changeEventImage, 2200);
+
+</script>
 </body>
 </html>
