@@ -1,46 +1,62 @@
-<!DOCTYPE html>  
-<html lang="en">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Pack Standoff 2</title>  
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"> 
-    <style>  
-        body {  
-            margin: 0;  
-            padding: 0;  
-            background-color: #1C1C1C;  
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pack Standoff 2</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1C1C1C;
+            background-image: url("https://soundtrack-season.vercel.app/Background-10.png");
             font-family: Arial, sans-serif;
-        } 
-        .top-bar {  
+        }
+
+        .top-bar {
             background-color: black;
-            color: white;  
-            padding: 5px;  
-            text-align: center;  
-            position: fixed;  
-            top: 0;  
-            width: 100%;  
+            color: white;
+            padding: 5px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
             z-index: 3;
-        }  
-        .top-bar img.left-corner {  
-            position: absolute;  
-            top: 8px;  
-            width: 180px;  
+        }
+
+        .top-bar img.left-corner {
+            position: absolute;
+            top: 8px;
+            width: 180px;
             height: 35px;
             left: 50%;
-            transform: translateX(-50%); 
+            transform: translateX(-50%);
         }
-             .square {  
-      text-align: center;  
-      margin-top: 80px; 
-      position: relative;}
-       
-  
-  .scrolling-wrapper {
+
+        .logo {
+            position: fixed;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: auto;
+            z-index: 1;
+        }
+
+        .square {
+            text-align: center;
+            margin-top: 80px;
+            position: relative;
+        }
+
+        .scrolling-wrapper {
             display: flex;
             overflow-x: auto;
             justify-content: center;
         }
+
         button {
             padding: 10px;
             margin-right: 0px;
@@ -48,113 +64,43 @@
             border: none;
             color: white;
             cursor: pointer;
-            background-image: none; /* Remova a imagem de fundo padrão */
         }
 
         button:hover {
-            background-image: url("https://media.discordapp.net/attachments/1156980420630548641/1164244880323776593/1697647995840.jpg?ex=65e89f8a&is=65d62a8a&hm=82159d230740bbf624d71933fd4df144b54b881f67bcefb89e0b2487a3d5b59c&");
+            background-image: url("https://soundtrack-season.vercel.app/Botao%20Houver.jpg");
             background-size: cover;
         }
+    </style>
+</head>
 
-        * {
-            box-sizing: border-box;
-        }
-        .background-square {
-            position: absolute;
-            top: 310px;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 300px;
-            height: 230px;
-            background-color: black;
-            opacity: 0.3;
-            z-index: -1;
-        }
-        form {
-            width: 300px;
-            position: absolute;
-            top: 200px;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-        }
-        input {
-            display: block;
-            margin: 10px auto;
-            width: 250px;
-            height: 30px;
-            color: gray;
-            background-color: #111;
-            border: 1px solid white;
-            outline: none;
-        }
-        h3 {
-            color: white;
-            font-family: 'Eurostile', sans-serif;
-            font-size: 20px;      
-        }
-        #loginButton {
-            text-align: center;
-            padding: 10px;
-            margin-right: 0px;
-            background-color: transparent;
-            border: none;
-            color: white;
-            cursor: pointer;
-            background-image: url("https://media.discordapp.net/attachments/1156980420630548641/1156980953726582925/Botao_Amarelo.jpg?ex=65e9e1fb&is=65d76cfb&hm=48a2899f25f04385b2cdbb0aaf7bd2ce9fd50f178f73a826cbb05fc01cd1855d&");
-            background-size: cover;
-            margin: 0 auto;
-            display: block;
-            font-size: 10px;
-            width: 250px;
-        }
-    </style>  
-</head>  
-<body>  
+<body>
     <div class="top-bar">
         <div class="scrolling-wrapper">
             <button onclick="redirecionarParaHome()">Home</button>
             <button onclick="redirecionarParaConteudo()">Conteúdo</button>
             <button onclick="redirecionarParaTabela()">Tabela</button>
             <button onclick="redirecionarParaSoundtrack()">Soundtracks</button>
-            <button onclick="redirecionarParaLogin()">Login</button>
+            <button onclick="redirecionarParaLogin()">Teste</button>
         </div>
     </div>
-  
-    <div class="background-square"></div>
-    <form id="loginForm">
-        <div class="square">  
-            <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 115px;">  
-                <img src="http://tinyurl.com/zeduk4ye" alt="imagem" style="width: 50%; height: 50%; object-fit: cover;" oncontextmenu="return false;">
-            </div>
-        </div> 
-  
-        <h3>LOGIN</h3>
-        <div style="position: relative;">
-            <input type="text" placeholder="Usuario" id="login">
-            <input type="password" placeholder="Senha" id="senha">
-            <span onclick="mostrarSenha()" style="cursor: pointer; position: absolute; top: 57px; right: 30px; transform: translateY(-50%);">
-    <img id="olhoIcone" src="http://tinyurl.com/yc6jsnk5" alt="Ícone" style="width: 18x; height: 18px;">
-</span>
+    <div class="square" style="margin-top: 60px;">
+        <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 10px;">
+            <img src="https://soundtrack-season.vercel.app/Pack%20So2%20Logo.png" alt="imagem" style="width: 70%; height: 70%; object-fit: cover;" oncontextmenu="return false;">
         </div>
-        <input type="button" value="Login" onclick="logar()" id="loginButton"> 
-    </form>
-
-
-  <script>
-  
+    </div>
+    <script>
         function redirecionarParaHome() {
-            window.location.href = "https://pack-standoff.vercel.app/Pack%20So2.Html"
+            window.location.href = "https://pack-standoff.vercel.app/Pack%20So2.Html";
         }
+
         function abrirNovaPaginaTabela() {
             window.location.href = "https://pack-standoff.vercel.app/Tabela.html";
-        }  
-        function abrirNovaPaginaEscutar() {
-            window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
-        }  
+        }
+
         function redirecionarParaConteudo() {
             window.location.href = "https://pack-standoff.vercel.app/Conte%C3%BAdo.html";
-        }    
+        }
+
         function redirecionarParaTabela() {
             window.location.href = "https://pack-standoff.vercel.app/Tabela.html";
         }
@@ -162,32 +108,11 @@
         function redirecionarParaSoundtrack() {
             window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
         }
-        function logar() {
-            var login = document.getElementById('login').value;
-            var senha = document.getElementById('senha').value;
-            var usuarioCorreto = 'Amostra';
-            var senhaCorreta = 'amostra';
 
-            if (login === usuarioCorreto && senha === senhaCorreta) {
-                alert('Login bem-sucedido!');
-                localStorage.setItem('usuarioLogado', 'true'); // Armazena indicador de login
-                window.location.href = "https://drive.google.com/file/d/1ea9iqEEuhDJwKNmbE0hqy25e9EGpt6uy/view?usp=drivesdk"; // redirecionar
-            } else {
-                alert('Usuario e Senha invalida.');
-            }
+        function redirecionarParaTeste() {
+          
         }
-             function mostrarSenha() {
-    var senhaInput = document.getElementById('senha');
-    var olhoIcone = document.getElementById('olhoIcone');
-
-    if (senhaInput.type === 'password') {
-        senhaInput.type = 'text';
-        olhoIcone.src = 'http://tinyurl.com/yc6jsnk5'; // Ícone de olho aberto // Ícone de olho aberto
-    } else {
-        senhaInput.type = 'password';
-        olhoIcone.src = 'http://tinyurl.com/2z6d5snn'; // Ícone de olho fechado
-    }
-}
     </script>
-</body>  
+</body>
+
 </html>
