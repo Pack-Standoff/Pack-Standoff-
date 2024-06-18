@@ -1,3 +1,6 @@
+Aqui está o seu código ajustado para incluir a funcionalidade de filtro de pesquisa nos jogos:
+
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -205,6 +208,9 @@
 .square:hover {
     background-color: #f0f0f0;
 }
+  .hidden {
+    display: none;
+}
     </style>
 </head>
 <body>
@@ -232,69 +238,89 @@
     <button class="search-btn">Slots</button>
  </div>
     <div class="games-container">
-    <div class="square">
+    <div class="square game">
         <img src="https://cdntoos.pagodejogo.com/game_pictures/g/EA/200/3/2000126/default.png" alt="Game 1" style="width: 100px; height: 150px; object-fit: cover; border-radius: 10px;">
     </div>
-    <div class="square">
+    <div class="square game">
         <img src="https://cdntoos.pagodejogo.com/game_pictures/g/EA/200/3/2001027/default.png" alt="Game 2" style="width: 100px; height: 150px; object-fit: cover; border-radius: 10px;">
     </div>
-    <div class="square">
+    <div class="square game">
         <img src="https://cdntoos.pagodejogo.com/game_pictures/g/EA/200/3/2001007/default.png" alt="Game 3" style="width: 100px; height: 150px; object-fit: cover; border-radius: 10px;">
     </div>
 </div>
     <div class="games-container">
-    <div class="square">
-        <img src="https://cdntoos.pagodejogo.com/game_pictures/g/EA/200/3/2000089/default.png" alt="Game 1" style="width: 100px; height: 150px; object-fit: cover; border-radius: 10px;">
-    </div>
-    <div class="square">
-        <img src="https://cdntoos.pagodejogo.com/game_pictures/g/EA/200/3/2000104/default.png" alt="Game 2" style="width: 100px; height: 150px; object-fit: cover; border-radius: 10px;">
-    </div>
-    <div class="square">
-        <img src="https://cdntoos.pagodejogo.com/game_pictures/g/EA/200/3/2000057/default.png" alt="Game 3" style="width: 100px; height: 150px; object-fit: cover; border-radius: 10px;">
+        <div class="square game">
+            <img src="https://cdntoos.pagodejogo.com/game_pictures/g/EA/200/3/2000104/default.png" alt="Game 4" style="width: 100px; height: 150px; object-fit: cover; border-radius: 10px;">
+        </div>
+        <div class="square game">
+            <img src="https://cdntoos.pagodejogo.com/game_pictures/g/EA/200/3/2000089/default.png" alt="Game 5" style="width: 100px; height: 150px; object-fit: cover; border-radius: 10px;">
+        </div>
+      <div class="square game">
+            <img src="https://cdntoos.pagodejogo.com/game_pictures/g/EA/200/3/2000057/default.png" alt="Game 6" style="width: 100px; height: 150px; object-fit: cover; border-radius: 10px;">
+        </div>
     </div>
   
-  
-  <script>
+    <script>
         const carousel = document.getElementById('carousel');
-const indicatorsContainer = document.getElementById('indicators');
-const slides = carousel.querySelectorAll('.slide');
-const totalSlides = slides.length;
-let currentIndex = 0;
+        const indicatorsContainer = document.getElementById('indicators');
+        const slides = carousel.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        let currentIndex = 0;
 
-// Cria os indicadores de slide
-for (let i = 0; i < totalSlides; i++) {
-    const indicator = document.createElement('div');
-    indicator.classList.add('indicator');
-    if (i === 0) {
-        indicator.classList.add('active');
-    }
-    indicator.addEventListener('click', () => {
-        currentIndex = i;
-        updateCarousel();
-    });
-    indicatorsContainer.appendChild(indicator);
-}
-
-// Função para atualizar o carrossel
-function updateCarousel() {
-    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-    // Atualiza os indicadores de slide
-    const indicators = indicatorsContainer.querySelectorAll('.indicator');
-    indicators.forEach((indicator, i) => {
-        if (i === currentIndex) {
-            indicator.classList.add('active');
-        } else {
-            indicator.classList.remove('active');
+        // Cria os indicadores de slide
+        for (let i = 0; i < totalSlides; i++) {
+            const indicator = document.createElement('div');
+            indicator.classList.add('indicator');
+            if (i === 0) {
+                indicator.classList.add('active');
+            }
+            indicator.addEventListener('click', () => {
+                currentIndex = i;
+                updateCarousel();
+            });
+            indicatorsContainer.appendChild(indicator);
         }
-    });
-}
 
-// Troca de slide automática a cada 3 segundos
-setInterval(() => {
-    currentIndex = (currentIndex + 1) % totalSlides;
-    updateCarousel();
-}, 3000);
+        // Função para atualizar o carrossel
+        function updateCarousel() {
+            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            // Atualiza os indicadores de slide
+            const indicators = indicatorsContainer.querySelectorAll('.indicator');
+            indicators.forEach((indicator, i) => {
+                if (i === currentIndex) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+        }
+
+        // Troca de slide automática a cada 3 segundos
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
+        }, 3000);
+
+        // Script para filtrar os jogos com base na pesquisa
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const games = document.querySelectorAll('.game');
+
+            searchInput.addEventListener('input', function() {
+                const searchTerm = searchInput.value.trim().toLowerCase();
+
+                games.forEach(game => {
+                    const gameName = game.querySelector('img').getAttribute('alt').toLowerCase();
+
+                    if (gameName.includes(searchTerm)) {
+                        game.classList.remove('hidden');
+                    } else {
+                        game.classList.add('hidden');
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
