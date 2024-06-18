@@ -144,22 +144,19 @@
     box-sizing: border-box;
     outline: none;
     background-color: rgba(0, 0, 0, 0.3);
-    
+    color: white;
     }
      .button-bar {
     display: flex;
     justify-content: center;
-    margin-top: 360px;
+    align-items: center;
+    margin-top: 20px;
     width: 100%;
-    max-width: 400px;
+    max-width: 800px; /* Ajuste conforme necessário */
     padding: 10px;
     overflow-x: auto;
-    text-align: center;
-    left: 50%;
-    transform: translateX(-50%);
-    position: fixed;
     background-color: rgba(0, 0, 0, 0.3);
-       
+
      }
 
 .search-btn {
@@ -179,7 +176,35 @@
     background-color: transparent;
     border: 2.5px solid #28a745;
 }
-  
+     .games-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.square {
+    width: 25%;
+    height: 150px;
+    background-color: transparent;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 150px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin: 0 5px;
+    
+}
+
+.square:hover {
+    background-color: #f0f0f0;
+}
     </style>
 </head>
 <body>
@@ -193,6 +218,7 @@
             <div class="slide"><img src="URL" alt="BetMaster"></div>
             <div class="slide"><img src="URL" alt="BetMaster"></div>
             <div class="slide"><img src="URL" alt="BetMaster"></div>
+            
         </div>
         <div class="slide-indicators" id="indicators"></div>
     </div>
@@ -205,69 +231,70 @@
     <button class="search-btn">Demo</button>
     <button class="search-btn">Slots</button>
  </div>
-  
-  
-  
-  
+    <div class="games-container">
+    <div class="square">
+        <img src="https://cdntoos.pagodejogo.com/game_pictures/g/EA/200/3/2000126/default.png" alt="Game 1" style="width: 100px; height: 150px; object-fit: cover; border-radius: 10px;">
+    </div>
+    <div class="square">
+        <img src="https://cdntoos.pagodejogo.com/game_pictures/g/EA/200/3/2001027/default.png" alt="Game 2" style="width: 100px; height: 150px; object-fit: cover; border-radius: 10px;">
+    </div>
+    <div class="square">
+        <img src="https://cdntoos.pagodejogo.com/game_pictures/g/EA/200/3/2001007/default.png" alt="Game 3" style="width: 100px; height: 150px; object-fit: cover; border-radius: 10px;">
+    </div>
+</div>
+    <div class="games-container">
+    <div class="square">
+        <img src="https://cdntoos.pagodejogo.com/game_pictures/g/EA/200/3/2000089/default.png" alt="Game 1" style="width: 100px; height: 150px; object-fit: cover; border-radius: 10px;">
+    </div>
+    <div class="square">
+        <img src="https://cdntoos.pagodejogo.com/game_pictures/g/EA/200/3/2000104/default.png" alt="Game 2" style="width: 100px; height: 150px; object-fit: cover; border-radius: 10px;">
+    </div>
+    <div class="square">
+        <img src="https://cdntoos.pagodejogo.com/game_pictures/g/EA/200/3/2000057/default.png" alt="Game 3" style="width: 100px; height: 150px; object-fit: cover; border-radius: 10px;">
+    </div>
   
   
   <script>
         const carousel = document.getElementById('carousel');
-        const indicatorsContainer = document.getElementById('indicators');
-        const slides = carousel.querySelectorAll('.slide');
-        const totalSlides = slides.length;
-        let currentIndex = 0;
+const indicatorsContainer = document.getElementById('indicators');
+const slides = carousel.querySelectorAll('.slide');
+const totalSlides = slides.length;
+let currentIndex = 0;
 
-        // Cria os indicadores de slide
-        for (let i = 0; i < totalSlides; i++) {
-            const indicator = document.createElement('div');
-            indicator.classList.add('indicator');
-            if (i === 0) {
-                indicator.classList.add('active');
-            }
-            indicator.addEventListener('click', () => {
-                currentIndex = i;
-                updateCarousel();
-            });
-            indicatorsContainer.appendChild(indicator);
-        }
-
-        // Função para atualizar o carrossel
-        function updateCarousel() {
-            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-            // Atualiza os indicadores de slide
-            const indicators = indicatorsContainer.querySelectorAll('.indicator');
-            indicators.forEach((indicator, i) => {
-                if (i === currentIndex) {
-                    indicator.classList.add('active');
-                } else {
-                    indicator.classList.remove('active');
-                }
-            });
-        }
-
-        // Troca de slide automática a cada 3 segundos
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            updateCarousel();
-        }, 3000);
-          
-    const searchInput = document.getElementById('searchInput');
-
-    searchInput.addEventListener('input', function() {
-        const searchText = this.value.toLowerCase();
-        const slides = document.querySelectorAll('.slide');
-        
-        slides.forEach(slide => {
-            const gameName = slide.querySelector('img').getAttribute('alt').toLowerCase();
-            if (gameName.includes(searchText)) {
-                slide.style.display = 'block';
-            } else {
-                slide.style.display = 'none';
-            }
-        });
+// Cria os indicadores de slide
+for (let i = 0; i < totalSlides; i++) {
+    const indicator = document.createElement('div');
+    indicator.classList.add('indicator');
+    if (i === 0) {
+        indicator.classList.add('active');
+    }
+    indicator.addEventListener('click', () => {
+        currentIndex = i;
+        updateCarousel();
     });
+    indicatorsContainer.appendChild(indicator);
+}
+
+// Função para atualizar o carrossel
+function updateCarousel() {
+    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    // Atualiza os indicadores de slide
+    const indicators = indicatorsContainer.querySelectorAll('.indicator');
+    indicators.forEach((indicator, i) => {
+        if (i === currentIndex) {
+            indicator.classList.add('active');
+        } else {
+            indicator.classList.remove('active');
+        }
+    });
+}
+
+// Troca de slide automática a cada 3 segundos
+setInterval(() => {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateCarousel();
+}, 3000);
     </script>
 </body>
 </html>
