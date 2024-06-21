@@ -89,7 +89,7 @@
         <input type="text" id="player1" placeholder="Player 1" required>
         <select id="weapon" required>
             <option value="" disabled selected>Selecione a Arma</option>
-            <option value="akr">AKR</option>
+            <option value="ak47">AK-47</option>
             <option value="m4a1">M4A1</option>
             <option value="awp">AWP</option>
             <option value="deagle">Desert Eagle</option>
@@ -136,24 +136,18 @@
             headshotIcon.style.marginRight = '5px'; // Espaçamento entre os ícones
 
             const weaponImg = document.createElement('img');
-            if (weapon === 'akr') {
-                weaponImg.src = 'https://tinyurl.com/5f96t3cy'; // Ícone da AKR
-                weaponImg.width = 32;
-                weaponImg.height = 9.8; // Mantendo a proporção de 219x67
-            } else {
-                weaponImg.src = `icons/${weapon}.png`; // Ícones das outras armas
-                weaponImg.width = 32;
-                weaponImg.height = 32; // Mantendo a proporção padrão
-            }
+            weaponImg.src = `icons/${weapon}.png`; // Ícone da Arma
             weaponImg.alt = weapon;
+            weaponImg.width = 32;
+            weaponImg.height = 32;
 
             const player2Span = document.createElement('span');
             player2Span.textContent = player2;
             player2Span.style.color = team2 === 'CT' ? 'blue' : 'orange';
 
             killfeedItem.appendChild(player1Span);
-            killfeedItem.appendChild(weaponImg); // Adiciona o ícone da arma primeiro
-            killfeedItem.appendChild(headshotIcon); // Adiciona o ícone de Headshot depois
+            killfeedItem.appendChild(headshotIcon); // Adiciona o ícone de Headshot
+            killfeedItem.appendChild(weaponImg);
             killfeedItem.appendChild(player2Span);
 
             killfeedContainer.appendChild(killfeedItem);
@@ -199,61 +193,33 @@
             ctx.fillStyle = team1 === 'CT' ? 'blue' : 'orange';
             ctx.fillText(player1, 10, 30);
 
-            // Imagem da arma
-            const weaponImg = new Image();
-            if (weapon === 'akr') {
-                weaponImg.src = 'https://tinyurl.com/5f96t3cy';
-                weaponImg.onload = function() {
-                    ctx.drawImage(weaponImg, 140, 18, 32, 9.8); // Mantendo a proporção de 219x67
-                    
-                    // Ícone de Headshot
-                    const headshotImg = new Image();
-                    headshotImg.src = 'https://tinyurl.com/22394xje';
-                    headshotImg.onload = function() {
-                        ctx.drawImage(headshotImg, 100, 10, 24, 24);
-                        
-                        // Texto do player 2
-                        ctx.fillStyle = team2 === 'CT' ? 'blue' : 'orange';
-                        ctx.fillText(player2, 190, 30);
+            // Ícone de Headshot
+            const headshotImg = new Image();
+            headshotImg.src = 'https://tinyurl.com/22394xje';
+            headshotImg.onload = function() {
+                ctx.drawImage(headshotImg, 100, 10, 24, 24);
 
-                        // Convertendo canvas para imagem
-                        const image = canvas.toDataURL('image/png');
-                        const imgElement = document.createElement('img');
-                        imgElement.src = image;
-                        imgElement.alt = 'Killfeed Image';
-
-                        // Limpa o conteúdo anterior do killfeed-container antes de adicionar a nova imagem
-                        killfeedContainer.innerHTML = '';
-                        killfeedContainer.appendChild(imgElement);
-                    };
-                };
-            } else {
+                // Imagem da arma
+                const weaponImg = new Image();
                 weaponImg.src = `icons/${weapon}.png`;
                 weaponImg.onload = function() {
                     ctx.drawImage(weaponImg, 140, 10, 32, 32);
                     
-                    // Ícone de Headshot
-                    const headshotImg = new Image();
-                    headshotImg.src = 'https://tinyurl.com/22394xje';
-                    headshotImg.onload = function() {
-                        ctx.drawImage(headshotImg, 100, 10, 24, 24);
-                        
-                        // Texto do player 2
-                        ctx.fillStyle = team2 === 'CT' ? 'blue' : 'orange';
-                        ctx.fillText(player2, 190, 30);
+                    // Texto do player 2
+                    ctx.fillStyle = team2 === 'CT' ? 'blue' : 'orange';
+                    ctx.fillText(player2, 190, 30);
 
-                        // Convertendo canvas para imagem
-                        const image = canvas.toDataURL('image/png');
-                        const imgElement = document.createElement('img');
-                        imgElement.src = image;
-                        imgElement.alt = 'Killfeed Image';
+                    // Convertendo canvas para imagem
+                    const image = canvas.toDataURL('image/png');
+                    const imgElement = document.createElement('img');
+                    imgElement.src = image;
+                    imgElement.alt = 'Killfeed Image';
 
-                        // Limpa o conteúdo anterior do killfeed-container antes de adicionar a nova imagem
-                        killfeedContainer.innerHTML = '';
-                        killfeedContainer.appendChild(imgElement);
-                    };
-                };
-            }
+                    // Limpa o conteúdo anterior do killfeed-container antes de adicionar a nova imagem
+                    killfeedContainer.innerHTML = '';
+                    killfeedContainer.appendChild(imgElement);
+                }
+            };
         }
     </script>
 </body>
