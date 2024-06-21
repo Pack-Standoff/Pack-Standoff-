@@ -119,9 +119,6 @@
 
             const killfeedContainer = document.getElementById('killfeed-container');
 
-            // Limpa o conteúdo anterior do killfeed-container
-            killfeedContainer.innerHTML = '';
-
             const killfeedItem = document.createElement('div');
             killfeedItem.classList.add('killfeed');
 
@@ -129,15 +126,8 @@
             player1Span.textContent = player1;
             player1Span.style.color = team1 === 'CT' ? 'blue' : 'orange';
 
-            const headshotIcon = document.createElement('img');
-            headshotIcon.src = 'icons/headshot.png'; // Ícone de Headshot
-            headshotIcon.alt = 'Headshot';
-            headshotIcon.width = 24;
-            headshotIcon.height = 24;
-            headshotIcon.style.marginRight = '5px'; // Espaçamento entre os ícones
-
             const weaponImg = document.createElement('img');
-            weaponImg.src = `icons/${weapon}.png`; // Ícone da Arma
+            weaponImg.src = `icons/${weapon}.png`; // Certifique-se de ter as imagens na pasta "icons"
             weaponImg.alt = weapon;
             weaponImg.width = 32;
             weaponImg.height = 32;
@@ -147,7 +137,6 @@
             player2Span.style.color = team2 === 'CT' ? 'blue' : 'orange';
 
             killfeedItem.appendChild(player1Span);
-            killfeedItem.appendChild(headshotIcon); // Adiciona o ícone de Headshot
             killfeedItem.appendChild(weaponImg);
             killfeedItem.appendChild(player2Span);
 
@@ -194,33 +183,23 @@
             ctx.fillStyle = team1 === 'CT' ? 'blue' : 'orange';
             ctx.fillText(player1, 10, 30);
 
-            // Ícone de Headshot
-            const headshotImg = new Image();
-            headshotImg.src = 'icons/headshot.png';
-            headshotImg.onload = function() {
-                ctx.drawImage(headshotImg, 100, 10, 24, 24);
+            // Imagem da arma
+            const img = new Image();
+            img.src = `icons/${weapon}.png`;
+            img.onload = function() {
+                ctx.drawImage(img, 150, 10, 32, 32);
+                
+                // Texto do player 2
+                ctx.fillStyle = team2 === 'CT' ? 'blue' : 'orange';
+                ctx.fillText(player2, 200, 30);
 
-                // Imagem da arma
-                const weaponImg = new Image();
-                weaponImg.src = `icons/${weapon}.png`;
-                weaponImg.onload = function() {
-                    ctx.drawImage(weaponImg, 140, 10, 32, 32);
-                    
-                    // Texto do player 2
-                    ctx.fillStyle = team2 === 'CT' ? 'blue' : 'orange';
-                    ctx.fillText(player2, 190, 30);
-
-                    // Convertendo canvas para imagem
-                    const image = canvas.toDataURL('image/png');
-                    const imgElement = document.createElement('img');
-                    imgElement.src = image;
-                    imgElement.alt = 'Killfeed Image';
-
-                    // Limpa o conteúdo anterior do killfeed-container antes de adicionar a nova imagem
-                    killfeedContainer.innerHTML = '';
-                    killfeedContainer.appendChild(imgElement);
-                }
-            };
+                // Convertendo canvas para imagem
+                const image = canvas.toDataURL('image/png');
+                const imgElement = document.createElement('img');
+                imgElement.src = image;
+                imgElement.alt = 'Killfeed Image';
+                killfeedContainer.appendChild(imgElement);
+            }
         }
     </script>
 </body>
