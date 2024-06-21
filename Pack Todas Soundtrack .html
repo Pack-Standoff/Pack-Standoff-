@@ -114,170 +114,149 @@
     <canvas id="killfeed-canvas"></canvas>
 
     <script>
-        document.getElementById('killfeed-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            const team1 = document.getElementById('team1').value;
-            const player1 = document.getElementById('player1').value;
-            const weapon = document.getElementById('weapon').value;
-            const team2 = document.getElementById('team2').value;
-            const player2 = document.getElementById('player2').value;
+document.getElementById('killfeed-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const team1 = document.getElementById('team1').value;
+    const player1 = document.getElementById('player1').value;
+    const weapon = document.getElementById('weapon').value;
+    const team2 = document.getElementById('team2').value;
+    const player2 = document.getElementById('player2').value;
 
-            const killfeedContainer = document.getElementById('killfeed-container');
+    const killfeedContainer = document.getElementById('killfeed-container');
 
-            // Limpa o conteúdo anterior do killfeed-container
-            killfeedContainer.innerHTML = '';
+    // Limpa o conteúdo anterior do killfeed-container
+    killfeedContainer.innerHTML = '';
 
-            const killfeedItem = document.createElement('div');
-            killfeedItem.classList.add('killfeed');
+    const killfeedItem = document.createElement('div');
+    killfeedItem.classList.add('killfeed');
 
-            const player1Span = document.createElement('span');
-            player1Span.textContent = player1;
-            player1Span.style.color = team1 === 'CT' ? '#889ec4' : '#d49960';
+    const player1Span = document.createElement('span');
+    player1Span.textContent = player1;
+    player1Span.style.color = team1 === 'CT' ? '#889ec4' : '#d49960';
 
-            const headshotIcon = document.createElement('img');
-            headshotIcon.src = 'https://tinyurl.com/22394xje'; // Ícone de Headshot
-            headshotIcon.alt = 'Headshot';
-            headshotIcon.width = 24;
-            headshotIcon.height = 24;
-            headshotIcon.style.marginRight = '5px'; // Espaçamento entre os ícones
+    const headshotIcon = document.createElement('img');
+    headshotIcon.src = 'https://tinyurl.com/22394xje'; // Ícone de Headshot
+    headshotIcon.alt = 'Headshot';
+    headshotIcon.width = 24;
+    headshotIcon.height = 24;
+    headshotIcon.style.marginRight = '5px'; // Espaçamento entre os ícones
 
-            const weaponImg = document.createElement('img');
-            if (weapon === 'akr') {
-                weaponImg.src = 'https://tinyurl.com/ps5awfmj'; // Novo ícone da AKR
-                weaponImg.width = 64;
-                weaponImg.height = 19.5; // Mantendo a proporção de 219x67
-            } else {
-                weaponImg.src = `icons/${weapon}.png`; // Ícones das outras armas
-                weaponImg.width = 32;
-                weaponImg.height = 32; // Mantendo a proporção padrão
-            }
-            weaponImg.alt = weapon;
+    const weaponImg = document.createElement('img');
+    if (weapon === 'akr') {
+        weaponImg.src = 'https://tinyurl.com/ps5awfmj'; // Novo ícone da AKR
+        weaponImg.width = 64;
+        weaponImg.height = 19.5; // Mantendo a proporção de 219x67
+    } else {
+        weaponImg.src = `icons/${weapon}.png`; // Ícones das outras armas
+        weaponImg.width = 32;
+        weaponImg.height = 32; // Mantendo a proporção padrão
+    }
+    weaponImg.alt = weapon;
 
-            const player2Span = document.createElement('span');
-            player2Span.textContent = player2;
-            player2Span.style.color = team2 === 'CT' ? '#889ec4' : '#d49960';
+    const player2Span = document.createElement('span');
+    player2Span.textContent = player2;
+    player2Span.style.color = team2 === 'CT' ? '#889ec4' : '#d49960';
 
-            killfeedItem.appendChild(player1Span);
-            killfeedItem.appendChild(weaponImg); // Adiciona o ícone da arma primeiro
-            killfeedItem.appendChild(headshotIcon); // Adiciona o ícone de Headshot depois
-            killfeedItem.appendChild(player2Span);
+    killfeedItem.appendChild(player1Span);
+    killfeedItem.appendChild(weaponImg); // Adiciona o ícone da arma primeiro
+    killfeedItem.appendChild(headshotIcon); // Adiciona o ícone de Headshot depois
+    killfeedItem.appendChild(player2Span);
 
-            killfeedContainer.appendChild(killfeedItem);
+    killfeedContainer.appendChild(killfeedItem);
 
-            // Gerar imagem do killfeed
-            generateImage(player1, team1, weapon, player2, team2);
+    // Gerar imagem do killfeed
+    generateImage(player1, team1, weapon, player2, team2);
 
-            // Limpar campos
-            document.getElementById('killfeed-form').reset();
-        });
+    // Limpar campos
+    document.getElementById('killfeed-form').reset();
+});
 
-        document.getElementById('download-button').addEventListener('click', function() {
+document.getElementById('download-button').addEventListener('click', function() {
     const canvas = document.getElementById('killfeed-canvas');
     const image = canvas.toDataURL('image/png');
     
-    console.log('Image data URL:', image);
-    
+    // Criar um elemento <a> temporário para realizar o download
     const a = document.createElement('a');
     a.href = image;
-    a.download = 'killfeed.png';
+    a.download = 'killfeed.png'; // Nome do arquivo a ser baixado
     
+    // Adicionar o elemento <a> ao documento (é crucial para alguns navegadores)
     document.body.appendChild(a);
-    console.log('Link added to document.');
     
+    // Simular o clique no link para iniciar o download
     a.click();
-    console.log('Simulated click on link.');
     
+    // Remover o elemento <a> do documento após o download
     document.body.removeChild(a);
-    console.log('Link removed from document.');
 });
 
-        function generateImage(player1, team1, weapon, player2, team2) {
-            const canvas = document.getElementById('killfeed-canvas');
-            const ctx = canvas.getContext('2d');
+function generateImage(player1, team1, weapon, player2, team2) {
+    const canvas = document.getElementById('killfeed-canvas');
+    const ctx = canvas.getContext('2d');
 
-            // Definindo dimensões do canvas
-            const width = 400;
-            const height = 50;
-            canvas.width = width;
-            canvas.height = height;
+    // Definindo dimensões do canvas
+    const width = 400;
+    const height = 50;
+    canvas.width = width;
+    canvas.height = height;
 
-            // Definindo estilos de texto
-            ctx.font = '20px Arial';
+    // Definindo estilos de texto
+    ctx.font = '20px Arial';
 
-            // Fundo do killfeed com preto e 0.5 de transparência
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
-            ctx.fillRect(0, 0, width, height);
+    // Fundo do killfeed com preto e 0.5 de transparência
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+    ctx.fillRect(0, 0, width, height);
 
-            // Bordas do killfeed
-            ctx.strokeStyle = '#8B0000';
-            ctx.lineWidth = 5;
-            ctx.strokeRect(0, 0, width, height);
+    // Bordas do killfeed
+    ctx.strokeStyle = '#8B0000';
+    ctx.lineWidth = 5;
+    ctx.strokeRect(0, 0, width, height);
 
-            // Texto do player 1
-            ctx.fillStyle = team1 === 'CT' ? '#889ec4' : '#d49960';
-            ctx.fillText(player1, 10, 30);
+    // Texto do player 1
+    ctx.fillStyle = team1 === 'CT' ? '#889ec4' : '#d49960';
+    ctx.fillText(player1, 10, 30);
 
-            // Imagem da arma
-            const weaponImg = new Image();
-            if (weapon === 'akr') {
-                weaponImg.src = 'https://tinyurl.com/ps5awfmj';
-                weaponImg.onload = function() {
-                    ctx.save();
-                    ctx.translate(200, 25); // Centraliza o ícone no eixo Y
-                    ctx.scale(-1, 1); // Espelha horizontalmente
-                    ctx.drawImage(weaponImg, -32, -7.75, 64, 19.5); // Ajustando a posição para baixo
-                    ctx.restore();
-                    
-                    // Ícone de Headshot
-                    const headshotImg = new Image();
-                    headshotImg.src = 'https://tinyurl.com/22394xje';
-                    headshotImg.onload = function() {
-                        ctx.drawImage(headshotImg, 160, 13, 24, 24);
-                        
-                        // Texto do player 2
-                        ctx.fillStyle = team2 === 'CT' ? '#889ec4' : '#d49960';
-                        ctx.fillText(player2, 270, 30);
-
-                        // Convertendo canvas para imagem
-                        const image = canvas.toDataURL('image/png');
-                        const imgElement = document.createElement('img');
-                        imgElement.src = image;
-                        imgElement.alt = 'Killfeed Image';
-
-                        // Limpa o conteúdo anterior do killfeed-container antes de adicionar a nova imagem
-                        killfeedContainer.innerHTML = '';
-                        killfeedContainer.appendChild(imgElement);
-                    }
-                }
-            } else {
-                weaponImg.src = `icons/${weapon}.png`; // Ícones das outras armas
-                weaponImg.onload = function() {
-                    ctx.drawImage(weaponImg, 150, 10, 32, 32);
-                    
-                    // Ícone de Headshot
-                    const headshotImg = new Image();
-                    headshotImg.src = 'https://tinyurl.com/22394xje';
-                    headshotImg.onload = function() {
-                        ctx.drawImage(headshotImg, 190, 10, 24, 24);
-                        
-                        // Texto do player 2
-                        ctx.fillStyle = team2 === 'CT' ? '#889ec4' : '#d49960';
-                        ctx.fillText(player2, 230, 30);
-
-                        // Convertendo canvas para imagem
-                        const image = canvas.toDataURL('image/png');
-                        const imgElement = document.createElement('img');
-                        imgElement.src = image;
-                        imgElement.alt = 'Killfeed Image';
-
-                        // Limpa o conteúdo anterior do killfeed-container antes de adicionar a nova imagem
-                        killfeedContainer.innerHTML = '';
-                        killfeedContainer.appendChild(imgElement);
-                    }
-                }
+    // Imagem da arma
+    const weaponImg = new Image();
+    if (weapon === 'akr') {
+        weaponImg.src = 'https://tinyurl.com/ps5awfmj';
+        weaponImg.onload = function() {
+            ctx.save();
+            ctx.translate(200, 25); // Centraliza o ícone no eixo Y
+            ctx.scale(-1, 1); // Espelha horizontalmente
+            ctx.drawImage(weaponImg, -32, -7.75, 64, 19.5); // Ajustando a posição para baixo
+            ctx.restore();
+            
+            // Ícone de Headshot
+            const headshotImg = new Image();
+            headshotImg.src = 'https://tinyurl.com/22394xje';
+            headshotImg.onload = function() {
+                ctx.drawImage(headshotImg, 160, 13, 24, 24);
+                
+                // Texto do player 2
+                ctx.fillStyle = team2 === 'CT' ? '#889ec4' : '#d49960';
+                ctx.fillText(player2, 270, 30);
             }
         }
+    } else {
+        weaponImg.src = `icons/${weapon}.png`; // Ícones das outras armas
+        weaponImg.onload = function() {
+            ctx.drawImage(weaponImg, 150, 10, 32, 32);
+            
+            // Ícone de Headshot
+            const headshotImg = new Image();
+            headshotImg.src = 'https://tinyurl.com/22394xje';
+            headshotImg.onload = function() {
+                ctx.drawImage(headshotImg, 190, 10, 24, 24);
+                
+                // Texto do player 2
+                ctx.fillStyle = team2 === 'CT' ? '#889ec4' : '#d49960';
+                ctx.fillText(player2, 230, 30);
+            }
+        }
+    }
+}
     </script>
 </body>
 </html>
