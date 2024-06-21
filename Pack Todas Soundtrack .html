@@ -173,11 +173,18 @@
         });
 
         document.getElementById('download-button').addEventListener('click', function() {
-            const image = document.getElementById('killfeed-canvas').toDataURL('image/png');
-            const a = document.createElement('a');
-            a.href = image;
-            a.download = 'killfeed.png';
-            a.click(); // Simula o clique no link para iniciar o download
+    const canvas = document.getElementById('killfeed-canvas');
+    const image = canvas.toDataURL('image/png');
+    
+    // Criar um elemento <a> temporário para realizar o download
+    const a = document.createElement('a');
+    a.href = image;
+    a.download = 'killfeed.png'; // Nome do arquivo a ser baixado
+    
+    // Adicionar o elemento <a> ao documento e simular o clique
+    document.body.appendChild(a);
+    a.click();
+      document.body.removeChild(a);
         });
 
         function generateImage(player1, team1, weapon, player2, team2) {
