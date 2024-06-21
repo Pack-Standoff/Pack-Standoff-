@@ -227,3 +227,38 @@
                         imgElement.alt = 'Killfeed Image';
 
                         // Limpa o conteúdo anterior do killfeed-container antes de adicionar a nova imagem
+killfeedContainer.innerHTML = '';
+                        killfeedContainer.appendChild(imgElement);
+                    }
+                }
+            } else {
+                weaponImg.src = `icons/${weapon}.png`; // Ícones das outras armas
+                weaponImg.onload = function() {
+                    ctx.drawImage(weaponImg, 150, 10, 32, 32);
+                    
+                    // Ícone de Headshot
+                    const headshotImg = new Image();
+                    headshotImg.src = 'https://tinyurl.com/22394xje';
+                    headshotImg.onload = function() {
+                        ctx.drawImage(headshotImg, 190, 10, 24, 24);
+                        
+                        // Texto do player 2
+                        ctx.fillStyle = team2 === 'CT' ? '#889ec4' : '#d49960';
+                        ctx.fillText(player2, 230, 30);
+
+                        // Convertendo canvas para imagem
+                        const image = canvas.toDataURL('image/png');
+                        const imgElement = document.createElement('img');
+                        imgElement.src = image;
+                        imgElement.alt = 'Killfeed Image';
+
+                        // Limpa o conteúdo anterior do killfeed-container antes de adicionar a nova imagem
+                        killfeedContainer.innerHTML = '';
+                        killfeedContainer.appendChild(imgElement);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
