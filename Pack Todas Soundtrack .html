@@ -184,8 +184,8 @@
     // Adicionar o elemento <a> ao documento e simular o clique
     document.body.appendChild(a);
     a.click();
-      document.body.removeChild(a);
-        });
+    document.body.removeChild(a); // Remover o elemento <a> após o download
+});
 
         function generateImage(player1, team1, weapon, player2, team2) {
             const canvas = document.getElementById('killfeed-canvas');
