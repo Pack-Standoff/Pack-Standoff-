@@ -176,15 +176,20 @@
     const canvas = document.getElementById('killfeed-canvas');
     const image = canvas.toDataURL('image/png');
     
-    // Criar um elemento <a> temporário para realizar o download
+    console.log('Image data URL:', image);
+    
     const a = document.createElement('a');
     a.href = image;
-    a.download = 'killfeed.png'; // Nome do arquivo a ser baixado
+    a.download = 'killfeed.png';
     
-    // Adicionar o elemento <a> ao documento e simular o clique
     document.body.appendChild(a);
+    console.log('Link added to document.');
+    
     a.click();
-    document.body.removeChild(a); // Remover o elemento <a> após o download
+    console.log('Simulated click on link.');
+    
+    document.body.removeChild(a);
+    console.log('Link removed from document.');
 });
 
         function generateImage(player1, team1, weapon, player2, team2) {
