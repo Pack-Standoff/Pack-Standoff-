@@ -39,16 +39,16 @@
             background-color: #666;
         }
         .killfeed {
-            position: relative; /* Adicionado para posicionamento relativo */
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 10px 0;
-            background-color: rgba(0, 0, 0, 0.5); /* Fundo preto com 0.5 de transparência */
+            background-color: rgba(0, 0, 0, 0.5);
             padding: 10px;
             border-radius: 5px;
-            border: 2px solid #8B0000; /* Bordas vermelho escuro */
-            pointer-events: none; /* Impede que o killfeed seja clicável ou selecionável */
+            border: 2px solid #8B0000;
+            pointer-events: none;
         }
         .killfeed img {
             margin: 0 10px;
@@ -88,12 +88,18 @@
         </select>
         <input type="text" id="player1" placeholder="Player 1" required>
         <select id="weapon" required>
-            <option value="" disabled selected>Selecione a Arma</option>
-            <option value="ak47">AK-47</option>
-            <option value="m4a1">M4A1</option>
-            <option value="awp">AWP</option>
-            <option value="deagle">Desert Eagle</option>
-            <!-- Adicione mais opções de armas aqui -->
+    <option value="" disabled selected>Selecione a Arma</option>
+    <option value="akr">AKR</option>
+    <option value="m4a1">M4A1</option>
+    <option value="awp">AWP</option>
+    <option value="deagle">Desert Eagle</option>
+    <option value="val">Val</option>
+    <option value="famas">Famas</option>
+    <option value="fnfal">Fnfal</option>
+    <option value="m4">M4</option>
+    <option value="m16">M16</option>
+    <option value="akr12">Akr12</option>
+</select>
         </select>
         <select id="team2" required>
             <option value="" disabled selected>Selecione o Time do Player 2</option>
@@ -119,25 +125,42 @@
 
             const killfeedContainer = document.getElementById('killfeed-container');
 
+            // Limpa o conteúdo anterior do killfeed-container
+            killfeedContainer.innerHTML = '';
+
             const killfeedItem = document.createElement('div');
             killfeedItem.classList.add('killfeed');
 
             const player1Span = document.createElement('span');
             player1Span.textContent = player1;
-            player1Span.style.color = team1 === 'CT' ? 'blue' : 'orange';
+            player1Span.style.color = team1 === 'CT' ? '#889ec4' : '#d49960';
+
+            const headshotIcon = document.createElement('img');
+            headshotIcon.src = 'https://tinyurl.com/22394xje'; // Ícone de Headshot
+            headshotIcon.alt = 'Headshot';
+            headshotIcon.width = 24;
+            headshotIcon.height = 24;
+            headshotIcon.style.marginRight = '5px'; // Espaçamento entre os ícones
 
             const weaponImg = document.createElement('img');
-            weaponImg.src = `icons/${weapon}.png`; // Certifique-se de ter as imagens na pasta "icons"
+            if (weapon === 'akr') {
+                weaponImg.src = 'https://tinyurl.com/ps5awfmj'; // Novo ícone da AKR
+                weaponImg.width = 64;
+                weaponImg.height = 19.5; // Mantendo a proporção de 219x67
+            } else {
+                weaponImg.src = `icons/${weapon}.png`; // Ícones das outras armas
+                weaponImg.width = 32;
+                weaponImg.height = 32; // Mantendo a proporção padrão
+            }
             weaponImg.alt = weapon;
-            weaponImg.width = 32;
-            weaponImg.height = 32;
 
             const player2Span = document.createElement('span');
             player2Span.textContent = player2;
-            player2Span.style.color = team2 === 'CT' ? 'blue' : 'orange';
+            player2Span.style.color = team2 === 'CT' ? '#889ec4' : '#d49960';
 
             killfeedItem.appendChild(player1Span);
-            killfeedItem.appendChild(weaponImg);
+            killfeedItem.appendChild(weaponImg); // Adiciona o ícone da arma primeiro
+            killfeedItem.appendChild(headshotIcon); // Adiciona o ícone de Headshot depois
             killfeedItem.appendChild(player2Span);
 
             killfeedContainer.appendChild(killfeedItem);
@@ -180,25 +203,67 @@
             ctx.strokeRect(0, 0, width, height);
 
             // Texto do player 1
-            ctx.fillStyle = team1 === 'CT' ? 'blue' : 'orange';
+            ctx.fillStyle = team1 === 'CT' ? '#889ec4' : '#d49960';
             ctx.fillText(player1, 10, 30);
 
             // Imagem da arma
-            const img = new Image();
-            img.src = `icons/${weapon}.png`;
-            img.onload = function() {
-                ctx.drawImage(img, 150, 10, 32, 32);
-                
-                // Texto do player 2
-                ctx.fillStyle = team2 === 'CT' ? 'blue' : 'orange';
-                ctx.fillText(player2, 200, 30);
+            const weaponImg = new Image();
+            if (weapon === 'akr') {
+                weaponImg.src = 'https://tinyurl.com/ps5awfmj';
+                weaponImg.onload = function() {
+                    ctx.save();
+                    ctx.translate(200, 25); // Centraliza o ícone no eixo Y
+                    ctx.scale(-1, 1); // Espelha horizontalmente
+                    ctx.drawImage(weaponImg, -32, -7.75, 64, 19.5); // Ajustando a posição para baixo
+                    ctx.restore();
+                    
+                    // Ícone de Headshot
+                    const headshotImg = new Image();
+                    headshotImg.src = 'https://tinyurl.com/22394xje';
+                    headshotImg.onload = function() {
+                        ctx.drawImage(headshotImg, 160, 13, 24, 24);
+                        
+                        // Texto do player 2
+                        ctx.fillStyle = team2 === 'CT' ? '#889ec4' : '#d49960';
+                        ctx.fillText(player2, 270, 30);
 
-                // Convertendo canvas para imagem
-                const image = canvas.toDataURL('image/png');
-                const imgElement = document.createElement('img');
-                imgElement.src = image;
-                imgElement.alt = 'Killfeed Image';
-                killfeedContainer.appendChild(imgElement);
+                        // Convertendo canvas para imagem
+                        const image = canvas.toDataURL('image/png');
+                        const imgElement = document.createElement('img');
+                        imgElement.src = image;
+                        imgElement.alt = 'Killfeed Image';
+
+                        // Limpa o conteúdo anterior do killfeed-container antes de adicionar a nova imagem
+                        killfeedContainer.innerHTML = '';
+                        killfeedContainer.appendChild(imgElement);
+                    }
+                }
+            } else {
+                weaponImg.src = `icons/${weapon}.png`; // Ícones das outras armas
+                weaponImg.onload = function() {
+                    ctx.drawImage(weaponImg, 150, 10, 32, 32);
+                    
+                    // Ícone de Headshot
+                    const headshotImg = new Image();
+                    headshotImg.src = 'https://tinyurl.com/22394xje';
+                    headshotImg.onload = function() {
+                        ctx.drawImage(headshotImg, 190, 10, 24, 24);
+                        
+                        // Texto do player 2
+                        ctx.fillStyle = team2 === 'CT' ? '#889ec4' : '#d49960';
+                        ctx.fillText(player2, 230, 30);
+
+                        // Convertendo canvas para imagem
+                        const image = canvas.toDataURL('image/png');
+                        const imgElement = document.createElement('img');
+                        imgElement.src = image;
+                        imgElement.alt = 'Killfeed Image';
+
+                        // Limpa o conteúdo anterior do killfeed-container antes de adicionar a nova imagem
+                        killfeedContainer.innerHTML = '';
+                        killfeedContainer.appendChild(imgElement);
+                    }
+                }
             }
         }
     </script>
