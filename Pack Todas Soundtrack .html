@@ -39,16 +39,16 @@
             background-color: #666;
         }
         .killfeed {
-            position: relative;
+            position: relative; /* Adicionado para posicionamento relativo */
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 10px 0;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.5); /* Fundo preto com 0.5 de transparência */
             padding: 10px;
             border-radius: 5px;
-            border: 2px solid #8B0000;
-            pointer-events: none;
+            border: 2px solid #8B0000; /* Bordas vermelho escuro */
+            pointer-events: none; /* Impede que o killfeed seja clicável ou selecionável */
         }
         .killfeed img {
             margin: 0 10px;
@@ -93,6 +93,7 @@
             <option value="m4a1">M4A1</option>
             <option value="awp">AWP</option>
             <option value="deagle">Desert Eagle</option>
+            <!-- Adicione mais opções de armas aqui -->
         </select>
         <select id="team2" required>
             <option value="" disabled selected>Selecione o Time do Player 2</option>
@@ -129,7 +130,7 @@
             player1Span.style.color = team1 === 'CT' ? 'blue' : 'orange';
 
             const headshotIcon = document.createElement('img');
-            headshotIcon.src = 'https://tinyurl.com/22394xje'; // Ícone de Headshot
+            headshotIcon.src = 'icons/headshot.png'; // Ícone de Headshot
             headshotIcon.alt = 'Headshot';
             headshotIcon.width = 24;
             headshotIcon.height = 24;
@@ -195,7 +196,7 @@
 
             // Ícone de Headshot
             const headshotImg = new Image();
-            headshotImg.src = 'https://tinyurl.com/22394xje';
+            headshotImg.src = 'icons/headshot.png';
             headshotImg.onload = function() {
                 ctx.drawImage(headshotImg, 100, 10, 24, 24);
 
