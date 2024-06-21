@@ -1,4 +1,119 @@
-<script>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Killfeed - Standoff 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #282828;
+            color: #FFFFFF;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        input[type="text"], select {
+            margin: 10px;
+            padding: 10px;
+            background-color: #444;
+            border: none;
+            border-radius: 5px;
+            color: #FFFFFF;
+            text-align: center;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #555;
+            border: none;
+            border-radius: 5px;
+            color: #FFFFFF;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #666;
+        }
+        .killfeed {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid #8B0000;
+            pointer-events: none;
+        }
+        .killfeed img {
+            margin: 0 10px;
+        }
+        .killfeed span {
+            margin: 0 5px;
+        }
+        #killfeed-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #download-button {
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: #555;
+            border: none;
+            border-radius: 5px;
+            color: #FFFFFF;
+            cursor: pointer;
+        }
+        #download-button:hover {
+            background-color: #666;
+        }
+        canvas {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gerador de Killfeed - Standoff 2</h1>
+    <form id="killfeed-form">
+        <select id="team1" required>
+            <option value="" disabled selected>Selecione o Time do Player 1</option>
+            <option value="CT">CT</option>
+            <option value="TR">TR</option>
+        </select>
+        <input type="text" id="player1" placeholder="Player 1" required>
+        <select id="weapon" required>
+    <option value="" disabled selected>Selecione a Arma</option>
+    <option value="akr">AKR</option>
+    <option value="m4a1">M4A1</option>
+    <option value="awp">AWP</option>
+    <option value="deagle">Desert Eagle</option>
+    <option value="val">Val</option>
+    <option value="famas">Famas</option>
+    <option value="fnfal">Fnfal</option>
+    <option value="m4">M4</option>
+    <option value="m16">M16</option>
+    <option value="akr12">Akr12</option>
+</select>
+        </select>
+        <select id="team2" required>
+            <option value="" disabled selected>Selecione o Time do Player 2</option>
+            <option value="CT">CT</option>
+            <option value="TR">TR</option>
+        </select>
+        <input type="text" id="player2" placeholder="Player 2" required>
+        <button type="submit">Gerar Killfeed</button>
+    </form>
+    <button id="download-button">Baixar Imagem</button>
+    <div id="killfeed-container"></div>
+    <canvas id="killfeed-canvas"></canvas>
+
+   <script>
 document.addEventListener('DOMContentLoaded', function() {
     const killfeedForm = document.getElementById('killfeed-form');
     const downloadButton = document.getElementById('download-button');
@@ -142,3 +257,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
+</body>
+</html>
