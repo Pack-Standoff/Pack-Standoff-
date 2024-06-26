@@ -60,18 +60,6 @@
             flex-direction: column;
             align-items: center;
         }
-        #download-button {
-            margin-bottom: 20px;
-            padding: 10px 20px;
-            background-color: #555;
-            border: none;
-            border-radius: 5px;
-            color: #FFFFFF;
-            cursor: pointer;
-        }
-        #download-button:hover {
-            background-color: #666;
-        }
         canvas {
             display: none;
         }
@@ -101,7 +89,6 @@
         <input type="text" id="player2" placeholder="Player 2" required>
         <button type="submit">Gerar Killfeed</button>
     </form>
-    <button id="download-button">Baixar Imagem</button>
     <div id="killfeed-container"></div>
     <canvas id="killfeed-canvas"></canvas>
 
@@ -117,41 +104,10 @@
 
             const killfeedContainer = document.getElementById('killfeed-container');
 
-            const killfeedItem = document.createElement('div');
-            killfeedItem.classList.add('killfeed');
-
-            const player1Span = document.createElement('span');
-            player1Span.textContent = player1;
-            player1Span.style.color = team1 === 'CT' ? 'blue' : 'orange';
-
-            const weaponImg = document.createElement('img');
-            weaponImg.src = getWeaponImage(weapon);
-            weaponImg.alt = weapon;
-            weaponImg.width = 32;
-            weaponImg.height = 32;
-
-            const player2Span = document.createElement('span');
-            player2Span.textContent = player2;
-            player2Span.style.color = team2 === 'CT' ? 'blue' : 'orange';
-
-            killfeedItem.appendChild(player1Span);
-            killfeedItem.appendChild(weaponImg);
-            killfeedItem.appendChild(player2Span);
-
-            killfeedContainer.appendChild(killfeedItem);
+            // Limpa o container antes de adicionar novo killfeed
+            killfeedContainer.innerHTML = '';
 
             generateImage(player1, team1, weapon, player2, team2);
-        });
-
-        document.getElementById('download-button').addEventListener('click', function() {
-            const canvas = document.getElementById('killfeed-canvas');
-            const image = canvas.toDataURL('image/png');
-            const a = document.createElement('a');
-            a.href = image;
-            a.download = 'killfeed.png';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
         });
 
         function getWeaponImage(weapon) {
@@ -209,6 +165,14 @@
                 const imgElement = document.createElement('img');
                 imgElement.src = killfeedImage;
                 imgElement.alt = 'Killfeed Image';
+                imgElement.onclick = function() {
+                    const a = document.createElement('a');
+                    a.href = killfeedImage;
+                    a.download = 'killfeed.png';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                };
                 killfeedContainer.appendChild(imgElement);
             };
         }
