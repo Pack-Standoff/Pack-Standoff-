@@ -124,6 +124,14 @@
             killfeedItem.appendChild(player2Span);
 
             killfeedContainer.appendChild(killfeedItem);
+
+            // Adiciona botão de download
+            const downloadButton = document.createElement('button');
+            downloadButton.textContent = 'Baixar Imagem';
+            downloadButton.onclick = function() {
+                downloadKillfeedImage();
+            };
+            killfeedContainer.appendChild(downloadButton);
         }
 
         function getWeaponImage(weapon) {
@@ -139,6 +147,36 @@
                 default:
                     return '';
             }
+        }
+
+        function downloadKillfeedImage() {
+            const killfeedContainer = document.getElementById('killfeed-container');
+            const killfeedItem = killfeedContainer.querySelector('.killfeed');
+
+            if (!killfeedItem) {
+                alert('Gerar o killfeed antes de baixar a imagem.');
+                return;
+            }
+
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+
+            // Definindo dimensões do canvas
+            const width = killfeedItem.offsetWidth;
+            const height = killfeedItem.offsetHeight;
+            canvas.width = width;
+            canvas.height = height;
+
+            // Desenhando o killfeed no canvas
+            html2canvas(killfeedItem).then(canvas => {
+                const image = canvas.toDataURL('image/png');
+
+                // Criando link de download
+                const a = document.createElement('a');
+                a.href = image;
+                a.download = 'killfeed.png';
+                a.click();
+            });
         }
     </script>
 </body>
