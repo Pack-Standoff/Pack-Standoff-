@@ -88,7 +88,7 @@
         <input type="text" id="player1" placeholder="Player 1" required>
         <select id="weapon" required>
             <option value="" disabled selected>Selecione a Arma</option>
-            <option value="ak47">AK-47</option>
+            <option value="akr">AKR</option>
             <option value="m4a1">M4A1</option>
             <option value="awp">AWP</option>
             <option value="deagle">Desert Eagle</option>
@@ -126,7 +126,7 @@
             player1Span.style.color = team1 === 'CT' ? 'blue' : 'orange';
 
             const weaponImg = document.createElement('img');
-            weaponImg.src = `icons/${weapon}.png`;
+            weaponImg.src = `https://tinyurl.com/ycxyfpat`;
             weaponImg.alt = weapon;
             weaponImg.width = 32;
             weaponImg.height = 32;
@@ -193,8 +193,11 @@
 
             // Imagem da arma
             try {
-                const img = await loadImage(`icons/${weapon}.png`);
-                ctx.drawImage(img, 150, 10, 32, 32);
+                const img = await loadImage(`https://tinyurl.com/ycxyfpat`);
+                const aspectRatio = img.width / img.height;
+                const imgHeight = 32;
+                const imgWidth = imgHeight * aspectRatio;
+                ctx.drawImage(img, 150, 10, imgWidth, imgHeight);
 
                 // Texto do player 2
                 ctx.fillStyle = team2 === 'CT' ? 'blue' : 'orange';
