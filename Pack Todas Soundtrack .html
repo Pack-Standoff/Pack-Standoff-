@@ -39,16 +39,15 @@
             background-color: #666;
         }
         .killfeed {
-            position: relative; /* Adicionado para posicionamento relativo */
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 10px 0;
-            background-color: rgba(0, 0, 0, 0.5); /* Fundo preto com 0.5 de transparência */
+            background-color: rgba(0, 0, 0, 0.5);
             padding: 10px;
             border-radius: 5px;
-            border: 2px solid #8B0000; /* Bordas vermelho escuro */
-            pointer-events: none; /* Impede que o killfeed seja clicável ou selecionável */
+            border: 2px solid #8B0000;
+            pointer-events: none;
         }
         .killfeed img {
             margin: 0 10px;
@@ -127,7 +126,7 @@
             player1Span.style.color = team1 === 'CT' ? 'blue' : 'orange';
 
             const weaponImg = document.createElement('img');
-            weaponImg.src = `icons/${weapon}.png`; // Certifique-se de ter as imagens na pasta "icons"
+            weaponImg.src = `icons/${weapon}.png`;
             weaponImg.alt = weapon;
             weaponImg.width = 32;
             weaponImg.height = 32;
@@ -154,7 +153,7 @@
             const a = document.createElement('a');
             a.href = image;
             a.download = 'killfeed.png';
-            a.click(); // Simula o clique no link para iniciar o download
+            a.click();
         });
 
         function generateImage(player1, team1, weapon, player2, team2) {
@@ -199,7 +198,7 @@
                 imgElement.src = image;
                 imgElement.alt = 'Killfeed Image';
                 killfeedContainer.appendChild(imgElement);
-            }
+            };
         }
     </script>
 </body>
