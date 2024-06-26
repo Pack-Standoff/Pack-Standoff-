@@ -205,7 +205,7 @@
                 const imgElement = document.createElement('img');
                 imgElement.src = image;
                 imgElement.alt = 'Killfeed Image';
-                killfeedContainer.appendChild(imgElement);
+                document.getElementById('killfeed-container').appendChild(imgElement);
             } catch (error) {
                 console.error('Erro ao carregar a imagem da arma:', error);
             }
