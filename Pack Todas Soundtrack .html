@@ -92,7 +92,6 @@
             <option value="m4a1">M4A1</option>
             <option value="awp">AWP</option>
             <option value="deagle">Desert Eagle</option>
-            <!-- Adicione mais opções de armas aqui -->
         </select>
         <select id="team2" required>
             <option value="" disabled selected>Selecione o Time do Player 2</option>
@@ -141,7 +140,6 @@
 
             killfeedContainer.appendChild(killfeedItem);
 
-            // Gerar imagem do killfeed
             generateImage(player1, team1, weapon, player2, team2);
         });
 
@@ -171,7 +169,7 @@
             }
         }
 
-        async function generateImage(player1, team1, weapon, player2, team2) {
+        function generateImage(player1, team1, weapon, player2, team2) {
             const canvas = document.getElementById('killfeed-canvas');
             const ctx = canvas.getContext('2d');
 
@@ -198,24 +196,21 @@
             ctx.fillText(player1, 10, 30);
 
             // Imagem da arma
-            const img = await loadImage(getWeaponImage(weapon));
-            const aspectRatio = img.width / img.height;
-            const imgHeight = 32;
-            const imgWidth = imgHeight * aspectRatio;
-            ctx.drawImage(img, 150, 10, imgWidth, imgHeight);
+            const img = new Image();
+            img.src = getWeaponImage(weapon);
+            img.onload = function() {
+                ctx.drawImage(img, 150, 10, 32, 32);
 
-            // Texto do player 2
-            ctx.fillStyle = team2 === 'CT' ? 'blue' : 'orange';
-            ctx.fillText(player2, 200, 30);
-        }
+                // Texto do player 2
+                ctx.fillStyle = team2 === 'CT' ? 'blue' : 'orange';
+                ctx.fillText(player2, 200, 30);
 
-        function loadImage(src) {
-            return new Promise((resolve, reject) => {
-                const img = new Image();
-                img.src = src;
-                img.onload = () => resolve(img);
-                img.onerror = (err) => reject(err);
-            });
+                const killfeedImage = canvas.toDataURL('image/png');
+                const imgElement = document.createElement('img');
+                imgElement.src = killfeedImage;
+                imgElement.alt = 'Killfeed Image';
+                killfeedContainer.appendChild(imgElement);
+            };
         }
     </script>
 </body>
