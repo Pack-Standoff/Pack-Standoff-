@@ -87,15 +87,13 @@
             <option value="TR">TR</option>
         </select>
         <input type="text" id="player2" placeholder="Player 2" required>
-        <button type="submit">Gerar Killfeed</button>
+        <button type="button" onclick="generateKillfeed()">Gerar Killfeed</button>
     </form>
     <div id="killfeed-container"></div>
     <canvas id="killfeed-canvas"></canvas>
 
     <script>
-        document.getElementById('killfeed-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
+        function generateKillfeed() {
             const team1 = document.getElementById('team1').value;
             const player1 = document.getElementById('player1').value;
             const weapon = document.getElementById('weapon').value;
@@ -103,12 +101,33 @@
             const player2 = document.getElementById('player2').value;
 
             const killfeedContainer = document.getElementById('killfeed-container');
-
-            // Limpa o container antes de adicionar novo killfeed
             killfeedContainer.innerHTML = '';
 
+            const killfeedItem = document.createElement('div');
+            killfeedItem.classList.add('killfeed');
+
+            const player1Span = document.createElement('span');
+            player1Span.textContent = player1;
+            player1Span.style.color = team1 === 'CT' ? 'blue' : 'orange';
+
+            const weaponImg = document.createElement('img');
+            weaponImg.src = getWeaponImage(weapon);
+            weaponImg.alt = weapon;
+            weaponImg.width = 32;
+            weaponImg.height = 32;
+
+            const player2Span = document.createElement('span');
+            player2Span.textContent = player2;
+            player2Span.style.color = team2 === 'CT' ? 'blue' : 'orange';
+
+            killfeedItem.appendChild(player1Span);
+            killfeedItem.appendChild(weaponImg);
+            killfeedItem.appendChild(player2Span);
+
+            killfeedContainer.appendChild(killfeedItem);
+
             generateImage(player1, team1, weapon, player2, team2);
-        });
+        }
 
         function getWeaponImage(weapon) {
             switch (weapon) {
@@ -165,6 +184,8 @@
                 const imgElement = document.createElement('img');
                 imgElement.src = killfeedImage;
                 imgElement.alt = 'Killfeed Image';
+
+                // Adiciona evento de clique para baixar a imagem
                 imgElement.onclick = function() {
                     const a = document.createElement('a');
                     a.href = killfeedImage;
@@ -173,6 +194,10 @@
                     a.click();
                     document.body.removeChild(a);
                 };
+
+                // Limpa o conteúdo anterior e adiciona a nova imagem
+                const killfeedContainer = document.getElementById('killfeed-container');
+                killfeedContainer.innerHTML = '';
                 killfeedContainer.appendChild(imgElement);
             };
         }
