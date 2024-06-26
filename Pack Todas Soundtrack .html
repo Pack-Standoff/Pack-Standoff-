@@ -90,7 +90,6 @@
         <button type="button" onclick="generateKillfeed()">Gerar Killfeed</button>
     </form>
     <div id="killfeed-container"></div>
-    <canvas id="killfeed-canvas"></canvas>
 
     <script>
         function generateKillfeed() {
@@ -125,8 +124,6 @@
             killfeedItem.appendChild(player2Span);
 
             killfeedContainer.appendChild(killfeedItem);
-
-            generateImage(player1, team1, weapon, player2, team2);
         }
 
         function getWeaponImage(weapon) {
@@ -143,64 +140,6 @@
                     return '';
             }
         }
-
-        function generateImage(player1, team1, weapon, player2, team2) {
-            const canvas = document.getElementById('killfeed-canvas');
-            const ctx = canvas.getContext('2d');
-
-            // Definindo dimensões do canvas
-            const width = 400;
-            const height = 50;
-            canvas.width = width;
-            canvas.height = height;
-
-            // Definindo estilos de texto
-            ctx.font = '20px Arial';
-
-            // Fundo do killfeed com preto e 0.5 de transparência
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
-            ctx.fillRect(0, 0, width, height);
-
-            // Bordas do killfeed
-            ctx.strokeStyle = '#8B0000';
-            ctx.lineWidth = 5;
-            ctx.strokeRect(0, 0, width, height);
-
-            // Texto do player 1
-            ctx.fillStyle = team1 === 'CT' ? 'blue' : 'orange';
-            ctx.fillText(player1, 10, 30);
-
-            // Imagem da arma
-            const img = new Image();
-            img.src = getWeaponImage(weapon);
-            img.onload = function() {
-                ctx.drawImage(img, 150, 10, 32, 32);
-
-                // Texto do player 2
-                ctx.fillStyle = team2 === 'CT' ? 'blue' : 'orange';
-                ctx.fillText(player2, 200, 30);
-
-                const killfeedImage = canvas.toDataURL('image/png');
-                const imgElement = document.createElement('img');
-                imgElement.src = killfeedImage;
-                imgElement.alt = 'Killfeed Image';
-
-                // Adiciona evento de clique para baixar a imagem
-                imgElement.onclick = function() {
-                    const a = document.createElement('a');
-                    a.href = killfeedImage;
-                    a.download = 'killfeed.png';
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                };
-
-                // Limpa o conteúdo anterior e adiciona a nova imagem
-                const killfeedContainer = document.getElementById('killfeed-container');
-                killfeedContainer.innerHTML = '';
-                killfeedContainer.appendChild(imgElement);
-            };
-        }
     </script>
 </body>
-</html> 
+</html>
