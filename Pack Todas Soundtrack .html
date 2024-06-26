@@ -126,7 +126,7 @@
             player1Span.style.color = team1 === 'CT' ? 'blue' : 'orange';
 
             const weaponImg = document.createElement('img');
-            weaponImg.src = `https://tinyurl.com/ycxyfpat`;
+            weaponImg.src = getWeaponImage(weapon);
             weaponImg.alt = weapon;
             weaponImg.width = 32;
             weaponImg.height = 32;
@@ -143,26 +143,30 @@
 
             // Gerar imagem do killfeed
             generateImage(player1, team1, weapon, player2, team2);
-
-            // Limpar campos
-            document.getElementById('killfeed-form').reset();
         });
 
         document.getElementById('download-button').addEventListener('click', function() {
-            const image = document.getElementById('killfeed-canvas').toDataURL('image/png');
+            const canvas = document.getElementById('killfeed-canvas');
+            const image = canvas.toDataURL('image/png');
             const a = document.createElement('a');
             a.href = image;
             a.download = 'killfeed.png';
             a.click();
         });
 
-        function loadImage(src) {
-            return new Promise((resolve, reject) => {
-                const img = new Image();
-                img.src = src;
-                img.onload = () => resolve(img);
-                img.onerror = (err) => reject(err);
-            });
+        function getWeaponImage(weapon) {
+            switch (weapon) {
+                case 'akr':
+                    return 'https://tinyurl.com/ycxyfpat';
+                case 'm4a1':
+                    return 'path/to/m4a1.png'; // Substitua pelo caminho correto da imagem
+                case 'awp':
+                    return 'path/to/awp.png'; // Substitua pelo caminho correto da imagem
+                case 'deagle':
+                    return 'path/to/deagle.png'; // Substitua pelo caminho correto da imagem
+                default:
+                    return '';
+            }
         }
 
         async function generateImage(player1, team1, weapon, player2, team2) {
@@ -192,26 +196,31 @@
             ctx.fillText(player1, 10, 30);
 
             // Imagem da arma
-            try {
-                const img = await loadImage(`https://tinyurl.com/ycxyfpat`);
-                const aspectRatio = img.width / img.height;
-                const imgHeight = 32;
-                const imgWidth = imgHeight * aspectRatio;
-                ctx.drawImage(img, 150, 10, imgWidth, imgHeight);
+            const img = await loadImage(getWeaponImage(weapon));
+            const aspectRatio = img.width / img.height;
+            const imgHeight = 32;
+            const imgWidth = imgHeight * aspectRatio;
+            ctx.drawImage(img, 150, 10, imgWidth, imgHeight);
 
-                // Texto do player 2
-                ctx.fillStyle = team2 === 'CT' ? 'blue' : 'orange';
-                ctx.fillText(player2, 200, 30);
+            // Texto do player 2
+            ctx.fillStyle = team2 === 'CT' ? 'blue' : 'orange';
+            ctx.fillText(player2, 200, 30);
 
-                // Convertendo canvas para imagem
-                const image = canvas.toDataURL('image/png');
-                const imgElement = document.createElement('img');
-                imgElement.src = image;
-                imgElement.alt = 'Killfeed Image';
-                document.getElementById('killfeed-container').appendChild(imgElement);
-            } catch (error) {
-                console.error('Erro ao carregar a imagem da arma:', error);
-            }
+            // Convertendo canvas para imagem
+            const image = canvas.toDataURL('image/png');
+            const imgElement = document.createElement('img');
+            imgElement.src = image;
+            imgElement.alt = 'Killfeed Image';
+            document.getElementById('killfeed-container').appendChild(imgElement);
+        }
+
+        function loadImage(src) {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.src = src;
+                img.onload = () => resolve(img);
+                img.onerror = (err) => reject(err);
+            });
         }
     </script>
 </body>
