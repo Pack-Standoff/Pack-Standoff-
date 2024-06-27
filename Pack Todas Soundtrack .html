@@ -60,9 +60,6 @@
             flex-direction: column;
             align-items: center;
         }
-        canvas {
-            display: none;
-        }
     </style>
 </head>
 <body>
@@ -91,6 +88,7 @@
     </form>
     <div id="killfeed-container"></div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     <script>
         function generateKillfeed() {
             const team1 = document.getElementById('team1').value;
@@ -129,7 +127,7 @@
             const downloadButton = document.createElement('button');
             downloadButton.textContent = 'Baixar Imagem';
             downloadButton.onclick = function() {
-                downloadKillfeedImage();
+                downloadKillfeedImage(killfeedItem);
             };
             killfeedContainer.appendChild(downloadButton);
         }
@@ -149,33 +147,17 @@
             }
         }
 
-        function downloadKillfeedImage() {
-            const killfeedContainer = document.getElementById('killfeed-container');
-            const killfeedItem = killfeedContainer.querySelector('.killfeed');
-
-            if (!killfeedItem) {
-                alert('Gerar o killfeed antes de baixar a imagem.');
-                return;
-            }
-
-            const canvas = document.createElement('canvas');
-            const ctx = canvas.getContext('2d');
-
-            // Definindo dimensões do canvas
-            const width = killfeedItem.offsetWidth;
-            const height = killfeedItem.offsetHeight;
-            canvas.width = width;
-            canvas.height = height;
-
-            // Desenhando o killfeed no canvas
-            html2canvas(killfeedItem).then(canvas => {
+        function downloadKillfeedImage(element) {
+            html2canvas(element).then(canvas => {
                 const image = canvas.toDataURL('image/png');
 
                 // Criando link de download
                 const a = document.createElement('a');
                 a.href = image;
                 a.download = 'killfeed.png';
+                document.body.appendChild(a);
                 a.click();
+                document.body.removeChild(a);
             });
         }
     </script>
