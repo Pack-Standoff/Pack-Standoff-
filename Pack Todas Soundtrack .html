@@ -3,161 +3,358 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerador de Killfeed - Standoff 2</title>
+    <title>Valorização de Itens</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #282828;
-            color: #FFFFFF;
-            text-align: center;
+            background-image: url('https://tinyurl.com/yc29pv4z');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
         }
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .search-container {
             margin-bottom: 20px;
+            text-align: left;
         }
-        input[type="text"], select {
-            margin: 10px;
+        #searchInput {
+            width: 50%;
             padding: 10px;
-            background-color: #444;
-            border: none;
-            border-radius: 5px;
-            color: #FFFFFF;
+            font-size: 12px;
+            border: 3px solid #7c9bce;
+            border-radius: 4px;
+            background-color: #1c1c1c;
+        }
+        .item-container {
+            margin-bottom: 40px;
+            text-align: left;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            min-width: 300px;
+        }
+        .item-container h2 {
+            margin-bottom: 10px;
+        }
+        .collection-name {
+          font-size: 12px;
+          font-weight: 300;
+          color: white;
+          margin-bottom: 10px;
+        }
+        .item-image {
+            margin-bottom: -5px;
+        }
+        .unit-table {
+            width: 100%;
+            border: 2px solid #7c9bce;
+            border-collapse: collapse;
+        }
+        .unit-table th, .unit-table td {
+            border: transparent;
+            padding: 3px;
             text-align: center;
+            font-size: 8px;
         }
-        button {
-            margin: 10px;
-            padding: 10px 20px;
-            background-color: #555;
-            border: none;
-            border-radius: 5px;
-            color: #FFFFFF;
-            cursor: pointer;
+        .unit-table th {
+            color: white;
         }
-        button:hover {
-            background-color: #666;
+        .unit-table th.value,
+        .unit-table th.units,
+        .unit-table th.date {
+            background-color: #1c1c1c;
         }
-        .killfeed {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 10px 0;
-            background-color: rgba(0, 0, 0, 0.5);
+        .unit-table td.value-cell,
+        .unit-table td.units-cell,
+        .unit-table td.date-cell {
+            background-color: #1c1c1c;
+            color: white;
+        }
+        .chart-container {
+            background-color: #1c1c1c;
             padding: 10px;
+            border: 2px solid #7c9bce;
             border-radius: 5px;
-            border: 2px solid #8B0000;
-            pointer-events: none;
+            display: inline-block;
+            margin-top: 20px;
+            margin-bottom: 15px;
         }
-        .killfeed img {
-            margin: 0 10px;
-        }
-        .killfeed span {
-            margin: 0 5px;
-        }
-        #killfeed-container {
+        .legend-container {
             display: flex;
-            flex-direction: column;
             align-items: center;
+            margin-top: 10px;
+        }
+        .rarity-legend {
+            width: 20px;
+            height: 10px;
+            margin-right: 10px;
+            border: 1px solid #fff;
+        }
+        .rarity-nameless-legend {
+            background-color: #ffae42;
+        }
+        .rarity-arcane-legend {
+            background-color: #ff0000;
+        }
+        .rarity-legendary-legend {
+            background-color: #ff69b4;
+        }
+        .rarity-epic-legend {
+            background-color: #800080;
+        }
+        .rarity-rare-legend {
+            background-color: #00008b;
+            border: 1px solid #7c9bce;
+        }
+        .rarity-uncommon-legend {
+            background-color: #add8e6;
+        }
+        .legend-text {
+            color: white;
+            font-size: 12px;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <h1>Gerador de Killfeed - Standoff 2</h1>
-    <form id="killfeed-form">
-        <select id="team1" required>
-            <option value="" disabled selected>Selecione o Time do Player 1</option>
-            <option value="CT">CT</option>
-            <option value="TR">TR</option>
-        </select>
-        <input type="text" id="player1" placeholder="Player 1" required>
-        <select id="weapon" required>
-            <option value="" disabled selected>Selecione a Arma</option>
-            <option value="akr">AKR</option>
-            <option value="m4a1">M4A1</option>
-            <option value="awp">AWP</option>
-            <option value="deagle">Desert Eagle</option>
-        </select>
-        <select id="team2" required>
-            <option value="" disabled selected>Selecione o Time do Player 2</option>
-            <option value="CT">CT</option>
-            <option value="TR">TR</option>
-        </select>
-        <input type="text" id="player2" placeholder="Player 2" required>
-        <button type="button" onclick="generateKillfeed()">Gerar Killfeed</button>
-    </form>
-    <div id="killfeed-container"></div>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Buscar item..." onkeyup="filterItems()">
+    </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <div class="item-container" id="namelessFragment">
+        <h2>Nameless Fragment</h2>
+        <div class="collection-name">SO2 Collection</div>
+        <div class="item-image">
+            <img src="https://tinyurl.com/vkjmx5rj" alt="Nameless Fragment" width="100">
+        </div>
+        <div class="chart-container">
+            <canvas id="chart1" width="400" height="200"></canvas>
+        </div>
+        <table class="unit-table">
+            <thead>
+                <tr>
+                    <th class="value">Valor</th>
+                    <th class="value value-cell">49.000</th>
+                    <th class="value value-cell">11.799,99</th>
+                    <th class="value value-cell"></th>
+                    <th class="value value-cell"></th>
+                    <th class="value value-cell"></th>
+                </tr>
+                <tr>
+                    <th class="units">Unidades</th>
+                    <td class="units-cell">4</td>
+                    <td class="units-cell">45</td>
+                    <td class="units-cell"></td>
+                    <td class="units-cell"></td>
+                    <td class="units-cell"></td>
+                </tr>
+                <tr>
+                    <th class="date">Data</th>
+                    <td class="date-cell">23/06/2024</td>
+                    <td class="date-cell">05/07/2024</td>
+                    <td class="date-cell"></td>
+                    <td class="date-cell"></td>
+                    <td class="date-cell"></td>
+                </tr>
+            </thead>
+        </table>
+       </div>
+    </div>
+
+    <div class="item-container" id="arcaneFragment">
+        <h2>Arcane Fragment</h2>
+         <div class="collection-name">SO2 Collection</div>
+         <div class="item-image">
+            <img src="https://tinyurl.com/zyf2w45b" alt="Nameless Fragment" width="100">
+        </div>
+        <div class="chart-container">
+            <canvas id="chart2" width="400" height="200"></canvas>
+        </div>
+        <table class="unit-table">
+            <thead>
+                <tr>
+                    <th class="value">Valor</th>
+                    <th class="value value-cell">1.000</th>
+                    <th class="value value-cell">162</th>
+                    <th class="value value-cell"></th>
+                    <th class="value value-cell"></th>
+                    <th class="value value-cell"></th>
+                </tr>
+                <tr>
+                    <th class="units">Unidades</th>
+                    <td class="units-cell">42</td>
+                    <td class="units-cell">2.857</td>
+                    <td class="units-cell"></td>
+                    <td class="units-cell"></td>
+                    <td class="units-cell"></td>
+                </tr>
+                <tr>
+                    <th class="date">Data</th>
+                    <td class="date-cell">23/06/2024</td>
+                    <td class="date-cell">05/06/2024</td>
+                    <td class="date-cell"></td>
+                    <td class="date-cell"></td>
+                    <td class="date-cell"></td>
+                </tr>
+            </thead>
+        </table>
+        </div>
+    </div>
+
     <script>
-        function generateKillfeed() {
-            const team1 = document.getElementById('team1').value;
-            const player1 = document.getElementById('player1').value;
-            const weapon = document.getElementById('weapon').value;
-            const team2 = document.getElementById('team2').value;
-            const player2 = document.getElementById('player2').value;
+        // Função para criar gráficos
+        function createChart(chartId, labels, data, rarity) {
+            var ctx = document.getElementById(chartId).getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Valor',
+                        data: data,
+                        borderColor: '#00ff00', // Linha verde
+                        backgroundColor: 'rgba(0, 255, 0, 0.2)', // Fundo dos pontos verde claro
+                        borderWidth: 0.5, // Largura da borda
+                        pointBorderColor: '#00ff00', // Cor da borda dos pontos verde
+                        pointBackgroundColor: '#00ff00', // Cor de fundo dos pontos verde
+                    }]
+                },
+                options: {
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                title: function(context) {
+                                    return '';
+                                },
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.y !== null) {
+                                        label += context.parsed.y;
+                                    }
+                                    return label;
+                                },
+                                afterBody: function() {
+                                    return `Rarity: ${rarity.charAt(0).toUpperCase() + rarity.slice(1)}`;
+                                }
+                            },
+                            backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                            borderColor: 'transparent',
+                            borderWidth: 1,
+                        }
+                    },
+                    scales: {
+                        y: {
+                            position: 'right',
+                            beginAtZero: true,
+                            grid: {
+                                color: 'transparent' // Cor das linhas do grid (cinza claro)
+                            },border: {
+                                color: '#d3d3d3' // Cor da borda do eixo Y (cinza claro)
+                            },
+                            ticks: {
+                                maxRotation: 0,
+                                minRotation: 0,
+                                font: {
+                                    size: 10 // Tamanho do texto das datas
+                                },
+                                color: '#00ff00' // Texto em branco
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                maxRotation: 0,
+                                minRotation: 0,
+                                font: {
+                                    size: 9 // Tamanho do texto das datas
+                                },
+                                color: 'white' // Texto em branco
+                            },
+                            grid: {
+                                color: 'transparent' // Cor das linhas do grid (cinza claro)
+                            },
+                            border: {
+                                color: '#d3d3d3' // Cor da borda do eixo X (cinza claro)
+                            }
+                        }
+                    },
+                    animation: {
+                        duration: 2000, // Duração da animação
+                        easing: 'easeInOutQuad' // Tipo de easing
+                    }
+                }
+            });
+        }
 
-            const killfeedContainer = document.getElementById('killfeed-container');
-            killfeedContainer.innerHTML = '';
-
-            const killfeedItem = document.createElement('div');
-            killfeedItem.classList.add('killfeed');
-
-            const player1Span = document.createElement('span');
-            player1Span.textContent = player1;
-            player1Span.style.color = team1 === 'CT' ? 'blue' : 'orange';
-
-            const weaponImg = document.createElement('img');
-            weaponImg.src = getWeaponImage(weapon);
-            weaponImg.alt = weapon;
-            weaponImg.width = 32;
-            weaponImg.height = 32;
-
-            const player2Span = document.createElement('span');
-            player2Span.textContent = player2;
-            player2Span.style.color = team2 === 'CT' ? 'blue' : 'orange';
-
-            killfeedItem.appendChild(player1Span);
-            killfeedItem.appendChild(weaponImg);
-            killfeedItem.appendChild(player2Span);
-
-            killfeedContainer.appendChild(killfeedItem);
-
-            // Adiciona botão de download
-            const downloadButton = document.createElement('button');
-            downloadButton.textContent = 'Baixar Imagem';
-            downloadButton.onclick = function() {
-                downloadKillfeedImage(killfeedItem);
+        // Função para adicionar legendas
+        function addLegend(chartId, rarity) {
+            const rarityColors = {
+                'nameless': 'rarity-nameless-legend',
+                'arcane': 'rarity-arcane-legend',
+                'legendary': 'rarity-legendary-legend',
+                'epic': 'rarity-epic-legend',
+                'rare': 'rarity-rare-legend',
+                'uncommon': 'rarity-uncommon-legend'
             };
-            killfeedContainer.appendChild(downloadButton);
+            const rarityClass = rarityColors[rarity] || '';
+
+            const legendContainer = document.createElement('div');
+            legendContainer.className = 'legend-container';
+
+            const rarityLegend = document.createElement('div');
+            rarityLegend.className = `rarity-legend ${rarityClass}`;
+
+            const legendText = document.createElement('div');
+            legendText.className = 'legend-text';
+            legendText.textContent = rarity.charAt(0).toUpperCase() + rarity.slice(1);
+
+            legendContainer.appendChild(rarityLegend);
+            legendContainer.appendChild(legendText);
+
+            document.getElementById(chartId).parentNode.appendChild(legendContainer);
         }
 
-        function getWeaponImage(weapon) {
-            switch (weapon) {
-                case 'akr':
-                    return 'https://tinyurl.com/ycxyfpat';
-                case 'm4a1':
-                    return 'path/to/m4a1.png'; // Substitua pelo caminho correto da imagem
-                case 'awp':
-                    return 'path/to/awp.png'; // Substitua pelo caminho correto da imagem
-                case 'deagle':
-                    return 'path/to/deagle.png'; // Substitua pelo caminho correto da imagem
-                default:
-                    return '';
-            }
+        // Função para converter valores
+        function convertValue(value) {
+            return parseFloat(value.replace(/\./g, '').replace(',', '.'));
         }
 
-        function downloadKillfeedImage(element) {
-            html2canvas(element).then(canvas => {
-                const image = canvas.toDataURL('image/png');
+        // Função para criar gráficos para os itens
+        function createCharts() {
+            const namelessValues = [
+                convertValue('49.000,99'),
+                convertValue('11.799,99')
+            ];
+            createChart('chart1', ['23/06/2024', '05/07/2024'], namelessValues, 'nameless');
 
-                // Criando link de download
-                const a = document.createElement('a');
-                a.href = image;
-                a.download = 'killfeed.png';
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
+            const arcaneValues = [              
+                convertValue('1000'),
+                convertValue('162')
+            ];
+            createChart('chart2', ['23/06/2024', '05/07/2024'], arcaneValues, 'arcane');
+
+            // Adicionar legendas
+            addLegend('chart1', 'nameless');
+            addLegend('chart2', 'arcane');
+        }
+
+        // Criar gráficos ao carregar a página
+        window.onload = createCharts;
+
+        // Função para filtrar itens
+        function filterItems() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const items = document.querySelectorAll('.item-container');
+            items.forEach(item => {
+                const title = item.querySelector('h2').textContent.toLowerCase();
+                if (title.includes(input)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
             });
         }
     </script>
