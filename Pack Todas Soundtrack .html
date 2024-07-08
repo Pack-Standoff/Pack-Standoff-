@@ -173,27 +173,27 @@
         <div id="filterOptions" class="filter-options">
             <div class="filter-option">
                 <img src="https://via.placeholder.com/20x20?text=1" alt="Ícone 1" class="filter-icon">
-                <span>Fragmentos</span>
+                <span>Nameless</span>
             </div>
             <div class="filter-option">
                 <img src="https://via.placeholder.com/20x20?text=2" alt="Ícone 2" class="filter-icon">
-                <span>Armas</span>
+                <span>Arcane</span>
             </div>
             <div class="filter-option">
                 <img src="https://via.placeholder.com/20x20?text=3" alt="Ícone 3" class="filter-icon">
-                <span>Facas</span>
+                <span>Legendary</span>
             </div>
             <div class="filter-option">
                 <img src="https://via.placeholder.com/20x20?text=4" alt="Ícone 4" class="filter-icon">
-                <span>Adesivos</span>
+                <span>Epic</span>
             </div>
             <div class="filter-option">
                 <img src="https://via.placeholder.com/20x20?text=5" alt="Ícone 5" class="filter-icon">
-                <span>Caixas</span>
+                <span>Rare</span>
             </div>
             <div class="filter-option">
                 <img src="https://via.placeholder.com/20x20?text=6" alt="Ícone 6" class="filter-icon">
-                <span>Nameless</span>
+                <span>Uncommom</span>
             </div>
         </div>
     </div>
@@ -442,26 +442,26 @@
             <tr>
                 <th class="value">Valor</th>
                 <th class="value value-cell">3.550</th>
+                <th class="value value-cell"></th>
+                <th class="value value-cell">5.948</th>
+                <th class="value value-cell">6.875</th>
                 <th class="value value-cell">5.635</th>
-                <th class="value value-cell"></th>
-                <th class="value value-cell"></th>
-                <th class="value value-cell"></th>
             </tr>
             <tr>
                 <th class="units">Unidades</th>
                 <td class="units-cell">173</td>
+                <td class="units-cell"></td>
+                <td class="units-cell">101</td>
+                <td class="units-cell">83</td>
                 <td class="units-cell">91</td>
-                <td class="units-cell"></td>
-                <td class="units-cell"></td>
-                <td class="units-cell"></td>
             </tr>
             <tr>
                 <th class="date">Data</th>
-                <td class="date-cell">06/02/2022</td>
+                <td class="date-cell">06/02/2022</td>              
+                <td class="date-cell"></td>
+                <td class="date-cell">20/01/2023</td>
+                <td class="date-cell">01/01/2024</td>
                 <td class="date-cell">08/7/2024</td>
-                <td class="date-cell"></td>
-                <td class="date-cell"></td>
-                <td class="date-cell"></td>
             </tr>
         </thead>
     </table>
@@ -660,9 +660,11 @@
          
          const m9BayonetakumoValues = [
                convertValue('3.550'),
+               convertValue('5.948'),
+               convertValue('6.875'),
                convertValue('5.635')
         ];
-         createChart('chart7', ['06/02/2022', '08/07/2024'], m9BayonetakumoValues, 'M9 Bayoneta Kumo');
+         createChart('chart7', ['06/02/2022','20/01/2023', '01/01/2024', '08/07/2024'], m9BayonetakumoValues, 'M9 Bayoneta Kumo');
         
       // Adicionar legendas
         addLegend('chart1', 'nameless');
@@ -696,6 +698,7 @@
         const filterOptions = document.getElementById('filterOptions');
         filterOptions.style.display = filterOptions.style.display === 'none' || !filterOptions.style.display ? 'block' : 'none';
     });
+    
 </script>
 </body>
 </html>
