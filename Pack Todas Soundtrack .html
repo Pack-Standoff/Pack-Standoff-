@@ -3,11 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BetMaster</title>
-    <style>
+    <title>Pack Standoff</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">  
+    <link rel="stylesheet" href="https://pack-standoff.vercel.app/Eurostile-Reg.ttf.otf">
+    <style>      
+        @font-face {
+            font-family: 'Eurostile';
+            src: url('https://pack-standoff.vercel.app/Eurostile-Reg.ttf.otf') format('opentype');
+        }
         body {
             font-family: Arial, sans-serif;
             background-color: #1C1C1C;
+            background-image: url("https://soundtrack-season.vercel.app/Background-10.png");
+            background-size: cover;
+            background-position: center;
             margin: 0;
             padding: 0;
             display: flex;
@@ -25,37 +34,22 @@
             font-size: 24px;
             font-weight: bold;
         }
-        .logo {
-            font-size: 24px;
-            margin-left: 10px; /* Move o logo um pouco para a esquerda */
-        }
-        .nav-btn {
-            background-color: #28a745;
-            color: #fff;
-            border: none;
-            padding: 5px 15px; /* Diminuir o tamanho dos botões */
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 14px; /* Diminuir a fonte dos botões */
-            margin-left: 10px; /* Espaço entre os botões */
-        }
-        .nav-btn:hover {
-            background-color: #218838;
-        }
-        .register-btn {
-            margin-left: auto; /* Move o botão de registrar para a direita */
-        }
-        .enter-btn {
-            color: #28a745; /* Cor do texto */
-            background-color: transparent; /* Cor de fundo transparente */
-            border: 2px solid #28a745; /* Borda verde */
-        }
-        .enter-btn:hover {
-            background-color: rgba(40, 167, 69, 0.1); /* Cor de fundo ao passar o mouse */
-        }
+        .logo img {
+    height: auto; /* Ajuste a altura conforme necessário */
+    width: auto; /* Mantém a proporção da imagem */
+    display: block;
+    font-size: 10px;
+}
+        .novidades {
+    color: #fff;
+    font-size: 12px;
+    margin-top: 10px;
+    font-weight: bold;
+    margin-bottom: -15px;
 
+}
         .container {
-            background-color: #007bff;
+            background-color: transparent;
             padding: 0;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             border-radius: 5px;
@@ -64,7 +58,7 @@
             text-align: center;
             margin-top: 20px;
             color: #fff;
-            height: 200px; /* Altura fixa para o carrossel */
+            height: 100%; /* Altura fixa para o carrossel */
             overflow: hidden;
             position: relative;
         }
@@ -76,11 +70,12 @@
             position: relative;
             width: 100%; /* Adiciona 100% de largura ao carrossel */
             box-sizing: border-box; /* Inclui bordas e preenchimento na largura total */
+            
         }
         .slide {
             min-width: 100%;
             height: 100%;
-            background-color: #28a745;
+            background-color: transparent;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -88,6 +83,7 @@
         .slide img {
             width: 100%;
             height: 100%;
+            background-color: transparent;
             object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
         }
 
@@ -101,9 +97,9 @@
             align-items: center;
         }
         .indicator {
-            width: 10px; /* Reduzindo o diâmetro do indicador */
-            height: 10px; /* Reduzindo o diâmetro do indicador */
-            border-radius: 50%;
+            width: 20px; /* Reduzindo o diâmetro do indicador */
+            height: 3px; /* Reduzindo o diâmetro do indicador */
+            border-radius: 0%;
             background-color: rgba(255, 255, 255, 0.5);
             margin: 0 5px;
             cursor: pointer;
@@ -142,27 +138,30 @@
             margin-top: 20px;
             width: 100%;
             max-width: 800px; /* Ajuste conforme necessário */
-            padding: 10px;
+            padding: 13px;
             overflow-x: auto;
-            background-color: rgba(0, 0, 0, 0.3);
+            background-color: rgba(0, 0, 0, 0.4);
+            
         }
 
         .search-btn {
-            padding: 8px 10px;
-            font-size: 14px;
-            background-color: #28a745;
+            padding: 8px 6px;
+            font-size: 12px;
+            background: linear-gradient(to bottom, #7c9bce, #6a8bce);
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 3px;
             cursor: pointer;
             transition: background-color 0.3s ease;
             margin: 0 5px; /* Espaço entre os botões */
             text-align: center;
-        }
+            font-family: 'Eurostile';
+            }
 
-        .search-btn:hover {
+        .search-btn:hover {         
             background-color: transparent;
-            border: 2.5px solid #28a745;
+            border: 1.0px solid white;
+            
         }
 
         .square {
@@ -191,22 +190,22 @@
 </head>
 <body>
     <div class="navbar">
-        <div class="logo">BetMaster</div>
-        <button class="nav-btn register-btn">Registrar</button>
-        <button class="nav-btn enter-btn">Entrar</button>
-    </div>
+        <div class="logo">
+             <img src="https://pack-standoff.vercel.app/Pack_Standoff_Logo_P.png" alt="imagem" style="width: 100px; height: 15px; margin-left: 10%; object-fit: cover;" oncontextmenu="return false;"></div>
+</div>
+    <p class="novidades">Novidades</p> <!-- Adicione isso abaixo dos botões na button-bar -->
     <div class="container">
         <div class="carousel" id="carousel">
-            <div class="slide"><img src="https://soundtrack-season.vercel.app/Pack%20So2%20HP1.jpg" alt="BetMaster"></div>
-            <div class="slide"><img src="https://soundtrack-season.vercel.app/Pack%20So2%20HP1.jpg" alt="BetMaster"></div>
-            <div class="slide"><img src="https://soundtrack-season.vercel.app/Pack%20So2%20HP1.jpg" alt="BetMaster"></div>
+            <div class="slide"><img src="https://soundtrack-season.vercel.app/Pack%20So2%20HP1.jpg" alt="Slide 1"></div>
+            <div class="slide"><img src="https://soundtrack-season.vercel.app/Pack%20So2%20HP1.jpg" alt="Slide 2 "></div>
+            <div class="slide"><img src="https://soundtrack-season.vercel.app/Pack%20So2%20HP1.jpg" alt="Slide 3 "></div>
         </div>
         <div class="slide-indicators" id="indicators"></div>
     </div>
-
+   
     <div class="button-bar">
-        <button class="search-btn">Conteudo</button>
-        <button class="search-btn">Tabela</button>
+        <button class="search-btn">Conteúdo</button>
+        <button class="search-btn">Preços</button>
         <button class="search-btn">Soundtracks</button>
    </div>
 
