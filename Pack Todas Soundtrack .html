@@ -190,6 +190,9 @@
             margin: 0px 0;
             padding: 20px;
             color: #fff;
+            max-width: 800px;
+            width: 100%;
+            box-sizing: border-box;
         }
         .pack-info .title {
              font-weight: bold;
@@ -201,6 +204,7 @@
             font-size: 12px;
             line-height: 1.6;
             margin: 10px 0;
+            word-wrap: break-word;
         }
         .pack-info img {
             width: 100%;
@@ -214,6 +218,20 @@
                 max-width: 800px;
             }
         }
+      .view-btn {
+    padding: 5px 18px;
+    font-size: 12px;
+    background-color: #e79726;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: 'Bebas Neue', sans-serif;
+    margin-top: -15px;
+}
+
+.view-btn:hover {
+    background-color: #7c9bce;
+}
     </style>
 </head>
 <body>
@@ -244,6 +262,18 @@
             Conheça o pack de imagens mais completo do jogo! Imagens de alta qualidade em 4K e conteúdo exclusivo, sempre recebendo atualizações. Adquira e eleve seu trabalho com o melhor conteúdo disponível.
         </div>
     </div>
+     <button class="view-btn">Ver Conteúdo</button> <!-- Botão Adicionado Aqui -->
+     
+</div>
+    <div class="pack-info">
+        <div class="title">Amostra Gratis</div>
+        <img src="https://soundtrack-season.vercel.app/Pack%20So2%20HP1.jpg" alt="Descrição da Imagem">
+        <div class="description">
+         Experimente gratuitamente uma amostra do nosso Pack e descubra a qualidade superior que oferecemos. Explore um pouco do nosso conteúdo exclusivo antes de realizar sua compra.
+        </div>
+    </div>
+     <button class="view-btn">Baixar Amostra</button> <!-- Botão Adicionado Aqui -->
+</div>
     <script>
         const carousel = document.getElementById('carousel');
         const indicatorsContainer = document.getElementById('indicators');
