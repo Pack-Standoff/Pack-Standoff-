@@ -35,30 +35,29 @@
             font-weight: bold;
         }
         .logo img {
-    height: auto; /* Ajuste a altura conforme necessário */
-    width: auto; /* Mantém a proporção da imagem */
-    display: block;
-    font-size: 10px;
-}
+            height: auto; 
+            width: auto; 
+            display: block;
+            font-size: 10px;
+        }
         .novidades {
-    color: #fff;
-    font-size: 12px;
-    margin-top: 10px;
-    font-weight: bold;
-    margin-bottom: -15px;
-
-}
+            color: #fff;
+            font-size: 12px;
+            margin-top: 10px;
+            font-weight: bold;
+            margin-bottom: -15px;
+        }
         .container {
             background-color: transparent;
             padding: 0;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             border-radius: 5px;
-            width: 80%; /* Ajusta a largura da container */
-            max-width: 800px; /* Define uma largura máxima para a container */
+            width: 80%;
+            max-width: 800px;
             text-align: center;
             margin-top: 20px;
             color: #fff;
-            height: 100%; /* Altura fixa para o carrossel */
+            height: 100%;
             overflow: hidden;
             position: relative;
         }
@@ -66,11 +65,10 @@
             display: flex;
             transition: transform 0.5s ease-in-out;
             height: 100%;
-            align-items: center; /* Alinha os slides verticalmente ao centro */
+            align-items: center;
             position: relative;
-            width: 100%; /* Adiciona 100% de largura ao carrossel */
-            box-sizing: border-box; /* Inclui bordas e preenchimento na largura total */
-            
+            width: 100%;
+            box-sizing: border-box;
         }
         .slide {
             min-width: 100%;
@@ -84,9 +82,8 @@
             width: 100%;
             height: 100%;
             background-color: transparent;
-            object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+            object-fit: cover;
         }
-
         .slide-indicators {
             position: absolute;
             bottom: 10px;
@@ -97,8 +94,8 @@
             align-items: center;
         }
         .indicator {
-            width: 20px; /* Reduzindo o diâmetro do indicador */
-            height: 2.5px; /* Reduzindo o diâmetro do indicador */
+            width: 20px;
+            height: 2.5px;
             border-radius: 0%;
             background-color: rgba(255, 255, 255, 0.5);
             margin: 0 5px;
@@ -106,10 +103,9 @@
             transition: background-color 0.3s ease;
         }
         .indicator.active {
-            background-color: #fff;
+            background-color: #e79726;
         }
-
-       @media (max-width: 1200px) {
+        @media (max-width: 1200px) {
             .container {
                 width: 80%;
             }
@@ -130,7 +126,6 @@
                 font-size: 20px;
             }
         }
-
         @media (min-width: 1200px) {
             .container {
                 width: 70%;
@@ -144,38 +139,31 @@
                 height: auto;
             }
         }
-         
         .button-bar {
             display: flex;
             justify-content: center;
             align-items: center;
             margin-top: 20px;
             width: 100%;
-            
             padding: 13px;
             overflow-x: auto;
             background-color: rgba(0, 0, 0, 0.4);
-            
         }
-
         .search-btn {
             padding: 5px 10px;
             font-size: 12px;
-            background-color: #e79726;
+            background-color: #7c9bce;
             color: white;
             border: none;         
             cursor: pointer;
             transition: background-color 0.3s ease;
-            margin: 0 5px; /* Espaço entre os botões */
+            margin: 0 5px;
             text-align: center;
             font-family: 'Bebas Neue';
-            }
-
+        }
         .search-btn:hover {         
-    background-color:  #7c9bce
-    
-}
-            
+            background-color: #e79726;
+        }
         .square {
             width: 25%;
             height: 150px;
@@ -191,7 +179,6 @@
             transition: background-color 0.3s ease;
             margin: 0 5px;
         }
-
         .square:hover {
             background-color: #f0f0f0;
         }
@@ -199,67 +186,64 @@
             display: none;
         }
         .pack-info {
-    text-align: center;
-    margin: 10px 0;
-    padding: 20px;
-    color: #fff; /* Cor do texto */
-}
-
-.pack-info .title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 24px; /* Tamanho reduzido para o título */
-    color: #fff; /* Cor branca para o título */
-}
-
-.pack-info .description {
-    font-family: 'Eurostile', sans-serif;
-    font-size: 14px; /* Tamanho reduzido para o texto */
-    line-height: 1.6;
-}
-.pack-info img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin: 20px 0;
-}
-
-@media (min-width: 768px) {
-    .pack-info img {
-        width: 80%;
-        max-width: 800px;
-    }
-}
+            text-align: center;
+            margin: 0px 0;
+            padding: 20px;
+            color: #fff;
+        }
+        .pack-info .title {
+             font-weight: bold;
+            font-size: 15px;
+            color: #fff;
+        }
+        .pack-info .description {
+            font-family: 'Eurostile', sans-serif;
+            font-size: 12px;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+        .pack-info img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 5px 0;
+        }
+        @media (min-width: 768px) {
+            .pack-info img {
+                width: 80%;
+                max-width: 800px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="navbar">
         <div class="logo">
-             <img src="https://pack-standoff.vercel.app/Pack_Standoff_Logo_P.png" alt="imagem" style="width: 100px; height: 15px; margin-left: 10%; object-fit: cover;" oncontextmenu="return false;"></div>
-</div>
-    <p class="novidades">Novidades</p> <!-- Adicione isso abaixo dos botões na button-bar -->
+            <img src="https://pack-standoff.vercel.app/Pack_Standoff_Logo_P.png" alt="imagem" style="width: 100px; height: 15px; margin-left: 10%; object-fit: cover;" oncontextmenu="return false;">
+        </div>
+    </div>
+    <p class="novidades">Novidades</p>
     <div class="container">
         <div class="carousel" id="carousel">
             <div class="slide"><img src="https://tinyurl.com/2y2v22y6" alt="Slide 1"></div>
-            <div class="slide"><img src="https://tinyurl.com/2y2v22y6" alt="Slide 2 "></div>
-            <div class="slide"><img src="https://tinyurl.com/2y2v22y6" alt="Slide 3 "></div>
-            
+            <div class="slide"><img src="https://tinyurl.com/2y2v22y6" alt="Slide 2"></div>
+            <div class="slide"><img src="https://tinyurl.com/2y2v22y6" alt="Slide 3"></div>
         </div>
         <div class="slide-indicators" id="indicators"></div>
     </div>
-   
     <div class="button-bar">
         <button class="search-btn">Conteúdo Do Pack</button>
         <button class="search-btn">Tabela De Preços</button>
-        <button class ="search-btn">Soundtracks</button>
+        <button class="search-btn">Soundtracks</button>
         <button class="search-btn">So2 Market</button>
-  
-   </div>
-<div class="pack-info">
-    <div class="title">Pack Standoff 2</div>
-    <img src="https://soundtrack-season.vercel.app/Pack%20So2%20HP1.jpg" alt="Descrição da Imagem" style="margin: 20px 0; max-width: 100%; width: 90%; height: auto; border-radius: 5px;"> <div class="description">
-        Conheça o pack de imagens mais completo do jogo! Imagens de alta qualidade em 4K e conteúdo exclusivo, sempre recebendo atualizações. Adquira e eleve seu trabalho com o melhor conteúdo disponível.
     </div>
-</div>
+    <div class="pack-info">
+        <div class="title">Pack Standoff 2</div>
+        <img src="https://soundtrack-season.vercel.app/Pack%20So2%20HP1.jpg" alt="Descrição da Imagem">
+        <div class="description">
+            Conheça o pack de imagens mais completo do jogo! Imagens de alta qualidade em 4K e conteúdo exclusivo, sempre recebendo atualizações. Adquira e eleve seu trabalho com o melhor conteúdo disponível.
+        </div>
+    </div>
     <script>
         const carousel = document.getElementById('carousel');
         const indicatorsContainer = document.getElementById('indicators');
@@ -283,7 +267,7 @@
 
         // Função para atualizar o carrossel
         function updateCarousel() {
-            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+           carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
 
             // Atualiza os indicadores de slide
             const indicators = indicatorsContainer.querySelectorAll('.indicator');
