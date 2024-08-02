@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pack Standoff</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
     <link rel="stylesheet" href="https://pack-standoff.vercel.app/Eurostile-Reg.ttf.otf">
-    <style>      
+    <style>
         @font-face {
             font-family: 'Eurostile';
             src: url('https://pack-standoff.vercel.app/Eurostile-Reg.ttf.otf') format('opentype');
         }
+
         body {
             font-family: Arial, sans-serif;
             background-color: #1C1C1C;
             background-image: url("https://tinyurl.com/yxas35a8");
-            background-size: cover;
-            background-position: absolute;
+            background-size: fixed;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
+
         .navbar {
             width: 100%;
             background-color: #000;
@@ -34,12 +36,14 @@
             font-size: 24px;
             font-weight: bold;
         }
+
         .logo img {
-            height: auto; 
-            width: auto; 
+            height: auto;
+            width: auto;
             display: block;
             font-size: 10px;
         }
+
         .novidades {
             color: #fff;
             font-size: 12px;
@@ -47,10 +51,11 @@
             font-weight: bold;
             margin-bottom: -15px;
         }
+
         .container {
             background-color: transparent;
             padding: 0;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
             width: 80%;
             max-width: 800px;
@@ -61,6 +66,7 @@
             overflow: hidden;
             position: relative;
         }
+
         .carousel {
             display: flex;
             transition: transform 0.5s ease-in-out;
@@ -70,6 +76,7 @@
             width: 100%;
             box-sizing: border-box;
         }
+
         .slide {
             min-width: 100%;
             height: 100%;
@@ -78,12 +85,14 @@
             justify-content: center;
             align-items: center;
         }
+
         .slide img {
             width: 100%;
             height: 100%;
             background-color: transparent;
             object-fit: cover;
         }
+
         .slide-indicators {
             position: absolute;
             bottom: 10px;
@@ -93,6 +102,7 @@
             justify-content: center;
             align-items: center;
         }
+
         .indicator {
             width: 20px;
             height: 2.5px;
@@ -102,43 +112,53 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
+
         .indicator.active {
             background-color: #e79726;
         }
+
         @media (max-width: 1200px) {
             .container {
                 width: 80%;
             }
         }
+
         @media (max-width: 768px) {
             .container {
                 width: 80%;
             }
+
             .navbar {
                 font-size: 22px;
             }
         }
+
         @media (max-width: 600px) {
             .container {
                 width: 90%;
             }
+
             .navbar {
                 font-size: 20px;
             }
         }
+
         @media (min-width: 1200px) {
             .container {
                 width: 70%;
                 max-width: 1200px;
             }
+
             .navbar {
                 padding: 10px 30px;
             }
+
             .logo img {
                 width: 150px;
                 height: auto;
             }
         }
+
         .button-bar {
             display: flex;
             justify-content: center;
@@ -149,21 +169,24 @@
             overflow-x: auto;
             background-color: rgba(0, 0, 0, 0.4);
         }
+
         .search-btn {
             padding: 5px 10px;
             font-size: 12px;
             background-color: #e79726;
             color: white;
-            border: none;         
+            border: none;
             cursor: pointer;
             transition: background-color 0.3s ease;
             margin: 0 5px;
             text-align: center;
             font-family: 'Bebas Neue';
         }
-        .search-btn:hover {         
-            background-color:  #7c9bce;
+
+        .search-btn:hover {
+            background-color: #7c9bce;
         }
+
         .square {
             width: 25%;
             height: 150px;
@@ -179,12 +202,15 @@
             transition: background-color 0.3s ease;
             margin: 0 5px;
         }
+
         .square:hover {
             background-color: #f0f0f0;
         }
+
         .hidden {
             display: none;
         }
+
         .pack-info {
             text-align: center;
             margin: 0px 0;
@@ -194,11 +220,13 @@
             width: 100%;
             box-sizing: border-box;
         }
+
         .pack-info .title {
-             font-weight: bold;
+            font-weight: bold;
             font-size: 15px;
             color: #fff;
         }
+
         .pack-info .description {
             font-family: 'Eurostile', sans-serif;
             font-size: 12px;
@@ -206,40 +234,59 @@
             margin: 10px 0;
             word-wrap: break-word;
         }
-        .pack-info img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin: 5px 0;
-    max-width: 2000px; /* Aumenta o tamanho máximo */
 
+        .pack-info img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 5px 0;
         }
-        @media (min-width: 800px) {
+
+        /* Para telas maiores */
+        @media (min-width: 1200px) {
             .pack-info img {
-                width: 100%;
-                max-width: 1500px;
+                width: 80%;
+                max-width: 1800px;
             }
         }
-      .view-btn {
-    padding: 5px 18px;
-    font-size: 12px;
-    background-color: #e79726;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-family: 'Bebas Neue', sans-serif;
-    margin-top: -15px;
-}
 
-.view-btn:hover {
-    background-color: #7c9bce;
-}
+        /* Para tablets */
+        @media (min-width: 768px) and (max-width: 1199px) {
+            .pack-info img {
+                width: 90%;
+                max-width: 1200px;
+            }
+        }
+
+        /* Para celulares */
+        @media (max-width: 767px) {
+            .pack-info img {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        .view-btn {
+            padding: 5px 18px;
+            font-size: 12px;
+            background-color: #e79726;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-family: 'Bebas Neue', sans-serif;
+            margin-top: -15px;
+        }
+
+        .view-btn:hover {
+            background-color: #7c9bce;
+        }
     </style>
 </head>
+
 <body>
     <div class="navbar">
         <div class="logo">
-            <img src="https://pack-standoff.vercel.app/Pack_Standoff_Logo_P.png" alt="imagem" style="width: 100px; height: 15px; margin-left: 10%; object-fit: cover;" oncontextmenu="return false;">
+            <img src="https://tinyurl.com/3nhnxjhs" alt="imagem" style="width: 100px; height: 15px; margin-left: 10%; object-fit: cover;" oncontextmenu="return false;">
         </div>
     </div>
     <p class="novidades">Novidades</p>
@@ -264,18 +311,18 @@
             Conheça o pack de imagens mais completo do jogo! Imagens de alta qualidade em 4K e conteúdo exclusivo, sempre recebendo atualizações. Adquira e eleve seu trabalho com o melhor conteúdo disponível.
         </div>
     </div>
-     <button class="view-btn">Ver Conteúdo</button> <!-- Botão Adicionado Aqui -->
-     
-</div>
+    <button class="view-btn">Ver Conteúdo</button> <!-- Botão Adicionado Aqui -->
+
+    </div>
     <div class="pack-info">
         <div class="title">Amostra Gratis</div>
         <img src="https://tinyurl.com/59r75ves" alt="Descrição da Imagem">
         <div class="description">
-         Experimente gratuitamente uma amostra do nosso Pack e descubra a qualidade superior que oferecemos. Explore um pouco do nosso conteúdo exclusivo antes de realizar sua compra.
+            Experimente gratuitamente uma amostra do nosso Pack e descubra a qualidade superior que oferecemos. Explore um pouco do nosso conteúdo exclusivo antes de realizar sua compra.
         </div>
     </div>
-     <button class="view-btn">Baixar Amostra</button> <!-- Botão Adicionado Aqui -->
-</div>
+    <button class="view-btn">Baixar Amostra</button> <!-- Botão Adicionado Aqui -->
+    </div>
     <script>
         const carousel = document.getElementById('carousel');
         const indicatorsContainer = document.getElementById('indicators');
@@ -299,7 +346,7 @@
 
         // Função para atualizar o carrossel
         function updateCarousel() {
-           carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
 
             // Atualiza os indicadores de slide
             const indicators = indicatorsContainer.querySelectorAll('.indicator');
@@ -319,4 +366,5 @@
         }, 3000);
     </script>
 </body>
+
 </html>
