@@ -301,7 +301,7 @@
     </div>
    
     <div class="button-bar">
-        <button class="search-btn">Conteúdo Do Pack</button>
+        <button class="search-btn" onclick= "redirecionarParaConteúdo()">Conteúdo Do Pack</button>
         <button class="search-btn">Tabela De Preços</button>
         <button class="search-btn">Soundtracks</button>
         <button class="search-btn">So2 Market</button>
@@ -366,6 +366,10 @@
             currentIndex = (currentIndex + 1) % totalSlides;
             updateCarousel();
         }, 3000);
+          
+          function redirecionarParaConteúdo() {
+    window.location.href = "https://pack-standoff.vercel.app/Pack%20Standoff%20Conteúdo.html";
+    }
     </script>
 </body>
 
