@@ -9,199 +9,196 @@
     <link rel="stylesheet" href="https://pack-standoff.vercel.app/Eurostile-Reg.ttf.otf">
     <style>
         @font-face {
-    font-family: 'Eurostile';
-    src: url('https://pack-standoff.vercel.app/Eurostile-Reg.ttf.otf') format('opentype');
-}
+            font-family: 'Eurostile';
+            src: url('https://pack-standoff.vercel.app/Eurostile-Reg.ttf.otf') format('opentype');
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #1C1C1C;
-    background-image: url("https://tinyurl.com/yxas35a8");
-    background-size: fixed;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1C1C1C;
+            background-image: url("https://tinyurl.com/yxas35a8");
+            background-size: fixed;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-.navbar {
+        .navbar {
+            width: 100%;
+            background-color: #000;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo img {
+            height: auto;
+            width: auto;
+            display: block;
+            font-size: 10px;
+        }
+
+        .novidades {
+            color: #fff;
+            font-size: 20px;
+            margin-top: 10px;
+            font-weight: bold;
+            margin-bottom: 25px;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+
+        .container {
+            background-color: transparent;
+            padding: 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+            margin-top: 20px;
+            color: #fff;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        @media (max-width: 1200px) {
+            .container {
+                width: 80%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 80%;
+            }
+
+            .navbar {
+                font-size: 22px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+            }
+
+            .navbar {
+                font-size: 20px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                width: 70%;
+                max-width: 1200px;
+            }
+
+            .navbar {
+                padding: 10px 30px;
+            }
+
+            .logo img {
+                width: 150px;
+                height: auto;
+            }
+        }
+
+        .square {
+            width: 25%;
+            height: 150px;
+            background-color: transparent;
+            text-align: center;
+            color: black;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 150px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin: 0 5px;
+        }
+
+        .square:hover {
+            background-color: #f0f0f0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .pack-info {
+            text-align: center;
+            margin: -15px 0;
+            padding: 20px;
+            color: #fff;
+            max-width: 800px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .pack-info .title {
+            font-weight: bold;
+            font-size: 15px;
+            color: #fff;
+        }
+
+        .pack-info .description {
+            font-family: 'Eurostile', sans-serif;
+            font-size: 12px;
+            line-height: 1.6;
+            margin: 10px 0;
+            word-wrap: break-word;
+        }
+
+        .pack-info img {
     width: 100%;
-    background-color: #000;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #fff;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.logo img {
     height: auto;
-    width: auto;
-    display: block;
-    font-size: 10px;
-}
-
-.novidades {
-    color: #fff;
-    font-size: 20px;
-    margin-top: 10px;
-    font-weight: bold;
-    margin-bottom: 25px;
-    font-family: 'Bebas Neue', sans-serif;
-}
-
-.container {
-    background-color: transparent;
-    padding: 0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    width: 80%;
-    max-width: 800px;
-    text-align: center;
-    margin-top: 20px;
-    color: #fff;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-@media (max-width: 1200px) {
-    .container {
-        width: 80%;
-    }
-}
-
-@media (max-width: 768px) {
-    .container {
-        width: 80%;
-    }
-
-    .navbar {
-        font-size: 22px;
-    }
-}
-
-@media (max-width: 600px) {
-    .container {
-        width: 90%;
-    }
-
-    .navbar {
-        font-size: 20px;
-    }
+    border-radius: 10px;
+    margin: 5px 0;
+    
 }
 
 @media (min-width: 1200px) {
-    .container {
-        width: 70%;
-        max-width: 1200px;
-    }
-
-    .navbar {
-        padding: 10px 30px;
-    }
-
-    .logo img {
-        width: 150px;
-        height: auto;
-    }
-}
-
-.square {
-    width: 25%;
-    height: 150px;
-    background-color: transparent;
-    text-align: center;
-    color: black;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 150px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    margin: 0 5px;
-}
-
-.square:hover {
-    background-color: #f0f0f0;
-}
-
-.hidden {
-    display: none;
-}
-
-.pack-info {
-    text-align: center;
-    margin: 20px 0;
-    padding: 20px;
-    color: #fff;
-    max-width: 800px;
-    width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
-    position: relative;
-}
-
-.pack-info .title {
-    font-weight: bold;
-    font-size: 15px;
-    color: #fff;
-}
-
-.pack-info .description {
-    font-family: 'Eurostile', sans-serif;
-    font-size: 12px;
-    line-height: 1.6;
-    margin: 10px 0;
-    word-wrap: break-word;
-}
-
-.pack-info img {
-    width: 100%; /* Largura padrão para a imagem */
-    height: auto; /* Mantém a proporção da imagem */
-    max-width: 100%; /* Garante que a imagem não exceda o contêiner */
-    border-radius: 10px; /* Adiciona bordas arredondadas */
-    margin: 5px 0; /* Margens padrão */
-    transform: scale(1.2); /* Aumenta o tamanho da imagem em 20% */
-    transform-origin: center; /* Centraliza o ponto de origem da transformação */
-}
-
-@media (max-width: 1200px) {
     .pack-info img {
-        transform: scale(1.1); /* Ajuste o escalonamento conforme necessário */
+        max-width: 125%;
+        margin-left: -12.5%;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1199px) {
     .pack-info img {
-        transform: scale(1.05); /* Ajuste o escalonamento conforme necessário */
+        max-width: 100%;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
     .pack-info img {
-        transform: scale(1); /* Mantém o tamanho original para telas menores */
+        max-width: 100%;
     }
 }
 
-.view-btn {
-    padding: 5px 18px;
-    font-size: 12px;
-    background-color: #e79726;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-family: 'Bebas Neue', sans-serif;
-    margin-top: -15px;
-}
+        .view-btn {
+            padding: 5px 18px;
+            font-size: 12px;
+            background-color: #e79726;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-family: 'Bebas Neue', sans-serif;
+            margin-top: -15px;
+        }
 
-.view-btn:hover {
-    background-color: #7c9bce;
-}
+        .view-btn:hover {
+            background-color: #7c9bce;
+        }
     </style>
 </head>
 
