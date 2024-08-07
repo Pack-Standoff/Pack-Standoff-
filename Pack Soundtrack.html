@@ -1,134 +1,195 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pack Standoff 2 SoundTrack</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
-  <link rel="stylesheet" href="https://pack-standoff.vercel.app/Eurostile-Reg.ttf.otf"> 
-  <style>
-  
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #1C1C1C;
-    background-image: url("https://soundtrack-season.vercel.app/Background-10.png");
-    background-size: cover;
-    background-position: center;
-    font-family: 'Eurostile', sans-serif; /* Incluí a definição de font-family no body */
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pack Standoff</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+    <link rel="stylesheet" href="https://pack-standoff.vercel.app/Eurostile-Reg.ttf.otf">
+    <style>
+        @font-face {
+            font-family: 'Eurostile';
+            src: url('https://pack-standoff.vercel.app/Eurostile-Reg.ttf.otf') format('opentype');
+        }
 
-@font-face {
-    font-family: 'Eurostile';
-    src: url('https://pack-standoff.vercel.app/Eurostile-Reg.ttf.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1C1C1C;
+            background-image: url("https://tinyurl.com/yxas35a8");
+            background-size: fixed;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-.top-bar {
-    background-color: black;
-    color: white;
-    padding: 5px;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-}
+        .navbar {
+            width: 100%;
+            background-color: #000;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
 
-.top-bar img.left-corner {
-    position: absolute;
-    left: 0%;
-    top: 8%;
-    width: 220px;
-    height: 40px;
-}
+        .logo img {
+            height: auto;
+            width: auto;
+            display: block;
+            font-size: 10px;
+        }
 
-.scrolling-wrapper {
-    display: flex;
-    overflow-x: auto;
-    justify-content: center;
-}
+        .novidades {
+            color: #fff;
+            font-size: 25px;
+            margin-top: 20px;
+            
+            margin-bottom: 25px;
+            font-family: 'Bebas Neue', sans-serif;
+        }
 
-button {
-    padding: 10px;
-    margin-right: 0px; /* Corrigi o valor da margem direita */
-    background-color: transparent;
-    border: none;
-    color: white;
-    cursor: pointer;
-}
+        .container {
+            background-color: transparent;
+            padding: 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+            margin-top: 20px;
+            color: #fff;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
 
-button:hover {
-    background-image: url("https://soundtrack-season.vercel.app/Botao%20Houver.jpg");
-}
+        @media (max-width: 1200px) {
+            .container {
+                width: 80%;
+            }
+        }
 
-.text_trilha {
-    text-align: center;
-    margin-top: 50px;
-    color: white;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 20px;
-}
+        @media (max-width: 768px) {
+            .container {
+                width: 80%;
+            }
 
-.text_des {
-    text-align: center;
-    margin-top: 5px;
-    color: white;
-    font-family: 'Eurostile', sans-serif;
-    font-size: 15px;
-}
+            .navbar {
+                font-size: 22px;
+            }
+        }
 
-.square {
-    margin-top: 10px;
-    margin-left: 5%;
-    display: flex; /* Adicionei display: flex para que .square e .square-1 se comportem corretamente */
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 90%;
-}
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+            }
 
-.square-1 {
-    margin-top: 5px;
-    margin-left: 5%;
-    display: flex; /* Adicionei display: flex para que .square e .square-1 se comportem corretamente */
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 90%;
-}
+            .navbar {
+                font-size: 20px;
+            }
+        }
 
-.season-text {
-    background-color: transparent;
-    border: none;
-    color: white;
-    padding: 15px 0px;
-    font-size: 22px;
-    cursor: pointer;
-    border-radius: 0px;
-    font-family: 'Bebas Neue', sans-serif;
-    margin-bottom: -15px;
-    background-image: url("https://tinyurl.com/2k5kpc78");
-    max-width: 95%;
-    text-decoration: none;
-    display: inline-block;
-}
+        @media (min-width: 1200px) {
+            .container {
+                width: 70%;
+                max-width: 1200px;
+            }
 
-.audio {
-    display: none;
-}
+            .navbar {
+                padding: 10px 30px;
+            }
 
-img {
-    max-width: 95%;
-    height: auto;
-    text-align: center;
-    border: 0.1px solid #555;
-}
+            .logo img {
+                width: 150px;
+                height: auto;
+            }
+        }
 
-.escutar-button, .pause-button {
+        .square {
+            width: 25%;
+            height: 150px;
+            background-color: transparent;
+            text-align: center;
+            color: black;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 150px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin: 0 5px;
+        }
+
+        .square:hover {
+            background-color: #f0f0f0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .pack-info {
+            text-align: center;
+            margin: -15px 0;
+            padding: 20px;
+            color: #fff;
+            max-width: 800px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .pack-info .title {
+            font-weight: bold;
+            font-size: 15px;
+            color: #fff;
+        }
+
+        .pack-info .description {
+            font-family: 'Eurostile', sans-serif;
+            font-size: 12px;
+            line-height: 1.6;
+            margin: 10px 0;
+            word-wrap: break-word;
+        }
+
+        .pack-info img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 5px 0;
+        }
+
+        /* Para telas maiores */
+        @media (min-width: 1200px) {
+            .pack-info img {
+                width: 80%;
+                max-width: 1800px;
+            }
+        }
+
+        /* Para tablets */
+        @media (min-width: 768px) and (max-width: 1199px) {
+            .pack-info img {
+                width: 90%;
+                max-width: 1200px;
+            }
+        }
+
+        /* Para celulares */
+        @media (max-width: 767px) {
+            .pack-info img {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        .escutar-button, .pause-button {
     background-color: transparent;
     border: none;
     color: white;
@@ -141,233 +202,243 @@ img {
     margin-bottom: -25px;
     margin: 0 auto; /* Corrigi a posição de margem */
 }
-
-.buttom-voltar {
-    background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');
-    background-size: cover;
-    color: white;
-    padding: 3px 27px;
-    border: none;
-    cursor: pointer;
-    font-family: "Bebas Neue";
-    font-size: 13px;
-}
-
-#faixa-atual {
-    position: fixed;
-    top: 130px;
-    Right: 0%;
-    background-color: transparent;
-    background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');
-    padding: 8px;
-    border: none;
-    display: none;
-    font-family: "Bebas Neue";
-    z-index: 9999;
-}
-       
-  </style>
+    </style>
 </head>
-<body>
-  <div class="top-bar">
-    <div class="scrolling-wrapper">
-     <button onclick="redirecionarParaHome()">Home</button>
-     <button onclick="redirecionarParaConteudo()">Conteúdo</button>
-     <button onclick="redirecionarParaTabela()">Tabela</button>
-     <button onclick="redirecionarParaSoundtrack()">Soundtracks</button>
-     </div></div>
-     
-    <div class="Logo" style="margin-top: 60px;">  
-    <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 0px; text-align: center">  
-    <img src="https://soundtrack-season.vercel.app/Pack%20So2%20Logo.png" alt="imagem" style="width: 70%; height: 70%; border: none; object-fit: cover;" oncontextmenu="return false;"></div>  
-    <div class="background-square" style="width: 100%; height: 100%;"></div>
-     
-    <div class="text_trilha">
-    <div style="margin-top: 0px; ">
-    <p class="contact-text">trilhas sonoras</p>
-    </div>
-    <div class="text_des">
-    <div style="margin-top: 0px; ">
-    <p class="contact-text">Divirta-se com as trilhas sonoras que faz do jogo uma experiência Imersiva</p>
-    </div>
-      
-    <div id="faixa-atual">Nenhuma faixa tocando</div>
-      
-    <div class="square-1">   
-    <p class="season-text">2 Years</p>
-    <img src="https://soundtrack-season.vercel.app/STK_2Y.jpg"></div>
-    <div style="text-align: center; margin-top: 0px;">
-    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(1)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
-    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	
-    </div>
-    
-    <div class="square">
-    <p class="season-text">Halloween 2019</p>
-    <img src="https://soundtrack-season.vercel.app/STK_HW2019.jpg"></div>
-    <div style="text-align: center; margin-top: 0px;">
-    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(2)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
-    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	
-    </div>
-    
-    <div class="square">
-    <p class="season-text">New year madness 2020</p>
-    <img src="https://soundtrack-season.vercel.app/STK_NY2020.jpg"></div>
-    <div style="text-align: center; margin-top: 0px;">
-    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(3)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
-    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	
-    </div>
-    
-    <div class="square">
-    <p class="season-text">Season 1 Project Z9</p>
-    <img src="https://soundtrack-season.vercel.app/STK_S1.jpg"></div>
-    <div style="text-align: center; margin-top: 0px;">
-    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(4)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
-    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	
-    </div>
-     
-    <div class="square">
-    <p class="season-text">Season 2 Revival</p>
-    <img src="https://soundtrack-season.vercel.app/STK_S2.jpg"></div>
-    <div style="text-align: center; margin-top: 0px;">
-    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(5)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
-    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	
-    </div>
-  
-    <div class="square">
-    <p class="season-text">Halloween 2020</p>
-    <img src="https://soundtrack-season.vercel.app/STK_HW2020.jpg"></div>
-    <div style="text-align: center; margin-top: 0px;">
-    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(6)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
-    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	
-    </div>
-  
-    <div class="square">
-    <p class="season-text">New year 2021</p>
-    <img src="https://soundtrack-season.vercel.app/STK_NY2021.jpg"></div>
-    <div style="text-align: center; margin-top: 0px;">
-    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(7)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
-    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	
-    </div>
-  
-    <div class="square">
-    <p class="season-text">4 Years</p>
-    <img src="https://soundtrack-season.vercel.app/STK_4Y.jpg"></div>
-    <div style="text-align: center; margin-top: 0px;">
-    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(8)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
-    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	
-    </div>
-  
-    <div class="square">
-    <p class="season-text">Season 3 Dragon Rise</p>
-    <img src="https://soundtrack-season.vercel.app/STK_S3.jpg"></div>
-    <div style="text-align: center; margin-top: 0px;">
-    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(9)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
-    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	
-    </div>
-  
-    <div class="square">
-    <p class="season-text">Halloween 2021 cursed souls</p>
-    <img src="https://soundtrack-season.vercel.app/STK_HW2021.jpg"></div>
-    <div style="text-align: center; margin-top: 0px;">
-    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(10)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
-    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	
-    </div>
-  
-    <div class="square">
-    <p class="season-text">New Year 2022 Winter Fun</p>
-    <img src="https://soundtrack-season.vercel.app/STK_NY2022.jpg"></div>
-    <div style="text-align: center; margin-top: 0px;">
-    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(11)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
-    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	
-    </div>
-  
-    <div class="square">
-    <p class="season-text">5 Years</p>
-    <img src="https://soundtrack-season.vercel.app/STK_5Y.jpg"></div>
-    <div style="text-align: center; margin-top: 0px;">
-    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(12)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
-    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	
-    </div>
-  
-    <div class="square">
-    <p class="season-text">Season 4 Legends</p>
-    <img src="https://soundtrack-season.vercel.app/STK_S4.jpg"></div>
-    <div style="text-align: center; margin-top: 0px;">
-    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(13)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
-    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	
-    </div>
-  
-    <div class="square">
-    <p class="season-text">halloween 2022 Project Pandora</p>
-    <img src="https://soundtrack-season.vercel.app/STK_HW2022.jpg"></div>
-    <div style="text-align: center; margin-top: 0px;">
-    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(14)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
-    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	
-    </div>
-  
-     <div class="square">
-    <p class="season-text">New Year 2023 Hot Winter Party</p>
-    <img src="https://soundtrack-season.vercel.app/STK_NY2023.jpg"></div>
-    <div style="text-align: center; margin-top: 0px;">
-    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(15)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
-    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	
-    </div>
-  
-    <div class="square">
-    <p class="season-text">Season 5 Fireborn</p>
-    <img src="https://soundtrack-season.vercel.app/STK_S5.jpg"></div>
-    <div style="text-align: center; margin-top: 0px;">
-    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(16)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
-    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	
-    </div>
-     
-    <div class="square">
-    <p class="season-text">Space Vision</p>
-    <img src="https://soundtrack-season.vercel.app/STK_SV.jpg"></div>
-    <div style="text-align: center; margin-top: 0px;">
-    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(17)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
-    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	
-    </div>
-  
-    <div class="square">
-    <p class="season-text">Season 6 Sunstrike</p>
-    <img src="https://soundtrack-season.vercel.app/STK_S6.jpg"></div>
-    <div style="text-align: center; margin-top: 0px;">
-    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(18)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
-    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	
-    </div>
-    
-    <div class="square">
-    <p class="season-text">Halloween 2023 Subject X</p>
-    <img src="https://soundtrack-season.vercel.app/STK_HW2023.jpg"></div>
-    <div style="text-align: center; margin-top: 0px;">
-    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(19)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
-    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	
-    </div>
-  
-    <div class="square">
-    <p class="season-text">New Year 2024 Frost Chaos</p>
-    <img src="https://soundtrack-season.vercel.app/STK_NY2024.jpg"></div>
-    <div style="text-align: center; margin-top: 0px;">
-    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(20)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
-    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	
-    </div>
-  
-    <div class="square">
-    <p class="season-text">Season 7 Outcast</p>
-    <img src="https://soundtrack-season.vercel.app/STK_S7.jpg"></div>
-    <div style="text-align: center; margin-top: 0px;">
-    <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(21)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
-    <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	
-    </div>
-  
-    <div style="text-align: center; margin-top: 18px;">
-   		<button class="buttom-voltar" onclick="voltarParaPaginaAnterior()">Voltar</button> 
-    </div>
 
-     <audio class="audio" id="audio1" src="https://soundtrack-season.vercel.app/Standoff%202%20Soundtrack%202Years%20(MP3_160K).mp3" controls></audio>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="https://pack-standoff.vercel.app/Pack_So2_Fun_Sun_Logo.png" alt="imagem" style="width: 100px; height: 15px; margin-left: 10%; object-fit: cover;" oncontextmenu="return false;">
+        </div>
+    </div>
+    <p class="novidades">Trilhas sonoras</p>
+  
+      <div class="pack-info">
+      <div class="title">2 Years</div>
+        <img src="https://soundtrack-season.vercel.app/STK_2Y.jpg" alt="Imagem" loading="lazy">
+     <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(1)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
+     <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	         
+        <div class="description">
+         
+     </div>
+    </div>
+  
+      <div class="pack-info">
+      <div class="title">Halloween 2019</div>
+        <img src="https://soundtrack-season.vercel.app/STK_HW2019.jpg" alt="Imagem" loading="lazy">
+     <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(2)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
+     <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	         
+        <div class="description">
+         
+     </div>
+    </div>
+  
+      <div class="pack-info">
+      <div class="title">New Year Madness 2020</div>
+        <img src="https://soundtrack-season.vercel.app/STK_NY2020.jpg" alt="Imagem" loading="lazy">
+     <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(3)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
+     <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	         
+        <div class="description">
+         
+     </div>
+    </div>
+  
+     <div class="pack-info">
+      <div class="title">Season 1 Project Zone 9</div>
+        <img src="https://soundtrack-season.vercel.app/STK_S1.jpg" alt="Imagem" loading="lazy">
+     <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(4)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
+     <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	         
+        <div class="description">
+         
+     </div>
+    </div>
+  
+      <div class="pack-info">
+      <div class="title">Season 2 Revival</div>
+        <img src="https://soundtrack-season.vercel.app/STK_S2.jpg" alt="Imagem" loading="lazy">
+     <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(5)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
+     <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	         
+        <div class="description">
+         
+     </div>
+    </div>
+  
+     <div class="pack-info">
+      <div class="title">Halloween 2020</div>
+        <img src="https://soundtrack-season.vercel.app/STK_HW2020.jpg" alt="Imagem" loading="lazy">
+     <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(6)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
+     <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	         
+        <div class="description">
+         
+     </div>
+    </div>
+  
+      <div class="pack-info">
+      <div class="title">New Year 2021</div>
+        <img src="https://soundtrack-season.vercel.app/STK_NY2021.jpg" alt="Imagem" loading="lazy">
+     <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(7)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
+     <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	         
+        <div class="description">
+         
+     </div>
+    </div>
+  
+      <div class="pack-info">
+      <div class="title">4 Years</div>
+        <img src="https://soundtrack-season.vercel.app/STK_4Y.jpg" alt="Imagem" loading="lazy">
+     <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(8)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
+     <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	         
+        <div class="description">
+         
+     </div>
+    </div>
+  
+       <div class="pack-info">
+      <div class="title">Season 3 Dragon Rise</div>
+        <img src="https://soundtrack-season.vercel.app/STK_S3.jpg" alt="Imagem" loading="lazy">
+     <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(9)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
+     <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	         
+        <div class="description">
+         
+     </div>
+    </div>
+  
+     <div class="pack-info">
+      <div class="title">Halloween 2021 Cursed Souls</div>
+        <img src="https://soundtrack-season.vercel.app/STK_HW2021.jpg" alt="Imagem" loading="lazy">
+     <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(10)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
+     <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	         
+        <div class="description">
+         
+     </div>
+    </div>
+  
+     <div class="pack-info">
+      <div class="title">New Year 2022 Winter Fun</div>
+        <img src="https://soundtrack-season.vercel.app/STK_NY2022.jpg" alt="Imagem" loading="lazy">
+     <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(11)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
+     <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	         
+        <div class="description">
+         
+     </div>
+    </div>
+  
+     <div class="pack-info">
+      <div class="title">5 Years</div>
+        <img src="https://soundtrack-season.vercel.app/STK_5Y.jpg" alt="Imagem" loading="lazy">
+     <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(12)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
+     <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	         
+        <div class="description">
+         
+     </div>
+    </div>
+  
+        <div class="pack-info">
+      <div class="title">Season 4 Legends</div>
+        <img src="https://soundtrack-season.vercel.app/STK_S4.jpg" alt="Imagem" loading="lazy">
+     <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(13)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
+     <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	         
+        <div class="description">
+         
+     </div>
+    </div>
+  
+     <div class="pack-info">
+      <div class="title">Halloween 2022 Project Pandora</div>
+        <img src="https://soundtrack-season.vercel.app/STK_HW2022.jpg" alt="Imagem" loading="lazy">
+     <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(14)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
+     <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	         
+        <div class="description">
+         
+     </div>
+    </div>
+  
+    <div class="pack-info">
+      <div class="title">New Year 2023 Hot Winter Party</div>
+        <img src="https://soundtrack-season.vercel.app/STK_NY2023.jpg" alt="Imagem" loading="lazy">
+     <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(15)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
+     <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	         
+        <div class="description">
+         
+     </div>
+    </div>
+  
+        <div class="pack-info">
+      <div class="title">Season 5 Fireborn</div>
+        <img src="https://soundtrack-season.vercel.app/STK_S5.jpg" alt="Imagem" loading="lazy">
+     <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(16)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
+     <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	         
+        <div class="description">
+         
+     </div>
+    </div>
+  
+      <div class="pack-info">
+      <div class="title">Space Vision</div>
+        <img src="https://soundtrack-season.vercel.app/STK_SV.jpg" alt="Imagem" loading="lazy">
+     <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(17)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
+     <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	         
+        <div class="description">
+         
+     </div>
+    </div>
+  
+    <div class="pack-info">
+      <div class="title">Sunstrike</div>
+        <img src="https://soundtrack-season.vercel.app/STK_S6.jpg" alt="Imagem" loading="lazy">
+     <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(18)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
+     <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	         
+        <div class="description">
+         
+     </div>
+    </div>
+  
+     <div class="pack-info">
+      <div class="title">Halloween 2023 Subject X</div>
+        <img src="https://soundtrack-season.vercel.app/STK_HW2023.jpg" alt="Imagem" loading="lazy">
+     <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(19)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
+     <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	         
+        <div class="description">
+         
+     </div>
+    </div>
+  
+     
+     <div class="pack-info">
+      <div class="title">New Year 2024 Frost Chaos</div>
+        <img src="https://soundtrack-season.vercel.app/STK_NY2024.jpg" alt="Imagem" loading="lazy">
+     <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(20)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
+     <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	         
+        <div class="description">
+         
+     </div>
+    </div>
+  
+      <div class="pack-info">
+      <div class="title">Season 7 Outcast</div>
+        <img src="https://soundtrack-season.vercel.app/STK_S7.jpg" alt="Imagem" loading="lazy">
+     <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(21)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
+     <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	         
+        <div class="description">
+         
+     </div>
+    </div>
+  
+      <div class="pack-info">
+      <div class="title">Fun & Sun</div>
+        <img src="https://soundtrack-season.vercel.app/STK_FS.jpg" alt="Imagem" loading="lazy">
+     <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(22)" style="width: 35%; margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;">Escutar</button>
+     <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()"style="width: 35%;  margin-top: 5px; background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');background-size: cover;"> Pause</button>	         
+        <div class="description">
+         
+     </div>
+    </div>
+  
+  
+  
+     <audio class="audio" id="audio1" src="https://soundtrack-season.vercel.app/Standoff%202%20Soundtrack%202Years%20(MP3_160K).mp3" ></audio>
      <audio class="audio" id="audio2" src="https://soundtrack-season.vercel.app/Standoff%202%20Halloween%202019%20(MP3_160K)_1.mp3"></audio>
-     <audio class="audio" id="audio3" src="https://soundtrack-season.vercel.app/Standoff%202%20New%20Year%20Madness%202020%20MP3_160K).mp3" controls></audio>
+     <audio class="audio" id="audio3" src="https://soundtrack-season.vercel.app/Standoff%202%20New%20Year%20Madness%202020%20MP3_160K).mp3" ></audio>
      <audio class="audio" id="audio4" src="https://pack-standoff.vercel.app/Z9%20Project%20Season%201%20SoundTrack.mp3"></audio>
      <audio class="audio" id="audio5" src="https://pack-standoff.vercel.app/Revival%20Season%202%20SoundTrack.mp3"></audio>
      <audio class="audio" id="audio6" src="https://soundtrack-season.vercel.app/Standoff%202%20Halloween%202020%20(MP3_160K).mp3"></audio>
@@ -379,36 +450,18 @@ img {
      <audio class="audio" id="audio12" src="https://soundtrack-season.vercel.app/Standoff%202%20-%205%20Years%20Soundtrack%20(MP3_160K).mp3"></audio>
      <audio class="audio" id="audio13" src="https://pack-standoff.vercel.app/Legends%20Season%204%20SoundTrack.mp3"></audio>
      <audio class="audio" id="audio14" src="https://soundtrack-season.vercel.app/Standoff%202%20Halloween%202022%20Project%20Pandora%20%20(MP3_160K).mp3"></audio>
-     <audio class="audio" id="audio15" src="https://soundtrack-season.vercel.app/Standoff%20New%20Year%202023%20%20Hot%20Winter%20Party(MP3_160K).mp3" controls></audio>
+     <audio class="audio" id="audio15" src="https://soundtrack-season.vercel.app/Standoff%20New%20Year%202023%20%20Hot%20Winter%20Party(MP3_160K).mp3" ></audio>
      <audio class="audio" id="audio16" src="https://pack-standoff.vercel.app/Fireborn%20Season%205%20SoundTrack.mp3"></audio>
-     <audio class="audio" id="audio17" src="https://soundtrack-season.vercel.app/Standoff%202%20Space%20Vision%20Soundtrack%20(MP3_160K).mp3" controls></audio>
+     <audio class="audio" id="audio17" src="https://soundtrack-season.vercel.app/Standoff%202%20Space%20Vision%20Soundtrack%20(MP3_160K).mp3" ></audio>
      <audio class="audio" id="audio18" src="https://pack-standoff.vercel.app/Dune%20(Season%206%20Loading)%20-%20Standoff%202%20OST(MP3_160K).mp3"></audio>
      <audio class="audio" id="audio19" src="https://soundtrack-season.vercel.app/Standoff%202%20Halloween%202023%20Subject-X%20(MP3_160K).mp3"></audio>
      <audio class="audio" id="audio20" src="https://soundtrack-season.vercel.app/Standoff%202%20-%20Frosty%20Chaos%20Soundtrack(MP3_160K).mp3"></audio>
      <audio class="audio" id="audio21" src="https://soundtrack-season.vercel.app/Standoff%202%20Outcast%20Soundtrack(MP3_160K).mp3"></audio>
+     <audio class="audio" id="audio22" src="https://soundtrack-season.vercel.app/Standoff%202%20Fun%20and%20Sun%20Soundtrack.mp3"></audio>
   
-<script>
-    function voltarParaPaginaAnterior() {
-    if (window.history.length > 1) {
-        window.history.back();
-    } else {
-        window.location.href = "https://pack-standoff.vercel.app/Pack%20So2.Html";
-    }
-}
-
-function redirecionarParaHome() {
-    window.location.href = "https://pack-standoff.vercel.app/Pack%20So2.Html";
-}
-
-function redirecionarParaConteudo() {
-    window.location.href = "https://pack-standoff.vercel.app/Conte%C3%BAdo.html";
-}
-
-function redirecionarParaTabela() {
-    window.location.href = "https://pack-standoff.vercel.app/Tabela.html";
-}
-
-var currentAudio = null;
+  
+   <script>
+  var currentAudio = null;
 var audioToPause = null;
 
 function playAudio(audioNumber) {
@@ -441,16 +494,8 @@ function pauseAudio() {
 document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
 });
-
-function hoverSeason(element) {
-    element.style.backgroundImage = "url('https://soundtrack-season.vercel.app/Botao%20Houver.jpg')";
-}
-
-function unhoverSeason(element) {
-    element.style.backgroundImage = "url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg')";
-}
-     
-    var currentAudio = null;
+  
+  var currentAudio = null;
     var audioToPause = null;
     var faixaAtual = document.getElementById('faixa-atual');
     var musicas = ["2 Years", "Halloween 2019", "New Year 2020", "Project Z9", "Revival", "Halloween 2020",
@@ -480,6 +525,15 @@ function unhoverSeason(element) {
             faixaAtual.style.display = 'none';
         }
     }
-  </script>
+  
+    function hoverSeason(element) {
+    element.style.backgroundImage = "url('https://soundtrack-season.vercel.app/Botao%20Houver.jpg')";
+}
+
+function unhoverSeason(element) {
+    element.style.backgroundImage = "url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg')";
+}
+    </script>
 </body>
+
 </html>
