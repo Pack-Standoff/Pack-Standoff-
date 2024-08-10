@@ -223,6 +223,15 @@
             font-family: "Bebas Neue";
             z-index: 9999;
         }
+        .buttom-voltar {
+            background-size: cover;
+            background-color: #e79726;
+            color: white;
+            padding: 3px 27px;
+            border: none;
+            cursor: pointer;
+            font-family: "Bebas Neue";
+            font-size: 13px;
     </style>
 </head>
 
@@ -457,6 +466,10 @@
 
         </div>
     </div>
+  
+      <div style="text-align: center; margin-top: 18px;">
+   		<button class="buttom-voltar" onclick="voltarParaPaginaAnterior()">Voltar</button> 
+    </div>
 
 
 
@@ -485,6 +498,13 @@
 
 
     <script>
+            function voltarParaPaginaAnterior() {
+    if (window.history.length > 1) {
+        window.history.back();
+    } else {
+        window.location.href = "https://pack-standoff.vercel.app/Pack%20So2.Html";
+    }
+}
         var currentAudio = null;
         var audioToPause = null;
         var faixaAtual = document.getElementById('faixa-atual');
