@@ -243,13 +243,13 @@
         }
 
         /* Para telas maiores */
-@media (min-width: 1200px) {
-    .pack-info img {
-        width: 150%;
-        max-width: none;
-        margin-left: -25%;
-    }
-}
+        @media (min-width: 1200px) {
+            .pack-info img {
+                width: 150%;
+                max-width: none;
+                margin-left: -25%;
+            }
+        }
 
         /* Para tablets */
         @media (min-width: 768px) and (max-width: 1199px) {
@@ -276,13 +276,12 @@
             cursor: pointer;
             font-family: 'Bebas Neue', sans-serif;
             margin-top: -15px;
-            
+
         }
 
         .view-btn:hover {
             background-color: #7c9bce;
         }
-        
     </style>
 </head>
 
@@ -301,12 +300,12 @@
         </div>
         <div class="slide-indicators" id="indicators"></div>
     </div>
-   
+
     <div class="button-bar">
-        <button class="search-btn" onclick= "redirecionarParaConteúdo()">Conteúdo Do Pack</button>
-        <button class="search-btn" onclick= "redirecionarParaTabela()" >Tabela De Preços</button>
-        <button class="search-btn" onclick= "redirecionarParaSoundtrack()">Soundtracks</button>
-        <button class="search-btn" onclick= "redirecionarParaMarket()">So2 Market</button>
+        <button class="search-btn" onclick="redirecionarParaConteúdo()">Conteúdo Do Pack</button>
+        <button class="search-btn" onclick="redirecionarParaTabela()">Tabela De Preços</button>
+        <button class="search-btn" onclick="redirecionarParaSoundtrack()">Soundtracks</button>
+        <button class="search-btn" onclick="redirecionarParaMarket()">So2 Market</button>
     </div>
     <div class="pack-info">
         <div class="title">Pack Standoff 2</div>
@@ -315,7 +314,7 @@
             Conheça o pack de imagens mais completo do jogo! Imagens de alta qualidade em 4K e conteúdo exclusivo, sempre recebendo atualizações. Adquira e eleve seu trabalho com o melhor conteúdo disponível.
         </div>
     </div>
-    <button class="view-btn" onclick= "redirecionarParaConteúdo()">Ver Conteúdo</button>
+    <button class="view-btn" onclick="redirecionarParaConteúdo()">Ver Conteúdo</button>
 
     </div>
     <div class="pack-info">
@@ -325,17 +324,17 @@
             Experimente gratuitamente uma amostra do nosso Pack e descubra a qualidade superior que oferecemos. Explore um pouco do nosso conteúdo exclusivo antes de realizar sua compra.
         </div>
     </div>
-    <button class="view-btn">Baixar Amostra</button> 
+    <button class="view-btn">Baixar Amostra</button>
     </div>
 
     <div class="pack-info">
         <div class="title">Soundtracks</div>
         <img src="https://tinyurl.com/59r75ves" alt="Soundtracks">
         <div class="description">
-             Escute e relembre todos os momentos épicos de Standoff 2 com a nossa coleção completa de trilhas sonoras do jogo! Disponibilizamos para você todas as músicas que marcaram os eventos e atualizações do jogo ao longo dos anos. 
+            Escute e relembre todos os momentos épicos de Standoff 2 com a nossa coleção completa de trilhas sonoras do jogo! Disponibilizamos para você todas as músicas que marcaram os eventos e atualizações do jogo ao longo dos anos.
         </div>
     </div>
-    <button class="view-btn" style= "margin-bottom: 20px;">Escutar Soundtracks</button> 
+    <button class="view-btn" style="margin-bottom: 20px;" onclick="redirecionarParaSoundtrack()">Escutar Soundtracks</button>
     </div>
 
     <script>
@@ -379,16 +378,18 @@
             currentIndex = (currentIndex + 1) % totalSlides;
             updateCarousel();
         }, 3000);
-          
-          function redirecionarParaConteúdo() {
-    window.location.href = "https://pack-standoff.vercel.app/Pack%20Standoff%20Conteúdo.html";
-    }
-          function redirecionarParaTabela() {
-    window.location.href = "https://pack-standoff.vercel.app/Tabela.html";
-    }
-          function redirecionarParaSoundtrack() {
-    window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
-    }
+
+        function redirecionarParaConteúdo() {
+            window.location.href = "https://pack-standoff.vercel.app/Pack%20Standoff%20Conteúdo.html";
+        }
+
+        function redirecionarParaTabela() {
+            window.location.href = "https://pack-standoff.vercel.app/Tabela.html";
+        }
+
+        function redirecionarParaSoundtrack() {
+            window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
+        }
     </script>
 </body>
 
