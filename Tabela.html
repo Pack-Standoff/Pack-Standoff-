@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,7 +49,7 @@
             margin-top: 20px;
             margin-bottom: 20px;
             font-family: 'Bebas Neue', sans-serif;
-        
+
         }
 
         .container {
@@ -120,12 +119,14 @@
         .rectangle {
             background-color: rgba(0, 0, 0, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 5px;
             opacity: 1;
-            padding: 10px;
+            padding: 8px;
             margin-top: 30px;
-            width: 85%;
+            width: 80%;
             height: 40px;
             margin: 0 auto;
+            margin-bottom: 5px;
             text-align: center;
         }
 
@@ -145,38 +146,55 @@
             margin-top: -37px;
         }
 
-        .bottom-voltar {
-             background-color: #e79726;
-             background-size: cover;
+        .table-container {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .table-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .order-text {
             color: white;
-            margin-top: 30px;
-            margin-bottom: 30px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 15px;
+            margin: 0;
+        }
+
+        .bottom-voltar {
+            background-color: #e79726;
+            color: white;
             padding: 3px 20px;
             border: none;
             cursor: pointer;
-            font-family: "Bebas Neue";
-            font-size: 16px;
+            font-family: 'Bebas Neue';
+            font-size: 15px;
+            transition: background-color 0.3s ease;
         }
-         .bottom-voltar:hover {
-           background-color: #7c9bce
-         }
-     
-        .table-container {
-            margin: 0 auto;
-            width: 90%;
-            padding-top: 10px;
+
+        .bottom-voltar:hover {
+            background-color: #7c9bce;
         }
 
         table {
             width: 100%;
-            border-collapse: collapse;
+            font-size: 13px;
             font-family: 'Bebas Neue', sans-serif;
             color: white;
+            border-collapse: separate;
+            border-spacing: 0;
+
+            overflow: hidden;
         }
 
         th,
         td {
-            border: 1px solid rgba(255, 255, 255, 0.7);
+            border: 0.5px solid rgba(255, 255, 255, 0.7);
+            border-radius: 0px;
             padding: 8px;
             text-align: left;
             color: white;
@@ -204,108 +222,128 @@
         </div>
     </div>
     <p class="novidades">Tabela de Preços</p>
-
     <div class="table-container">
+        <div class="table-header">
+            <p class="order-text">Ordenar por Preço</p>
+            <button class="bottom-voltar" id="ordenarButton" onclick="ordenarTabela()">Preço</button>
+        </div>
+
         <table>
             <tr>
                 <th colspan="2">Conteúdo</th>
                 <th colspan="2" style="text-align: center">Dinheiro ou Golds</th>
             </tr>
-            </tr>
             <tr>
-                <td style="text-align: center; padding-top: 11px;"><img src="https://soundtrack-season.vercel.app/Icon_TFacas.png" alt="" style="width: 25x; height: 20px;"></td>
+            <tr>
+                <td style="text-align: center; padding-top: 11px;"><img src="https://soundtrack-season.vercel.app/Icon_TFacas.png" alt="" style="width: 25px; height: 20px;"></td>
                 <td>Facas</td>
                 <td>R$ 8,00</td>
                 <td>184 Golds</td>
             </tr>
+
             <tr>
                 <td style="text-align: center; padding-top: 11px;"><img src="https://soundtrack-season.vercel.app/Icon%20TPersonagens.png" alt="" style="width: 25px; height: 17px;"></td>
                 <td>Personagens</td>
                 <td>R$ 25,00</td>
                 <td>575 Golds</td>
             </tr>
+
             <tr>
                 <td style="text-align: center; padding-top: 9px;"><img src="https://soundtrack-season.vercel.app/Icon%20TPatente.png" alt="patentes" style="width: 20px; height: 20px;"></td>
                 <td>Patentes</td>
                 <td>R$ 6,00</td>
                 <td>138 Golds</td>
             </tr>
+
             <tr>
                 <td style="text-align: center; padding-top: 9px;"><img src="https://soundtrack-season.vercel.app/Icon%20TVeteran.png" alt="medalha veterana" style="width: 27px; height: 17px;"></td>
                 <td>Medalhas Veteranas</td>
                 <td>R$ 5,00</td>
                 <td>115 Golds</td>
             </tr>
+
             <tr>
                 <td style="text-align: center; padding-top: 10px;"><img src="https://soundtrack-season.vercel.app/Icon%20TVeteran.png" alt="medalha de passe" style="width: 27px; height: 17px;"></td>
                 <td>Medalhas de Passe</td>
                 <td>R$ 8,00</td>
                 <td>184 Golds</td>
             </tr>
+
             <tr>
                 <td style="text-align: center; padding-top: 10px;"><img src="https://soundtrack-season.vercel.app/Icon%20TStickers.png" alt="adesivos" style="width: 18px; height: 18px;"></td>
                 <td>Adesivos</td>
                 <td>R$ 5,00</td>
                 <td>115 golds</td>
             </tr>
+
             <tr>
                 <td style="text-align: center; padding-top: 10px;"><img src="https://soundtrack-season.vercel.app/Icon%20TStickers.png" alt="adesivos shield" style="width: 18px; height: 18px;"></td>
                 <td>Adesivos Shield</td>
                 <td>R$ 3,00</td>
                 <td>69 golds</td>
             </tr>
+
             <tr>
                 <td style="text-align: center; padding-top: 10px;"><img src="https://soundtrack-season.vercel.app/Icon%20TGrafites.png" alt="grafites" style="width: 18px; height: 18px;"></td>
                 <td>grafites</td>
                 <td>Gratís</td>
                 <td>Gratís</td>
             </tr>
+
             <tr>
                 <td style="text-align: center; padding-top: 11px;"><img src="https://soundtrack-season.vercel.app/Icon%20TCharms.png" alt="Charms" style="width: 33px; height: 30px;"></td>
                 <td>Amuletos</td>
                 <td>R$ 4,00</td>
                 <td>92 golds</td>
             </tr>
+
             <tr>
                 <td style="text-align: center; padding-top: 11px;"><img src="https://soundtrack-season.vercel.app/Icon%20TCases.png" alt="Cases" style="width: 27px; height: 17px;"></td>
                 <td>Caixas</td>
                 <td>R$ 5,00</td>
                 <td>115 golds</td>
             </tr>
+
             <tr>
                 <td style="text-align: center; padding-top: 12px;"><img src="https://soundtrack-season.vercel.app/Icon%20TStickerPacks.png" alt="pacotes" style="width: 23px; height: 23px;"></td>
                 <td>pacotes</td>
                 <td>R$ 2,00</td>
                 <td>46 Golds</td>
             </tr>
+
             <tr>
                 <td style="text-align: center; padding-top: 12px;"><img src="https://soundtrack-season.vercel.app/Icon%20TLuvas.png" alt="luvas" style="width: 23px; height: 20px;"></td>
                 <td>luvas</td>
                 <td>R$ 8,00</td>
                 <td>184 golds</td>
             </tr>
+
             <tr>
                 <td style="text-align: center; padding-top: 12px;"><img src="https://soundtrack-season.vercel.app/Icon%20TCoins.png" alt="Coins" style="width: 20px; height: 20px;"></td>
                 <td>moedas</td>
                 <td>R$ 1,00</td>
                 <td>23 golds</td>
             </tr>
+
             <tr>
                 <td style="text-align: center; padding-top: 12px;"><img src="https://soundtrack-season.vercel.app/Icon%20TCole%C3%A7%C3%A3o.png" alt="coleçoes" style="width: 18px; height: 27px;"></td>
                 <td>coleções</td>
                 <td>R$ 0,50</td>
                 <td>11.50 golds</td>
             </tr>
+
             <tr>
                 <td style="text-align: center; padding-top: 12px;"><img src="https://soundtrack-season.vercel.app/Icon%20TGranadas.png" alt="granadas" style="width:16px; height: 21px;"></td>
                 <td>granadas</td>
                 <td>R$ 3,50</td>
                 <td>80.5 Golds</td>
             </tr>
+
             <td style="text-align: center; padding-top: 12px;"><img src="https://soundtrack-season.vercel.app/Icon%20TMapas.png" alt="mapas" style="width: 23px; height: 21px;"></td>
             <td>Mapas</td>
             <td>R$ 7,00</td>
             <td>161 Golds</td>
+            </tr>
             </tr>
         </table>
         <div class="additional-content">
@@ -329,34 +367,62 @@
                 </div>
             </div>
             <div style="text-align: center;">
-                <button class="bottom-voltar" onclick="voltarParaPaginaAnterior()">Voltar</button>
+                <button class="bottom-voltar" style="margin-top: 30px; margin-bottom: 10px;" onclick="voltarParaPaginaAnterior()">Voltar</button>
             </div>
-           
+            <script>
+                function voltarParaPaginaAnterior() {
+                    if (window.history.length > 1) {
+                        window.history.back();
+                    } else {
+                        window.location.href = "https://pack-standoff.vercel.app/Pack%20So2.Html";
+                    }
+                }
 
-            <script> 
-      function voltarParaPaginaAnterior() { 
-    if (window.history.length > 1) {
-        window.history.back(); 
-    } else {
-        window.location.href = "https://pack-standoff.vercel.app/Pack%20So2.Html";
-    }
-}
-      function copiarNomeDiscord() {
-            var nomeDiscord = "PackStandoff2#1705"; 
-            var tempInput = document.createElement("input");
-            tempInput.value = nomeDiscord;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand("copy");
-            document.body.removeChild(tempInput);
-            alert("Nome do usuário copiado: " + nomeDiscord);
-        }
-       function abrirNovaPaginaWhatsapp() {    
-            window.location.href = "https://wa.me/5511958683615";    
-          }   
-     
-    
-     </script>
+                function copiarNomeDiscord() {
+                    var nomeDiscord = "PackStandoff2#1705";
+                    var tempInput = document.createElement("input");
+                    tempInput.value = nomeDiscord;
+                    document.body.appendChild(tempInput);
+                    tempInput.select();
+                    document.execCommand("copy");
+                    document.body.removeChild(tempInput);
+                    alert("Nome do usuário copiado: " + nomeDiscord);
+                }
+
+                function abrirNovaPaginaWhatsapp() {
+                    window.location.href = "https://wa.me/5511958683615";
+                }
+
+                // Variável para rastrear o estado da ordenação
+                var ordemCrescente = false;
+
+                function ordenarTabela() {
+                    var tabela = document.querySelector("table");
+                    var linhas = Array.from(tabela.rows).slice(2); // Pega todas as linhas, exceto o cabeçalho
+
+                    linhas.sort(function(a, b) {
+                        var precoA = a.cells[2].textContent.trim();
+                        var precoB = b.cells[2].textContent.trim();
+
+                        // Converter valores para números, tratando "Gratís" como 0
+                        var valorA = precoA === "Gratís" ? 0 : parseFloat(precoA.replace('R$', '').replace(',', '.'));
+                        var valorB = precoB === "Gratís" ? 0 : parseFloat(precoB.replace('R$', '').replace(',', '.'));
+
+                        // Verifica a ordem atual e ordena de acordo
+                        return ordemCrescente ? valorA - valorB : valorB - valorA;
+                    });
+
+                    // Alterna a ordem da próxima vez que o botão for clicado
+                    ordemCrescente = !ordemCrescente;
+
+                    // Remove as linhas antigas e adiciona as novas, ordenadas
+                    linhas.forEach(function(linha) {
+                        tabela.appendChild(linha);
+                    });
+
+                    // Atualiza o texto do botão conforme a ordem
+                    document.getElementById("ordenarButton").textContent = ordemCrescente ? "Maior Preço" : "Menor Preço";
+                }
+            </script>
 </body>
-
 </html>
