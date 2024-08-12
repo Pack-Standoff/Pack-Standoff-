@@ -48,7 +48,6 @@
             color: #fff;
             font-size: 25px;
             margin-top: 20px;
-            font-weight: bold;
             margin-bottom: 25px;
             font-family: 'Bebas Neue', sans-serif;
         }
@@ -189,20 +188,24 @@
             }
         }
 
-        .view-btn {
-            padding: 5px 18px;
-            font-size: 12px;
-            background-color: #e79726;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-family: 'Bebas Neue', sans-serif;
-            margin-top: -15px;
-        }
+         .bottom-voltar,
+.bottom-comprar {
+    background-color: #e79726;
+    background-size: cover;
+    color: white;
+    padding: 3px 20px;
+    border: none;
+    cursor: pointer;
+    font-family: "Bebas Neue";
+    font-size: 16px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
 
-        .view-btn:hover {
-            background-color: #7c9bce;
-        }
+.bottom-voltar:hover,
+.bottom-comprar:hover {
+  background-color: #7c9bce
+}
     </style>
 </head>
 
@@ -323,7 +326,10 @@
         Essa categoria possui todos os mapas do jogo em 4K.
     </div>
 </div>
-      
+   <div style="text-align: center;">
+    <button class="bottom-comprar" onclick="abrirNovaPaginaComprar()">Comprar</button>
+ 	  	<button class="bottom-voltar" onclick="voltarParaPaginaAnterior()">Voltar</button>
+
     <script>          
     var images = [
         "https://pack-standoff.vercel.app/Pack_So2_Conteudo_Maps_Sandstone.jpg",
@@ -343,6 +349,17 @@
     }
 
     setInterval(changeImage, 2000);
+     
+     function voltarParaPaginaAnterior() { 
+    if (window.history.length > 1) {
+        window.history.back(); 
+    } else {
+        window.location.href = "https://pack-standoff.vercel.app/Pack%20So2.Html";
+    }
+    }
+    function abrirNovaPaginaComprar() {    
+        window.location.href = "https://pack-standoff.vercel.app/Tabela.html";   
+    }
 </script>
     </script>
 </body>
