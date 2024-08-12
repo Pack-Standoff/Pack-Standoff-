@@ -1,85 +1,122 @@
-<!DOCTYPE html> 
-<html> 
-<head> 
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Pack Standoff 2 Tabela</title> 
-    <link rel="stylesheet" href="https://pack-standoff.vercel.app/Eurostile-Reg.ttf.otf"> 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"> 
-<style> 
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pack Standoff</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+    <link rel="stylesheet" href="https://pack-standoff.vercel.app/Eurostile-Reg.ttf.otf">
+    <style>
+        @font-face {
+            font-family: 'Eurostile';
+            src: url('https://pack-standoff.vercel.app/Eurostile-Reg.ttf.otf') format('opentype');
+        }
+
         body {
-    margin: 0;
-    padding: 0;
-    background-color: #1C1C1C;
-    background-image: url("https://soundtrack-season.vercel.app/Background.png");
-    background-size: cover;
-    background-position: center;
-    font-family: Arial, sans-serif;
-   } 
-    @font-face { 
-     font-family: "Eurostile"; 
-     src: url("https://pack-standoff.vercel.app/Eurostile-Reg.ttf.otf") format("opentype"); 
-   } 
-   .top-bar {  
-     background-color: black;
-     color: white;  
-     padding: 5px;  
-     text-align: center;  
-     position: fixed;  
-     top: 0;  
-     width: 100%;  
-     z-index: 3;
-   }  
-   .top-bar img.left-corner {  
-     position: absolute;  
-     center: fixed;
-     top: 8px;  
-     width: 180px;  
-     height: 35px;
-     left: 50%;
-     transform: translateX(-50%); 
-   }  
-   .logo {
-     position: fixed;
-     top: 10%; 
-     left: 50%;
-     transform: translate(-50%, -50%);
-     width: 100px; 
-     height: auto; 
-     z-index: 1; 
-   }
-   .square {  
-     text-align: center;  
-     margin-top: 10%;  
-   }   
-    additional-content {
-     text-align: center;
-     margin-top: 70px;
-   }
-   .scrolling-wrapper {
-     display: flex;
-     overflow-x: auto;
-     justify-content: center;
-    }
-    button {
-     padding: 10px;
-     margin-right: 0px;
-           background-color: transparent;
-           border: none;
-           color: white;
-           cursor: pointer;}
-             
-           button:hover {
-           background-color: transparent;
-           background-image: url("https://soundtrack-season.vercel.app/Botao%20Houver.jpg");
-         }
-            .contact-text {
+            font-family: Arial, sans-serif;
+            background-color: #1C1C1C;
+            background-image: url("https://tinyurl.com/yxas35a8");
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: #000;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo img {
+            height: auto;
+            width: auto;
+            display: block;
+            font-size: 10px;
+        }
+
+        .novidades {
+            color: #fff;
+            font-size: 12px;
+            margin-top: 15px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            background-color: transparent;
+            padding: 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+            margin-top: 20px;
+            color: #fff;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        @media (max-width: 1200px) {
+            .container {
+                width: 80%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 80%;
+            }
+
+            .navbar {
+                font-size: 22px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+            }
+
+            .navbar {
+                font-size: 20px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                width: 70%;
+                max-width: 1200px;
+            }
+
+            .navbar {
+                padding: 10px 30px;
+            }
+
+            .logo img {
+                width: 150px;
+                height: auto;
+            }
+        }
+
+        .contact-text {
             font-family: "Bebas Neue";
             font-size: 20px;
             color: white;
             text-align: center;
-          }
-          .rectangle-1 {
+        }
+
+        .rectangle {
             background-color: rgba(0, 0, 0, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.7);
             opacity: 1;
@@ -89,229 +126,212 @@
             height: 40px;
             margin: 0 auto;
             text-align: center;
-            }
-          .rectangle-2 {
-            background-color: rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.7);
-            opacity: 1;
-            padding: 10px;
-            margin-top: 30px;
-            width: 85%;
-            height: 40px;
-            margin: 0 auto;
-            text-align: center;
-           }
-           .icon-1 {
-            width: 40px;
-            height: 40px;
-            margin-right: 75%;
-            margin-top: -2px; 
-            opacity: 1;
-           }
-           .icon-2 {
+        }
+
+        .icons {
             width: 40px;
             height: 40px;
             margin-right: 75%;
             margin-top: -2px;
             opacity: 1;
-           }
-           .d-text {
+        }
+
+        .app-text {
             font-family: 'Bebas Neue';
-            color: white; 
+            color: white;
             margin-left: 60%;
             font-size: 22px;
-            margin-top: -37px; 
-           }
-           .w-text {
-            font-family: 'Bebas Neue';
-            color: white; 
-            margin-left: 60%;
-            font-size: 22px;
-            margin-top: -37px; 
-           }
-           .bottom-voltar {
-            		background-image: url('https://soundtrack-season.vercel.app/Botao_Amarelo.jpg');
-            		background-size: cover;
-            		color: white; 
-             margin-top: 6%;
-             padding: 3px 20px; 
-             border: none; 
-             cursor: pointer; 
-             font-family: "Bebas Neue"; 
-             font-size: 16px; 
-            }
-            .table-container {
-             margin: 0 auto;
-             width: 90%;
-             padding-top: 10px;
-            }
-		            table {
-		            		width: 100%;
-		            		border-collapse: collapse;
-		            		font-family: 'Bebas Neue', sans-serif;
-		            		color: white;
-             }
-              th, td {
-              		border: 1px solid rgba(255, 255, 255, 0.7);
-              		padding: 8px;
-              		text-align: left;
-              		color: white;
-              		font-weight: normal; 
-                background-color: rgba(0, 0, 0, 0.3);
-             }
-		            th {
-		            		background-image:
-		            		background-size: cover;
-		            		background-repeat: no-repeat;
-		            		color: white;
-             }     
-		           tr:nth-child(even) {
-		           		background-color: transparent;
-             }
-		      </style>
+            margin-top: -37px;
+        }
+
+        .bottom-voltar {
+             background-color: #e79726;
+             background-size: cover;
+            color: white;
+            margin-top: 6%;
+            padding: 3px 20px;
+            border: none;
+            cursor: pointer;
+            font-family: "Bebas Neue";
+            font-size: 16px;
+        }
+         .bottom-voltar:hover {
+           background-color: #7c9bce
+         }
+     
+        .table-container {
+            margin: 0 auto;
+            width: 90%;
+            padding-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Bebas Neue', sans-serif;
+            color: white;
+        }
+
+        th,
+        td {
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            padding: 8px;
+            text-align: left;
+            color: white;
+            font-weight: normal;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        th {
+            background-image:
+                background-size: cover;
+            background-repeat: no-repeat;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: transparent;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="top-bar">
-      <div class="scrolling-wrapper">
-      <button onclick="redirecionarParaHome()">Home</button>
-      <button onclick="redirecionarParaConteudo()">Conteúdo</button>
-      <button onclick="redirecionarParaTabela()">Tabela</button>
-      <button onclick="redirecionarParaSoundtrack()">Soundtracks</button>
-      </div></div>
-  
-       <div class="square" style="margin-top: 60px;">  
-      <div style="width: 100%; height: 100%; background-color: transparent; position: relative; margin-bottom: 10px;">  
-         <img src="https://soundtrack-season.vercel.app/Pack%20So2%20Logo.png" alt="imagem" style="width: 70%; height: 70%; object-fit: cover;" oncontextmenu="return false;"></div>
-         
-       
-         <div class="table-container">
+    <div class="navbar">
+        <div class="logo">
+            <img src="https://pack-standoff.vercel.app/Pack_So2_Fun_Sun_Logo.png" alt="imagem" style="width: 100px; height: 15px; margin-left: 10%; object-fit: cover;" oncontextmenu="return false;">
+        </div>
+    </div>
+    <p class="novidades">Tabela de Preços</p>
+
+    <div class="table-container">
         <table>
             <tr>
                 <th colspan="2">Conteúdo</th>
-            		<th colspan="2" style="text-align: center">Dinheiro ou Golds</th></tr>
+                <th colspan="2" style="text-align: center">Dinheiro ou Golds</th>
             </tr>
-               <tr>
-              <td style="text-align: center; padding-top: 11px;"><img src="https://soundtrack-season.vercel.app/Icon_TFacas.png" alt="" style="width: 25x; height: 20px;"></td>
-              <td>Facas</td>
-              <td>R$ 8,00</td>
-              <td>184 Golds</td>         
             </tr>
             <tr>
-              <td style="text-align: center; padding-top: 11px;"><img src="https://soundtrack-season.vercel.app/Icon%20TPersonagens.png" alt="" style="width: 25px; height: 17px;"></td>
-              <td>Personagens</td>
-              <td>R$ 25,00</td>
-              <td>575 Golds</td>         
+                <td style="text-align: center; padding-top: 11px;"><img src="https://soundtrack-season.vercel.app/Icon_TFacas.png" alt="" style="width: 25x; height: 20px;"></td>
+                <td>Facas</td>
+                <td>R$ 8,00</td>
+                <td>184 Golds</td>
             </tr>
             <tr>
-              <td style="text-align: center; padding-top: 9px;"><img src="https://soundtrack-season.vercel.app/Icon%20TPatente.png" alt="patentes" style="width: 20px; height: 20px;"></td>
-              <td>Patentes</td>
-            	 	<td>R$ 6,00</td>
-              <td>138 Golds</td>    
+                <td style="text-align: center; padding-top: 11px;"><img src="https://soundtrack-season.vercel.app/Icon%20TPersonagens.png" alt="" style="width: 25px; height: 17px;"></td>
+                <td>Personagens</td>
+                <td>R$ 25,00</td>
+                <td>575 Golds</td>
             </tr>
             <tr>
-              <td style="text-align: center; padding-top: 9px;"><img src="https://soundtrack-season.vercel.app/Icon%20TVeteran.png" alt="medalha veterana" style="width: 27px; height: 17px;"></td>
-              <td>Medalhas Veteranas</td>
-              <td>R$ 5,00</td>
-              <td>115 Golds</td>
+                <td style="text-align: center; padding-top: 9px;"><img src="https://soundtrack-season.vercel.app/Icon%20TPatente.png" alt="patentes" style="width: 20px; height: 20px;"></td>
+                <td>Patentes</td>
+                <td>R$ 6,00</td>
+                <td>138 Golds</td>
             </tr>
-              <tr>
-              <td style="text-align: center; padding-top: 10px;"><img src="https://soundtrack-season.vercel.app/Icon%20TVeteran.png" alt="medalha de passe" style="width: 27px; height: 17px;"></td>
-              <td>Medalhas de Passe</td>
-             		<td>R$ 8,00</td>
-              <td>184 Golds</td>
+            <tr>
+                <td style="text-align: center; padding-top: 9px;"><img src="https://soundtrack-season.vercel.app/Icon%20TVeteran.png" alt="medalha veterana" style="width: 27px; height: 17px;"></td>
+                <td>Medalhas Veteranas</td>
+                <td>R$ 5,00</td>
+                <td>115 Golds</td>
             </tr>
-              <tr>
-              <td style="text-align: center; padding-top: 10px;"><img src="https://soundtrack-season.vercel.app/Icon%20TStickers.png" alt="adesivos" style="width: 18px; height: 18px;"></td>
-              <td>Adesivos</td>
-              <td>R$ 5,00</td>
-              <td>115 golds</td>
+            <tr>
+                <td style="text-align: center; padding-top: 10px;"><img src="https://soundtrack-season.vercel.app/Icon%20TVeteran.png" alt="medalha de passe" style="width: 27px; height: 17px;"></td>
+                <td>Medalhas de Passe</td>
+                <td>R$ 8,00</td>
+                <td>184 Golds</td>
             </tr>
-              <tr>
-              <td style="text-align: center; padding-top: 10px;"><img src="https://soundtrack-season.vercel.app/Icon%20TStickers.png" alt="adesivos shield" style="width: 18px; height: 18px;"></td>
-              <td>Adesivos Shield</td>
-              <td>R$ 3,00</td>
-              <td>69 golds</td>
+            <tr>
+                <td style="text-align: center; padding-top: 10px;"><img src="https://soundtrack-season.vercel.app/Icon%20TStickers.png" alt="adesivos" style="width: 18px; height: 18px;"></td>
+                <td>Adesivos</td>
+                <td>R$ 5,00</td>
+                <td>115 golds</td>
             </tr>
-              <tr>
-              <td style="text-align: center; padding-top: 10px;"><img src="https://soundtrack-season.vercel.app/Icon%20TGrafites.png" alt="grafites" style="width: 18px; height: 18px;"></td>
-              <td>grafites</td>
-              		<td>Gratís</td>
-              <td>Gratís</td>
+            <tr>
+                <td style="text-align: center; padding-top: 10px;"><img src="https://soundtrack-season.vercel.app/Icon%20TStickers.png" alt="adesivos shield" style="width: 18px; height: 18px;"></td>
+                <td>Adesivos Shield</td>
+                <td>R$ 3,00</td>
+                <td>69 golds</td>
             </tr>
-              <tr>
-              <td style="text-align: center; padding-top: 11px;"><img src="https://soundtrack-season.vercel.app/Icon%20TCharms.png" alt="Charms" style="width: 33px; height: 30px;"></td>
-              <td>Amuletos</td>
-              <td>R$ 4,00</td>
-              <td>92 golds</td>
+            <tr>
+                <td style="text-align: center; padding-top: 10px;"><img src="https://soundtrack-season.vercel.app/Icon%20TGrafites.png" alt="grafites" style="width: 18px; height: 18px;"></td>
+                <td>grafites</td>
+                <td>Gratís</td>
+                <td>Gratís</td>
             </tr>
-              <tr>
-              <td style="text-align: center; padding-top: 11px;"><img src="https://soundtrack-season.vercel.app/Icon%20TCases.png" alt="Cases" style="width: 27px; height: 17px;"></td>
-              <td>Caixas</td>
-              <td>R$ 5,00</td>
-              <td>115 golds</td>
+            <tr>
+                <td style="text-align: center; padding-top: 11px;"><img src="https://soundtrack-season.vercel.app/Icon%20TCharms.png" alt="Charms" style="width: 33px; height: 30px;"></td>
+                <td>Amuletos</td>
+                <td>R$ 4,00</td>
+                <td>92 golds</td>
             </tr>
-              <tr>
-              <td style="text-align: center; padding-top: 12px;"><img src="https://soundtrack-season.vercel.app/Icon%20TStickerPacks.png" alt="pacotes" style="width: 23px; height: 23px;"></td>
-              <td>pacotes</td>
-              <td>R$ 2,00</td>
-              <td>46 Golds</td>
+            <tr>
+                <td style="text-align: center; padding-top: 11px;"><img src="https://soundtrack-season.vercel.app/Icon%20TCases.png" alt="Cases" style="width: 27px; height: 17px;"></td>
+                <td>Caixas</td>
+                <td>R$ 5,00</td>
+                <td>115 golds</td>
             </tr>
-              <tr>
-              <td style="text-align: center; padding-top: 12px;"><img src="https://soundtrack-season.vercel.app/Icon%20TLuvas.png" alt="luvas" style="width: 23px; height: 20px;"></td>
-              <td>luvas</td>
-              <td>R$ 8,00</td>
-              <td>184 golds</td>
+            <tr>
+                <td style="text-align: center; padding-top: 12px;"><img src="https://soundtrack-season.vercel.app/Icon%20TStickerPacks.png" alt="pacotes" style="width: 23px; height: 23px;"></td>
+                <td>pacotes</td>
+                <td>R$ 2,00</td>
+                <td>46 Golds</td>
             </tr>
-              <tr>
-              		<td style="text-align: center; padding-top: 12px;"><img src="https://soundtrack-season.vercel.app/Icon%20TCoins.png" alt="Coins" style="width: 20px; height: 20px;"></td>
-              <td>moedas</td>
-              <td>R$ 1,00</td>
-              <td>23 golds</td>
+            <tr>
+                <td style="text-align: center; padding-top: 12px;"><img src="https://soundtrack-season.vercel.app/Icon%20TLuvas.png" alt="luvas" style="width: 23px; height: 20px;"></td>
+                <td>luvas</td>
+                <td>R$ 8,00</td>
+                <td>184 golds</td>
             </tr>
-              <tr>
-              <td style="text-align: center; padding-top: 12px;"><img src="https://soundtrack-season.vercel.app/Icon%20TCole%C3%A7%C3%A3o.png" alt="coleçoes" style="width: 18px; height: 27px;"></td>
-              <td>coleções</td>
-              <td>R$ 0,50</td>
-              <td>11.50 golds</td>
+            <tr>
+                <td style="text-align: center; padding-top: 12px;"><img src="https://soundtrack-season.vercel.app/Icon%20TCoins.png" alt="Coins" style="width: 20px; height: 20px;"></td>
+                <td>moedas</td>
+                <td>R$ 1,00</td>
+                <td>23 golds</td>
             </tr>
-              <tr>
-              <td style="text-align: center; padding-top: 12px;"><img src="https://soundtrack-season.vercel.app/Icon%20TGranadas.png" alt="granadas" style="width:16px; height: 21px;"></td>
-              <td>granadas</td>
-              <td>R$ 3,50</td>
-              <td>80.5 Golds</td>
-              		</tr>
-     		       <td style="text-align: center; padding-top: 12px;"><img src="https://soundtrack-season.vercel.app/Icon%20TMapas.png" alt="mapas" style="width: 23px; height: 21px;"></td>
-              <td>Mapas</td>
-              <td>R$ 7,00</td>
-              <td>161 Golds</td>
-     </tr>
-</table>
-<div class="additional-content">
-             <div style="margin-top: 10px;">
-               <p class="contact-text">Pacote Completo De:<s> R$90,00</s> por R$76,50 15% de desconto</p>
-           </div>
-<div style="text-align: center; margin-top: 10px;">
-    <p style="color: white; font-family: 'Eurostile'; font-size: 15px;">Ao Adquirir o pacote, você receberá todo o conteúdo atual e futuras atualizações.</p>
-</div>
-           <div class="additional-content">
-             <div style="margin-top: 25px;">
-               <p class="contact-text">Entre em Contato e Realize a Compra</p>
-           </div>
-             <div class="rectangle-1" onclick="copiarNomeDiscord()">
-               <img src="https://soundtrack-season.vercel.app/Icon%20TDiscord.png" alt="Imagem" class="icon-1">
-               <p class="d-text">Discord</p>
-           </div>
-             <div class="rectangle-2" onclick="abrirNovaPaginaWhatsapp()">
-               <img src="https://soundtrack-season.vercel.app/Icon%20TWhatsapp.png" alt="Imagem" class="icon-2">
-               <p class="w-text">Whatsapp</p>
-             </div>
-           </div>
-<div style="text-align: center;">
-         <button class="bottom-voltar" onclick="voltarParaPaginaAnterior()">Voltar</button>
-       </div>
-  <h>.</h>
-          
-  <script> 
+            <tr>
+                <td style="text-align: center; padding-top: 12px;"><img src="https://soundtrack-season.vercel.app/Icon%20TCole%C3%A7%C3%A3o.png" alt="coleçoes" style="width: 18px; height: 27px;"></td>
+                <td>coleções</td>
+                <td>R$ 0,50</td>
+                <td>11.50 golds</td>
+            </tr>
+            <tr>
+                <td style="text-align: center; padding-top: 12px;"><img src="https://soundtrack-season.vercel.app/Icon%20TGranadas.png" alt="granadas" style="width:16px; height: 21px;"></td>
+                <td>granadas</td>
+                <td>R$ 3,50</td>
+                <td>80.5 Golds</td>
+            </tr>
+            <td style="text-align: center; padding-top: 12px;"><img src="https://soundtrack-season.vercel.app/Icon%20TMapas.png" alt="mapas" style="width: 23px; height: 21px;"></td>
+            <td>Mapas</td>
+            <td>R$ 7,00</td>
+            <td>161 Golds</td>
+            </tr>
+        </table>
+        <div class="additional-content">
+            <div style="margin-top: 10px;">
+                <p class="contact-text">Pacote Completo De:<s> R$90,00</s> por R$76,50 15% de desconto</p>
+            </div>
+            <div style="text-align: center; margin-top: 10px;">
+                <p style="color: white; font-family: 'Eurostile'; font-size: 15px;">Ao Adquirir o pacote, você receberá todo o conteúdo atual e futuras atualizações.</p>
+            </div>
+            <div class="additional-content">
+                <div style="margin-top: 25px;">
+                    <p class="contact-text">Entre em Contato e Realize a Compra</p>
+                </div>
+                <div class="rectangle" onclick="copiarNomeDiscord()">
+                    <img src="https://soundtrack-season.vercel.app/Icon%20TDiscord.png" alt="Imagem" class="icons">
+                    <p class="app-text">Discord</p>
+                </div>
+                <div class="rectangle" onclick="abrirNovaPaginaWhatsapp()">
+                    <img src="https://soundtrack-season.vercel.app/Icon%20TWhatsapp.png" alt="Imagem" class="icons">
+                    <p class="app-text">Whatsapp</p>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <button class="bottom-voltar" onclick="voltarParaPaginaAnterior()">Voltar</button>
+            </div>
+           
+
+            <script> 
       function voltarParaPaginaAnterior() { 
     if (window.history.length > 1) {
         window.history.back(); 
@@ -332,16 +352,9 @@
        function abrirNovaPaginaWhatsapp() {    
             window.location.href = "https://wa.me/5511958683615";    
           }   
-         function redirecionarParaHome() {
-    window.location.href = "https://pack-standoff.vercel.app/Pack%20So2.Html";
-    }    
-    function redirecionarParaConteudo() {
-      window.location.href = "https://pack-standoff.vercel.app/Conte%C3%BAdo.html";
-    }
+     
     
-    function redirecionarParaSoundtrack() {
-    window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
-    }
      </script>
 </body>
+
 </html>
