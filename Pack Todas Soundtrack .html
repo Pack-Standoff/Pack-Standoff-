@@ -302,9 +302,9 @@
    
     <div class="button-bar">
         <button class="search-btn" onclick= "redirecionarParaConteúdo()">Conteúdo Do Pack</button>
-        <button class="search-btn">Tabela De Preços</button>
-        <button class="search-btn">Soundtracks</button>
-        <button class="search-btn">So2 Market</button>
+        <button class="search-btn" onclick= "redirecionarParaTabela()" >Tabela De Preços</button>
+        <button class="search-btn" onclick= "redirecionarParaSoundtrack()">Soundtracks</button>
+        <button class="search-btn" onclick= "redirecionarParaMarket()">So2 Market</button>
     </div>
     <div class="pack-info">
         <div class="title">Pack Standoff 2</div>
@@ -379,6 +379,12 @@
           
           function redirecionarParaConteúdo() {
     window.location.href = "https://pack-standoff.vercel.app/Pack%20Standoff%20Conteúdo.html";
+    }
+          function redirecionarParaTabela() {
+    window.location.href = "https://pack-standoff.vercel.app/Tabela.html";
+    }
+          function redirecionarParaSoundtrack() {
+    window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
     }
     </script>
 </body>
