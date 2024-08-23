@@ -328,14 +328,13 @@
     </div>
 
     <div class="pack-info">
-        <div class="title">Soundtracks</div>
-        <img src="https://pack-standoff.vercel.app/Pack_Standoff_Char_Soundtrack.jpg" alt="em breve">
-        <div class="description">
-            Escute e relembre todos os momentos épicos de Standoff 2 com a nossa coleção completa de trilhas sonoras do jogo! Disponibilizamos para você todas as músicas que marcaram os eventos e atualizações do jogo ao longo dos anos.
-        </div>
+    <div class="title">Soundtracks</div>
+    <img id="soundtrack-image" src="https://pack-standoff.vercel.app/Pack_Standoff_Char_Soundtrack.jpg" alt="Soundtrack">
+    <div class="description">
+        Escute e relembre todos os momentos épicos de Standoff 2 com a nossa coleção completa de trilhas sonoras do jogo! Disponibilizamos para você todas as músicas que marcaram os eventos e atualizações do jogo ao longo dos anos.
     </div>
-    <button class="view-btn" style="margin-bottom: 20px;" onclick="redirecionarParaSoundtrack()">Escutar Soundtracks</button>
-    </div>
+</div>
+<button class="view-btn" style="margin-bottom: 20px;" onclick="redirecionarParaSoundtrack()">Escutar Soundtracks</button>
 
     <script>
         const carousel = document.getElementById('carousel');
@@ -390,6 +389,22 @@
         function redirecionarParaSoundtrack() {
             window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
         }
+            
+        const soundtrackImages = [
+    "https://pack-standoff.vercel.app/Pack_Standoff_Char_Soundtrack.jpg",
+    "https://pack-standoff.vercel.app/Pack_Standoff_Char_Soundtrack2.jpg"
+];
+
+let currentImageIndex = 0;
+const soundtrackImageElement = document.getElementById('soundtrack-image');
+
+function changeSoundtrackImage() {
+    currentImageIndex = (currentImageIndex + 1) % soundtrackImages.length;
+    soundtrackImageElement.src = soundtrackImages[currentImageIndex];
+}
+
+// Troca de imagem a cada 1 segundo
+setInterval(changeSoundtrackImage, 1000);
     </script>
 </body>
 
