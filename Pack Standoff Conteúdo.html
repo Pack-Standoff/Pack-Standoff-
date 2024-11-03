@@ -219,7 +219,7 @@
     <p class="novidades">Conteúdo do Pack</p>
     <div class="pack-info">
         <div class="title">Personagens</div>
-        <img src="https://pack-standoff.vercel.app/Pack_So2_Conteudo_Personagens.jpg" alt="Imagem" loading="lazy">
+        <img src="https://pack-standoff.vercel.app/Pack_So2_Conteudo_Personagens1.jpg" alt="Imagem" loading="lazy">
         <div class="description">
             Essa categoria possui mais de 300 Renders exclusivas, Mais os persongens de eventos
         </div>    
@@ -232,17 +232,16 @@
          Essa categoria possui todas skins de todas as facas
         </div>
     </div>
-  
     <div class="pack-info">
-        <div class="title">Patentes</div>
-        <img src="https://pack-standoff.vercel.app/Pack_So2_Conteudo_Patente1.jpg" alt="Imagem" loading="lazy">
-        <img src="https://pack-standoff.vercel.app/Pack_So2_Conteudo_Patente2.jpg" alt="Imagem" loading="lazy">
-        <img src="https://pack-standoff.vercel.app/Pack_So2_Conteudo_Patente3.jpg" alt="Imagem" loading="lazy">   
-        <div class="description">
-         Essa categoria possui todas as patentes dos modos Competitivo, Aliados e Batalha de Clã
-        </div>
+    <div class="title">Patentes</div>
+    <div class="map-carousel">
+        <img id="ranks-image-1" src="https://pack-standoff.vercel.app/Pack_So2_Conteudo_Patente1.jpg" alt="Map Image 1" loading="lazy">
+        <img id="ranks-image-2" src="https://pack-standoff.vercel.app/Pack_So2_Conteudo_Patente2.jpg" alt="Map Image 2" loading="lazy">
     </div>
-  
+      <div class="description">
+         Essa categoria possui todas as patentes dos modos Competitivo, Aliados, Duelo e Batalha de Clã
+        </div></div>
+      
      <div class="pack-info">
         <div class="title">Medalhas Veteranas</div>
         <img src="https://pack-standoff.vercel.app/Pack_So2_Conteudo_Medalhas_Veteranas.jpg" alt="Imagem" loading="lazy">
@@ -251,7 +250,7 @@
         </div>
     </div>
      
-       <div class="pack-info">
+             <div class="pack-info">
         <div class="title">Medalhas De Passe</div>
         <img src="https://pack-standoff.vercel.app/Pack_So2_Conteudo_Medalhas_De_Passe.jpg" alt="Imagem" loading="lazy">
         <div class="description">
@@ -347,8 +346,9 @@
     <button class="bottom-comprar" onclick="abrirNovaPaginaComprar()">Comprar</button>
  	  	<button class="bottom-voltar" onclick="voltarParaPaginaAnterior()">Voltar</button>
 
-    <script>          
-    var images = [
+   <script>
+    // Para o conjunto de imagens de mapas
+    var mapsImages = [
         "https://pack-standoff.vercel.app/Pack_So2_Conteudo_Maps_Sandstone.jpg",
         "https://pack-standoff.vercel.app/Pack_So2_Conteudo_Maps_Zone7.jpg",
         "https://pack-standoff.vercel.app/Pack_So2_Conteudo_Maps_Province.jpg",
@@ -357,29 +357,49 @@
         "https://pack-standoff.vercel.app/Pack_So2_Conteudo_Maps_Rust.jpg"
     ];
 
-    var currentImageIndex = 0;
+    var currentMapImageIndex = 0;
     var mapsImage1 = document.getElementById("maps-image-1");
     var mapsImage2 = document.getElementById("maps-image-2");
 
-    function changeImage() {
-        mapsImage1.src = images[currentImageIndex];
-        mapsImage2.src = images[(currentImageIndex + 1) % images.length];
-        currentImageIndex = (currentImageIndex + 1) % images.length;
+    function changeMapImage() {
+        mapsImage1.src = mapsImages[currentMapImageIndex];
+        mapsImage2.src = mapsImages[(currentMapImageIndex + 1) % mapsImages.length];
+        currentMapImageIndex = (currentMapImageIndex + 1) % mapsImages.length;
+    }    
+
+    setInterval(changeMapImage, 1200);
+     
+    // Para o conjunto de imagens de patentes
+    var ranksImages = [
+        "https://pack-standoff.vercel.app/Pack_So2_Conteudo_Patente1.jpg",
+        "https://pack-standoff.vercel.app/Pack_So2_Conteudo_Patente3.jpg",
+        "https://pack-standoff.vercel.app/Pack_So2_Conteudo_Patente2.jpg",
+        "https://pack-standoff.vercel.app/Pack_So2_Conteudo_Patente4.jpg"
+    ];
+
+    var currentRankImageIndex = 0;
+    var ranksImage1 = document.getElementById("ranks-image-1");
+    var ranksImage2 = document.getElementById("ranks-image-2");
+
+    function changeRankImage() {
+        ranksImage1.src = ranksImages[currentRankImageIndex];
+        ranksImage2.src = ranksImages[(currentRankImageIndex + 1) % ranksImages.length];
+        currentRankImageIndex = (currentRankImageIndex + 1) % ranksImages.length;
+    }    
+
+    setInterval(changeRankImage, 2000);
+     
+    function voltarParaPaginaAnterior() { 
+        if (window.history.length > 1) {
+            window.history.back(); 
+        } else {
+            window.location.href = "https://pack-standoff.vercel.app/Pack%20So2.Html";
+        }
     }
 
-    setInterval(changeImage, 1000);
-     
-     function voltarParaPaginaAnterior() { 
-    if (window.history.length > 1) {
-        window.history.back(); 
-    } else {
-        window.location.href = "https://pack-standoff.vercel.app/Pack%20So2.Html";
-    }
-    }
     function abrirNovaPaginaComprar() {    
         window.location.href = "https://pack-standoff.vercel.app/Tabela.html";   
     }
-</script>
     </script>
 </body>
 
