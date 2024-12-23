@@ -21,7 +21,7 @@
 
         body {
             font-family: 'Outfit', sans-serif;
-            background: #333;
+            background: #111;
             color: #fff;
             min-height: 100vh;
             margin: 0;
@@ -30,13 +30,22 @@
             align-items: center;
         }
 
+        /* Animação RGB */
+        @keyframes rgb-border {
+            0% { border-color: #ff0000; }
+            33% { border-color: #00ff00; }
+            66% { border-color: #0000ff; }
+            100% { border-color: #ff0000; }
+        }
+
         /* Top Bar */
         header {
             width: 100%;
             padding: 10px 20px;
-            background: #111;
+            background: black;
             color: white;
-            border-bottom: 2px solid #fff;
+            border-bottom: 2px solid;
+            animation: rgb-border 8s infinite linear;
             display: flex;
             justify-content: start;
             align-items: center;
@@ -73,26 +82,28 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            margin-top: -20px;
         }
 
         /* Campo de busca */
         .search-bar {
-            margin: 20px 0;
+            margin: 10px 0;
             width: 100%;
             max-width: 400px;
             display: flex;
             align-items: center;
             gap: 10px;
+            
         }
 
         .search-bar input {
             flex: 1;
             padding: 8px 10px;
-            border: 2px solid #555;
-            border-radius: 15px;
+            border: 2px solid gold;
+            border-radius: 8px;
             outline: none;
             font-size: 14px;
+            background: #222;
+            
         }
 
         .search-bar button {
@@ -112,40 +123,41 @@
         /* Lista de produtos */
         .product-list {
             display: flex;
-            flex-wrap: wrap; /* Permite quebra de linha */
-            gap: 20px; /* Espaço entre os produtos */
+            flex-wrap: wrap;
+            gap: 20px;
             justify-content: center;
         }
 
         .product {
-            background: #444;
+            background: #222;
             border-radius: 10px;
             padding: 15px;
             text-align: center;
-            width: 180px; /* Largura dos produtos */
-            flex-grow: 1; /* Adapta ao espaço disponível */
+            width: 180px;
+            margin-top: 5px;
         }
 
         .product img {
             width: 100%;
-            max-width: 100px; /* Imagem menor */
+            max-width: 100px;
             height: auto;
             border-radius: 10px;
-            margin-bottom: 10px;
+            margin-bottom: 0px;
+            border: 2px solid gold;
         }
 
         .product h3 {
-            font-size: 16px; /* Tamanho do texto */
+            font-size: 16px;
             color: #fff;
             margin: 5px 0;
         }
 
-        /* Mensagem de "nenhum produto encontrado" */
+        /* Mensagem de "Nenhum produto encontrado" */
         #noResultsMessage {
-            font-size: 16px;
-            color: #ff3333;
+            font-size: 14px;
+            color: gold;
             margin-top: 20px;
-            display: none; /* Inicialmente escondida */
+            display: none;
         }
 
         /* Responsividade */
@@ -156,107 +168,154 @@
 
             header p {
                 font-size: 12px;
+                
             }
 
             .product {
-                width: 150px; /* Ajusta a largura dos produtos em telas menores */
+                width: 150px;
             }
 
             .search-bar input {
                 font-size: 12px;
+                color: white;
             }
 
             .search-bar button {
                 font-size: 12px;
             }
         }
+
+        /* Footer */
+        footer {
+            width: 100%;
+            background: #111;
+            padding: 1px;
+            text-align: center;
+            border-top: 1px solid gold;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            color: #ccc;
+            font-size: 12px;
+        }
+
+        footer a {
+            color: gold;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .price-box {
+    margin-top: 10px;
+    background: gold;
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: inline-block;
+}
     </style>
 </head>
 <body>
+    <header>
+        <img src="https://tinyurl.com/4mvey5t9" alt="Foto de perfil">
+        <h1>FL</h1>
+        <p>Tabacaria</p>
+    </header>
+
     <div class="container">
-        <header>
-            <img src="https://tinyurl.com/226j6ezw" alt="Foto de perfil">
-            <h1>@mushuzingg</h1>
-            <p>Do xuxuzin pra vocezin.</p>
-        </header>
+        <!-- Barra de pesquisa -->
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Pesquisar produtos..." oninput="filterProducts()">
+        </div>
 
-        <main>
-            <!-- Barra de pesquisa -->
-            <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Pesquisar produtos..." oninput="filterProducts()">
+        <!-- Lista de produtos -->
+        <div class="product-list" id="productList">
+            <div class="product" data-name="Gelo de coco">
+                <a href="#" target="_blank">
+                    <img src="https://www.msdb.com.br/lv/1330/produtos/1562/p4569.png" alt="Produto">
+                </a>
+                <h3>Gelo de Coco</h3>
+                <div class="price-box">R$ 3,00</div>
             </div>
-
-            <!-- Lista de produtos -->
+            <div class="product" data-name="Gin">
+                <a href="#" target="_blank">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzDapT6_qEIBqrpPSL-TJBpcpilo5qeC_CMQ&s" alt="Produto">
+                </a>
+                <h3>Gin</h3>
+                 <div class="price-box">R$ 30,00</div>
+            </div>
+            <div class="product" data-name="Gelo de maracujá">
+                <a href="#" target="_blank">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCV1gfz8uym5-bh9vvHU66KEoBoazufea7OdoNSJHmuT9IphyfYtBJRpF8&s=10" alt="Produto">
+                </a>
+                <h3>Gelo de Maracujá</h3>
+                 <div class="price-box">R$ 3,00</div>
+            </div>
+            <div class="product" data-name="Carvão">
+                <a href="#" target="_blank">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWjREeIYYOeu-1SGBZh5UVTfmKQvXCxIk5HpZVtdBHTiB2m6kn4ugRV38&s=10" alt="Produto">
+                </a>
+                <h3>Carvão</h3>
+                 <div class="price-box">R$ 15,00</div>
+            </div>
+        </div></div>
+        <div class="product-list" id="productList">
+            <div class="product" data-name="Gelo de coco">
+                <a href="#" target="_blank">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgc47xFGoSvjbYlWhsuVDP7-wzvgngMja4Mw&s" alt="Produto">
+                </a>
+                <h3>Gelo de Morango</h3>
+                <div class="price-box">R$ 3,00</div>
+            </div>
             <div class="product-list" id="productList">
-                <div class="product" data-name="Fone">
-                    <a href="https://www.mercadolivre.com.br/social/jhonatanrayan20230110124114?matt_tool=57461863&forceInApp=true&ref=BO0ISesWhLTEALegkk%2FMV48FogITzOjhqFiYd8rEveRlT7SdZiukLzeQNTs6ySd4uawNccotWoEhw819j3FTmrPR0ULk%2BbZMDyp1vIy8btvjMzCVCm081PTpeREIbOiTBETQzsRtCeEaLbznNDWT%2FMmyK5xgQ6hVABpzOTetcQ%2B%2F9IgSHiHzqLgccuUUo60lCefSnU4%3D" target="_blank">
-                        <img src="https://tinyurl.com/43rn5nca" alt="Produto">
-                    </a>
-                    <h3>Fone</h3>
-                </div>
-                <div class="product" data-name="Produto 2">
-                    <a href="Link do Produto" target="_blank">
-                        <img src="https://via.placeholder.com/100" alt="Produto">
-                    </a>
-                    <h3>batata RS 10,00</h3>
-                </div>
-                <div class="product" data-name="Produto 3">
-                    <a href="Link do Produto" target="_blank">
-                        <img src="https://via.placeholder.com/100" alt="Produto">
-                    </a>
-                    <h3>Produto 3</h3>
-                </div>
-                <div class="product" data-name="Produto 4">
-                    <a href="Link do Produto" target="_blank">
-                        <img src="https://via.placeholder.com/100" alt="Produto">
-                    </a>
-                    <h3>Produto 4</h3>
-                </div>
-                <div class="product" data-name="Produto 5">
-                    <a href="Link do Produto" target="_blank">
-                        <img src="https://via.placeholder.com/100" alt="Produto">
-                    </a>
-                    <h3>Produto 5</h3>
-                </div>
-                <div class="product" data-name="Produto 6">
-                    <a href="Link do Produto" target="_blank">
-                        <img src="https://via.placeholder.com/100" alt="Produto">
-                    </a>
-                    <h3>Produto 6</h3>
-                </div>
+            <div class="product" data-name="Gelo de coco">
+                <a href="#" target="_blank">
+                    <img src="https://www.msdb.com.br/lv/1330/produtos/1562/p4569.png" alt="Produto">
+                </a>
+                <h3>Gelo de Melancia</h3>
+                <div class="price-box">R$ 3,00</div>
             </div>
 
-            <!-- Mensagem de "Nenhum produto encontrado" -->
-            <p id="noResultsMessage">Nenhum produto encontrado.</p>
-        </main>
+        <!-- Mensagem de "Nenhum produto encontrado" -->
+        <p id="noResultsMessage">Nenhum produto encontrado.</p>
     </div>
+
+    <footer>
+                <p>Redes Sociais: 
+            <a href="#">Instagram</a> | 
+            <a href="#">WhatsApp</a> | 
+            <a href="#">Twitter</a>
+        </p>
+        <p>&copy; 2024 FL Tabacaria. Todos os direitos reservados.</p>
+        
+        </p>
+    </footer>
 
     <script>
         // Função para filtrar produtos
         function filterProducts() {
             const input = document.getElementById('searchInput');
             const filter = input.value.toLowerCase();
-            const productList = document.getElementById('productList');
-            const products = productList.getElementsByClassName('product');
-            let noResults = true; // Variável para verificar se há resultados
+            const products = document.querySelectorAll('.product');
+            let hasResults = false;
 
-            Array.from(products).forEach(product => {
-                const productName = product.getAttribute('data-name').toLowerCase();
-                if (productName.includes(filter)) {
+            products.forEach(product => {
+                const name = product.getAttribute('data-name').toLowerCase();
+                if (name.includes(filter)) {
                     product.style.display = '';
-                    noResults = false; // Encontrou um resultado
+                    hasResults = true;
                 } else {
                     product.style.display = 'none';
                 }
             });
 
-            // Exibe ou esconde a mensagem de "Nenhum produto encontrado"
-            const message = document.getElementById('noResultsMessage');
-            if (noResults) {
-                message.style.display = 'block';
-            } else {
-                message.style.display = 'none';
-            }
+            document.getElementById('noResultsMessage').style.display = hasResults ? 'none' : 'block';
         }
     </script>
 </body>
