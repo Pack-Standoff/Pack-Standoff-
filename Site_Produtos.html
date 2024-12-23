@@ -30,7 +30,7 @@
             align-items: center;
         }
 
-        /* Animação RGB */
+        
         @keyframes rgb-border {
             0% { border-color: #ff0000; }
             33% { border-color: #00ff00; }
@@ -38,7 +38,7 @@
             100% { border-color: #ff0000; }
         }
 
-        /* Top Bar */
+        
         header {
             width: 100%;
             padding: 10px 20px;
@@ -210,14 +210,14 @@
             text-decoration: underline;
         }
         .price-box {
-    margin-top: 10px;
-    background: gold;
-    color: black;
-    font-weight: bold;
-    font-size: 14px;
-    border-radius: 5px;
-    padding: 5px 10px;
-    display: inline-block;
+        margin-top: 10px;
+        background: gold;
+        color: black;
+        font-weight: bold;
+        font-size: 14px;
+        border-radius: 5px;
+        padding: 5px 10px;
+        display: inline-block;
 }
     </style>
 </head>
@@ -228,8 +228,7 @@
         <p>Tabacaria</p>
     </header>
 
-    <div class="container">
-        <!-- Barra de pesquisa -->
+       <div class="container">     
         <div class="search-bar">
             <input type="text" id="searchInput" placeholder="Pesquisar produtos..." oninput="filterProducts()">
         </div>
@@ -266,7 +265,7 @@
             </div>
         </div></div>
         <div class="product-list" id="productList">
-            <div class="product" data-name="Gelo de coco">
+            <div class="product" data-name="Gelo de morango">
                 <a href="#" target="_blank">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgc47xFGoSvjbYlWhsuVDP7-wzvgngMja4Mw&s" alt="Produto">
                 </a>
@@ -274,11 +273,27 @@
                 <div class="price-box">R$ 3,00</div>
             </div>
             <div class="product-list" id="productList">
-            <div class="product" data-name="Gelo de coco">
+            <div class="product" data-name="Gelo de melancia">
                 <a href="#" target="_blank">
                     <img src="https://www.msdb.com.br/lv/1330/produtos/1562/p4569.png" alt="Produto">
                 </a>
                 <h3>Gelo de Melancia</h3>
+                <div class="price-box">R$ 3,00</div>
+            </div></div>
+                 <div class="product-list" id="productList">
+            <div class="product" data-name="Gelo de morango">
+                <a href="#" target="_blank">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-bXd08lyADM9reOzDleGAtugBkK_crCVHJA&s" alt="Produto">
+                </a>
+                <h3>Gelo de Melancia</h3>
+                <div class="price-box">R$ 3,00</div>
+            </div>
+            <div class="product-list" id="productList">
+            <div class="product" data-name="Gelo de melancia">
+                <a href="#" target="_blank">
+                    <img src="https://www.msdb.com.br/lv/1330/produtos/1562/p4569.png" alt="Produto">
+                </a>
+                <h3>Gelo de Morango</h3>
                 <div class="price-box">R$ 3,00</div>
             </div>
 
@@ -296,7 +311,6 @@
         
         </p>
     </footer>
-
     <script>
         // Função para filtrar produtos
         function filterProducts() {
