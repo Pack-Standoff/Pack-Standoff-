@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+
     <style>
         /* Estilos globais */
         * {
@@ -30,15 +31,26 @@
             align-items: center;
         }
 
-        
+
         @keyframes rgb-border {
-            0% { border-color: #ff0000; }
-            33% { border-color: #00ff00; }
-            66% { border-color: #0000ff; }
-            100% { border-color: #ff0000; }
+            0% {
+                border-color: #ff0000;
+            }
+
+            33% {
+                border-color: #00ff00;
+            }
+
+            66% {
+                border-color: #0000ff;
+            }
+
+            100% {
+                border-color: #ff0000;
+            }
         }
 
-        
+
         header {
             width: 100%;
             padding: 10px 20px;
@@ -78,7 +90,8 @@
         .container {
             width: 100%;
             max-width: 1200px;
-            padding: 80px 20px 20px 20px; /* Ajuste para compensar a altura da top bar */
+            padding: 80px 20px 20px 20px;
+            /* Ajuste para compensar a altura da top bar */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -93,7 +106,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            
+
         }
 
         .search-bar input {
@@ -104,7 +117,7 @@
             outline: none;
             font-size: 14px;
             background: #222;
-            margin-top: -15px;
+            margin-top: 10px;
         }
 
         .search-bar button {
@@ -170,7 +183,7 @@
 
             header p {
                 font-size: 12px;
-                
+
             }
 
             .product {
@@ -186,7 +199,6 @@
                 font-size: 12px;
             }
         }
-
         /* Footer */
         footer {
             width: 100%;
@@ -195,14 +207,13 @@
             text-align: center;
             border-top: 1px solid gold;
             margin-top: 20px;
-        }
 
+        }
         footer p {
             margin: 5px 0;
             color: #ccc;
             font-size: 12px;
         }
-
         footer a {
             color: gold;
             text-decoration: none;
@@ -211,149 +222,176 @@
         footer a:hover {
             text-decoration: underline;
         }
+
         .price-box {
-        margin-top: 10px;
-        background: gold;
-        color: black;
-        font-weight: bold;
-        font-size: 14px;
-        border-radius: 5px;
-        padding: 5px 10px;
-        display: inline-block;
-}
+            margin-top: 10px;
+            background: gold;
+            color: black;
+            font-weight: bold;
+            font-size: 14px;
+            border-radius: 5px;
+            padding: 5px 10px;
+            display: inline-block;
+        }    
     </style>
 </head>
 <body>
     <header>
-        <img src="https://tinyurl.com/4mvey5t9" alt="Foto de perfil">
+        <img src="https://pack-standoff.vercel.app/FL_Logo.jpg" alt="Produto">
         <h1>FL</h1>
         <p>Tabacaria</p>
     </header>
-
-    <div class="container">     
+    <div class="container">
         <div class="search-bar">
             <input type="text" id="searchInput" placeholder="Pesquisar produtos..." oninput="filterProducts()">
         </div>
-
         <!-- Lista de produtos -->
         <div class="product-list" id="productList">
             <div class="product" data-name="Gelo de coco">
                 <a href="#" target="_blank">
-                    <img src="https://www.msdb.com.br/lv/1330/produtos/1562/p4569.png" alt="Produto">
+                    <img src="https://pack-standoff.vercel.app/FL_Gelo_Coco.jpg" alt="Produto">
                 </a>
                 <h3>Gelo de Coco</h3>
                 <div class="price-box">R$ 3,00</div>
             </div>
-            <div class="product" data-name="Produto sem imagem">
-    <a href="#" target="_blank">
-        <img src="imagem-nao-disponivel.png" 
-             alt="Produto" 
-             onerror="this.src='https://via.placeholder.com/150?text=Sem+Imagem';">
-    </a>
-    <h3>Dose ?</h3>
-    <div class="price-box">R$ 20,00</div>
-</div>
             <div class="product" data-name="Gelo de maracujá">
                 <a href="#" target="_blank">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCV1gfz8uym5-bh9vvHU66KEoBoazufea7OdoNSJHmuT9IphyfYtBJRpF8&s=10" alt="Produto">
-                </a>
+                  <img src="https://pack-standoff.vercel.app/FL_Gelo_Maracuja.jpg" alt="Produto">               
+                 </a>
                 <h3>Gelo de Maracujá</h3>
                 <div class="price-box">R$ 3,00</div>
             </div>
-            
             <div class="product" data-name="Gelo de morango">
                 <a href="#" target="_blank">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgc47xFGoSvjbYlWhsuVDP7-wzvgngMja4Mw&s" alt="Produto">
+                    <img src="https://pack-standoff.vercel.app/FL_Gelo_Morango.jpg" alt="Produto">
                 </a>
                 <h3>Gelo de Morango</h3>
                 <div class="price-box">R$ 3,00</div>
             </div>
-            
-            <div class="product" data-name="Gelo de ?">
+            <div class="product" data-name="Gelo de melancia">
                 <a href="#" target="_blank">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-bXd08lyADM9reOzDleGAtugBkK_crCVHJA&s" alt="Produto">
-                </a>
+                <img src="https://pack-standoff.vercel.app/FL_Gelo_Melancia.jpg" alt="Produto">
+                 </a>
                 <h3>Gelo de Melancia</h3>
                 <div class="price-box">R$ 3,00</div>
             </div>
-            <div class="product" data-name="Gelo de Melancia">
+            <div class="product" data-name="Gelo de Maçã Verde">
                 <a href="#" target="_blank">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfmmo8Q2JWwxs4IMcwpoFu7cAFUGPUelNaE8VDJtKeCXjYSdHBxHxq4_em&s=10" alt="Produto">
+                <img src="https://pack-standoff.vercel.app/FL_Maçã_Verde.jpg" alt="Produto">
                 </a>
-                <h3>Gelo de Limão</h3>
+                <h3>Gelo de Maçã Verde</h3>
                 <div class="price-box">R$ 3,00</div>
             </div>
-        
-        <div class="product" data-name="Produto sem imagem">
-    <a href="#" target="_blank">
-        <img src="imagem-nao-disponivel.png" 
-             alt="Produto" 
-             onerror="this.src='https://via.placeholder.com/150?text=Sem+Imagem';">
-    </a>
-    <h3>Produto </h3>
-    <div class="price-box">R$ 0,00</div>
-</div>
-            <div class="product" data-name="Produto sem imagem">
-    <a href="#" target="_blank">
-        <img src="imagem-nao-disponivel.png" 
-             alt="Produto" 
-             onerror="this.src='https://via.placeholder.com/150?text=Sem+Imagem';">
-    </a>
-    <h3>Produto </h3>
-    <div class="price-box">R$ 0,00</div>
-</div>
-            <div class="product" data-name="Produto sem imagem">
-    <a href="#" target="_blank">
-        <img src="imagem-nao-disponivel.png" 
-             alt="Produto" 
-             onerror="this.src='https://via.placeholder.com/150?text=Sem+Imagem';">
-    </a>
-    <h3>Produto </h3>
-    <div class="price-box">R$ 0,00</div>
-</div>
-             <div class="product" data-name="Produto sem imagem">
-    <a href="#" target="_blank">
-        <img src="imagem-nao-disponivel.png" 
-             alt="Produto" 
-             onerror="this.src='https://via.placeholder.com/150?text=Sem+Imagem';">
-    </a>
-    <h3>Produto </h3>
-    <div class="price-box">R$ 0,00</div>
-</div>
+            <div class="product" data-name="Dose Gin Malibu">
+                <a href="#" target="_blank">
+                <img src="imagem-nao-disponivel.png" alt="Produto" onerror="this.src='https://via.placeholder.com/150?text=Sem+Imagem';">
+                </a>
+                <h3>Dose Gin Malibu </h3>
+                <div class="price-box">R$ 20,00</div>
+            </div>
+            <div class="product" data-name="Dose Gin Tropical">
+                <a href="#" target="_blank">
+                <img src="imagem-nao-disponivel.png" alt="Produto" onerror="this.src='https://via.placeholder.com/150?text=Sem+Imagem';">
+                </a>
+                <h3>Dose Gin Tropical </h3>
+                <div class="price-box">R$ 20,00</div>
+            </div>
+            <div class="product" data-name="Dose Gin Melancia">
+                <a href="#" target="_blank">
+                    <img src="imagem-nao-disponivel.png" alt="Produto" onerror="this.src='https://via.placeholder.com/150?text=Sem+Imagem';">
+                </a>
+                <h3>Dose Gin Melancia </h3>
+                <div class="price-box">R$ 20,00</div>
+            </div>
+            <div class="product" data-name="Dose Gin Maçã Verde">
+                <a href="#" target="_blank">
+                 <img src="imagem-nao-disponivel.png" alt="Produto" onerror="this.src='https://via.placeholder.com/150?text=Sem+Imagem';">
+                </a>
+                <h3>Dose Gin Maçã Verde </h3>
+                <div class="price-box">R$ 20,00</div>
+            </div>
+          <div class="product" data-name="Dose Gin Chanceler">
+                <a href="#" target="_blank">
+                <img src="imagem-nao-disponivel.png" alt="Produto" onerror="this.src='https://via.placeholder.com/150?text=Sem+Imagem';">
+                </a>
+                <h3>Dose Gin Chanceler </h3>
+                <div class="price-box">R$ 25,00</div>
+            </div>
+          <div class="product" data-name="Cerveja Heineken Garrafa">
+                <a href="#" target="_blank">
+                <img src="https://pack-standoff.vercel.app/FL_Heineken_Garrafa.png" alt="Produto">
+                </a>
+                <h3>Cerveja Heineken Garrafa</h3>
+                <div class="price-box">R$ 10,00</div>
+            </div>
+          <div class="product" data-name="Cerveja Heineken Lata">
+                <a href="#" target="_blank">
+                <img src="https://pack-standoff.vercel.app/FL_Heineken_Latinha.jpg" alt="Produto">
+                </a>
+                <h3>Cerveja Heineken Lata</h3>
+                <div class="price-box">R$ 6,00</div>
+            </div>
+          <div class="product" data-name="Cerveja Skol Lata">
+                <a href="#" target="_blank">
+                <img src="https://pack-standoff.vercel.app/FL_Skol_Latinha.jpg" alt="Produto">
+                </a>
+                <h3>Cerveja Skol Lata</h3>
+                <div class="price-box">R$ 6,00</div>
+            </div>
+                <div class="product" data-name="Cerveja Coca Cola Lata">
+                <a href="#" target="_blank">
+                <img src="https://pack-standoff.vercel.app/FL_Coca_Latinha.jpg" alt="Produto">
+                </a>
+                <h3>Coca Cola Lata</h3>
+                <div class="price-box">R$ 6,00</div>
+            </div>
+            <div class="product" data-name="Cigarro Surya PRO Unidade">
+                <a href="#" target="_blank">
+                <img src="https://pack-standoff.vercel.app/Fl_SuryaPRO.png" alt="Produto">
+                </a>
+                <h3>Surya PRO 1 Unidade</h3>
+                <div class="price-box">R$ 3,00</div>
+            </div>
+            <div class="product" data-name="Seda Zomo">
+                <a href="#" target="_blank">
+                <img src="https://pack-standoff.vercel.app/FL_Seda Zomo.jpg" alt="Produto">
+                </a>
+                <h3>Seda Zomo</h3>
+                <div class="price-box">R$ 5,00</div>
+            </div>
+            <!-- Mensagem de "Nenhum produto encontrado" -->
+            <p id="noResultsMessage">Nenhum produto encontrado.</p>
+        </div>
+        <footer>
+            <p>Redes Sociais:
+                <a href="https://www.instagram.com/tabacaria.fl?igsh=MTR2NzduaHJvbGlwaw==">Instagram</a> 
+                <a href="#"></a> 
+                <a href="#"></a>
+            </p>
+            <p>&copy; 2024 FL Tabacaria. Todos os direitos reservados.</p>
+            </p>
+        </footer>
+        <script>
+            // Função para filtrar produtos
+            function filterProducts() {
+                const input = document.getElementById('searchInput');
+                const filter = input.value.toLowerCase();
+                const products = document.querySelectorAll('.product');
+                let hasResults = false;
 
-        <!-- Mensagem de "Nenhum produto encontrado" -->
-        <p id="noResultsMessage">Nenhum produto encontrado.</p>
-    </div>
-    <footer>
-                <p>Redes Sociais: 
-            <a href="https://www.instagram.com/tabacaria.fl?igsh=MTR2NzduaHJvbGlwaw==">Instagram</a> | 
-            <a href="#">WhatsApp</a> | 
-            <a href="#">Twitter</a>
-        </p>
-        <p>&copy; 2024 FL Tabacaria. Todos os direitos reservados.</p>
-        
-        </p>
-    </footer>
-    <script>
-        // Função para filtrar produtos
-        function filterProducts() {
-            const input = document.getElementById('searchInput');
-            const filter = input.value.toLowerCase();
-            const products = document.querySelectorAll('.product');
-            let hasResults = false;
+                products.forEach(product => {
+                    const name = product.getAttribute('data-name').toLowerCase();
+                    if (name.includes(filter)) {
+                        product.style.display = '';
+                        hasResults = true;
+                    } else {
+                        product.style.display = 'none';
+                    }
+                });
 
-            products.forEach(product => {
-                const name = product.getAttribute('data-name').toLowerCase();
-                if (name.includes(filter)) {
-                    product.style.display = '';
-                    hasResults = true;
-                } else {
-                    product.style.display = 'none';
-                }
-            });
-
-            document.getElementById('noResultsMessage').style.display = hasResults ? 'none' : 'block';
-        }
-    </script>
+                document.getElementById('noResultsMessage').style.display = hasResults ? 'none' : 'block';
+            }
+ </script>
 </body>
+
 </html>
