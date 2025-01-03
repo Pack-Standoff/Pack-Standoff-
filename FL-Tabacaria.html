@@ -604,19 +604,26 @@
 
                 document.getElementById('noResultsMessage').style.display = hasResults ? 'none' : 'block';
             }
+    
+    // Função para verificar a idade do usuário
     function confirmAge(isAdult) {
-  if (isAdult) {
-    document.getElementById("ageModal").style.display = "none";
-  } else {
-    alert("Você precisa ser maior de 18 anos para acessar este site.");
-    window.location.href = "https://www.google.com"; // Redireciona para outro site
-  }
-}
+        if (isAdult) {
+            localStorage.setItem('ageConfirmed', 'true'); // Salva a decisão do usuário no localStorage
+            document.getElementById('ageModal').style.display = 'none'; // Fecha o modal
+        } else {
+            window.location.href = "https://www.google.com"; // Redireciona para outro site se não for maior de 18
+        }
+    }
 
-// Exibe o modal ao carregar a página
-window.onload = function() {
-  document.getElementById("ageModal").style.display = "flex";
-};
+    // Verifica se o modal já foi confirmado anteriormente
+    window.onload = function() {
+        if (localStorage.getItem('ageConfirmed') === 'true') {
+            document.getElementById('ageModal').style.display = 'none'; // Esconde o modal se já foi confirmado
+        } else {
+            document.getElementById('ageModal').style.display = 'flex'; // Exibe o modal se não foi confirmado
+        }
+    };
+
         </script>
 </body>
 
