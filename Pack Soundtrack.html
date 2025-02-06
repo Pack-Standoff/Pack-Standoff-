@@ -46,12 +46,31 @@
         }
 
         .novidades {
-            color: #fff;
-            font-size: 25px;
-            margin-top: 20px;
-            margin-bottom: 25px;
-            font-family: 'Bebas Neue', sans-serif;
-        }
+  font-size: 25px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-family: 'Bebas Neue', sans-serif;
+  display: inline;
+}
+
+.novidades .trilhas {
+  background: linear-gradient(to bottom, #ffffff, #d3d3d3, #444444); /* Degradê com cinza mais claro e preto mais suave */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.novidades .sonoras {
+  background: linear-gradient(to bottom, 
+    #ffe8a3, 
+    #ffdb6d, 
+    #ffbf5b, 
+    #d18434, 
+    #a76529, 
+    #7a401b
+  ); /* O mesmo degradê que você enviou */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
         .text-d {
             color: white;
             font-size: 10px;
@@ -246,7 +265,7 @@
             <img src="https://pack-standoff.vercel.app/Pack_So2_Logo.png" alt="imagem" style="width: 100px; height: 15px; margin-left: 10%; object-fit: cover;" oncontextmenu="return false;">
         </div>
     </div>
-    <p class="novidades">Trilhas sonoras</p>
+    <p class="novidades"><span class="trilhas">Trilhas</span> <span class="sonoras">Sonoras</span></p><div class="pack-info">
      <p class="text-d">Divirta-se com as trilhas sonoras que faz do jogo uma experiência Imersiva</p>
     
     <div id="faixa-atual">Nenhuma faixa tocando</div>
