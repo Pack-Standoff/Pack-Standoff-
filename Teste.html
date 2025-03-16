@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco PAN</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            width: 360px;
+            padding: 20px;
+            border-radius: 10px;
+            
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .user {
+            display: flex;
+            align-items: center;
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            background: lightgray;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            opacity: 0.4;
+        }
+
+        .username {
+            margin-left: 10px;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        .icons {
+            display: flex;
+            gap: 8px;
+            color: black;
+
+        }
+
+        .icons img {
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+        }
+
+        .saldo {
+    position: relative;
+    padding-right: 30px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.saldo::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.saldo::before {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 6px;
+    height: 6px;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+}
+
+        .saldo p {
+            font-size: 17px;
+            color: black;
+        }
+
+        .saldo h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #06b2fc;
+        }
+
+        .actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .actions button {
+            height: 65px;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: left;
+            font-weight: bold;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 14px;
+            width: 100%;
+            background: #f4f5f7;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .actions button img {
+            width: 20px;
+            height: 20px;
+            margin-bottom: 5px;
+        }
+
+        .pix {
+            position: relative;
+        }
+
+        .pix::after {
+            content: "Até 12x";
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: #06b2fc;
+            /* Cor azul */
+            color: white;
+            font-size: 10px;
+            font-weight: bold;
+            padding: 4px 7px;
+            border-radius: 12px;
+        }
+
+        .dia-consumidor {
+            background: #06b2fc !important;
+            color: white !important;
+
+        }
+
+        .emprestimos1 {
+            background: #f4f5f7;
+            color: black;
+        }
+
+        .credito {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .credito img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        /* Ajustando os quadrados na parte inferior */
+        .cartoes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
+
+        }
+
+        .cartao {
+            background: #f4f5f7;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: left;
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+
+        }
+
+        .cartao h4 {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .cartao p {
+            display: block;
+            text-align: left;
+            font-size: 15px;
+            line-height: 18px;
+            max-width: 80px;
+            word-wrap: break-word;
+        }
+
+        /* Aplicando a cor azul nos quadrados corretos */
+        .investimentos {
+            background: #06b2fc;
+            color: white;
+        }
+
+        .emprestimos {
+            background: #06b2fc;
+            color: white;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .menu button {
+            flex-grow: 1;
+            padding: 15px;
+            font-weight: bold;
+            background: #f4f5f7;
+            ;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .menu .selected {
+            background: black;
+            color: white;
+        }
+  button, a {
+    -webkit-tap-highlight-color: transparent;
+}
+  
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div class="user">
+                <div class="avatar">L</div>
+                <span class="username">Lucas</span>
+            </div>
+            <div class="icons">
+                <img src="https://tinyurl.com/yzje8bc6" alt="Olho" id="toggle-saldo" width="20">
+                <img src="https://tinyurl.com/m366evae" alt="FAQ" width="20">
+            </div>
+        </div>
+
+        <div class="saldo">
+            <p>Saldo atual</p>
+            <h2>R$ <span class="valor" id="saldo">1. 274.122,00</span></h2>
+        </div>
+
+        <div class="actions">
+            <button class="pix">
+                <img src="https://tinyurl.com/4d2hf75b" alt="Pix">
+                Pix
+            </button>
+            <button class="fgts">
+                <img src="https://tinyurl.com/3x9x9k7a" alt="Antecipar FGTS">
+                Antecipar FGTS
+            </button>
+            <button class="dia-consumidor">
+                <img src="https://tinyurl.com/3cnbyfy8" alt="Dia Consumidor">
+                Dia Consumidor
+            </button>
+            <button class="emprestimos1">
+                <img src="https://tinyurl.com/3x9x9k7a" alt="Empréstimos">
+                Empréstimos
+            </button>
+        </div>
+
+        <div class="credito">
+            <img src="https://tinyurl.com/ye8kmvxn" alt="Precisa de Crédito?">
+        </div>
+
+        <!-- Quadrados finais -->
+        <div class="cartoes">
+            <div class="cartao">
+                <h4>Cartões</h4>
+                <p>Mostrar detalhes do meu cartão</p>
+            </div>
+            <div class="cartao emprestimos">
+                <h4>Empréstimos</h4>
+                <p>Temos novas opções pra você</p>
+            </div>
+            <div class="cartao investimentos">
+                <h4>Investimentos</h4>
+                <p>Coloque seu dinheiro pra render</p>
+            </div>
+            <div class="cartao">
+                <h4>Pagamentos</h4>
+                <p>Parcele seus boletos em até 12x</p>
+            </div>
+        </div>
+
+        <div class="menu">
+            <button class="selected">Resumo</button>
+            <button>Conta</button>
+            <button>Shop</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("toggle-saldo").addEventListener("click", function() {
+            let saldo = document.getElementById("saldo");
+            if (saldo.textContent === "****") {
+                saldo.textContent = "1.822,33";
+            } else {
+                saldo.textContent = "****";
+            }
+        });
+
+        document.querySelectorAll(".menu button").forEach(button => {
+            button.addEventListener("click", function() {
+                document.querySelectorAll(".menu button").forEach(btn => btn.classList.remove("selected"));
+                this.classList.add("selected");
+            });
+        });
+    </script>
+
+</body>
+
+</html>
