@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerador de Currículo</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .input-group {
+      margin-bottom: 10px;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 5px;
+    }
+    #curriculo {
+      display: none;
+      font-family: 'Times New Roman', Times, serif;
+      color: black;
+      padding: 40px;
+      background: white;
+      width: 794px;
+      height: 1123px;
+      box-sizing: border-box;
+      position: relative;
+    }
+    .info {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .dados {
+      width: 70%;
+    }
+    .foto {
+      width: 100px;
+      height: 120px;
+      background: #ccc;
+      text-align: center;
+      line-height: 120px;
+      font-weight: bold;
+    }
+    .foto img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .section {
+      margin-top: 20px;
+    }
+    .section-title {
+      background: #dcdcdc;
+      padding: 5px;
+      font-weight: bold;
+    }
+    #downloadBtn {
+      display: none;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Gerador de Currículo</h1>
+    <div class="input-group"><label>Nome:</label><input id="nome" value="LUCAS SOUSA TELES"></div>
+    <div class="input-group"><label>Estado Civil:</label><input id="civil" value="SOLTEIRO"></div>
+    <div class="input-group"><label>Idade:</label><input id="idade" value="26 ANOS"></div>
+    <div class="input-group"><label>Email:</label><input id="email" value="dioplayergamer@hotmail.com"></div>
+    <div class="input-group"><label>Nacionalidade:</label><input id="nacionalidade" value="BRASILEIRO"></div>
+    <div class="input-group"><label>Endereço:</label><input id="endereco" value="PV VARJOTA"></div>
+    <div class="input-group"><label>Cidade:</label><input id="cidade" value="AQUIRAZ - CE"></div>
+    <div class="input-group"><label>Telefone:</label><input id="telefone" value="(11) 95370-4664"></div>
+    <div class="input-group"><label>CEP:</label><input id="cep" value="62540-000"></div>
+    <div class="input-group"><label>Escolaridade:</label><input id="escolaridade" value="ENSINO MÉDIO COMPLETO"></div>
+    <div class="input-group"><label>Foto (URL):</label><input id="fotoUrl" placeholder="https://exemplo.com/foto.jpg"></div>
+    <div class="input-group"><label>Experiências:</label>
+      <textarea id="experiencias" rows="6">EMPRESA: PADARIA NOVA LUCIANA - SP
+CARGO: CAIXA
+CARGO: COPEIRO
+PERÍODO: 10/09/2022 À 31/10/2023
+
+EMPRESA: TROPA DOS LANCHES & PORÇÕES
+CARGO: CAIXA
+CARGO: GARÇOM
+PERÍODO: 12/12/2024 À 06/03/2025
+
+OUTROS CARGOS:
+BALCONISTA
+AJUDANTE DE CONFEITEIRO
+AJUDANTE DE PADEIRO</textarea>
+    </div>
+    <div class="input-group"><label>Objetivo:</label>
+      <textarea id="objetivo" rows="3">PROCURO UMA NOVA OPORTUNIDADE PARA EXPERIÊNCIAS. BUSCO CONTRIBUIR COM MEUS CONHECIMENTOS E HABILIDADES PARA O CRESCIMENTO DA EMPRESA.</textarea>
+    </div>
+    <button onclick="gerarCurriculo()">Gerar Currículo</button>
+    <button id="downloadBtn" onclick="baixarPDF()">Baixar PDF</button>
+  </div>
+
+  <div id="curriculo">
+    <h2 id="v_nome"></h2>
+    <div class="info">
+      <div class="dados">
+        <p><strong>ESTADO CIVIL:</strong> <span id="v_civil"></span></p>
+        <p><strong>IDADE:</strong> <span id="v_idade"></span></p>
+        <p><strong>E-MAIL:</strong> <span id="v_email"></span></p>
+        <p><strong>NACIONALIDADE:</strong> <span id="v_nacionalidade"></span></p>
+        <p><strong>ENDEREÇO:</strong> <span id="v_endereco"></span></p>
+        <p><strong>CIDADE:</strong> <span id="v_cidade"></span></p>
+        <p><strong>TELEFONE:</strong> <span id="v_telefone"></span></p>
+        <p><strong>CEP:</strong> <span id="v_cep"></span></p>
+      </div>
+      <div class="foto" id="v_foto">FOTO</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">ESCOLARIDADE</div>
+      <p id="v_escolaridade"></p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">EXPERIÊNCIAS PROFISSIONAIS</div>
+      <p id="v_experiencias"></p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">OBJETIVOS</div>
+      <p id="v_objetivo"></p>
+    </div>
+  </div>
+
+  <script>
+    async function baixarPDF() {
+      const curriculo = document.getElementById('curriculo');
+      const canvas = await html2canvas(curriculo);
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jspdf.jsPDF('p', 'pt', 'a4');
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = canvas.height * pdfWidth / canvas.width;
+      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+      pdf.save('curriculo.pdf');
+    }
+
+    function gerarCurriculo() {
+      document.getElementById('v_nome').innerText = document.getElementById('nome').value;
+      document.getElementById('v_civil').innerText = document.getElementById('civil').value;
+      document.getElementById('v_idade').innerText = document.getElementById('idade').value;
+      document.getElementById('v_email').innerText = document.getElementById('email').value;
+      document.getElementById('v_nacionalidade').innerText = document.getElementById('nacionalidade').value;
+      document.getElementById('v_endereco').innerText = document.getElementById('endereco').value;
+      document.getElementById('v_cidade').innerText = document.getElementById('cidade').value;
+      document.getElementById('v_telefone').innerText = document.getElementById('telefone').value;
+      document.getElementById('v_cep').innerText = document.getElementById('cep').value;
+      document.getElementById('v_escolaridade').innerText = document.getElementById('escolaridade').value;
+
+      const expText = document.getElementById('experiencias').value;
+      document.getElementById('v_experiencias').innerHTML = expText.replace(/\n/g, '<br>');
+
+      const objText = document.getElementById('objetivo').value;
+      document.getElementById('v_objetivo').innerHTML = objText.replace(/\n/g, '<br>');
+
+      const fotoUrl = document.getElementById('fotoUrl').value;
+      const fotoDiv = document.getElementById('v_foto');
+      fotoDiv.innerHTML = fotoUrl ? `<img src="${fotoUrl}" alt="Foto">` : 'FOTO';
+
+      document.getElementById('curriculo').style.display = 'block';
+      document.getElementById('downloadBtn').style.display = 'inline-block';
+      window.scrollTo(0, document.body.scrollHeight);
+    }
+  </script>
+</body>
+</html>
