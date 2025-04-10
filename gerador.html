@@ -57,7 +57,6 @@
       height: 120px;
       background: #ccc;
       text-align: center;
-      line-height: 120px;
       font-weight: bold;
     }
     .foto img {
@@ -92,9 +91,7 @@
     <div class="input-group"><label>Telefone:</label><input id="telefone" value="(11) 95370-4664"></div>
     <div class="input-group"><label>CEP:</label><input id="cep" value="62540-000"></div>
     <div class="input-group"><label>Escolaridade:</label><input id="escolaridade" value="ENSINO MÉDIO COMPLETO"></div>
-    <div class="input-group"><label>Foto (URL):</label><input id="fotoUrl" placeholder="https://exemplo.com/foto.jpg"></div>
-    <div class="input-group"><label>Experiências:</label>
-      <textarea id="experiencias" rows="6">EMPRESA: PADARIA NOVA LUCIANA - SP
+    <div class="input-group"><label>Experiências:</label><textarea id="experiencias" rows="6">EMPRESA: PADARIA NOVA LUCIANA - SP
 CARGO: CAIXA
 CARGO: COPEIRO
 PERÍODO: 10/09/2022 À 31/10/2023
@@ -107,11 +104,9 @@ PERÍODO: 12/12/2024 À 06/03/2025
 OUTROS CARGOS:
 BALCONISTA
 AJUDANTE DE CONFEITEIRO
-AJUDANTE DE PADEIRO</textarea>
-    </div>
-    <div class="input-group"><label>Objetivo:</label>
-      <textarea id="objetivo" rows="3">PROCURO UMA NOVA OPORTUNIDADE PARA EXPERIÊNCIAS. BUSCO CONTRIBUIR COM MEUS CONHECIMENTOS E HABILIDADES PARA O CRESCIMENTO DA EMPRESA.</textarea>
-    </div>
+AJUDANTE DE PADEIRO</textarea></div>
+    <div class="input-group"><label>Objetivo:</label><textarea id="objetivo" rows="3">PROCURO UMA NOVA OPORTUNIDADE PARA EXPERIÊNCIAS. BUSCO CONTRIBUIR COM MEUS CONHECIMENTOS E HABILIDADES PARA O CRESCIMENTO DA EMPRESA.</textarea></div>
+    <div class="input-group"><label>URL da Foto:</label><input id="urlFoto" placeholder="https://exemplo.com/foto.jpg"></div>
     <button onclick="gerarCurriculo()">Gerar Currículo</button>
     <button id="downloadBtn" onclick="baixarPDF()">Baixar PDF</button>
   </div>
@@ -129,7 +124,7 @@ AJUDANTE DE PADEIRO</textarea>
         <p><strong>TELEFONE:</strong> <span id="v_telefone"></span></p>
         <p><strong>CEP:</strong> <span id="v_cep"></span></p>
       </div>
-      <div class="foto" id="v_foto">FOTO</div>
+      <div class="foto" id="fotoContainer">FOTO</div>
     </div>
 
     <div class="section">
@@ -153,7 +148,8 @@ AJUDANTE DE PADEIRO</textarea>
       const curriculo = document.getElementById('curriculo');
       const canvas = await html2canvas(curriculo);
       const imgData = canvas.toDataURL('image/png');
-      const pdf = new jspdf.jsPDF('p', 'pt', 'a4');
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF('p', 'pt', 'a4');
       const pdfWidth = pdf.internal.pageSize.getWidth();
       const pdfHeight = canvas.height * pdfWidth / canvas.width;
       pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
@@ -171,16 +167,16 @@ AJUDANTE DE PADEIRO</textarea>
       document.getElementById('v_telefone').innerText = document.getElementById('telefone').value;
       document.getElementById('v_cep').innerText = document.getElementById('cep').value;
       document.getElementById('v_escolaridade').innerText = document.getElementById('escolaridade').value;
+      document.getElementById('v_experiencias').innerText = document.getElementById('experiencias').value;
+      document.getElementById('v_objetivo').innerText = document.getElementById('objetivo').value;
 
-      const expText = document.getElementById('experiencias').value;
-      document.getElementById('v_experiencias').innerHTML = expText.replace(/\n/g, '<br>');
-
-      const objText = document.getElementById('objetivo').value;
-      document.getElementById('v_objetivo').innerHTML = objText.replace(/\n/g, '<br>');
-
-      const fotoUrl = document.getElementById('fotoUrl').value;
-      const fotoDiv = document.getElementById('v_foto');
-      fotoDiv.innerHTML = fotoUrl ? `<img src="${fotoUrl}" alt="Foto">` : 'FOTO';
+      const urlFoto = document.getElementById('urlFoto').value.trim();
+      const fotoContainer = document.getElementById('fotoContainer');
+      if (urlFoto) {
+        fotoContainer.innerHTML = `<img src="${urlFoto}" alt="Foto">`;
+      } else {
+        fotoContainer.innerHTML = 'FOTO';
+      }
 
       document.getElementById('curriculo').style.display = 'block';
       document.getElementById('downloadBtn').style.display = 'inline-block';
