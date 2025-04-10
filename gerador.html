@@ -56,12 +56,6 @@
       width: 100px;
       height: 120px;
       background: #ccc;
-      text-align: center;
-      font-weight: bold;
-    }
-    .foto img {
-      width: 100%;
-      height: 100%;
       object-fit: cover;
     }
     .section {
@@ -101,12 +95,11 @@ CARGO: CAIXA
 CARGO: GARÇOM
 PERÍODO: 12/12/2024 À 06/03/2025
 
-OUTROS CARGOS:
-BALCONISTA
+OUTROS CARGOS: BALCONISTA
 AJUDANTE DE CONFEITEIRO
 AJUDANTE DE PADEIRO</textarea></div>
     <div class="input-group"><label>Objetivo:</label><textarea id="objetivo" rows="3">PROCURO UMA NOVA OPORTUNIDADE PARA EXPERIÊNCIAS. BUSCO CONTRIBUIR COM MEUS CONHECIMENTOS E HABILIDADES PARA O CRESCIMENTO DA EMPRESA.</textarea></div>
-    <div class="input-group"><label>URL da Foto:</label><input id="urlFoto" placeholder="https://exemplo.com/foto.jpg"></div>
+    <div class="input-group"><label>Foto:</label><input type="file" id="fotoInput" accept="image/*"></div>
     <button onclick="gerarCurriculo()">Gerar Currículo</button>
     <button id="downloadBtn" onclick="baixarPDF()">Baixar PDF</button>
   </div>
@@ -124,19 +117,16 @@ AJUDANTE DE PADEIRO</textarea></div>
         <p><strong>TELEFONE:</strong> <span id="v_telefone"></span></p>
         <p><strong>CEP:</strong> <span id="v_cep"></span></p>
       </div>
-      <div class="foto" id="fotoContainer">FOTO</div>
+      <img id="fotoPreview" class="foto" src="" alt="Foto">
     </div>
-
     <div class="section">
       <div class="section-title">ESCOLARIDADE</div>
       <p id="v_escolaridade"></p>
     </div>
-
     <div class="section">
       <div class="section-title">EXPERIÊNCIAS PROFISSIONAIS</div>
       <p id="v_experiencias"></p>
     </div>
-
     <div class="section">
       <div class="section-title">OBJETIVOS</div>
       <p id="v_objetivo"></p>
@@ -144,12 +134,25 @@ AJUDANTE DE PADEIRO</textarea></div>
   </div>
 
   <script>
+    document.getElementById('fotoInput').addEventListener('change', function (event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          document.getElementById('fotoPreview').src = e.target.result;
+        }
+        reader.readAsDataURL(file);
+      }
+    });
+
     async function baixarPDF() {
       const curriculo = document.getElementById('curriculo');
-      const canvas = await html2canvas(curriculo);
+      const canvas = await html2canvas(curriculo, {
+        useCORS: true,
+        allowTaint: false
+      });
       const imgData = canvas.toDataURL('image/png');
-      const { jsPDF } = window.jspdf;
-      const pdf = new jsPDF('p', 'pt', 'a4');
+      const pdf = new jspdf.jsPDF('p', 'pt', 'a4');
       const pdfWidth = pdf.internal.pageSize.getWidth();
       const pdfHeight = canvas.height * pdfWidth / canvas.width;
       pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
@@ -169,14 +172,6 @@ AJUDANTE DE PADEIRO</textarea></div>
       document.getElementById('v_escolaridade').innerText = document.getElementById('escolaridade').value;
       document.getElementById('v_experiencias').innerText = document.getElementById('experiencias').value;
       document.getElementById('v_objetivo').innerText = document.getElementById('objetivo').value;
-
-      const urlFoto = document.getElementById('urlFoto').value.trim();
-      const fotoContainer = document.getElementById('fotoContainer');
-      if (urlFoto) {
-        fotoContainer.innerHTML = `<img src="${urlFoto}" alt="Foto">`;
-      } else {
-        fotoContainer.innerHTML = 'FOTO';
-      }
 
       document.getElementById('curriculo').style.display = 'block';
       document.getElementById('downloadBtn').style.display = 'inline-block';
