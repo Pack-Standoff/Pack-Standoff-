@@ -16,7 +16,7 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #1C1C1C;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://pack-standoff.vercel.app/Pack_So2_Background_Reforged.jpg");
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://pack-standoff.vercel.app/Pack_So2_Background_Prey.png");
             background-size: cover;
             background-attachment: fixed;
             margin: 0;
@@ -50,26 +50,26 @@
         .novidades {
             font-size: 25px;
             margin-top: 20px;
-            margin-bottom: 15px;
+            margin-bottom: 0px;
             font-family: 'Bebas Neue', sans-serif;
             display: inline;
         }
 
         .novidades .tabela {
             background: linear-gradient(to bottom, #ffffff, #d3d3d3, #444444);
-            /* Degradê com cinza mais claro e preto mais suave */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .novidades .pack {
             background: linear-gradient(to bottom,
-                    #ffe8a3,
-                    #ffdb6d,
-                    #ffbf5b,
-                    #d18434,
-                    #a76529,
-                    #7a401b);
+                    #e1fc4e,
+                    #e1fc4e,
+                    #aaf057,
+                    #65d969,
+                    #3c958f,
+                    #348a93,
+                    #39918e);
             /* O mesmo degradê que você enviou */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -137,6 +137,7 @@
             font-size: 20px;
             color: white;
             text-align: center;
+
         }
 
         .rectangle {
@@ -186,6 +187,10 @@
             font-family: 'Bebas Neue', sans-serif;
             font-size: 15px;
             margin: 0;
+            background: linear-gradient(to bottom, #ffffff, #d3d3d3, #444444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
         }
 
         .bottom-voltar {
@@ -196,6 +201,7 @@
             cursor: pointer;
             font-family: 'Bebas Neue';
             font-size: 15px;
+            -webkit-tap-highlight-color: transparent;
 
         }
 
@@ -253,10 +259,16 @@
 <body>
     <div class="navbar">
         <div class="logo">
-            <img src="https://pack-standoff.vercel.app/Pack_So2_Logo.png" alt="imagem" style="width: 100px; height: 15px; margin-left: 10%; object-fit: cover;" oncontextmenu="return false;">
+            <img src="https://pack-standoff.vercel.app/Pack_So2_Logo_Prey.png" alt="imagem" style="width: 100px; height: 15px; margin-left: 10%; object-fit: cover;" oncontextmenu="return false;">
         </div>
     </div>
     <p class="novidades"><span class="tabela">Tabela</span> <span class="pack">De Preços</span></p>
+    <div style="text-align: center; margin-top: 0px; margin-bottom: 5px;">
+        <p style="color: white; font-family: 'Eurostile'; font-size: 15px;">
+            <span>A tabela a seguir apresenta os valores atualizados</span><br>
+            <span>de cada item presente no pack.</span>
+        </p>
+    </div>
     <div class="pack-info">
         <div class="table-container">
             <div class="table-header">
@@ -273,15 +285,15 @@
                 <tr>
                     <td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Facas.png" class="table-icon"></td>
                     <td>Facas</td>
-                    <td>R$ 8,00</td>
-                    <td>184 Golds</td>
+                    <td>R$ 15,00</td>
+                    <td>345 Golds</td>
                 </tr>
 
                 <tr>
                     <td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Personagem.png" class="table-icon"></td>
                     <td>Personagens</td>
                     <td>R$ 40,00</td>
-                    <td>690 Golds</td>
+                    <td>920 Golds</td>
                 </tr>
 
                 <tr>
@@ -357,8 +369,8 @@
                 <tr>
                     <td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Luvas.png" class="table-icon-l"></td>
                     <td>luvas</td>
-                    <td>R$ 8,00</td>
-                    <td>184 golds</td>
+                    <td>R$ 10,00</td>
+                    <td>230 golds</td>
                 </tr>
 
                 <tr>
@@ -371,8 +383,8 @@
                 <tr>
                     <td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Coin.png" class="table-icon"></td>
                     <td>moedas</td>
-                    <td>R$ 1,00</td>
-                    <td>23 golds</td>
+                    <td>R$ 3,00</td>
+                    <td>69 golds</td>
                 </tr>
 
                 <tr>
@@ -390,28 +402,60 @@
                 </tr>
                 <td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Maps.png" class="table-icon"></td>
                 <td>Mapas</td>
-                <td>R$ 12,00</td>
-                <td>161 Golds</td>
+                <td>R$ 15,00</td>
+                <td>345 Golds</td>
                 </tr>
                 </tr>
             </table>
             <div class="additional-content">
                 <div style="margin-top: 10px;">
-                    <p class="contact-text" style="font-size: 20px;">Pack Completo possui 25% de desconto<s> de R$125 </s> por R$94,75 </p>
+                    <p style="font-size: 20px; font-family: 'Bebas Neue'; text-align: center;">
+                        <span style="background: linear-gradient(to bottom, #ffffff, #d3d3d3, #444444); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                            Pack Completo possui
+                        </span>
+
+                        <span style="background: linear-gradient(to bottom, #e1fc4e, #e1fc4e, #aaf057, #65d969, #3c958f, #348a93, #39918e); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                            30%
+                        </span>
+
+                        <span style="background: linear-gradient(to bottom, #ffffff, #d3d3d3, #444444); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                            de desconto de
+                        </span>
+
+                        <span style="position: relative; display: inline-block;">
+                            <span style="background: linear-gradient(to bottom, #e1fc4e, #e1fc4e, #aaf057, #65d969, #3c958f, #348a93, #39918e); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                                R$130
+                            </span>
+                            <span style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, #ffffff, #d3d3d3, #444444); clip-path: polygon(0% 60%, 100% 60%, 100% 52%, 0% 52%);"></span>
+                        </span>
+
+                        <span style="background: linear-gradient(to bottom, #ffffff, #d3d3d3, #444444); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                            por
+                        </span>
+
+                        <span style="background: linear-gradient(to bottom, #e1fc4e, #e1fc4e, #aaf057, #65d969, #3c958f, #348a93, #39918e); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                            R$100,00
+                        </span>
+                    </p>
                 </div>
                 <div style="text-align: center; margin-top: 8px; margin-bottom: 50px;">
                     <p style="color: white; font-family: 'Eurostile'; font-size: 15px;">Ao Adquirir o pacote, você receberá todo o conteúdo atual e futuras atualizações.</p>
                 </div>
                 <div class="additional-content">
                     <div style="margin-top: 25px;">
-                        <p class="contact-text">Entre em Contato e Realize a Compra</p>
+                        <p style="font-size: 20px; font-family: 'Bebas Neue'; text-align: center;
+background: linear-gradient(to bottom, #ffffff, #d3d3d3, #444444);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;">
+                            Entre em Contato e Realize a Compra
+                        </p>
                     </div>
                     <div class="rectangle" onclick="copiarNomeDiscord()">
-                        <img src="https://soundtrack-season.vercel.app/Icon%20TDiscord.png" alt="Imagem" class="icons">
+                        <img src="https://pack-standoff.vercel.app/Pack_So2_Icon_D.png" alt="Imagem" class="icons">
                         <p class="app-text">Discord</p>
                     </div>
                     <div class="rectangle" onclick="abrirNovaPaginaWhatsapp()">
-                        <img src="https://soundtrack-season.vercel.app/Icon%20TWhatsapp.png" alt="Imagem" class="icons">
+                        <img src="https://pack-standoff.vercel.app/Pack_So2_Icon_W.png" alt="Imagem" class="icons">
                         <p class="app-text">Whatsapp</p>
                     </div>
                 </div>
