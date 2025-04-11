@@ -26,7 +26,10 @@
             flex-direction: column;
             align-items: center;
         }
-
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
         .navbar {
             width: 100%;
             background-color: #000;
@@ -241,7 +244,7 @@
             word-wrap: break-word;
         }
 
-        .pack-info img {
+        .pack-info img {8
             width: 100%;
             height: auto;
             border-radius: 10px;
@@ -316,7 +319,7 @@
     </div>
     <div class="pack-info">
         <div class="title">Pack Standoff 2</div>
-        <img src="https://pack-standoff.vercel.app/Pack_So2_Folder.png" alt="Conteudo"loading="lazy">
+        <img src="https://pack-standoff.vercel.app/Pack_So2_Char_Folder1.png" alt="Conteudo"loading="lazy">
         <div class="description">
             Conheça o pack de imagens mais completo do jogo! Imagens de alta qualidade em 4K e conteúdo exclusivo, sempre recebendo atualizações. Adquira e eleve seu trabalho com o melhor conteúdo disponível.
         </div>
@@ -326,7 +329,7 @@
     </div>
     <div class="pack-info">
         <div class="title">Amostra Gratis</div>
-        <img src="https://pack-standoff.vercel.app/Pack_So2_Free_CC.png" alt="Amostra Gratis"loading="lazy">
+        <img src="https://pack-standoff.vercel.app/Pack_So2_Box.png" alt="Amostra Gratis"loading="lazy">
         <div class="description">
             Experimente gratuitamente uma amostra do nosso Pack e descubra a qualidade superior que oferecemos. Explore um pouco do nosso conteúdo exclusivo antes de realizar sua compra.
         </div>
@@ -336,7 +339,7 @@
 
     <div class="pack-info">
         <div class="title">Soundtracks</div>
-        <img id="soundtrack-image" src="https://pack-standoff.vercel.app/Pack_So2_Soundtrack1.png" alt="Soundtrack"loading="lazy">
+        <img id="soundtrack-image" src="https://pack-standoff.vercel.app/Pack_So2_Sound1.png" alt="Soundtrack"loading="lazy">
         <div class="description">
             Escute e relembre todos os momentos épicos de Standoff 2 com a nossa coleção completa de trilhas sonoras do jogo! Disponibilizamos para você todas as músicas que marcaram os eventos e atualizações do jogo ao longo dos anos.
        
@@ -398,8 +401,8 @@
         }
 
         const soundtrackImages = [
-            "https://pack-standoff.vercel.app/Pack_So2_Soundtrack1.png",
-            "https://pack-standoff.vercel.app/Pack_So2_Soundtrack2.png"
+            "https://pack-standoff.vercel.app/Pack_So2_Sound1.png",
+            "https://pack-standoff.vercel.app/Pack_So2_Sound2.png"
         ];
 
         let currentImageIndex = 0;
