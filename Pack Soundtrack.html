@@ -506,7 +506,36 @@
 
         </div>
     </div>
+        
+         <div class="pack-info">
+        <div class="title">Nightmare</div>
+        <img src="https://soundtrack-season.vercel.app/STK_HW2024.jpg" alt="Imagem" loading="lazy">
+        <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(24)" style="width: 35%; margin-top: 5px; background-color: #e79726; background-size: cover;">Escutar</button>
+        <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()" style="width: 35%;  margin-top: 5px; background-color: #e79726; background-size: cover;"> Pause</button>
+        <div class="description">
+
+        </div>
+    </div>
   
+        <div class="pack-info">
+        <div class="title">Kitsune Dreams</div>
+        <img src="https://soundtrack-season.vercel.app/STK_NY2025.jpg" alt="Imagem" loading="lazy">
+        <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(25)" style="width: 35%; margin-top: 5px; background-color: #e79726; background-size: cover;">Escutar</button>
+        <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()" style="width: 35%;  margin-top: 5px; background-color: #e79726; background-size: cover;"> Pause</button>
+        <div class="description">
+
+        </div>
+    </div>
+        
+        <div class="pack-info">
+        <div class="title">Season 9 Prey</div>
+        <img src="https://soundtrack-season.vercel.app/STK_S9.jpg" alt="Imagem" loading="lazy">
+        <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(26)" style="width: 35%; margin-top: 5px; background-color: #e79726; background-size: cover;">Escutar</button>
+        <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()" style="width: 35%;  margin-top: 5px; background-color: #e79726; background-size: cover;"> Pause</button>
+        <div class="description">
+
+        </div>
+    </div>
       <div style="text-align: center; margin-top: 18px;">
    		<button class="buttom-voltar" onclick="voltarParaPaginaAnterior()">Voltar</button> 
     </div>
@@ -536,6 +565,9 @@
     <audio class="audio" id="audio21" src="https://soundtrack-season.vercel.app/Standoff%202%20Outcast%20Soundtrack(MP3_160K).mp3"></audio>
     <audio class="audio" id="audio22" src="https://soundtrack-season.vercel.app/Standoff%202%20Fun%20and%20Sun%20Soundtrack.mp3"></audio>
     <audio class="audio" id="audio23" src="https://soundtrack-season.vercel.app/Standoff%202%20Reforged%20Soundtrack.mp3"></audio>
+    <audio class="audio" id="audio24" src="https://soundtrack-season.vercel.app/Standoff2%20Nightmare%20Soundtrack.mp3"></audio>
+    <audio class="audio" id="audio25" src="https://soundtrack-season.vercel.app/Standoff%202%20Kitsune%20Soundtrack.mp3"></audio>
+    <audio class="audio" id="audio26" src="https://soundtrack-season.vercel.app/Standoff2%20Prey%20Soundtrack.mp3"></audio>
 
 
     <script>
@@ -551,7 +583,7 @@
         var faixaAtual = document.getElementById('faixa-atual');
         var musicas = ["2 Years", "Halloween 2019", "New Year 2020", "Project Z9", "Revival", "Halloween 2020",
             "New Year 2021", "4 Years", "Dragon Rise", "Cursed Souls", "Winter Fun", "5 Years", "Legends", "Project Pandora",
-            "Hot Winter Party", "Fireborn", "Space Vision", "Sunstrike", "Subject X", "Frost Chaos", "Outcast", "Fun & Sun", "Reforged"
+            "Hot Winter Party", "Fireborn", "Space Vision", "Sunstrike", "Subject X", "Frost Chaos", "Outcast", "Fun & Sun", "Reforged", "Nightmare", "Kitsune Dreams", "Prey"
         ];
 
         function playAudio(audioNumber) {
