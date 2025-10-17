@@ -245,6 +245,22 @@ html, body {
         .view-btn:hover {
             background-color: #7c9bce;
         }
+    
+        .bottom-voltar {
+            background-color: #e79726;
+            color: white;
+            padding: 3px 20px;
+            border: none;
+            cursor: pointer;
+            font-family: 'Bebas Neue';
+            font-size: 15px;
+            -webkit-tap-highlight-color: transparent;
+
+        }
+
+        .bottom-voltar:hover {
+            background-color: #7c9bce;
+        }
     </style>
 </head>
 
@@ -266,8 +282,21 @@ html, body {
     <button class="view-btn">indisponivel</button>
     </div>
 
-
+      <div style="text-align: center;">
+      <button class="bottom-voltar" style="margin-top: 200px; margin-bottom: 30px;" onclick="voltarParaPaginaAnterior()">Voltar</button>
+     </div>
     <script>
+
+function voltarParaPaginaAnterior() {
+                                    if (window.history.length > 1) {
+                                        window.history.back();
+                                    } else {
+                                        window.location.href = "https://pack-standoff.vercel.app/Pack%20So2.Html";
+                                    }
+                                }
+
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const folhasImgs = [
