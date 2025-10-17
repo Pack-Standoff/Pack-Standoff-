@@ -7,6 +7,8 @@
     <title>Pack Standoff</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
     <link rel="stylesheet" href="https://pack-standoff.vercel.app/Eurostile-Reg.ttf.otf">
+    <link rel="preload" as="image" href="https://pack-standoff.vercel.app/Pack_So2_Background_S10_Red.jpg">
+    <link rel="preload" as="image" href="https://pack-standoff.vercel.app/Pack_So2_Logo_S10.png">    
     <style>
         @font-face {
             font-family: 'Eurostile';
@@ -16,7 +18,7 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #1C1C1C;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("https://pack-standoff.vercel.app/Pack_So2_Background_Prey2.png");
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url("https://pack-standoff.vercel.app/Pack_So2_Background_S10_Red.jpg");
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
@@ -68,13 +70,13 @@
 
         .novidades .pack {
             background: linear-gradient(to bottom,
-                    #e1fc4e,
-                    #e1fc4e,
-                    #aaf057,
-                    #65d969,                 
-                    #3c958f,
-                    #348a93,
-                    #39918e);
+                    #d2574a,
+                    #d2574a,
+                    #c05857,
+                    #bc4e4c,
+                    #96423a,
+                    #9b3c3e,
+                    #863034);
             /* O mesmo degradê que você enviou */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -236,13 +238,48 @@
         .bottom-comprar:hover {
             background-color: #7c9bce
         }
+         .folha {
+  position: fixed;
+  top: -50px;
+  pointer-events: none;
+  z-index: 1;
+  animation: cair linear forwards;
+  filter: brightness(2) contrast(2.3) saturate(5);
+}
+
+@keyframes cair {
+  from {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateY(110vh);
+    opacity: 0.5;
+  }
+}
+
+.folha img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  animation: vento ease-in-out infinite alternate;
+}
+
+@keyframes vento {
+  from {
+    transform: translateX(0) rotate(0deg);
+  }
+  to {
+    transform: translateX(var(--swing)) rotate(360deg);
+  }
+}
     </style>
 </head>
 
 <body>
     <div class="navbar">
         <div class="logo">
-            <img src="https://pack-standoff.vercel.app/Pack_So2_Logo_Prey.png" alt="imagem" style="width: 100px; height: 15px; margin-left: 10%; object-fit: cover;" oncontextmenu="return false;">
+            <img src="https://pack-standoff.vercel.app/Pack_So2_Logo_S10.png" alt="imagem" style="width: 100px; height: 15px; margin-left: 10%; object-fit: cover;" oncontextmenu="return false;">
         </div>
     </div>
     <p class="novidades"><span class="conteudo">Conteúdo</span> <span class="pack">do Pack</span></p>
@@ -453,6 +490,83 @@
             function abrirNovaPaginaComprar() {
                 window.location.href = "https://pack-standoff.vercel.app/Tabela.html";
             }
+        
+        document.addEventListener("DOMContentLoaded", () => {
+    const images = document.querySelectorAll("img");
+
+    images.forEach(img => {
+        // Ignora imagens pequenas, como logos
+        if(img.naturalWidth < 300) return;
+
+        const originalSrc = img.src;
+        const halfSrc = originalSrc.replace(/(\.jpg|\.png)$/i, "_half$1");
+
+        // Mostra primeiro a imagem de meia-resolução
+        img.src = halfSrc;
+        img.style.filter = "blur(3px)";
+        img.style.transition = "filter 0.3s ease";
+
+        // Carrega a imagem full-res em background
+        const highRes = new Image();
+        highRes.src = originalSrc;
+        highRes.onload = () => {
+            img.src = highRes.src;       // Substitui pela full-res
+            img.style.filter = "blur(0)"; // Transição suave
+        };
+    });
+});
+        document.addEventListener("DOMContentLoaded", () => {
+  const folhasImgs = [
+    "https://pack-standoff.vercel.app/Pack_So2_Folha1.png",
+    "https://pack-standoff.vercel.app/Pack_So2_Folha2.png",
+    "https://pack-standoff.vercel.app/Pack_So2_Folha3.png"
+     ];
+
+  function criarFolha() {
+    const folha = document.createElement("div");
+    folha.classList.add("folha");
+
+    // posição inicial
+    folha.style.left = Math.random() * 95 + "vw";
+
+    // duração da queda
+    const duracaoQueda = 6 + Math.random() * 10;
+    folha.style.animationDuration = duracaoQueda + "s";
+
+    // cria a imagem da folha
+    const img = document.createElement("img");
+    img.src = folhasImgs[Math.floor(Math.random() * folhasImgs.length)];
+
+    // tamanho aleatório
+    const tamanho = 8 + Math.random() * 9;
+    img.style.width = `${tamanho}px`;
+    img.style.height = `${tamanho}px`;
+
+    // swing lateral
+    const swing = (Math.random() * 250) + 0;
+    img.style.setProperty("--swing", `${swing}px`);
+
+    // duração e velocidade do vento
+    const duracaoVento = 5 + Math.random() * 5;
+    img.style.animationDuration = duracaoVento + "s";
+
+    folha.appendChild(img);
+    document.body.appendChild(folha);
+
+    folha.addEventListener("animationend", () => folha.remove());
+  }
+
+  function soltarFolhas() {
+    const quantidade = Math.random() < 0.4 ? 2 : 1;
+    for (let i = 0; i < quantidade; i++) {
+      criarFolha();
+    }
+  }
+
+  setInterval(() => {
+    soltarFolhas();
+  }, 3000 + Math.random() * 5000);
+});
         </script>
 </body>
 
