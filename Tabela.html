@@ -2,431 +2,511 @@
 <html lang="pt-BR">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pack Standoff</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
-<link rel="stylesheet" href="https://pack-standoff.vercel.app/Eurostile-Reg.ttf.otf">
-<style>
-@font-face {
-font-family: 'Eurostile';
-src: url('https://pack-standoff.vercel.app/Eurostile-Reg.ttf.otf') format('opentype');
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pack Standoff</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+    <link rel="stylesheet" href="https://pack-standoff.vercel.app/Eurostile-Reg.ttf.otf">
+    <style>
+        @font-face {
+            font-family: 'Eurostile';
+            src: url('https://pack-standoff.vercel.app/Eurostile-Reg.ttf.otf') format('opentype');
+        }
 
-body {
-font-family: Arial, sans-serif;
-background-color: #1C1C1C;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://pack-standoff.vercel.app/Pack_So2_Background_Prey.png");
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://pack-standoff.vercel.app/Pack_So2_Background_Prey2.png");
-background-size: cover;
-background-attachment: fixed;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1C1C1C;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url("https://pack-standoff.vercel.app/Pack_So2_Background_S10_Red.jpg");
+            background-size: cover;
+            background-attachment: fixed;
             background-position: center;
-margin: 0;
-padding: 0;
-display: flex;
-flex-direction: column;
-align-items: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
-}
-html, body {
-    max-width: 100vw;
-    overflow-x: hidden;
-}
-.navbar {
-width: 100%;
-background-color: #000;
-padding: 10px 20px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-color: #fff;
-font-size: 24px;
-font-weight: bold;
+        }
+
+        html,
+        body {
+            max-width: 100vw;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: #000;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo img {
+            height: auto;
+            width: auto;
+            display: block;
+            font-size: 10px;
+        }
+
+        .novidades {
+            font-size: 25px;
+            margin-top: 20px;
+            margin-bottom: 0px;
+            font-family: 'Bebas Neue', sans-serif;
+            display: inline;
+        }
+
+        .novidades .tabela {
+            background: linear-gradient(to bottom, #ffffff, #d3d3d3, #444444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .novidades .pack {
+            background: linear-gradient(to bottom,
+                    #d2574a,
+                    #d2574a,
+                    #c05857,
+                    #bc4e4c,
+                    #96423a,
+                    #9b3c3e,
+                    #863034);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .container {
+            background-color: transparent;
+            padding: 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+            margin-top: 20px;
+            color: #fff;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        @media (max-width: 1200px) {
+            .container {
+                width: 80%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 80%;
+            }
+
+            .navbar {
+                font-size: 22px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+            }
+
+            .navbar {
+                font-size: 20px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                width: 70%;
+                max-width: 1200px;
+            }
+
+            .navbar {
+                padding: 10px 30px;
+            }
+
+            .logo img {
+                width: 150px;
+                height: auto;
+            }
+        }
+
+        .contact-text {
+            font-family: "Bebas Neue";
+            font-size: 20px;
+            color: white;
+            text-align: center;
+
+        }
+
+        .rectangle {
+            background-color: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 5px;
+            opacity: 1;
+            padding: 8px;
+            margin-top: 30px;
+            width: 80%;
+            height: 40px;
+            margin: 0 auto;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        .icons {
+            width: 40px;
+            height: 40px;
+            margin-left: 5%;
+            margin-top: 0px;
+            opacity: 1;
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-position: center;
+            -webkit-mask-size: contain;
+            mask-repeat: no-repeat;
+            mask-position: center;
+            mask-size: contain;
+        }
+
+        .icon-discord {
+            -webkit-mask-image: url("https://pack-standoff.vercel.app/Pack_So2_Icon_D.png");
+            mask-image: url("https://pack-standoff.vercel.app/Pack_So2_Icon_D.png");
+            background: linear-gradient(135deg, #7289da, #5865f2, #404eed);
+
+        }
+
+        .icon-whatsapp {
+            -webkit-mask-image: url("https://pack-standoff.vercel.app/Pack_So2_Icon_W.png");
+            mask-image: url("https://pack-standoff.vercel.app/Pack_So2_Icon_W.png");
+            background: linear-gradient(135deg, #25d366, #128c7e, #075e54);
+        }
+
+        .app-text {
+            font-family: 'Bebas Neue';
+            margin-left: 60%;
+            font-size: 22px;
+            margin-top: -35px;
+            background: linear-gradient(to bottom,
+                    #d2574a,
+                    #d2574a,
+                    #c05857,
+                    #bc4e4c,
+                    #96423a,
+                    #9b3c3e,
+                    #863034);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .table-container {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .table-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .order-text {
+            color: white;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 15px;
+            margin: 0;
+            background: linear-gradient(to bottom, #ffffff, #d3d3d3, #444444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+        }
+
+        .bottom-voltar {
+            background-color: #e79726;
+            color: white;
+            padding: 3px 20px;
+            border: none;
+            cursor: pointer;
+            font-family: 'Bebas Neue';
+            font-size: 15px;
+            -webkit-tap-highlight-color: transparent;
+
+        }
+
+        .bottom-voltar:hover {
+            background-color: #7c9bce;
+        }
+
+        table {
+            width: 100%;
+            font-size: 13px;
+            font-family: 'Bebas Neue', sans-serif;
+            color: white;
+            border-collapse: separate;
+            border-spacing: 0;
+
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            border: 0.9px solid rgba(255, 255, 255, 0.7);
+            border-radius: 0px;
+            padding: 8px;
+            text-align: left;
+            color: white;
+            font-weight: normal;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        th {
+            background-image:
+                background-size: cover;
+            background-repeat: no-repeat;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: transparent;
+        }
+
+        .table-icon {
+            width: 25px;
+            height: 25;
+            object-fit: cover;
+        }
+
+        .table-icon-l {
+            width: 35px;
+            height: 23px;
+            object-fit: cover;
+        }
+    
+         .folha {
+  position: fixed;
+  top: -50px;
+  pointer-events: none;
+  z-index: 1;
+  animation: cair linear forwards;
+  filter: brightness(2) contrast(2.3) saturate(5);
 }
 
-.logo img {
-height: auto;
-width: auto;
-display: block;
-font-size: 10px;
+@keyframes cair {
+  from {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateY(110vh);
+    opacity: 0.5;
+  }
 }
 
-.novidades {
-font-size: 25px;
-margin-top: 20px;
-margin-bottom: 0px;
-font-family: 'Bebas Neue', sans-serif;
-display: inline;
+.folha img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  animation: vento ease-in-out infinite alternate;
 }
 
-.novidades .tabela {
-background: linear-gradient(to bottom, #ffffff, #d3d3d3, #444444);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+@keyframes vento {
+  from {
+    transform: translateX(0) rotate(0deg);
+  }
+  to {
+    transform: translateX(var(--swing)) rotate(360deg);
+  }
 }
-
-.novidades .pack {
-background: linear-gradient(to bottom,
-#e1fc4e,
-#e1fc4e,
-#aaf057,
-#65d969,
-#3c958f,
-#348a93,
-#39918e);
-/* O mesmo degradê que você enviou */
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-}
-
-.container {
-background-color: transparent;
-padding: 0;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-border-radius: 5px;
-width: 80%;
-max-width: 800px;
-text-align: center;
-margin-top: 20px;
-color: #fff;
-height: 100%;
-overflow: hidden;
-position: relative;
-}
-
-@media (max-width: 1200px) {
-.container {
-width: 80%;
-}
-}
-
-@media (max-width: 768px) {
-.container {
-width: 80%;
-}
-
-.navbar {
-font-size: 22px;
-}
-}
-
-@media (max-width: 600px) {
-.container {
-width: 90%;
-}
-
-.navbar {
-font-size: 20px;
-}
-}
-
-@media (min-width: 1200px) {
-.container {
-width: 70%;
-max-width: 1200px;
-}
-
-.navbar {
-padding: 10px 30px;
-}
-
-.logo img {
-width: 150px;
-height: auto;
-}
-}
-
-.contact-text {
-font-family: "Bebas Neue";
-font-size: 20px;
-color: white;
-text-align: center;
-
-}
-
-.rectangle {
-background-color: rgba(0, 0, 0, 0.2);
-border: 1px solid rgba(255, 255, 255, 0.7);
-border-radius: 5px;
-opacity: 1;
-padding: 8px;
-margin-top: 30px;
-width: 80%;
-height: 40px;
-margin: 0 auto;
-margin-bottom: 5px;
-text-align: center;
-}
-
-.icons {
-width: 40px;
-height: 40px;
-margin-right: 75%;
-margin-top: -2px;
-opacity: 1;
-}
-
-.app-text {
-font-family: 'Bebas Neue';
-color: white;
-margin-left: 60%;
-font-size: 22px;
-margin-top: -37px;
-}
-
-.table-container {
-width: 90%;
-margin: 0 auto;
-}
-
-.table-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin-bottom: 10px;
-}
-
-.order-text {
-color: white;
-font-family: 'Bebas Neue', sans-serif;
-font-size: 15px;
-margin: 0;
-background: linear-gradient(to bottom, #ffffff, #d3d3d3, #444444);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-
-}
-
-.bottom-voltar {
-background-color: #e79726;
-color: white;
-padding: 3px 20px;
-border: none;
-cursor: pointer;
-font-family: 'Bebas Neue';
-font-size: 15px;
--webkit-tap-highlight-color: transparent;
-
-}
-
-.bottom-voltar:hover {
-background-color: #7c9bce;
-}
-
-table {
-width: 100%;
-font-size: 13px;
-font-family: 'Bebas Neue', sans-serif;
-color: white;
-border-collapse: separate;
-border-spacing: 0;
-
-overflow: hidden;
-}
-
-th,
-td {
-border: 0.9px solid rgba(255, 255, 255, 0.7);
-border-radius: 0px;
-padding: 8px;
-text-align: left;
-color: white;
-font-weight: normal;
-background-color: rgba(0, 0, 0, 0.3);
-}
-
-th {
-background-image:
-background-size: cover;
-background-repeat: no-repeat;
-color: white;
-}
-
-tr:nth-child(even) {
-background-color: transparent;
-}
-
-.table-icon {
-width: 25px;
-height: 25;
-object-fit: cover;
-}
-
-.table-icon-l {
-width: 35px;
-height: 23px;
-object-fit: cover;
-}
-</style>
+    </style>
 </head>
 
 <body>
-<div class="navbar">
-<div class="logo">
-<img src="https://pack-standoff.vercel.app/Pack_So2_Logo_Prey.png" alt="imagem" style="width: 100px; height: 15px; margin-left: 10%; object-fit: cover;" oncontextmenu="return false;">
-</div>
-</div>
-<p class="novidades"><span class="tabela">Tabela</span> <span class="pack">De Preços</span></p>
-<div style="text-align: center; margin-top: 0px; margin-bottom: 5px;">
-<p style="color: white; font-family: 'Eurostile'; font-size: 15px;">
-<span>A tabela a seguir apresenta os valores atualizados</span><br>
-<span>de cada item presente no pack.</span>
-</p>
-</div>
-<div class="pack-info">
-<div class="table-container">
-<div class="table-header">
-<p class="order-text">Ordenar por Preço</p>
-<button class="bottom-voltar" id="ordenarButton" onclick="ordenarTabela()">Preço</button>
-</div>
+    <div class="navbar">
+        <div class="logo">
+            <img src="https://pack-standoff.vercel.app/Pack_So2_Logo_S10.png" alt="imagem" style="width: 100px; height: 15px; margin-left: 10%; object-fit: cover;" oncontextmenu="return false;">
+        </div>
+    </div>
+    <p class="novidades"><span class="tabela">Tabela</span> <span class="pack">De Preços</span></p>
+    <div style="text-align: center; margin-top: 0px; margin-bottom: 5px;">
+        <p style="color: white; font-family: 'Eurostile'; font-size: 15px;">
+            <span>A tabela a seguir apresenta os valores atualizados</span><br>
+            <span>de cada item presente no pack.</span>
+        </p>
+    </div>
+    <div class="pack-info">
+        <div class="table-container">
+            <div class="table-header">
+                <p class="order-text">Ordenar por Preço</p>
+                <button class="bottom-voltar" id="ordenarButton" onclick="ordenarTabela()">Preço</button>
+            </div>
 
-<table>
-<tr>
-<th colspan="2">Conteúdo</th>
-<th colspan="2" style="text-align: center">Dinheiro ou Golds</th>
-</tr>
-<tr>
-<tr>
-<td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Facas.png" class="table-icon"></td>
-<td>Inspeção Facas</td>
-<td>R$ 20,00</td>
-<td>460 Golds</td>
-</tr>
-            
-<tr>
-<td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Luvas.png" class="table-icon-l"></td>
-<td>Inspeção luvas</td>
-<td>R$ 10,00</td>
-<td>230 golds</td>
-</tr>
+            <table>
+                <tr>
+                    <th colspan="2">Conteúdo</th>
+                    <th colspan="2" style="text-align: center">Dinheiro ou Golds</th>
+                </tr>
+                <tr>
+                <tr>
+                    <td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Facas.png" class="table-icon"></td>
+                    <td>Inspeção Facas</td>
+                    <td>R$ 20,00</td>
+                    <td>460 Golds</td>
+                </tr>
 
-<tr>
-<td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Personagem.png" class="table-icon"></td>
-<td>Personagens</td>
-<td>R$ 40,00</td>
-<td>920 Golds</td>
-</tr>
+                <tr>
+                    <td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Luvas.png" class="table-icon-l"></td>
+                    <td>Inspeção luvas</td>
+                    <td>R$ 10,00</td>
+                    <td>230 golds</td>
+                </tr>
 
-<tr>
-<td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Patente.png" class="table-icon"></td>
-<td>Patentes</td>
-<td>R$ 5,00</td>
-<td>115 Golds</td>
-</tr>
+                <tr>
+                    <td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Personagem.png" class="table-icon"></td>
+                    <td>Personagens</td>
+                    <td>R$ 40,00</td>
+                    <td>920 Golds</td>
+                </tr>
 
-<tr>
-<td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Medal.png" class="table-icon-l"></td>
-<td>Medalhas Veteranas</td>
-<td>R$ 5,00</td>
-<td>115 Golds</td>
-</tr>
+                <tr>
+                    <td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Patente.png" class="table-icon"></td>
+                    <td>Patentes</td>
+                    <td>R$ 5,00</td>
+                    <td>115 Golds</td>
+                </tr>
 
-<tr>
-<td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Medal.png" class="table-icon-l"></td>
-<td>Medalhas de Passe</td>
-<td>R$ 8,00</td>
-<td>184 Golds</td>
-</tr>
+                <tr>
+                    <td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Medal.png" class="table-icon-l"></td>
+                    <td>Medalhas Veteranas</td>
+                    <td>R$ 5,00</td>
+                    <td>115 Golds</td>
+                </tr>
 
-<tr>
-<td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Sticker.png" class="table-icon"></td>
-<td>Adesivos</td>
-<td>R$ 5,00</td>
-<td>115 golds</td>
-</tr>
+                <tr>
+                    <td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Medal.png" class="table-icon-l"></td>
+                    <td>Medalhas de Passe</td>
+                    <td>R$ 8,00</td>
+                    <td>184 Golds</td>
+                </tr>
 
-<tr>
-<td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Sticker.png" class="table-icon"></td>
-<td>Adesivos Shield</td>
-<td>R$ 3,00</td>
-<td>69 golds</td>
-</tr>
+                <tr>
+                    <td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Sticker.png" class="table-icon"></td>
+                    <td>Adesivos</td>
+                    <td>R$ 5,00</td>
+                    <td>115 golds</td>
+                </tr>
 
-<tr>
-<td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Grafites.png" class="table-icon"></td>
-<td>grafites</td>
-<td>Gratís</td>
-<td>Gratís</td>
-</tr>
+                <tr>
+                    <td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Sticker.png" class="table-icon"></td>
+                    <td>Adesivos Shield</td>
+                    <td>R$ 3,00</td>
+                    <td>69 golds</td>
+                </tr>
 
-<tr>
-<td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Charms.png" class="table-icon"></td>
-<td>Charms</td>
-<td>R$ 4,00</td>
-<td>92 golds</td>
-</tr>
+                <tr>
+                    <td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Grafites.png" class="table-icon"></td>
+                    <td>grafites</td>
+                    <td>Gratís</td>
+                    <td>Gratís</td>
+                </tr>
 
-<tr>
-<td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Case.png" class="table-icon-l"></td>
-<td>Caixas</td>
-<td>R$ 5,00</td>
-<td>115 golds</td>
-</tr>
+                <tr>
+                    <td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Charms.png" class="table-icon"></td>
+                    <td>Charms</td>
+                    <td>R$ 4,00</td>
+                    <td>92 golds</td>
+                </tr>
 
-<tr>
-<td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Pacotes.png" class="table-icon"></td>
-<td>pacotes</td>
-<td>R$ 4,00</td>
-<td>92 Golds</td>
-</tr>
+                <tr>
+                    <td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Case.png" class="table-icon-l"></td>
+                    <td>Caixas</td>
+                    <td>R$ 5,00</td>
+                    <td>115 golds</td>
+                </tr>
 
-<tr>
-<td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Bomb.png" class="table-icon"></td>
-<td>Bomb C4</td>
-<td>R$ 3,00</td>
-<td>69 Golds</td>
-</tr>
+                <tr>
+                    <td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Pacotes.png" class="table-icon"></td>
+                    <td>pacotes</td>
+                    <td>R$ 4,00</td>
+                    <td>92 Golds</td>
+                </tr>
 
-<tr>
-<td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Luvas.png" class="table-icon-l"></td>
-<td>luvas</td>
-<td>R$ 10,00</td>
-<td>230 golds</td>
-</tr>
+                <tr>
+                    <td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Bomb.png" class="table-icon"></td>
+                    <td>Bomb C4</td>
+                    <td>R$ 3,00</td>
+                    <td>69 Golds</td>
+                </tr>
 
-<tr>
-<td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Fragment.png" class="table-icon"></td>
-<td>Fragmentos</td>
-<td>R$ 1,00</td>
-<td>23 golds</td>
-</tr>
+                <tr>
+                    <td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Luvas.png" class="table-icon-l"></td>
+                    <td>luvas</td>
+                    <td>R$ 10,00</td>
+                    <td>230 golds</td>
+                </tr>
 
-<tr>
-<td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Coin.png" class="table-icon"></td>
-<td>moedas</td>
-<td>R$ 3,00</td>
-<td>69 golds</td>
-</tr>
+                <tr>
+                    <td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Fragment.png" class="table-icon"></td>
+                    <td>Fragmentos</td>
+                    <td>R$ 1,00</td>
+                    <td>23 golds</td>
+                </tr>
 
-<tr>
-<td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Collections.png" class="table-icon"></td>
-<td>coleções</td>
-<td>R$ 0,50</td>
-<td>11.50 golds</td>
-</tr>
+                <tr>
+                    <td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Coin.png" class="table-icon"></td>
+                    <td>moedas</td>
+                    <td>R$ 3,00</td>
+                    <td>69 golds</td>
+                </tr>
 
-<tr>
-<td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Granadas.png" class="table-icon"></td>
-<td>granadas</td>
-<td>R$ 3,50</td>
-<td>80.5 Golds</td>
-</tr>
-<td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Maps.png" class="table-icon"></td>
-<td>Mapas</td>
-<td>R$ 15,00</td>
-<td>345 Golds</td>
-</tr>
-</tr>
-</table>
-<div class="additional-content">
+                <tr>
+                    <td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Collections.png" class="table-icon"></td>
+                    <td>coleções</td>
+                    <td>R$ 0,50</td>
+                    <td>11.50 golds</td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Granadas.png" class="table-icon"></td>
+                    <td>granadas</td>
+                    <td>R$ 3,50</td>
+                    <td>80.5 Golds</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Granadas.png" class="table-icon"></td>
+                    <td>Molduras</td>
+                    <td>R$ 1,00</td>
+                    <td>23 Golds</td>
+                </tr>
+
+                <td style="text-align: center; padding-top: 11px;"><img src="https://pack-standoff.vercel.app/Pack_Standoff_Icon_Maps.png" class="table-icon"></td>
+                <td>Mapas</td>
+                <td>R$ 15,00</td>
+                <td>345 Golds</td>
+                </tr>
+                </tr>
+            </table>
+
+
+            <div class="additional-content">
 <div style="margin-top: 10px;">
 <p style="font-size: 20px; font-family: 'Bebas Neue'; text-align: center;">
 <span style="background: linear-gradient(to bottom, #ffffff, #d3d3d3, #444444); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
 Pack Completo possui
 </span>
 
-<span style="background: linear-gradient(to bottom, #e1fc4e, #e1fc4e, #aaf057, #65d969, #3c958f, #348a93, #39918e); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-30%
+<span style="background: linear-gradient(to bottom,
+          #ff6f61,
+          #e96457,
+          #d95c4b,
+          #c85244,
+          #b0483d,
+          #9f3f36,
+          #8a2f2d); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">30%
 </span>
 
 <span style="background: linear-gradient(to bottom, #ffffff, #d3d3d3, #444444); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
@@ -434,8 +514,14 @@ de desconto de
 </span>
 
 <span style="position: relative; display: inline-block;">
-<span style="background: linear-gradient(to bottom, #e1fc4e, #e1fc4e, #aaf057, #65d969, #3c958f, #348a93, #39918e); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-R$145
+<span style="background: linear-gradient(to bottom,
+          #ff6f61,
+          #e96457,
+          #d95c4b,
+          #c85244,
+          #b0483d,
+          #9f3f36,
+          #8a2f2d); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">R$145
 </span>
 <span style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, #ffffff, #d3d3d3, #444444); clip-path: polygon(0% 60%, 100% 60%, 100% 52%, 0% 52%);"></span>
 </span>
@@ -444,7 +530,14 @@ R$145
 por
 </span>
 
-<span style="background: linear-gradient(to bottom, #e1fc4e, #e1fc4e, #aaf057, #65d969, #3c958f, #348a93, #39918e); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+<span style="background: linear-gradient(to bottom,
+          #ff6f61,
+          #e96457,
+          #d95c4b,
+          #c85244,
+          #b0483d,
+          #9f3f36,
+          #8a2f2d); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
 R$101,50
 </span>
 </p>
@@ -461,71 +554,128 @@ background: linear-gradient(to bottom, #ffffff, #d3d3d3, #444444);
 Entre em Contato e Realize a Compra
 </p>
 </div>
-<div class="rectangle" onclick="copiarNomeDiscord()">
-<img src="https://pack-standoff.vercel.app/Pack_So2_Icon_D.png" alt="Imagem" class="icons">
-<p class="app-text">Discord</p>
-</div>
-<div class="rectangle" onclick="abrirNovaPaginaWhatsapp()">
-<img src="https://pack-standoff.vercel.app/Pack_So2_Icon_W.png" alt="Imagem" class="icons">
-<p class="app-text">Whatsapp</p>
-</div>
-</div>
-<div style="text-align: center;">
-<button class="bottom-voltar" style="margin-top: 30px; margin-bottom: 10px;" onclick="voltarParaPaginaAnterior()">Voltar</button>
-</div>
-<script>
-function voltarParaPaginaAnterior() {
-if (window.history.length > 1) {
-window.history.back();
-} else {
-window.location.href = "https://pack-standoff.vercel.app/Pack%20So2.Html";
-}
-}
+                    <div class="rectangle" onclick="copiarNomeDiscord()">
+                        <div class="icons icon-discord"></div>
+                        <p class="app-text">Discord</p>
+                    </div>
 
-function copiarNomeDiscord() {
-var nomeDiscord = "PackStandoff2#1705";
-var tempInput = document.createElement("input");
-tempInput.value = nomeDiscord;
-document.body.appendChild(tempInput);
-tempInput.select();
-document.execCommand("copy");
-document.body.removeChild(tempInput);
-alert("Nome do usuário copiado: " + nomeDiscord);
-}
+                    <div class="rectangle" onclick="abrirNovaPaginaWhatsapp()">
+                        <div class="icons icon-whatsapp"></div>
+                        <p class="app-text">Whatsapp</p>
+                        < </div>
+                            <div style="text-align: center;">
+                                <button class="bottom-voltar" style="margin-top: 30px; margin-bottom: 30px;" onclick="voltarParaPaginaAnterior()">Voltar</button>
+                            </div>
+                            <script>
+                                function voltarParaPaginaAnterior() {
+                                    if (window.history.length > 1) {
+                                        window.history.back();
+                                    } else {
+                                        window.location.href = "https://pack-standoff.vercel.app/Pack%20So2.Html";
+                                    }
+                                }
 
-function abrirNovaPaginaWhatsapp() {
-window.location.href = "https://wa.me/5511958683615";
-}
+                                function copiarNomeDiscord() {
+                                    var nomeDiscord = "PackStandoff2#1705";
+                                    var tempInput = document.createElement("input");
+                                    tempInput.value = nomeDiscord;
+                                    document.body.appendChild(tempInput);
+                                    tempInput.select();
+                                    document.execCommand("copy");
+                                    document.body.removeChild(tempInput);
+                                    alert("Nome do usuário copiado: " + nomeDiscord);
+                                }
 
-// Variável para rastrear o estado da ordenação
-var ordemCrescente = false;
+                                function abrirNovaPaginaWhatsapp() {
+                                    window.location.href = "https://wa.me/5511958683615";
+                                }
 
-function ordenarTabela() {
-var tabela = document.querySelector("table");
-var linhas = Array.from(tabela.rows).slice(2); // Pega todas as linhas, exceto o cabeçalho
+                                // Variável para rastrear o estado da ordenação
+                                var ordemCrescente = false;
 
-linhas.sort(function(a, b) {
-var precoA = a.cells[2].textContent.trim();
-var precoB = b.cells[2].textContent.trim();
+                                function ordenarTabela() {
+                                    var tabela = document.querySelector("table");
+                                    var linhas = Array.from(tabela.rows).slice(2); // Pega todas as linhas, exceto o cabeçalho
 
-// Converter valores para números, tratando "Gratís" como 0
-var valorA = precoA === "Gratís" ? 0 : parseFloat(precoA.replace('R$', '').replace(',', '.'));
-var valorB = precoB === "Gratís" ? 0 : parseFloat(precoB.replace('R$', '').replace(',', '.'));
+                                    linhas.sort(function(a, b) {
+                                        var precoA = a.cells[2].textContent.trim();
+                                        var precoB = b.cells[2].textContent.trim();
 
-// Verifica a ordem atual e ordena de acordo
-return ordemCrescente ? valorA - valorB : valorB - valorA;
+                                        // Converter valores para números, tratando "Gratís" como 0
+                                        var valorA = precoA === "Gratís" ? 0 : parseFloat(precoA.replace('R$', '').replace(',', '.'));
+                                        var valorB = precoB === "Gratís" ? 0 : parseFloat(precoB.replace('R$', '').replace(',', '.'));
+
+                                        // Verifica a ordem atual e ordena de acordo
+                                        return ordemCrescente ? valorA - valorB : valorB - valorA;
+                                    });
+
+                                    // Alterna a ordem da próxima vez que o botão for clicado
+                                    ordemCrescente = !ordemCrescente;
+
+                                    // Remove as linhas antigas e adiciona as novas, ordenadas
+                                    linhas.forEach(function(linha) {
+                                        tabela.appendChild(linha);
+                                    });
+
+                                    // Atualiza o texto do botão conforme a ordem
+                                    document.getElementById("ordenarButton").textContent = ordemCrescente ? "Maior Preço" : "Menor Preço";
+                                }
+
+                                
+                               
+                        
+                        
+                        document.addEventListener("DOMContentLoaded", () => {
+  const folhasImgs = [
+    "https://pack-standoff.vercel.app/Pack_So2_Folha1.png",
+    "https://pack-standoff.vercel.app/Pack_So2_Folha2.png",
+    "https://pack-standoff.vercel.app/Pack_So2_Folha3.png"
+     ];
+
+  function criarFolha() {
+    const folha = document.createElement("div");
+    folha.classList.add("folha");
+
+    // posição inicial
+    folha.style.left = Math.random() * 95 + "vw";
+
+    // duração da queda
+    const duracaoQueda = 6 + Math.random() * 10;
+    folha.style.animationDuration = duracaoQueda + "s";
+
+    // cria a imagem da folha
+    const img = document.createElement("img");
+    img.src = folhasImgs[Math.floor(Math.random() * folhasImgs.length)];
+
+    // tamanho aleatório
+    const tamanho = 8 + Math.random() * 9;
+    img.style.width = `${tamanho}px`;
+    img.style.height = `${tamanho}px`;
+
+    // swing lateral
+    const swing = (Math.random() * 250) + 0;
+    img.style.setProperty("--swing", `${swing}px`);
+
+    // duração e velocidade do vento
+    const duracaoVento = 5 + Math.random() * 5;
+    img.style.animationDuration = duracaoVento + "s";
+
+    folha.appendChild(img);
+    document.body.appendChild(folha);
+
+    folha.addEventListener("animationend", () => folha.remove());
+  }
+
+  function soltarFolhas() {
+    const quantidade = Math.random() < 0.4 ? 2 : 1;
+    for (let i = 0; i < quantidade; i++) {
+      criarFolha();
+    }
+  }
+
+  setInterval(() => {
+    soltarFolhas();
+  }, 3000 + Math.random() * 5000);
 });
-
-// Alterna a ordem da próxima vez que o botão for clicado
-ordemCrescente = !ordemCrescente;
-
-// Remove as linhas antigas e adiciona as novas, ordenadas
-linhas.forEach(function(linha) {
-tabela.appendChild(linha);
-});
-
-// Atualiza o texto do botão conforme a ordem
-document.getElementById("ordenarButton").textContent = ordemCrescente ? "Maior Preço" : "Menor Preço";
-}
-</script>
+                            </script>
 </body>
