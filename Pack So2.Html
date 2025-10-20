@@ -1,54 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pack Standoff</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
     <link rel="stylesheet" href="https://pack-standoff.vercel.app/Eurostile-Reg.ttf.otf">
-    
-    
+    <link rel="preload" as="image" href="https://pack-standoff.vercel.app/Pack_So2_Background_S10_Red.jpg">
+    <link rel="preload" as="image" href="https://pack-standoff.vercel.app/Pack_So2_Logo_S10.png">
+
     <style>
         @font-face {
             font-family: 'Eurostile';
             src: url('https://pack-standoff.vercel.app/Eurostile-Reg.ttf.otf') format('opentype');
         }
-.folha {
-  position: fixed;
-  top: -50px;
-  pointer-events: none;
-  z-index: 1;
-  animation: cair linear forwards;
-    
-}
 
-@keyframes cair {
-  from {
-    transform: translateY(0);
-    opacity: 0.5;
-  }
-  to {
-    transform: translateY(110vh);
-    opacity: 0.5;
-  }
-}
-
-.folha img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  animation: vento ease-in-out infinite alternate;
-}
-
-@keyframes vento {
-  from {
-    transform: translateX(0) rotate(0deg);
-  }
-  to {
-    transform: translateX(var(--swing)) rotate(360deg);
-  }
-}
         body {
             font-family: Arial, sans-serif;
             background-color: #1C1C1C;
@@ -62,10 +28,13 @@
             flex-direction: column;
             align-items: center;
         }
-html, body {
-    max-width: 100vw;
-    overflow-x: hidden;
-}
+
+        html,
+        body {
+            max-width: 100vw;
+            overflow-x: hidden;
+        }
+
         .navbar {
             width: 100%;
             background-color: #000;
@@ -107,7 +76,7 @@ html, body {
             height: 100%;
             overflow: hidden;
             position: relative;
-             z-index: 2;
+            z-index: 2;
         }
 
         .carousel {
@@ -222,7 +191,7 @@ html, body {
             background-color: #e79726;
             color: white;
             border: none;
-            cursor: pointer;           
+            cursor: pointer;
             margin: 0 5px;
             text-align: center;
             font-family: 'Bebas Neue';
@@ -324,11 +293,49 @@ html, body {
             font-family: 'Bebas Neue', sans-serif;
             margin-top: -15px;
             -webkit-tap-highlight-color: transparent;
-
+            z-index: 10;
         }
 
         .view-btn:hover {
             background-color: #7c9bce;
+        }
+
+        .folha {
+            position: fixed;
+            top: -50px;
+            pointer-events: none;
+            z-index: 1;
+            animation: cair linear forwards;
+
+        }
+
+        @keyframes cair {
+            from {
+                transform: translateY(0);
+                opacity: 0.5;
+            }
+
+            to {
+                transform: translateY(110vh);
+                opacity: 0.5;
+            }
+        }
+
+        .folha img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            animation: vento ease-in-out infinite alternate;
+        }
+
+        @keyframes vento {
+            from {
+                transform: translateX(0) rotate(0deg);
+            }
+
+            to {
+                transform: translateX(var(--swing)) rotate(360deg);
+            }
         }
     </style>
 </head>
@@ -342,9 +349,9 @@ html, body {
     <p class="novidades">Novidades</p>
     <div class="container">
         <div class="carousel" id="carousel">
-            <div class="slide"><img src="https://pack-standoff.vercel.app/Pack_So2_News5.png" alt="Slide 1"oncontextmenu="return false;"loading="lazy" decoding="async"fetchpriority="high"></div>
-            <div class="slide"><img src="https://pack-standoff.vercel.app/Pack_So2_News5.png" alt="Slide 2"oncontextmenu="return false;"loading="lazy" decoding="async"fetchpriority="high"></div>
-            <div class="slide"><img src="https://pack-standoff.vercel.app/Pack_So2_News5.png" alt="Slide 3"oncontextmenu="return false;"loading="lazy" decoding="async"fetchpriority="high"></div>
+            <div class="slide"><img src="https://pack-standoff.vercel.app/Pack_So2_News5.png" alt="Slide 1" oncontextmenu="return false;" loading="lazy" decoding="async" fetchpriority="high"></div>
+            <div class="slide"><img src="https://pack-standoff.vercel.app/Pack_So2_News5.png" alt="Slide 2" oncontextmenu="return false;" loading="lazy" decoding="async" fetchpriority="high"></div>
+            <div class="slide"><img src="https://pack-standoff.vercel.app/Pack_So2_News5.png" alt="Slide 3" oncontextmenu="return false;" loading="lazy" decoding="async" fetchpriority="high"></div>
         </div>
         <div class="slide-indicators" id="indicators"></div>
     </div>
@@ -357,7 +364,7 @@ html, body {
     </div>
     <div class="pack-info">
         <div class="title">Pack Standoff 2</div>
-        <img src="https://pack-standoff.vercel.app/Pack_So2_F1.png" alt="Conteudo"oncontextmenu="return false;"loading="eager" decoding="async">
+        <img src="https://pack-standoff.vercel.app/Pack_So2_F1.png" alt="Conteudo" oncontextmenu="return false;" loading="eager" decoding="async">
         <div class="description">
             Conheça o pack de imagens mais completo do jogo! Imagens de alta qualidade em 4K e conteúdo exclusivo, sempre recebendo atualizações. Adquira e eleve seu trabalho com o melhor conteúdo disponível.
         </div>
@@ -367,7 +374,7 @@ html, body {
     </div>
     <div class="pack-info">
         <div class="title">Amostra Gratis</div>
-        <img src="https://pack-standoff.vercel.app/Pack_So2_Amostra.png" alt="Amostra Gratis"oncontextmenu="return false;"loading="eager" decoding="async">
+        <img src="https://pack-standoff.vercel.app/Pack_So2_Amostra.png" alt="Amostra Gratis" oncontextmenu="return false;" loading="eager" decoding="async">
         <div class="description">
             Experimente gratuitamente uma amostra do nosso Pack e descubra a qualidade superior que oferecemos. Explore um pouco do nosso conteúdo exclusivo antes de realizar sua compra.
         </div>
@@ -377,157 +384,139 @@ html, body {
 
     <div class="pack-info">
         <div class="title">Soundtracks</div>
-        <img id="soundtrack-image" src="https://pack-standoff.vercel.app/Pack_So2_ST1.png" alt="Soundtrack"oncontextmenu="return false;"loading="eager" decoding="async">
+        <img id="soundtrack-image" src="https://pack-standoff.vercel.app/Pack_So2_ST1.png" alt="Soundtrack" oncontextmenu="return false;" loading="eager" decoding="async">
         <div class="description">
             Escute e relembre todos os momentos épicos de Standoff 2 com a nossa coleção completa de trilhas sonoras do jogo! Disponibilizamos para você todas as músicas que marcaram os eventos e atualizações do jogo ao longo dos anos.
-       
-    </div>
-    <button class="view-btn" style="margin-bottom: 20px;" onclick="redirecionarParaSoundtrack()">Escutar Soundtracks</button>
 
-    <script>
-        const carousel = document.getElementById('carousel');
-        const indicatorsContainer = document.getElementById('indicators');
-        const slides = carousel.querySelectorAll('.slide');
-        const totalSlides = slides.length;
-        let currentIndex = 0;
+        </div>
+        <button class="view-btn" style="margin-bottom: 20px;" onclick="redirecionarParaSoundtrack()">Escutar Soundtracks</button>
 
-        // Cria os indicadores de slide
-        for (let i = 0; i < totalSlides; i++) {
-            const indicator = document.createElement('div');
-            indicator.classList.add('indicator');
-            if (i === 0) {
-                indicator.classList.add('active');
-            }
-            indicator.addEventListener('click', () => {
-                currentIndex = i;
-                updateCarousel();
-            });
-            indicatorsContainer.appendChild(indicator);
-        }
+        <script>
+            const carousel = document.getElementById('carousel');
+            const indicatorsContainer = document.getElementById('indicators');
+            const slides = carousel.querySelectorAll('.slide');
+            const totalSlides = slides.length;
+            let currentIndex = 0;
 
-        // Função para atualizar o carrossel
-        function updateCarousel() {
-            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-            // Atualiza os indicadores de slide
-            const indicators = indicatorsContainer.querySelectorAll('.indicator');
-            indicators.forEach((indicator, i) => {
-                if (i === currentIndex) {
+            // Cria os indicadores de slide
+            for (let i = 0; i < totalSlides; i++) {
+                const indicator = document.createElement('div');
+                indicator.classList.add('indicator');
+                if (i === 0) {
                     indicator.classList.add('active');
-                } else {
-                    indicator.classList.remove('active');
                 }
-            });
-        }
+                indicator.addEventListener('click', () => {
+                    currentIndex = i;
+                    updateCarousel();
+                });
+                indicatorsContainer.appendChild(indicator);
+            }
 
-        // Troca de slide automática a cada 3 segundos
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            updateCarousel();
-        }, 3000);
+            // Função para atualizar o carrossel
+            function updateCarousel() {
+                carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-        function redirecionarParaConteúdo() {
-            window.location.href = "https://pack-standoff.vercel.app/Pack%20Standoff%20Conteúdo.html";
-        }
+                // Atualiza os indicadores de slide
+                const indicators = indicatorsContainer.querySelectorAll('.indicator');
+                indicators.forEach((indicator, i) => {
+                    if (i === currentIndex) {
+                        indicator.classList.add('active');
+                    } else {
+                        indicator.classList.remove('active');
+                    }
+                });
+            }
 
-        function redirecionarParaTabela() {
-            window.location.href = "https://pack-standoff.vercel.app/Tabela.html";
-        }
-         
-        function redirecionarParaFree() {
-            window.location.href = "https://pack-standoff.vercel.app/Pack%20Amostra.html";
-        }
+            // Troca de slide automática a cada 3 segundos
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateCarousel();
+            }, 3000);
 
-        function redirecionarParaSoundtrack() {
-            window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
-        }
+            function redirecionarParaConteúdo() {
+                window.location.href = "https://pack-standoff.vercel.app/Pack%20Standoff%20Conteúdo.html";
+            }
 
-        const soundtrackImages = [
-            "https://pack-standoff.vercel.app/Pack_So2_ST1.png",
-            "https://pack-standoff.vercel.app/Pack_So2_ST2.png",
-        ];
+            function redirecionarParaTabela() {
+                window.location.href = "https://pack-standoff.vercel.app/Tabela.html";
+            }
 
-        let currentImageIndex = 0;
-        const soundtrackImageElement = document.getElementById('soundtrack-image');
+            function redirecionarParaFree() {
+                window.location.href = "https://pack-standoff.vercel.app/Pack%20Amostra.html";
+            }
 
-        function changeSoundtrackImage() {
-            currentImageIndex = (currentImageIndex + 1) % soundtrackImages.length;
-            soundtrackImageElement.src = soundtrackImages[currentImageIndex];
-        }
+            function redirecionarParaSoundtrack() {
+                window.location.href = "https://pack-standoff.vercel.app/Pack%20Soundtrack.html";
+            }
 
-        // Troca de imagem a cada 1 segundo
-        setInterval(changeSoundtrackImage, 1000);
-            
-            
-            
-            
+            const soundtrackImages = [
+                "https://pack-standoff.vercel.app/Pack_So2_ST1.png",
+                "https://pack-standoff.vercel.app/Pack_So2_ST2.png",
+            ];
 
+            let currentImageIndex = 0;
+            const soundtrackImageElement = document.getElementById('soundtrack-image');
 
+            function changeSoundtrackImage() {
+                currentImageIndex = (currentImageIndex + 1) % soundtrackImages.length;
+                soundtrackImageElement.src = soundtrackImages[currentImageIndex];
+            }
 
+            // Troca de imagem a cada 1 segundo
+            setInterval(changeSoundtrackImage, 1000);
 
+            document.addEventListener("DOMContentLoaded", () => {
+                const folhasImgs = [
+                    "https://pack-standoff.vercel.app/Pack_So2_Folha1.png",
+                    "https://pack-standoff.vercel.app/Pack_So2_Folha2.png",
+                    "https://pack-standoff.vercel.app/Pack_So2_Folha3.png"
+                ];
 
-            
+                function criarFolha() {
+                    const folha = document.createElement("div");
+                    folha.classList.add("folha");
 
-document.addEventListener("DOMContentLoaded", () => {
-  const folhasImgs = [
-    "https://pack-standoff.vercel.app/Pack_So2_Folha1.png",
-    "https://pack-standoff.vercel.app/Pack_So2_Folha2.png",
-    "https://pack-standoff.vercel.app/Pack_So2_Folha3.png"
-     ];
+                    // posição inicial
+                    folha.style.left = Math.random() * 95 + "vw";
 
-  function criarFolha() {
-    const folha = document.createElement("div");
-    folha.classList.add("folha");
+                    // duração da queda
+                    const duracaoQueda = 6 + Math.random() * 10;
+                    folha.style.animationDuration = duracaoQueda + "s";
 
-    // posição inicial
-    folha.style.left = Math.random() * 95 + "vw";
+                    // cria a imagem da folha
+                    const img = document.createElement("img");
+                    img.src = folhasImgs[Math.floor(Math.random() * folhasImgs.length)];
 
-    // duração da queda
-    const duracaoQueda = 6 + Math.random() * 10;
-    folha.style.animationDuration = duracaoQueda + "s";
+                    // tamanho aleatório
+                    const tamanho = 6 + Math.random() * 7;
+                    img.style.width = `${tamanho}px`;
+                    img.style.height = `${tamanho}px`;
 
-    // cria a imagem da folha
-    const img = document.createElement("img");
-    img.src = folhasImgs[Math.floor(Math.random() * folhasImgs.length)];
+                    // swing lateral
+                    const swing = (Math.random() * 250) + 0;
+                    img.style.setProperty("--swing", `${swing}px`);
 
-    // tamanho aleatório
-    const tamanho = 6 + Math.random() * 7;
-    img.style.width = `${tamanho}px`;
-    img.style.height = `${tamanho}px`;
+                    // duração e velocidade do vento
+                    const duracaoVento = 5 + Math.random() * 5;
+                    img.style.animationDuration = duracaoVento + "s";
 
-    // swing lateral
-    const swing = (Math.random() * 250) + 0;
-    img.style.setProperty("--swing", `${swing}px`);
+                    folha.appendChild(img);
+                    document.body.appendChild(folha);
 
-    // duração e velocidade do vento
-    const duracaoVento = 5 + Math.random() * 5;
-    img.style.animationDuration = duracaoVento + "s";
+                    folha.addEventListener("animationend", () => folha.remove());
+                }
 
-    folha.appendChild(img);
-    document.body.appendChild(folha);
-
-    folha.addEventListener("animationend", () => folha.remove());
-  }
-
-  function soltarFolhas() {
-    const quantidade = Math.random() < 0.4 ? 2 : 1;
-    for (let i = 0; i < quantidade; i++) {
-      criarFolha();
-    }
-  }
-
-  setInterval(() => {
-    soltarFolhas();
-  }, 3000 + Math.random() * 5000);
-});
-
-
-
-
-
-
-
-    </script>
+                function soltarFolhas() {
+                    const quantidade = Math.random() < 0.4 ? 2 : 1;
+                    for (let i = 0; i < quantidade; i++) {
+                        criarFolha();
+                    }
+                }
+                setInterval(() => {
+                    soltarFolhas();
+                }, 3000 + Math.random() * 5000);
+            });                              
+        </script>
 </body>
 
 </html>
