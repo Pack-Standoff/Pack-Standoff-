@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pack Standoff</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
     <link rel="stylesheet" href="https://pack-standoff.vercel.app/Eurostile-Reg.ttf.otf">
-    <link rel="preload" as="image" href="https://pack-standoff.vercel.app/Pack_So2_Background_S10_Red.jpg">
-    <link rel="preload" as="image" href="https://pack-standoff.vercel.app/Pack_So2_Logo_S10.png">
+    <link rel="preload" as="image" href="https://pack-standoff.vercel.app/Pack_So2_Background_S11-BKT.png">
+    <link rel="preload" as="image" href="https://pack-standoff.vercel.app/Pack_So2_Logo_BKT.png">
     <style>
         @font-face {
             font-family: 'Eurostile';
@@ -17,7 +18,7 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #1C1C1C;
-            background-image: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, 0.7)), url("https://pack-standoff.vercel.app/Pack_So2_Background_S10_Red.jpg");
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("https://pack-standoff.vercel.app/Pack_So2_Background_S11_BKT.png");
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
@@ -72,8 +73,13 @@
 
         .novidades .sonoras {
             background: linear-gradient(to bottom,
-            #d2574a, #d2574a, #c05857, #bc4e4c, #96423a, #9b3c3e,#863034);
-            );
+                    #9fabc9,
+                    #9fabc9,
+                    #8f9cbc,
+                    #8090b0,
+                    #6f7f9e,
+                    #667695,
+                    #5c6b89);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -100,7 +106,7 @@
             height: 100%;
             overflow: hidden;
             position: relative;
-          
+
         }
 
         @media (max-width: 1200px) {
@@ -159,7 +165,7 @@
             border-radius: 5px;
             transition: background-color 0.3s ease;
             margin: 0 5px;
-            
+
 
         }
 
@@ -261,7 +267,13 @@
             font-family: "Bebas Neue";
             z-index: 999;
             background: linear-gradient(to bottom,
-            #d2574a, #d2574a, #c05857, #bc4e4c, #96423a, #9b3c3e, #863034);
+                    #9fabc9,
+                    #9fabc9,
+                    #8f9cbc,
+                    #8090b0,
+                    #6f7f9e,
+                    #667695,
+                    #5c6b89);
         }
 
         .buttom-voltar {
@@ -280,56 +292,42 @@
         .buttom-voltar:hover {
             background-color: #7c9bce
         }
-  .folha {
-  position: fixed;
-  top: -50px;
-  pointer-events: none;
-  z-index: 1;
-  animation: cair linear forwards;
-  filter: brightness(2) contrast(2.3) saturate(5);
-}
 
-@keyframes cair {
-  from {
-    transform: translateY(0);
-    opacity: 0.5;
-  }
-  to {
-    transform: translateY(110vh);
-    opacity: 0.5;
-  }
-}
+        .neve {
+            position: fixed;
+            top: -20px;
+            pointer-events: none;
+            border-radius: 90%;
+            background: white;
+            opacity: 0.5;
+            animation-name: cair;
+            animation-timing-function: linear;
+            z-index: -99;
+        }
 
-.folha img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  animation: vento ease-in-out infinite alternate;
-}
+        @keyframes cair {
+            from {
+                transform: translateX(0) translateY(0);
+            }
 
-@keyframes vento {
-  from {
-    transform: translateX(0) rotate(0deg);
-  }
-  to {
-    transform: translateX(var(--swing)) rotate(360deg);
-  }
-}
-          
-
+            to {
+                transform: translateX(var(--swing)) translateY(110vh);
+            }
+        }
     </style>
 </head>
+
 <body>
     <div class="navbar">
         <div class="logo">
-            <img src="https://pack-standoff.vercel.app/Pack_So2_Logo_S10.png" alt="imagem" style="width: 100px; height: 15px; margin-left: 10%; object-fit: cover;" oncontextmenu="return false;">
+            <img src="https://pack-standoff.vercel.app/Pack_So2_Logo_BKT.png" alt="imagem" style="width: 100px; height: 15px; margin-left: 10%; object-fit: cover;" oncontextmenu="return false;">
         </div>
     </div>
     <p class="novidades"><span class="trilhas">Trilhas</span> <span class="sonoras">Sonoras</span></p>
-            <p class="text-d">Divirta-se com as trilhas sonoras que faz do jogo uma experiência Imersiva</p>
-<div style="display:flex; justify-content:space-between; align-items:center; width:90%; margin:20px auto;">
-    <!-- Texto Ordenar com Bebas Neue e degradê -->
-    <p style="
+    <p class="text-d">Divirta-se com as trilhas sonoras que faz do jogo uma experiência Imersiva</p>
+    <div style="display:flex; justify-content:space-between; align-items:center; width:90%; margin:20px auto;">
+        <!-- Texto Ordenar com Bebas Neue e degradê -->
+        <p style="
         margin:0;
         font-size:16px;
         font-family: 'Bebas Neue', sans-serif;
@@ -339,8 +337,8 @@
         user-select: none;
     ">Ordenar por data</p>
 
-    <!-- Botão com Bebas Neue e hover -->
-    <button id="ordenarButton" style="
+        <!-- Botão com Bebas Neue e hover -->
+        <button id="ordenarButton" style="
         background-color: #e79726;
         color: white;
         padding:4px 20px;
@@ -350,10 +348,8 @@
         font-family: 'Bebas Neue', sans-serif;
         -webkit-tap-highlight-color: transparent;
          z-index: 999;
-    " 
-    onmouseover="this.style.backgroundColor='#7c9bce'" 
-    onmouseout="this.style.backgroundColor='#e79726'">Antigo</button>
-</div>
+    " onmouseover="this.style.backgroundColor='#7c9bce'" onmouseout="this.style.backgroundColor='#e79726'">Antigo</button>
+    </div>
     <div class="pack-info">
         <div id="faixa-atual">Nenhuma faixa tocando</div>
 
@@ -635,9 +631,10 @@
             <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()">Pause</button>
             <div class="description">
 
-            </div>  </div>
-            
-            <div class="pack-info">
+            </div>
+        </div>
+
+        <div class="pack-info">
             <div class="title">Halloween 2025 Dia de Muertos</div>
             <img src="https://soundtrack-season.vercel.app/STK_HW2025.jpg" alt="Imagem" loading="lazy" decoding="async">
             <button class="escutar-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="playAudio(29)">Escutar</button>
@@ -653,190 +650,181 @@
             <button class="pause-button" onmouseover="hoverSeason(this)" onmouseout="unhoverSeason(this)" onclick="pauseAudio()">Pause</button>
             <div class="description">
 
-            </div>  </div>
+            </div>
         </div>
-        <div style="text-align: center; margin-top: 18px;">
-            <button class="buttom-voltar" onclick="voltarParaPaginaAnterior()">Voltar</button>
-        </div>
+    </div>
+    <div style="text-align: center; margin-top: 18px;">
+        <button class="buttom-voltar" onclick="voltarParaPaginaAnterior()">Voltar</button>
+    </div>
 
-        <audio class="audio" id="audio1" src="https://soundtrack-season.vercel.app/Standoff%202%20Soundtrack%202Years%20(MP3_160K).mp3" preload="none"></audio>
-        <audio class="audio" id="audio2" src="https://soundtrack-season.vercel.app/Standoff%202%20Halloween%202019%20(MP3_160K)_1.mp3" preload="none"></audio>
-        <audio class="audio" id="audio3" src="https://soundtrack-season.vercel.app/Standoff%202%20New%20Year%20Madness%202020%20MP3_160K).mp3" preload="none"></audio>
-        <audio class="audio" id="audio4" src="https://pack-standoff.vercel.app/Z9%20Project%20Season%201%20SoundTrack.mp3" preload="none"></audio>
-        <audio class="audio" id="audio5" src="https://pack-standoff.vercel.app/Revival%20Season%202%20SoundTrack.mp3" preload="none"></audio>
-        <audio class="audio" id="audio6" src="https://soundtrack-season.vercel.app/Standoff%202%20Halloween%202020%20(MP3_160K).mp3"></audio>
-        <audio class="audio" id="audio7" src="https://soundtrack-season.vercel.app/Standoff%202%20New%20Year%202021%20Little%20Helper%20Protocol(MP3_160K).mp3" preload="none"></audio>
-        <audio class="audio" id="audio8" src="https://soundtrack-season.vercel.app/Standoff%204%20Years%20Soundtrack%20(MP3_160K).mp3" preload="none"></audio>
-        <audio class="audio" id="audio9" src="https://pack-standoff.vercel.app/Dragon%20Rise%20Season%203%20SoundTrack.mp3" preload="none"></audio>
-        <audio class="audio" id="audio10" src="https://soundtrack-season.vercel.app/Standoff%202%20Halloween%202021%20Cursed%20Souls%20(MP3_160K).mp3" preload="none"></audio>
-        <audio class="audio" id="audio11" src="https://soundtrack-season.vercel.app/Standoff%202%20New%20Year%202022%20Winter%20Fun%20(MP3_160K).mp3" preload="none"></audio>
-        <audio class="audio" id="audio12" src="https://soundtrack-season.vercel.app/Standoff%202%20-%205%20Years%20Soundtrack%20(MP3_160K).mp3" preload="none"></audio>
-        <audio class="audio" id="audio13" src="https://pack-standoff.vercel.app/Legends%20Season%204%20SoundTrack.mp3"></audio>
-        <audio class="audio" id="audio14" src="https://soundtrack-season.vercel.app/Standoff%202%20Halloween%202022%20Project%20Pandora%20%20(MP3_160K).mp3" preload="none"></audio>
-        <audio class="audio" id="audio15" src="https://soundtrack-season.vercel.app/Standoff%20New%20Year%202023%20%20Hot%20Winter%20Party(MP3_160K).mp3" preload="none"></audio>
-        <audio class="audio" id="audio16" src="https://pack-standoff.vercel.app/Fireborn%20Season%205%20SoundTrack.mp3" preload="none"></audio>
-        <audio class="audio" id="audio17" src="https://soundtrack-season.vercel.app/Standoff%202%20Space%20Vision%20Soundtrack%20(MP3_160K).mp3" preload="none"></audio>
-        <audio class="audio" id="audio18" src="https://pack-standoff.vercel.app/Dune%20(Season%206%20Loading)%20-%20Standoff%202%20OST(MP3_160K).mp3" preload="none"></audio>
-        <audio class="audio" id="audio19" src="https://soundtrack-season.vercel.app/Standoff%202%20Halloween%202023%20Subject-X%20(MP3_160K).mp3" preload="none"></audio>
-        <audio class="audio" id="audio20" src="https://soundtrack-season.vercel.app/Standoff%202%20-%20Frosty%20Chaos%20Soundtrack(MP3_160K).mp3" preload="none"></audio>
-        <audio class="audio" id="audio21" src="https://soundtrack-season.vercel.app/Standoff%202%20Outcast%20Soundtrack(MP3_160K).mp3" preload="none"></audio>
-        <audio class="audio" id="audio22" src="https://soundtrack-season.vercel.app/Standoff%202%20Fun%20and%20Sun%20Soundtrack.mp3" preload="none"></audio>
-        <audio class="audio" id="audio23" src="https://soundtrack-season.vercel.app/Standoff%202%20Reforged%20Soundtrack.mp3" preload="none"></audio>
-        <audio class="audio" id="audio24" src="https://soundtrack-season.vercel.app/Standoff2%20Nightmare%20Soundtrack.mp3" preload="none"></audio>
-        <audio class="audio" id="audio25" src="https://soundtrack-season.vercel.app/Standoff%202%20Kitsune%20Soundtrack.mp3" preload="none"></audio>
-        <audio class="audio" id="audio26" src="https://soundtrack-season.vercel.app/Standoff2%20Prey%20Soundtrack.mp3" preload="none"></audio>
-        <audio class="audio" id="audio27" src="https://soundtrack-season.vercel.app/Standoff%202%20Gambit%20Soundtrack.mp3" preload="none"></audio>
-        <audio class="audio" id="audio28" src="https://soundtrack-season.vercel.app/Standoff%202%20Syndicate%20Soundtrack.mp3" preload="none"></audio>
-        <audio class="audio" id="audio29" src="https://soundtrack-season.vercel.app/Standoff%202%20Dia%20de%20Muertos.mp3" preload="none"></audio>
-        <audio class="audio" id="audio30" src="https://soundtrack-season.vercel.app/Standoff%202%20Winter%20Tale.mp3" preload="none"></audio>
+    <audio class="audio" id="audio1" src="https://soundtrack-season.vercel.app/Standoff%202%20Soundtrack%202Years%20(MP3_160K).mp3" preload="none"></audio>
+    <audio class="audio" id="audio2" src="https://soundtrack-season.vercel.app/Standoff%202%20Halloween%202019%20(MP3_160K)_1.mp3" preload="none"></audio>
+    <audio class="audio" id="audio3" src="https://soundtrack-season.vercel.app/Standoff%202%20New%20Year%20Madness%202020%20MP3_160K).mp3" preload="none"></audio>
+    <audio class="audio" id="audio4" src="https://pack-standoff.vercel.app/Z9%20Project%20Season%201%20SoundTrack.mp3" preload="none"></audio>
+    <audio class="audio" id="audio5" src="https://pack-standoff.vercel.app/Revival%20Season%202%20SoundTrack.mp3" preload="none"></audio>
+    <audio class="audio" id="audio6" src="https://soundtrack-season.vercel.app/Standoff%202%20Halloween%202020%20(MP3_160K).mp3"></audio>
+    <audio class="audio" id="audio7" src="https://soundtrack-season.vercel.app/Standoff%202%20New%20Year%202021%20Little%20Helper%20Protocol(MP3_160K).mp3" preload="none"></audio>
+    <audio class="audio" id="audio8" src="https://soundtrack-season.vercel.app/Standoff%204%20Years%20Soundtrack%20(MP3_160K).mp3" preload="none"></audio>
+    <audio class="audio" id="audio9" src="https://pack-standoff.vercel.app/Dragon%20Rise%20Season%203%20SoundTrack.mp3" preload="none"></audio>
+    <audio class="audio" id="audio10" src="https://soundtrack-season.vercel.app/Standoff%202%20Halloween%202021%20Cursed%20Souls%20(MP3_160K).mp3" preload="none"></audio>
+    <audio class="audio" id="audio11" src="https://soundtrack-season.vercel.app/Standoff%202%20New%20Year%202022%20Winter%20Fun%20(MP3_160K).mp3" preload="none"></audio>
+    <audio class="audio" id="audio12" src="https://soundtrack-season.vercel.app/Standoff%202%20-%205%20Years%20Soundtrack%20(MP3_160K).mp3" preload="none"></audio>
+    <audio class="audio" id="audio13" src="https://pack-standoff.vercel.app/Legends%20Season%204%20SoundTrack.mp3"></audio>
+    <audio class="audio" id="audio14" src="https://soundtrack-season.vercel.app/Standoff%202%20Halloween%202022%20Project%20Pandora%20%20(MP3_160K).mp3" preload="none"></audio>
+    <audio class="audio" id="audio15" src="https://soundtrack-season.vercel.app/Standoff%20New%20Year%202023%20%20Hot%20Winter%20Party(MP3_160K).mp3" preload="none"></audio>
+    <audio class="audio" id="audio16" src="https://pack-standoff.vercel.app/Fireborn%20Season%205%20SoundTrack.mp3" preload="none"></audio>
+    <audio class="audio" id="audio17" src="https://soundtrack-season.vercel.app/Standoff%202%20Space%20Vision%20Soundtrack%20(MP3_160K).mp3" preload="none"></audio>
+    <audio class="audio" id="audio18" src="https://pack-standoff.vercel.app/Dune%20(Season%206%20Loading)%20-%20Standoff%202%20OST(MP3_160K).mp3" preload="none"></audio>
+    <audio class="audio" id="audio19" src="https://soundtrack-season.vercel.app/Standoff%202%20Halloween%202023%20Subject-X%20(MP3_160K).mp3" preload="none"></audio>
+    <audio class="audio" id="audio20" src="https://soundtrack-season.vercel.app/Standoff%202%20-%20Frosty%20Chaos%20Soundtrack(MP3_160K).mp3" preload="none"></audio>
+    <audio class="audio" id="audio21" src="https://soundtrack-season.vercel.app/Standoff%202%20Outcast%20Soundtrack(MP3_160K).mp3" preload="none"></audio>
+    <audio class="audio" id="audio22" src="https://soundtrack-season.vercel.app/Standoff%202%20Fun%20and%20Sun%20Soundtrack.mp3" preload="none"></audio>
+    <audio class="audio" id="audio23" src="https://soundtrack-season.vercel.app/Standoff%202%20Reforged%20Soundtrack.mp3" preload="none"></audio>
+    <audio class="audio" id="audio24" src="https://soundtrack-season.vercel.app/Standoff2%20Nightmare%20Soundtrack.mp3" preload="none"></audio>
+    <audio class="audio" id="audio25" src="https://soundtrack-season.vercel.app/Standoff%202%20Kitsune%20Soundtrack.mp3" preload="none"></audio>
+    <audio class="audio" id="audio26" src="https://soundtrack-season.vercel.app/Standoff2%20Prey%20Soundtrack.mp3" preload="none"></audio>
+    <audio class="audio" id="audio27" src="https://soundtrack-season.vercel.app/Standoff%202%20Gambit%20Soundtrack.mp3" preload="none"></audio>
+    <audio class="audio" id="audio28" src="https://soundtrack-season.vercel.app/Standoff%202%20Syndicate%20Soundtrack.mp3" preload="none"></audio>
+    <audio class="audio" id="audio29" src="https://soundtrack-season.vercel.app/Standoff%202%20Dia%20de%20Muertos.mp3" preload="none"></audio>
+    <audio class="audio" id="audio30" src="https://soundtrack-season.vercel.app/Standoff%202%20Winter%20Tale.mp3" preload="none"></audio>
 
-        <script>
-            function voltarParaPaginaAnterior() {
-                if (window.history.length > 1) {
-                    window.history.back();
-                } else {
-                    window.location.href = "https://pack-standoff.vercel.app/Pack%20So2.Html";
+    <script>
+        function voltarParaPaginaAnterior() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = "https://pack-standoff.vercel.app/Pack%20So2.Html";
+            }
+        }
+        var currentAudio = null;
+        var audioToPause = null;
+        var faixaAtual = document.getElementById('faixa-atual');
+        var musicas = ["2 Years", "Halloween 2019", "New Year 2020", "Project Z9", "Revival", "Halloween 2020",
+            "New Year 2021", "4 Years", "Dragon Rise", "Cursed Souls", "Winter Fun", "5 Years", "Legends", "Project Pandora",
+            "Hot Winter Party", "Fireborn", "Space Vision", "Sunstrike", "Subject X", "Frost Chaos", "Outcast", "Fun & Sun",
+            "Reforged", "Nightmare", "Kitsune Dreams", "Prey", "Gambit", "Syndicate", "Dia de Muertos", "Winter Tale"
+        ];
+
+        function playAudio(audioNumber) {
+            var audio = document.getElementById("audio" + audioNumber);
+
+            // Se há um áudio diferente do atual sendo tocado, pause-o e reinicie
+            if (currentAudio !== null && currentAudio !== audio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+            }
+
+            // Se o áudio está pausado, toque-o e atualize a faixa atual
+            if (audio.paused) {
+                audio.play();
+                currentAudio = audio;
+                audioToPause = audio;
+                if (audioNumber >= 1 && audioNumber <= musicas.length) {
+                    faixaAtual.textContent = `Tocando: ${musicas[audioNumber - 1]}`;
+                    faixaAtual.style.display = 'block';
+                }
+            } else {
+                // Se o áudio já está tocando, pause e o reinicie, e atualize a faixa atual
+                audio.pause();
+                audio.currentTime = 0;
+                currentAudio = null;
+                faixaAtual.textContent = "Nenhuma faixa tocando";
+                faixaAtual.style.display = 'none';
+            }
+        }
+
+        function pauseAudio() {
+            // Pausa e reinicia o áudio, atualizando o estado de faixa atual
+            if (audioToPause !== null) {
+                audioToPause.pause();
+                audioToPause.currentTime = 0;
+                currentAudio = null;
+                audioToPause = null;
+                faixaAtual.textContent = "Nenhuma faixa tocando";
+                faixaAtual.style.display = 'none';
+            }
+        }
+
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        function hoverSeason(element) {
+            element.style.backgroundColor = "#7c9bce";
+        }
+
+        function unhoverSeason(element) {
+            element.style.backgroundColor = "#e79726";
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            function criarFloco() {
+                const floco = document.createElement("div");
+                floco.classList.add("neve");
+
+                // posição inicial
+                floco.style.left = Math.random() * 400 + "vw";
+
+                // tamanho (pontinhos grandes e pequenos)
+                const tamanho = Math.random() < 0.4 ?
+                    2 + Math.random() * 2 // pequenos
+                    :
+                    3 + Math.random() * 3; // grandes
+
+                floco.style.width = tamanho + "px";
+                floco.style.height = tamanho + "px";
+
+                // opacidade variável
+                floco.style.opacity = 0.4 + Math.random() * 0.6;
+
+                // duração da queda
+                const duracao = 6 + Math.random() * 8;
+                floco.style.animationDuration = duracao + "s";
+
+                // balanço lateral
+                const swing = (Math.random() * 200) - 100;
+                floco.style.setProperty("--swing", swing + "px");
+
+                document.body.appendChild(floco);
+
+                floco.addEventListener("animationend", () => floco.remove());
+            }
+
+            function soltarNeve() {
+                const quantidade = Math.floor(Math.random() * 3) + 1;
+                for (let i = 0; i < quantidade; i++) {
+                    criarFloco();
                 }
             }
-            var currentAudio = null;
-            var audioToPause = null;
-            var faixaAtual = document.getElementById('faixa-atual');
-            var musicas = ["2 Years", "Halloween 2019", "New Year 2020", "Project Z9", "Revival", "Halloween 2020",
-                "New Year 2021", "4 Years", "Dragon Rise", "Cursed Souls", "Winter Fun", "5 Years", "Legends", "Project Pandora",
-                "Hot Winter Party", "Fireborn", "Space Vision", "Sunstrike", "Subject X", "Frost Chaos", "Outcast", "Fun & Sun",
-                "Reforged", "Nightmare", "Kitsune Dreams", "Prey", "Gambit", "Syndicate", "Dia de Muertos","Winter Tale"
-            ];
 
-            function playAudio(audioNumber) {
-                var audio = document.getElementById("audio" + audioNumber);
+            setInterval(soltarNeve, 700);
+        });
 
-                // Se há um áudio diferente do atual sendo tocado, pause-o e reinicie
-                if (currentAudio !== null && currentAudio !== audio) {
-                    currentAudio.pause();
-                    currentAudio.currentTime = 0;
-                }
-
-                // Se o áudio está pausado, toque-o e atualize a faixa atual
-                if (audio.paused) {
-                    audio.play();
-                    currentAudio = audio;
-                    audioToPause = audio;
-                    if (audioNumber >= 1 && audioNumber <= musicas.length) {
-                        faixaAtual.textContent = `Tocando: ${musicas[audioNumber - 1]}`;
-                        faixaAtual.style.display = 'block';
-                    }
-                } else {
-                    // Se o áudio já está tocando, pause e o reinicie, e atualize a faixa atual
-                    audio.pause();
-                    audio.currentTime = 0;
-                    currentAudio = null;
-                    faixaAtual.textContent = "Nenhuma faixa tocando";
-                    faixaAtual.style.display = 'none';
-                }
-            }
-
-            function pauseAudio() {
-                // Pausa e reinicia o áudio, atualizando o estado de faixa atual
-                if (audioToPause !== null) {
-                    audioToPause.pause();
-                    audioToPause.currentTime = 0;
-                    currentAudio = null;
-                    audioToPause = null;
-                    faixaAtual.textContent = "Nenhuma faixa tocando";
-                    faixaAtual.style.display = 'none';
-                }
-            }
-
-            document.addEventListener('contextmenu', function(e) {
-                e.preventDefault();
-            });
-
-            function hoverSeason(element) {
-                element.style.backgroundColor = "#7c9bce";
-            }
-
-            function unhoverSeason(element) {
-                element.style.backgroundColor = "#e79726";
-            }
-      
-             document.addEventListener("DOMContentLoaded", () => {
-  const folhasImgs = [
-    "https://pack-standoff.vercel.app/Pack_So2_Folha1.png",
-    "https://pack-standoff.vercel.app/Pack_So2_Folha2.png",
-    "https://pack-standoff.vercel.app/Pack_So2_Folha3.png"
-
-               
-         ];
-
-  function criarFolha() {
-    const folha = document.createElement("div");
-    folha.classList.add("folha");
-
-    // posição inicial
-    folha.style.left = Math.random() * 95 + "vw";
-
-    // duração da queda
-    const duracaoQueda = 6 + Math.random() * 10;
-    folha.style.animationDuration = duracaoQueda + "s";
-
-    // cria a imagem da folha
-    const img = document.createElement("img");
-    img.src = folhasImgs[Math.floor(Math.random() * folhasImgs.length)];
-
-    // tamanho aleatório
-    const tamanho = 8 + Math.random() * 9;
-    img.style.width = `${tamanho}px`;
-    img.style.height = `${tamanho}px`;
-
-    // swing lateral
-    const swing = (Math.random() * 250) + 0;
-    img.style.setProperty("--swing", `${swing}px`);
-
-    // duração e velocidade do vento
-    const duracaoVento = 5 + Math.random() * 5;
-    img.style.animationDuration = duracaoVento + "s";
-
-    folha.appendChild(img);
-    document.body.appendChild(folha);
-
-    folha.addEventListener("animationend", () => folha.remove());
-  }
-
-  function soltarFolhas() {
-    const quantidade = Math.random() < 0.4 ? 2 : 1;
-    for (let i = 0; i < quantidade; i++) {
-      criarFolha();
-    }
-  }
-
-  setInterval(() => {
-    soltarFolhas();
-  }, 3000 + Math.random() * 5000);
-});
-        
         // Seleciona o botão
-const ordenarButton = document.getElementById("ordenarButton");
+        const ordenarButton = document.getElementById("ordenarButton");
 
-// Seleciona o container que tem todos os packs (primeira .pack-info que é container)
-const container = document.querySelector("body > .pack-info");
+        // Seleciona o container que tem todos os packs (primeira .pack-info que é container)
+        const container = document.querySelector("body > .pack-info");
 
-// Estado do botão
-let invertido = false;
+        // Estado do botão
+        let invertido = false;
 
-ordenarButton.addEventListener("click", () => {
-    // Pega apenas os packs filhos diretos que possuem título
-    const packs = Array.from(container.querySelectorAll(":scope > .pack-info")).filter(p => p.querySelector(".title"));
+        ordenarButton.addEventListener("click", () => {
+            // Pega apenas os packs filhos diretos que possuem título
+            const packs = Array.from(container.querySelectorAll(":scope > .pack-info")).filter(p => p.querySelector(".title"));
 
-    // Inverte a ordem
-    packs.reverse();
+            // Inverte a ordem
+            packs.reverse();
 
-    // Remove do DOM e adiciona na nova ordem
-    packs.forEach(pack => container.appendChild(pack));
+            // Remove do DOM e adiciona na nova ordem
+            packs.forEach(pack => container.appendChild(pack));
 
-    // Alterna o texto do botão
-    invertido = !invertido;
-    ordenarButton.textContent = invertido ? "Recente" : "Antigo";
-});
-        </script>
+            // Alterna o texto do botão
+            invertido = !invertido;
+            ordenarButton.textContent = invertido ? "Recente" : "Antigo";
+        });
+    </script>
 </body>
+
 </html>
