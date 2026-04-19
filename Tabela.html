@@ -16,7 +16,7 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #1C1C1C;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url("https://pack-standoff.vercel.app/Pack_So2_Background_S10_Red.jpg");
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("https://pack-standoff.vercel.app/Pack_So2_Background_S11_BKT.png");
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
@@ -69,13 +69,13 @@
 
         .novidades .pack {
             background: linear-gradient(to bottom,
-                    #d2574a,
-                    #d2574a,
-                    #c05857,
-                    #bc4e4c,
-                    #96423a,
-                    #9b3c3e,
-                    #863034);
+                    #9fabc9,
+                    #9fabc9,
+                    #8f9cbc,
+                    #8090b0,
+                    #6f7f9e,
+                    #667695,
+                    #5c6b89);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -93,6 +93,7 @@
             height: 100%;
             overflow: hidden;
             position: relative;
+
         }
 
         @media (max-width: 1200px) {
@@ -157,6 +158,7 @@
             margin: 0 auto;
             margin-bottom: 5px;
             text-align: center;
+
         }
 
         .icons {
@@ -192,13 +194,13 @@
             font-size: 22px;
             margin-top: -35px;
             background: linear-gradient(to bottom,
-                    #d2574a,
-                    #d2574a,
-                    #c05857,
-                    #bc4e4c,
-                    #96423a,
-                    #9b3c3e,
-                    #863034);
+                    #9fabc9,
+                    #9fabc9,
+                    #8f9cbc,
+                    #8090b0,
+                    #6f7f9e,
+                    #667695,
+                    #5c6b89);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -249,7 +251,6 @@
             color: white;
             border-collapse: separate;
             border-spacing: 0;
-
             overflow: hidden;
         }
 
@@ -286,49 +287,35 @@
             height: 23px;
             object-fit: cover;
         }
-    
-         .folha {
-  position: fixed;
-  top: -50px;
-  pointer-events: none;
-  z-index: 1;
-  animation: cair linear forwards;
-  filter: brightness(2) contrast(2.3) saturate(5);
-}
 
-@keyframes cair {
-  from {
-    transform: translateY(0);
-    opacity: 0.5;
-  }
-  to {
-    transform: translateY(110vh);
-    opacity: 0.5;
-  }
-}
+        .neve {
+            position: fixed;
+            top: -20px;
+            pointer-events: none;
+            border-radius: 90%;
+            background: white;
+            opacity: 0.5;
+            animation-name: cair;
+            animation-timing-function: linear;
+            z-index: -99;
+        }
 
-.folha img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  animation: vento ease-in-out infinite alternate;
-}
+        @keyframes cair {
+            from {
+                transform: translateX(0) translateY(0);
+            }
 
-@keyframes vento {
-  from {
-    transform: translateX(0) rotate(0deg);
-  }
-  to {
-    transform: translateX(var(--swing)) rotate(360deg);
-  }
-}
+            to {
+                transform: translateX(var(--swing)) translateY(110vh);
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="navbar">
         <div class="logo">
-            <img src="https://pack-standoff.vercel.app/Pack_So2_Logo_S10.png" alt="imagem" style="width: 100px; height: 15px; margin-left: 10%; object-fit: cover;" oncontextmenu="return false;">
+            <img src="https://pack-standoff.vercel.app/Pack_So2_Logo_BKT.png" alt="imagem" style="width: 100px; height: 15px; margin-left: 10%; object-fit: cover;" oncontextmenu="return false;">
         </div>
     </div>
     <p class="novidades"><span class="tabela">Tabela</span> <span class="pack">De Preços</span></p>
@@ -493,67 +480,67 @@
 
 
             <div class="additional-content">
-<div style="margin-top: 10px;">
-<p style="font-size: 20px; font-family: 'Bebas Neue'; text-align: center;">
-<span style="background: linear-gradient(to bottom, #ffffff, #d3d3d3, #444444); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-Pack Completo possui
-</span>
+                <div style="margin-top: 10px;">
+                    <p style="font-size: 20px; font-family: 'Bebas Neue'; text-align: center;">
+                        <span style="background: linear-gradient(to bottom, #ffffff, #d3d3d3, #444444); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                            Pack Completo possui
+                        </span>
 
-<span style="background: linear-gradient(to bottom,
-          #ff6f61,
-          #e96457,
-          #d95c4b,
-          #c85244,
-          #b0483d,
-          #9f3f36,
-          #8a2f2d); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">35%
-</span>
+                        <span style="background: linear-gradient(to bottom,
+          #9fabc9,
+#9fabc9,
+#8f9cbc,
+#8090b0,
+#6f7f9e,
+#667695,
+#5c6b89); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">35%
+                        </span>
 
-<span style="background: linear-gradient(to bottom, #ffffff, #d3d3d3, #444444); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-de desconto de
-</span>
+                        <span style="background: linear-gradient(to bottom, #ffffff, #d3d3d3, #444444); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                            de desconto de
+                        </span>
 
-<span style="position: relative; display: inline-block;">
-<span style="background: linear-gradient(to bottom,
-          #ff6f61,
-          #e96457,
-          #d95c4b,
-          #c85244,
-          #b0483d,
-          #9f3f36,
-          #8a2f2d); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">R$145
-</span>
-<span style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, #ffffff, #d3d3d3, #444444); clip-path: polygon(0% 60%, 100% 60%, 100% 52%, 0% 52%);"></span>
-</span>
+                        <span style="position: relative; display: inline-block;">
+                            <span style="background: linear-gradient(to bottom,
+         #9fabc9,
+#9fabc9,
+#8f9cbc,
+#8090b0,
+#6f7f9e,
+#667695,
+#5c6b89); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">R$145
+                            </span>
+                            <span style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, #ffffff, #d3d3d3, #444444); clip-path: polygon(0% 60%, 100% 60%, 100% 52%, 0% 52%);"></span>
+                        </span>
 
-<span style="background: linear-gradient(to bottom, #ffffff, #d3d3d3, #444444); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-por
-</span>
+                        <span style="background: linear-gradient(to bottom, #ffffff, #d3d3d3, #444444); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                            por
+                        </span>
 
-<span style="background: linear-gradient(to bottom,
-          #ff6f61,
-          #e96457,
-          #d95c4b,
-          #c85244,
-          #b0483d,
-          #9f3f36,
-          #8a2f2d); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-R$94,25
-</span>
-</p>
-</div>
-<div style="text-align: center; margin-top: 8px; margin-bottom: 50px;">
-<p style="color: white; font-family: 'Eurostile'; font-size: 15px;">Ao Adquirir o pacote, você receberá todo o conteúdo atual e futuras atualizações.</p>
-</div>
-<div class="additional-content">
-<div style="margin-top: 25px;">
-<p style="font-size: 20px; font-family: 'Bebas Neue'; text-align: center;
+                        <span style="background: linear-gradient(to bottom,
+          #9fabc9,
+#9fabc9,
+#8f9cbc,
+#8090b0,
+#6f7f9e,
+#667695,
+#5c6b89); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                            R$94,25
+                        </span>
+                    </p>
+                </div>
+                <div style="text-align: center; margin-top: 8px; margin-bottom: 50px;">
+                    <p style="color: white; font-family: 'Eurostile'; font-size: 15px;">Ao Adquirir o pacote, você receberá todo o conteúdo atual e futuras atualizações.</p>
+                </div>
+                <div class="additional-content">
+                    <div style="margin-top: 25px;">
+                        <p style="font-size: 20px; font-family: 'Bebas Neue'; text-align: center;
 background: linear-gradient(to bottom, #ffffff, #d3d3d3, #444444);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;">
-Entre em Contato e Realize a Compra
-</p>
-</div>
+                            Entre em Contato e Realize a Compra
+                        </p>
+                    </div>
                     <div class="rectangle" onclick="copiarNomeDiscord()">
                         <div class="icons icon-discord"></div>
                         <p class="app-text">Discord</p>
@@ -621,61 +608,48 @@ Entre em Contato e Realize a Compra
                                     document.getElementById("ordenarButton").textContent = ordemCrescente ? "Maior Preço" : "Menor Preço";
                                 }
 
-                                
-                               
-                        
-                        
-                        document.addEventListener("DOMContentLoaded", () => {
-  const folhasImgs = [
-    "https://pack-standoff.vercel.app/Pack_So2_Folha1.png",
-    "https://pack-standoff.vercel.app/Pack_So2_Folha2.png",
-    "https://pack-standoff.vercel.app/Pack_So2_Folha3.png"
-     ];
+                                document.addEventListener("DOMContentLoaded", () => {
 
-  function criarFolha() {
-    const folha = document.createElement("div");
-    folha.classList.add("folha");
+                                    function criarFloco() {
+                                        const floco = document.createElement("div");
+                                        floco.classList.add("neve");
 
-    // posição inicial
-    folha.style.left = Math.random() * 95 + "vw";
+                                        // posição inicial
+                                        floco.style.left = Math.random() * 400 + "vw";
 
-    // duração da queda
-    const duracaoQueda = 6 + Math.random() * 10;
-    folha.style.animationDuration = duracaoQueda + "s";
+                                        // tamanho (pontinhos grandes e pequenos)
+                                        const tamanho = Math.random() < 0.4 ?
+                                            2 + Math.random() * 2 // pequenos
+                                            :
+                                            3 + Math.random() * 3; // grandes
 
-    // cria a imagem da folha
-    const img = document.createElement("img");
-    img.src = folhasImgs[Math.floor(Math.random() * folhasImgs.length)];
+                                        floco.style.width = tamanho + "px";
+                                        floco.style.height = tamanho + "px";
 
-    // tamanho aleatório
-    const tamanho = 8 + Math.random() * 9;
-    img.style.width = `${tamanho}px`;
-    img.style.height = `${tamanho}px`;
+                                        // opacidade variável
+                                        floco.style.opacity = 0.4 + Math.random() * 0.6;
 
-    // swing lateral
-    const swing = (Math.random() * 250) + 0;
-    img.style.setProperty("--swing", `${swing}px`);
+                                        // duração da queda
+                                        const duracao = 6 + Math.random() * 8;
+                                        floco.style.animationDuration = duracao + "s";
 
-    // duração e velocidade do vento
-    const duracaoVento = 5 + Math.random() * 5;
-    img.style.animationDuration = duracaoVento + "s";
+                                        // balanço lateral
+                                        const swing = (Math.random() * 200) - 100;
+                                        floco.style.setProperty("--swing", swing + "px");
 
-    folha.appendChild(img);
-    document.body.appendChild(folha);
+                                        document.body.appendChild(floco);
 
-    folha.addEventListener("animationend", () => folha.remove());
-  }
+                                        floco.addEventListener("animationend", () => floco.remove());
+                                    }
 
-  function soltarFolhas() {
-    const quantidade = Math.random() < 0.4 ? 2 : 1;
-    for (let i = 0; i < quantidade; i++) {
-      criarFolha();
-    }
-  }
+                                    function soltarNeve() {
+                                        const quantidade = Math.floor(Math.random() * 3) + 1;
+                                        for (let i = 0; i < quantidade; i++) {
+                                            criarFloco();
+                                        }
+                                    }
 
-  setInterval(() => {
-    soltarFolhas();
-  }, 3000 + Math.random() * 5000);
-});
+                                    setInterval(soltarNeve, 700);
+                                });
                             </script>
-</body> 
+</body>
